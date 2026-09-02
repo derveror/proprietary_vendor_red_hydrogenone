@@ -4,9 +4,9 @@
   "stock_archive_verified": true,
   "counts": {
     "P0": 104,
-    "P1": 380,
+    "P1": 376,
     "P2": 17,
-    "total": 501
+    "total": 497
   },
   "notes": [
     "No RED msm8998-common repository is used.",
@@ -15,6 +15,7 @@
     "Stock init fragments are retained only when their service executable has an owner; device-owned init.qcom.rc/init.qcom.usb.rc are not duplicated by vendor.",
     "RED .118 libsdm-disp-apis.so (32/64) is retained because the Leia display service DT_NEEDED graph requires it.",
     "Android.bp shared_libs are generated from the retained .118 ELF DT_NEEDED graph.",
-    "317 of 336 proprietary ELF modules have check_elf_files enabled; the remaining 19 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json."
+    "317 of 336 proprietary ELF modules have check_elf_files enabled; the remaining 19 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
+    "316 of 334 proprietary ELF modules have check_elf_files enabled; the remaining 18 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json."
   ]
 }

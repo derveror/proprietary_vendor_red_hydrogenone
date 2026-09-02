@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 104,
-    "P1": 380,
+    "P1": 376,
     "P2": 17,
-    "total": 501
+    "total": 497
   },
   "files": [
     {
@@ -672,21 +672,9 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/bin/hw/vendor.nxp.hardware.nfc@1.1-service",
-      "size": 69352,
-      "sha256": "ed6edddc5d3b90f14223b1c22b8b19c52284e5f83c878d84ec047bf65e5959a3"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/bin/hw/vendor.qti.esepowermanager@1.0-service",
       "size": 68344,
       "sha256": "b0d81db40a7b8a870b6242064149a440e7c6fd4010350540bbb6bfeb7dab7f7c"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/hw/vendor.qti.gnss@1.0-service",
-      "size": 68344,
-      "sha256": "903a5492f612335c2e5b2f66df4b726b3d4f7a4bba5170f7952b668a5cc5a7f6"
     },
     {
       "tier": "P1",
@@ -780,21 +768,9 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/etc/init/vendor.nxp.hardware.nfc@1.1-service.rc",
-      "size": 1687,
-      "sha256": "eac46802b1f6ffb7eeee68748de80ceaa82750de0a58a71911509421c2989ccf"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc",
       "size": 141,
       "sha256": "12961d0b42c81bd2d05ddbaa7f701608c245bd5db3980b8bb214f4c971bb1820"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/etc/init/vendor.qti.gnss@1.0-service.rc",
-      "size": 122,
-      "sha256": "cbbf04e5721761cdcd84d2a5f3cee1f2cceedb9a37671389aca053416d8e7b25"
     },
     {
       "tier": "P1",
@@ -3025,16 +3001,11 @@
   ],
   "android15_contract": {
     "source_owned_modules_pruned": [
-      "audio.primary.msm8998",
-      "audio.r_submix.default",
-      "audio.usb.default",
-      "libgnss",
-      "libgnsspps",
-      "libwifi-hal-qcom",
-      "libwpa_client"
+      "vendor.nxp.hardware.nfc@1.1-service",
+      "vendor.qti.gnss@1.0-service"
     ],
     "stale_init_paths_pruned": [],
-    "removed_path_count": 12,
+    "removed_path_count": 4,
     "policy": "Retain RED hardware payload; replace source-owned Android 9 HAL wrappers with LineageOS 22.2 implementations and remove stock init fragments whose executable owner is absent or whose destination is device-owned."
   }
 }

@@ -114,9 +114,7 @@ vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/bin/hw/android.hardware.media.omx@1.0-service
 vendor/bin/hw/qcrild
 vendor/bin/hw/rild
-vendor/bin/hw/vendor.nxp.hardware.nfc@1.1-service
 vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
-vendor/bin/hw/vendor.qti.gnss@1.0-service
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
@@ -132,9 +130,7 @@ vendor/bin/xtwifi-client
 vendor/bin/xtwifi-inet-agent
 vendor/etc/init/qcrild.rc
 vendor/etc/init/rild.rc
-vendor/etc/init/vendor.nxp.hardware.nfc@1.1-service.rc
 vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc
-vendor/etc/init/vendor.qti.gnss@1.0-service.rc
 vendor/etc/init/vendor.rild.rc
 vendor/etc/libnfc-mtp-NQ3XX.conf
 vendor/etc/libnfc-mtp-NQ4XX.conf

@@ -65,8 +65,6 @@ MUST_RETAIN = {
     "vendor/bin/thermal-engine",
     "vendor/bin/hw/qcrild",
     "vendor/bin/hw/rild",
-    "vendor/bin/hw/vendor.qti.gnss@1.0-service",
-    "vendor/etc/init/vendor.qti.gnss@1.0-service.rc",
     "vendor/lib/hw/camera.msm8998.so",
     "vendor/lib/libmmcamera2_mct.so",
     "vendor/firmware/leia_pfp_470.fw",

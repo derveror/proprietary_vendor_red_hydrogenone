@@ -31,6 +31,8 @@ FORBIDDEN_MODULES = {
     "libgnsspps",
     "libwifi-hal-qcom",
     "libwpa_client",
+    "vendor.qti.gnss@1.0-service",
+    "vendor.nxp.hardware.nfc@1.1-service",
 }
 
 FORBIDDEN_RC = {
@@ -48,6 +50,8 @@ FORBIDDEN_RC = {
     "vendor/etc/init/android.hardware.usb@1.0-service.rc",
     "vendor/etc/init/android.hardware.vibrator@1.0-service.rc",
     "vendor/etc/init/android.hardware.wifi@1.0-service.rc",
+    "vendor/etc/init/vendor.qti.gnss@1.0-service.rc",
+    "vendor/etc/init/vendor.nxp.hardware.nfc@1.1-service.rc",
 }
 
 # Stock .118 init contains references that are stale even in the complete

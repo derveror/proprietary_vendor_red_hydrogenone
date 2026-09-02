@@ -13701,53 +13701,6 @@
         }
       }
     },
-    "vendor.nxp.hardware.nfc@1.1-service": {
-      "kind": "cc_prebuilt_binary",
-      "check_elf_files": false,
-      "blocking_dependencies": [
-        "android.hardware.nfc@1.0",
-        "android.hardware.nfc@1.1"
-      ],
-      "architectures": {
-        "android_arm64": {
-          "srcs": [
-            "proprietary/vendor/bin/hw/vendor.nxp.hardware.nfc@1.1-service"
-          ],
-          "shared_libs": [
-            "android.hardware.nfc@1.0",
-            "android.hardware.nfc@1.1",
-            "libc",
-            "libc++",
-            "libdl",
-            "libhidlbase",
-            "libhidltransport",
-            "libhwbinder",
-            "liblog",
-            "libm",
-            "libutils",
-            "nfc_nci.nqx.default.hw",
-            "vendor.nxp.hardware.nfc@1.0"
-          ],
-          "needed": {
-            "proprietary/vendor/bin/hw/vendor.nxp.hardware.nfc@1.1-service": [
-              "nfc_nci.nqx.default.hw",
-              "libhidlbase",
-              "libhidltransport",
-              "libutils",
-              "liblog",
-              "libhwbinder",
-              "android.hardware.nfc@1.1",
-              "android.hardware.nfc@1.0",
-              "vendor.nxp.hardware.nfc@1.0",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
     "vendor.qti.data.factory@1.0": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -14245,52 +14198,6 @@
               "libxtadapter",
               "libizat_core",
               "libizat_client_api",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
-    "vendor.qti.gnss@1.0-service": {
-      "kind": "cc_prebuilt_binary",
-      "check_elf_files": true,
-      "blocking_dependencies": [],
-      "architectures": {
-        "android_arm64": {
-          "srcs": [
-            "proprietary/vendor/bin/hw/vendor.qti.gnss@1.0-service"
-          ],
-          "shared_libs": [
-            "android.hardware.gnss@1.0",
-            "android.hardware.gnss@1.1",
-            "libbase",
-            "libc",
-            "libc++",
-            "libcutils",
-            "libdl",
-            "libhidlbase",
-            "libhidltransport",
-            "libhwbinder",
-            "liblog",
-            "libm",
-            "libutils",
-            "vendor.qti.gnss@1.0"
-          ],
-          "needed": {
-            "proprietary/vendor/bin/hw/vendor.qti.gnss@1.0-service": [
-              "liblog",
-              "libcutils",
-              "libbase",
-              "libutils",
-              "libhwbinder",
-              "libhidlbase",
-              "libhidltransport",
-              "android.hardware.gnss@1.0",
-              "android.hardware.gnss@1.1",
-              "vendor.qti.gnss@1.0",
               "libc++",
               "libc",
               "libm",
@@ -15943,9 +15850,9 @@
     }
   },
   "summary": {
-    "total_modules": 336,
-    "checkelf_enabled": 317,
-    "checkelf_exceptions": 19,
+    "total_modules": 334,
+    "checkelf_enabled": 316,
+    "checkelf_exceptions": 18,
     "provider_sonames": 307
   }
 }

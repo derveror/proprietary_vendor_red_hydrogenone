@@ -10199,41 +10199,6 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-cc_prebuilt_binary {
-    name: "vendor.nxp.hardware.nfc@1.1-service",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    check_elf_files: false,
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/hw/vendor.nxp.hardware.nfc@1.1-service",
-            ],
-            shared_libs: [
-                "android.hardware.nfc@1.0",
-                "android.hardware.nfc@1.1",
-                "libc",
-                "libc++",
-                "libdl",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libm",
-                "libutils",
-                "nfc_nci.nqx.default.hw",
-                "vendor.nxp.hardware.nfc@1.0",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    relative_install_path: "hw",
-    soc_specific: true,
-}
-
 cc_prebuilt_library_shared {
     name: "vendor.qti.data.factory@1.0",
     owner: "red",
@@ -10568,41 +10533,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "both",
-    prefer: true,
-    relative_install_path: "hw",
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "vendor.qti.gnss@1.0-service",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/hw/vendor.qti.gnss@1.0-service",
-            ],
-            shared_libs: [
-                "android.hardware.gnss@1.0",
-                "android.hardware.gnss@1.1",
-                "libbase",
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libm",
-                "libutils",
-                "vendor.qti.gnss@1.0",
-            ],
-        },
-    },
-    compile_multilib: "64",
     prefer: true,
     relative_install_path: "hw",
     soc_specific: true,

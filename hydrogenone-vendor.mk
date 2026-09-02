@@ -19,9 +19,7 @@ PRODUCT_COPY_FILES += \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rild.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/vendor.cm.hardware.thermal3d@1.0-service.cm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.cm.hardware.thermal3d@1.0-service.cm.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/vendor.leia.hardware.leiadisp@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.leia.hardware.leiadisp@1.0-service.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/vendor.nxp.hardware.nfc@1.1-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.nxp.hardware.nfc@1.1-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.esepowermanager@1.0-service.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/vendor.qti.gnss@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.gnss@1.0-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/vendor.rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.rild.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/libnfc-mtp-NQ3XX.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-mtp-NQ3XX.conf \
     vendor/red/hydrogenone/proprietary/vendor/etc/libnfc-mtp-NQ4XX.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-mtp-NQ4XX.conf \
@@ -348,7 +346,6 @@ PRODUCT_PACKAGES += \
     vendor.leia.hardware.leiadisp@1.0-impl \
     vendor.leia.hardware.leiadisp@1.0-service \
     vendor.nxp.hardware.nfc@1.0 \
-    vendor.nxp.hardware.nfc@1.1-service \
     vendor.qti.data.factory@1.0 \
     vendor.qti.data.factory@1.1 \
     vendor.qti.esepowermanager@1.0 \
@@ -356,7 +353,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.esepowermanager@1.0-service \
     vendor.qti.gnss@1.0 \
     vendor.qti.gnss@1.0-impl \
-    vendor.qti.gnss@1.0-service \
     vendor.qti.gnss@1.1 \
     vendor.qti.gnss@1.2 \
     vendor.qti.gnss@2.0 \

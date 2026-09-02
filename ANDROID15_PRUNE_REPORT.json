@@ -2,51 +2,30 @@
   "schema_version": 1,
   "stock_archive_sha256": "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e",
   "before": {
-    "selected_files": 511,
-    "selected_bytes": 247285912
+    "selected_files": 501,
+    "selected_bytes": 245270288
   },
   "after": {
-    "selected_files": 499,
-    "selected_bytes": 245162912,
-    "elf_modules": 335,
-    "copy_files": 52
+    "selected_files": 497,
+    "selected_bytes": 245130783,
+    "elf_modules": 334,
+    "copy_files": 50
   },
   "removed_modules": [
-    "audio.primary.msm8998",
-    "audio.r_submix.default",
-    "audio.usb.default",
-    "libgnss",
-    "libgnsspps",
-    "libwifi-hal-qcom",
-    "libwpa_client"
+    "vendor.nxp.hardware.nfc@1.1-service",
+    "vendor.qti.gnss@1.0-service"
   ],
   "removed_manifest_paths": [
-    "vendor/lib/hw/audio.primary.msm8998.so",
-    "vendor/lib/hw/audio.r_submix.default.so",
-    "vendor/lib/hw/audio.usb.default.so",
-    "vendor/lib/libgnss.so",
-    "vendor/lib/libgnsspps.so",
-    "vendor/lib64/hw/audio.primary.msm8998.so",
-    "vendor/lib64/hw/audio.r_submix.default.so",
-    "vendor/lib64/hw/audio.usb.default.so",
-    "vendor/lib64/libgnss.so",
-    "vendor/lib64/libgnsspps.so",
-    "vendor/lib64/libwifi-hal-qcom.so",
-    "vendor/lib64/libwpa_client.so"
+    "vendor/bin/hw/vendor.nxp.hardware.nfc@1.1-service",
+    "vendor/bin/hw/vendor.qti.gnss@1.0-service",
+    "vendor/etc/init/vendor.nxp.hardware.nfc@1.1-service.rc",
+    "vendor/etc/init/vendor.qti.gnss@1.0-service.rc"
   ],
   "deleted_payload_paths": [
-    "vendor/lib/hw/audio.primary.msm8998.so",
-    "vendor/lib/hw/audio.r_submix.default.so",
-    "vendor/lib/hw/audio.usb.default.so",
-    "vendor/lib/libgnss.so",
-    "vendor/lib/libgnsspps.so",
-    "vendor/lib64/hw/audio.primary.msm8998.so",
-    "vendor/lib64/hw/audio.r_submix.default.so",
-    "vendor/lib64/hw/audio.usb.default.so",
-    "vendor/lib64/libgnss.so",
-    "vendor/lib64/libgnsspps.so",
-    "vendor/lib64/libwifi-hal-qcom.so",
-    "vendor/lib64/libwpa_client.so"
+    "vendor/bin/hw/vendor.nxp.hardware.nfc@1.1-service",
+    "vendor/bin/hw/vendor.qti.gnss@1.0-service",
+    "vendor/etc/init/vendor.nxp.hardware.nfc@1.1-service.rc",
+    "vendor/etc/init/vendor.qti.gnss@1.0-service.rc"
   ],
   "stale_init_candidates": [
     "vendor/etc/init/android.hardware.cas@1.0-service.rc",

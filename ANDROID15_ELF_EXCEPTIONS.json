@@ -174,16 +174,6 @@
         "proprietary/vendor/lib64/nfc_nci.nqx.default.hw.so: DT_NEEDED -> libbase, libcutils, liblog, libhwbinder, libhardware, libhardware_legacy, libhidlbase, libhidltransport, libutils, android.hardware.nfc@1.0, android.hardware.nfc@1.1, android.hardware.secure_element@1.0, libc++, libc, libm, libdl"
       ]
     },
-    "vendor.nxp.hardware.nfc@1.1-service": {
-      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
-      "blocking_dependencies": [
-        "android.hardware.nfc@1.0",
-        "android.hardware.nfc@1.1"
-      ],
-      "evidence": [
-        "proprietary/vendor/bin/hw/vendor.nxp.hardware.nfc@1.1-service: DT_NEEDED -> nfc_nci.nqx.default.hw, libhidlbase, libhidltransport, libutils, liblog, libhwbinder, android.hardware.nfc@1.1, android.hardware.nfc@1.0, vendor.nxp.hardware.nfc@1.0, libc++, libc, libm, libdl"
-      ]
-    },
     "vendor.qti.hardware.wifi.hostapd@1.0": {
       "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
       "blocking_dependencies": [
