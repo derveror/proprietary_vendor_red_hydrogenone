@@ -1,0 +1,31 @@
+name: Verify Android 15 vendor contract
+
+on:
+  push:
+    branches:
+      - lineage-22.2-android15-contract
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate machine-readable metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m json.tool proprietary-manifest.json >/dev/null
+          python3 -m json.tool SOURCE_LOCK.json >/dev/null
+          python3 -m json.tool GENERATED_VENDOR_AUDIT.json >/dev/null
+          python3 -m json.tool VENDOR_TREE_AUDIT.json >/dev/null
+
+      - name: Run Android 15 contract tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m unittest -v tests.test_android15_contract
