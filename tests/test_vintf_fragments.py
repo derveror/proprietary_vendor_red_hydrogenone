@@ -84,7 +84,11 @@ def bp_block(module: str) -> str:
 
 def fragment_for_module(module: str) -> Path:
     block = bp_block(module)
-    match = re.search(r'vintf_fragments:\s*\[\s*"([^"]+)"\s*\]', block, re.S)
+    match = re.search(
+        r'vintf_fragments:\s*\[\s*"([^"]+)"\s*,?\s*\]',
+        block,
+        re.S,
+    )
     if not match:
         raise AssertionError(f"{module} has no vintf_fragments property")
     return ROOT / match.group(1)
