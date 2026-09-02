@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 104,
-    "P1": 392,
+    "P1": 380,
     "P2": 15,
-    "total": 511
+    "total": 499
   },
   "files": [
     {
@@ -996,24 +996,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib/hw/audio.primary.msm8998.so",
-      "size": 548588,
-      "sha256": "1c123a3bed059261ebd14a1f6c3f6102f49155f758e21d206ac4587e915ae31c"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/hw/audio.r_submix.default.so",
-      "size": 33124,
-      "sha256": "1be1553ef85ae4165947692cb8085bd3ace763422f65809af0253be6fd8f4cf5"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/hw/audio.usb.default.so",
-      "size": 15664,
-      "sha256": "be4c7b2be391708ae36ca1162d2530d0df5b5c1f06a65879d1e07febad63fbbe"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib/hw/camera.msm8998.so",
       "size": 1247340,
       "sha256": "252825edea8c8bb139e3c1fcb570558d5ac8726211159772265ba64057e0fec0"
@@ -1209,18 +1191,6 @@
       "path": "vendor/lib/libgeofence.so",
       "size": 53596,
       "sha256": "50ec2512704349957d38e421b101beb269685989e5d86b8fe64bb408d711067a"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/libgnss.so",
-      "size": 127112,
-      "sha256": "52ce44f441cf3ac9cdbd0d2c662599a643426c8f68b8da13f78ebc45b8b2ae0d"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/libgnsspps.so",
-      "size": 19712,
-      "sha256": "d389608513b75ffab007914c772f14f41ea94441803f0c0cd767df4491aa9d5b"
     },
     {
       "tier": "P1",
@@ -2118,24 +2088,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib64/hw/audio.primary.msm8998.so",
-      "size": 560736,
-      "sha256": "6f516866c1540f948a37788e638c1495e3fda24024f0be36e74de9ba5d0fb701"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/hw/audio.r_submix.default.so",
-      "size": 69696,
-      "sha256": "9649a7c55cb60a61623c60cd12f852c4da1240c1bd7679cb1107f33995ae5570"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/hw/audio.usb.default.so",
-      "size": 68936,
-      "sha256": "81a04c9b885f006326ad65ebb500323c8cd46743ad9b7170f2837345970b5105"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib64/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so",
       "size": 68968,
       "sha256": "0d64852dbf09f5bff8919d7aeeac393961db95f3b29dc5365c05e44e52c4abaf"
@@ -2385,18 +2337,6 @@
       "path": "vendor/lib64/libgeofence.so",
       "size": 68912,
       "sha256": "dd026e6d88814f76361bb3696aac50508b4c867bf50adb059c31060049ef477c"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/libgnss.so",
-      "size": 202480,
-      "sha256": "74a062f3384b8fc105cc69548829c0e8a269e0bff11e09ff2ecab90d9ec12226"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/libgnsspps.so",
-      "size": 68192,
-      "sha256": "697747a6ffc65bfe7f32a32299c2fdeceecba6d12be1017a9383d45f40fc3f1a"
     },
     {
       "tier": "P1",
@@ -2712,21 +2652,9 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib64/libwifi-hal-qcom.so",
-      "size": 368200,
-      "sha256": "29392c4f9c729784901bf86882acc347d1c49b319ad8801cd974f007ce7cf0c8"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib64/libwifi-hal.so",
       "size": 369808,
       "sha256": "2716e3961b030fa21e8ac2d53d5990f8d22439dd6373acb726ce2fe007088dfb"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/libwpa_client.so",
-      "size": 40560,
-      "sha256": "9597954d986cebabc13066891f68f2589db3cc11fcfd64d1edb7f88f08e37cf0"
     },
     {
       "tier": "P1",
@@ -3084,31 +3012,17 @@
     }
   ],
   "android15_contract": {
-    "source_owned_modules_pruned": [],
-    "stale_init_paths_pruned": [
-      "vendor/etc/init/android.hardware.cas@1.0-service.rc",
-      "vendor/etc/init/android.hardware.drm@1.0-service.rc",
-      "vendor/etc/init/android.hardware.drm@1.1-service.clearkey.rc",
-      "vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc",
-      "vendor/etc/init/android.hardware.memtrack@1.0-service.rc",
-      "vendor/etc/init/android.hardware.power@1.0-service.rc",
-      "vendor/etc/init/android.hardware.thermal@1.0-service.rc",
-      "vendor/etc/init/android.hardware.vr@1.0-service.rc",
-      "vendor/etc/init/hostapd.android.rc",
-      "vendor/etc/init/hw/init.qcom.factory.rc",
-      "vendor/etc/init/hw/init.qcom.rc",
-      "vendor/etc/init/hw/init.qcom.usb.rc",
-      "vendor/etc/init/sns_reg.rc",
-      "vendor/etc/init/vendor.display.color@1.0-service.rc",
-      "vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc",
-      "vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc",
-      "vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc",
-      "vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc",
-      "vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc",
-      "vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc",
-      "vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc"
+    "source_owned_modules_pruned": [
+      "audio.primary.msm8998",
+      "audio.r_submix.default",
+      "audio.usb.default",
+      "libgnss",
+      "libgnsspps",
+      "libwifi-hal-qcom",
+      "libwpa_client"
     ],
-    "removed_path_count": 21,
+    "stale_init_paths_pruned": [],
+    "removed_path_count": 12,
     "policy": "Retain RED hardware payload; replace source-owned Android 9 HAL wrappers with LineageOS 22.2 implementations and remove stock init fragments whose executable owner is absent or whose destination is device-owned."
   }
 }

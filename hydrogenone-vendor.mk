@@ -66,9 +66,6 @@ PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0-service \
     android.hidl.base@1.0 \
     audio.primary.default \
-    audio.primary.msm8998 \
-    audio.r_submix.default \
-    audio.usb.default \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
     camera.device@3.3-impl \
@@ -166,8 +163,6 @@ PRODUCT_PACKAGES += \
     libflp \
     libgdtap \
     libgeofence \
-    libgnss \
-    libgnsspps \
     libgps.utils \
     libgpustats \
     libgsl \
@@ -328,8 +323,6 @@ PRODUCT_PACKAGES += \
     libwfdmmservice \
     libwfdmodulehdcpsession \
     libwifi-hal \
-    libwifi-hal-qcom \
-    libwpa_client \
     libxml \
     libxtadapter \
     libxtwifi_ulp_adaptor \
