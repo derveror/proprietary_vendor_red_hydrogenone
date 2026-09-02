@@ -1,11 +1,11 @@
 {
-  "selected_files": 532,
-  "p0": 123,
-  "p1": 394,
+  "selected_files": 511,
+  "p0": 104,
+  "p1": 392,
   "p2": 15,
-  "selected_bytes": 247434209,
+  "selected_bytes": 247285912,
   "elf_modules": 342,
-  "copy_files": 73,
+  "copy_files": 52,
   "sensitive_path_matches": [],
   "missing_files": [],
   "duplicate_paths": 0

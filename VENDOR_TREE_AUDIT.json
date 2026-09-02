@@ -3,14 +3,15 @@
   "all_selected_sha256_verified": true,
   "stock_archive_verified": true,
   "counts": {
-    "P0": 123,
-    "P1": 394,
+    "P0": 104,
+    "P1": 392,
     "P2": 15,
-    "total": 532
+    "total": 511
   },
   "notes": [
     "No RED msm8998-common repository is used.",
     "Android 9 proprietary binaries still require LineageOS 22.2 build/runtime compatibility validation.",
-    "Android 9 source-owned HAL wrappers and explicit factory/debug executables are pruned on the Android 15 contract branch."
+    "Android 9 source-owned HAL wrappers and explicit factory/debug executables are pruned on the Android 15 contract branch.",
+    "Stock init fragments are retained only when their service executable has an owner; device-owned init.qcom.rc/init.qcom.usb.rc are not duplicated by vendor."
   ]
 }

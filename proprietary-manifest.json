@@ -10,10 +10,10 @@
     "sdk": 28
   },
   "counts": {
-    "P0": 123,
-    "P1": 394,
+    "P0": 104,
+    "P1": 392,
     "P2": 15,
-    "total": 532
+    "total": 511
   },
   "files": [
     {
@@ -78,57 +78,9 @@
     },
     {
       "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.cas@1.0-service.rc",
-      "size": 188,
-      "sha256": "417086c63d3b4b87c4d6a8118bfbf06aca8cf5465c42e8657ebb890c1c77a1eb"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.drm@1.0-service.rc",
-      "size": 188,
-      "sha256": "0ab16a366b057f06cbb3decf53fdaaf1efc3b60fac2868f7cab3e11c469733ea"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.drm@1.1-service.clearkey.rc",
-      "size": 205,
-      "sha256": "729d302c59d46806539f52c02667b95ffa063f825d16ca34cadf35239058777b"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc",
-      "size": 489,
-      "sha256": "d9f8637b57d98347dfba8dce35ad98398c596fa3d45825fa74b4309acef3cce6"
-    },
-    {
-      "tier": "P0",
       "path": "vendor/etc/init/android.hardware.media.omx@1.0-service.rc",
       "size": 211,
       "sha256": "92327bd0cbccbed25e25d68a67d3db0b06ee8763d474740a0deaaefc9e6e509f"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.memtrack@1.0-service.rc",
-      "size": 132,
-      "sha256": "d2c696bd2aed77b119d307ff6e6287f07e0ac4875408afc588c4b1bc7d2bde27"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.power@1.0-service.rc",
-      "size": 126,
-      "sha256": "c01a01302c36f18eb231ce1217e1043109681cae23867811d1cfae026a43e76c"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.thermal@1.0-service.rc",
-      "size": 130,
-      "sha256": "3c9c698550dd54bad4a7392cddf1bd7670004b1fc82e2b8092efc71d9388b059"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.vr@1.0-service.rc",
-      "size": 116,
-      "sha256": "b60ee911f6e2350ed38c905b8eff74ea11d89a30e0928fe584b7ecd6614a0adb"
     },
     {
       "tier": "P0",
@@ -138,75 +90,9 @@
     },
     {
       "tier": "P0",
-      "path": "vendor/etc/init/hostapd.android.rc",
-      "size": 599,
-      "sha256": "55768d655d9072056ee0b0e58cdb165118a165b4cf0cb501ce072f8063606442"
-    },
-    {
-      "tier": "P0",
       "path": "vendor/etc/init/hw/init.msm.usb.configfs.rc",
       "size": 70649,
       "sha256": "bb3e70de5082aa43f59a33cf50b8157b5062d8c40f94ef2f114650ef48596095"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/hw/init.qcom.factory.rc",
-      "size": 7869,
-      "sha256": "8a7bfd776d8e7f8b3a639ef3c6abb6bf83bf7ece8b056255f20805e67df03858"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/hw/init.qcom.rc",
-      "size": 43208,
-      "sha256": "bc0a61c8174e9b920cf470750479289b97dad0c47015c2288ef6452e5746c18f"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/vendor.display.color@1.0-service.rc",
-      "size": 125,
-      "sha256": "9f450ab55031c52612b8c662bb75947d1ed2a8ba7d91079e8276302b1fe56336"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc",
-      "size": 257,
-      "sha256": "66e0b919b5f7d189dfd6b4af221274ead1234ba9ef31eb617882a6a84aaebacd"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc",
-      "size": 357,
-      "sha256": "37be8bcc667dab325bcfe80495e3d03d048b9e7c3d915422a03ef1cb0c45dd0a"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc",
-      "size": 125,
-      "sha256": "91f4ededb629813b4303b6a7bfa0cfce378270310f780107e18ed4b3b0716458"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc",
-      "size": 144,
-      "sha256": "17adbae4280ef285988f3de5c5a39a7a1b2a18bd56ce873b576610d1a5f2269f"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc",
-      "size": 138,
-      "sha256": "90ab48bc6399a7ca5a9098d84c8011f7086792449bd1f6ce1500a6cf960016b7"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc",
-      "size": 261,
-      "sha256": "de0c771beebd9643fd58b39cae33ca435867af8b0f84a56b663edad95cbec145"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc",
-      "size": 136,
-      "sha256": "f3c8ff77022521f2d9a8f038dc548139711b83b245f6225fc0e0b5f1620d68b6"
     },
     {
       "tier": "P0",
@@ -882,12 +768,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/etc/init/hw/init.qcom.usb.rc",
-      "size": 92859,
-      "sha256": "925275038bb0ebb7cad79c4a0a2ae6648b0ee328b023ffdc2aa7439bfe5c2f1f"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/etc/init/qcrild.rc",
       "size": 629,
       "sha256": "c19123a96e327e9138a10f42e60d3ea4f655f77c7dc050bc953d576ab8a7033c"
@@ -897,12 +777,6 @@
       "path": "vendor/etc/init/rild.rc",
       "size": 198,
       "sha256": "8debba2b3bfb53b586a6867182dc2abb590139013dc443e354504c531344d270"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/etc/init/sns_reg.rc",
-      "size": 645,
-      "sha256": "4832771975fe1d09a01ca13e3c718348204958126d94edb22c57f9bd08ee69df"
     },
     {
       "tier": "P1",
@@ -3210,22 +3084,31 @@
     }
   ],
   "android15_contract": {
-    "source_owned_modules_pruned": [
-      "android.hardware.audio.effect@2.0-impl",
-      "android.hardware.audio.effect@4.0-impl",
-      "android.hardware.audio@2.0-impl",
-      "android.hardware.audio@2.0-service",
-      "android.hardware.audio@4.0-impl",
-      "android.hardware.camera.provider@2.4-impl",
-      "android.hardware.camera.provider@2.4-service",
-      "android.hardware.gnss@1.0-impl-qti",
-      "android.hardware.sensors@1.0-impl",
-      "android.hardware.sensors@1.0-service",
-      "android.hardware.soundtrigger@2.1-impl",
-      "android.hardware.usb@1.0-service",
-      "android.hardware.wifi@1.0-service"
+    "source_owned_modules_pruned": [],
+    "stale_init_paths_pruned": [
+      "vendor/etc/init/android.hardware.cas@1.0-service.rc",
+      "vendor/etc/init/android.hardware.drm@1.0-service.rc",
+      "vendor/etc/init/android.hardware.drm@1.1-service.clearkey.rc",
+      "vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc",
+      "vendor/etc/init/android.hardware.memtrack@1.0-service.rc",
+      "vendor/etc/init/android.hardware.power@1.0-service.rc",
+      "vendor/etc/init/android.hardware.thermal@1.0-service.rc",
+      "vendor/etc/init/android.hardware.vr@1.0-service.rc",
+      "vendor/etc/init/hostapd.android.rc",
+      "vendor/etc/init/hw/init.qcom.factory.rc",
+      "vendor/etc/init/hw/init.qcom.rc",
+      "vendor/etc/init/hw/init.qcom.usb.rc",
+      "vendor/etc/init/sns_reg.rc",
+      "vendor/etc/init/vendor.display.color@1.0-service.rc",
+      "vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc",
+      "vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc",
+      "vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc",
+      "vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc",
+      "vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc",
+      "vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc",
+      "vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc"
     ],
-    "removed_path_count": 51,
-    "policy": "Retain RED hardware payload; replace source-owned Android 9 HAL wrappers with LineageOS 22.2 implementations."
+    "removed_path_count": 21,
+    "policy": "Retain RED hardware payload; replace source-owned Android 9 HAL wrappers with LineageOS 22.2 implementations and remove stock init fragments whose executable owner is absent or whose destination is device-owned."
   }
 }
