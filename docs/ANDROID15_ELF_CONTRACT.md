@@ -2,7 +2,8 @@
 
 **Target:** LineageOS 22.2 / Android 15 API 35  
 **Stock authority:** RED `.118`, SHA-256 `7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e`  
-**Vendor branch:** `lineage-22.2-android15-contract`
+**Vendor branch:** `lineage-22.2-android15-contract`  
+**Verified ELF implementation commit:** `841c0c8bd3daf3013afe44237b2007dacee27dfb`
 
 ## Purpose
 
@@ -27,9 +28,12 @@ It is deterministic; running it twice on an unchanged tree produces byte-identic
 
 ```text
 Selected proprietary files: 501
+P0 / P1 / P2:               104 / 380 / 17
 ELF modules:                 336
 checkelf enabled:            317
 explicit exceptions:         19
+missing retained files:      0
+duplicate retained paths:    0
 ```
 
 This is intentionally different from the original generated baseline, where all proprietary ELF modules had `check_elf_files: false`.
@@ -55,7 +59,7 @@ size:    69312
 SHA-256: 849a8b2db319ad03eaebea51acd998b1652866f2a38bfc545351034a919759d2
 ```
 
-Both are taken from RED `.118`, not from a donor. They are selected as one multilib module:
+Both are taken from RED `.118`, not from a donor. The one-shot apply job reconstructed the canonical eight-part stock archive, verified its SHA-256 before extraction, verified both provider hashes, and removed itself after committing the generated contract. They are selected as one multilib module:
 
 ```text
 libsdm-disp-apis
@@ -102,7 +106,7 @@ Static contract:
 
 ```bash
 python3 tools/generate_elf_contract.py
-python3 -m unittest -v tests.test_elf_contract
+python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
 Reproducibility check:
