@@ -1,0 +1,46 @@
+name: Patch P0 restore Soong seed formatting
+
+on:
+  push:
+    branches:
+      - lineage-22.2-android15-contract
+    paths:
+      - .github/workflows/patch-p0-restore.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Expand seed target blocks for deterministic parser
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('.github/workflows/restore-p0-daemons.yml')
+          s=p.read_text()
+          replacements={
+            'target: { android_arm64: { srcs: ["proprietary/vendor/bin/spdaemon"], }, },': '''target: {\n        android_arm64: {\n            srcs: [\n                "proprietary/vendor/bin/spdaemon",\n            ],\n        },\n    },''',
+            'target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libspcom.so"], }, },': '''target: {\n        android_arm64: {\n            srcs: [\n                "proprietary/vendor/lib64/libspcom.so",\n            ],\n        },\n    },''',
+            'target: { android_arm64: { srcs: ["proprietary/vendor/bin/hvdcp_opti"], }, },': '''target: {\n        android_arm64: {\n            srcs: [\n                "proprietary/vendor/bin/hvdcp_opti",\n            ],\n        },\n    },''',
+            'target: { android_arm64: { srcs: ["proprietary/vendor/bin/energy-awareness"], }, },': '''target: {\n        android_arm64: {\n            srcs: [\n                "proprietary/vendor/bin/energy-awareness",\n            ],\n        },\n    },''',
+          }
+          for old,new in replacements.items():
+              if old not in s:
+                  raise SystemExit(f'missing seed anchor: {old}')
+              s=s.replace(old,new,1)
+          p.write_text(s)
+          PY
+          rm .github/workflows/patch-p0-restore.yml
+          git diff --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'ci: fix P0 restore Soong seed formatting'
+          git push origin HEAD:lineage-22.2-android15-contract
