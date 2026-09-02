@@ -23,10 +23,55 @@ jobs:
           python3 -m json.tool SOURCE_LOCK.json >/dev/null
           python3 -m json.tool GENERATED_VENDOR_AUDIT.json >/dev/null
           python3 -m json.tool VENDOR_TREE_AUDIT.json >/dev/null
+          python3 -m json.tool ANDROID15_ELF_AUDIT.json >/dev/null
+          python3 -m json.tool ANDROID15_ELF_EXCEPTIONS.json >/dev/null
+          python3 -m json.tool VINTF_PROPRIETARY_CONTRACT.json >/dev/null
           test ! -f ANDROID15_PRUNE_REPORT.json || python3 -m json.tool ANDROID15_PRUNE_REPORT.json >/dev/null
+
+      - name: Verify canonical RED .118 selection counts and ownership
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          manifest = json.loads(Path('proprietary-manifest.json').read_text())
+          lock = json.loads(Path('SOURCE_LOCK.json').read_text())
+          audit = json.loads(Path('GENERATED_VENDOR_AUDIT.json').read_text())
+
+          expected_counts = {'P0': 108, 'P1': 374, 'P2': 17, 'total': 499}
+          assert manifest['counts'] == expected_counts, manifest['counts']
+          assert lock['stock_build'] == 'H1A1000.082ho.01.00.10r.118', lock
+          assert lock['stock_archive_sha256'] == '7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e', lock
+          assert lock['selected_files'] == 499, lock['selected_files']
+          assert audit['selected_files'] == 499, audit
+          assert audit['p0'] == 108 and audit['p1'] == 374 and audit['p2'] == 17, audit
+          assert audit['selected_bytes'] == 245538934, audit['selected_bytes']
+          assert audit['copy_files'] == 48, audit['copy_files']
+          assert audit['missing_files'] == [], audit['missing_files']
+          assert audit['duplicate_paths'] == 0, audit['duplicate_paths']
+          assert audit['sensitive_path_matches'] == [], audit['sensitive_path_matches']
+          assert audit['checkelf_enabled'] == 320, audit['checkelf_enabled']
+          assert audit['checkelf_exceptions'] == 18, audit['checkelf_exceptions']
+
+          selected = {entry['path'] for entry in manifest['files']}
+          source_owned = {
+              'vendor/etc/permissions/android.hardware.nfc.hce.xml',
+              'vendor/etc/permissions/android.hardware.nfc.xml',
+          }
+          vendor_owned = {
+              'vendor/etc/libnfc-nci.conf',
+              'vendor/etc/thermal-engine.conf',
+          }
+          assert not (selected & source_owned), sorted(selected & source_owned)
+          assert vendor_owned <= selected, sorted(vendor_owned - selected)
+          assert lock['android15_contract']['source_owned_aosp_identical_copy_pruned'] is True
+          PY
 
       - name: Run Android 15 contract tests
         shell: bash
         run: |
           set -euo pipefail
           python3 -m unittest discover -s tests -p 'test_*.py' -v
+          git diff --check
