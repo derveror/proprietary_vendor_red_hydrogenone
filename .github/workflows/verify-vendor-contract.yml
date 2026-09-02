@@ -23,9 +23,10 @@ jobs:
           python3 -m json.tool SOURCE_LOCK.json >/dev/null
           python3 -m json.tool GENERATED_VENDOR_AUDIT.json >/dev/null
           python3 -m json.tool VENDOR_TREE_AUDIT.json >/dev/null
+          test ! -f ANDROID15_PRUNE_REPORT.json || python3 -m json.tool ANDROID15_PRUNE_REPORT.json >/dev/null
 
       - name: Run Android 15 contract tests
         shell: bash
         run: |
           set -euo pipefail
-          python3 -m unittest -v tests.test_android15_contract
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
