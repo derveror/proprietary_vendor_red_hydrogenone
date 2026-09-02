@@ -155,15 +155,17 @@ jobs:
 
           mk_path = ROOT / 'hydrogenone-vendor.mk'
           mk = mk_path.read_text().rstrip()
-          for item in required:
-              if not re.search(rf'(?m)^\s*{re.escape(item["module"])}\s*\\?\s*$', mk):
-                  pass
-          missing_modules = [item['module'] for item in required if not re.search(rf'(?m)^\s*{re.escape(item["module"])}\s*\\?\s*$', mk)]
+          missing_modules = [
+              item['module']
+              for item in required
+              if not re.search(rf'(?m)^\s*{re.escape(item["module"])}\s*\\?\s*$', mk)
+          ]
           if missing_modules:
-              mk += '\n\n# RED .118 P0 daemon completion\nPRODUCT_PACKAGES += \\\n'
+              section = ['', '', '# RED .118 P0 daemon completion', 'PRODUCT_PACKAGES += \\']
               for index, module in enumerate(sorted(missing_modules)):
                   suffix = ' \\' if index < len(missing_modules) - 1 else ''
-                  mk += f'    {module}{suffix}\n'
+                  section.append(f'    {module}{suffix}')
+              mk += '\n'.join(section)
           mk_path.write_text(mk.rstrip() + '\n')
 
           selected_bytes = sum(int(entry['size']) for entry in manifest['files'])
