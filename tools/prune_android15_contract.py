@@ -43,6 +43,33 @@ FORBIDDEN_RC = {
     "vendor/etc/init/android.hardware.wifi@1.0-service.rc",
 }
 
+# Stock .118 init contains references that are stale even in the complete
+# factory vendor image. The generic qcom rc files also collide with the exact
+# Android 15 control-plane destinations owned by device/red/hydrogenone.
+STALE_INIT_RC = {
+    "vendor/etc/init/android.hardware.cas@1.0-service.rc",
+    "vendor/etc/init/android.hardware.drm@1.0-service.rc",
+    "vendor/etc/init/android.hardware.drm@1.1-service.clearkey.rc",
+    "vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc",
+    "vendor/etc/init/android.hardware.memtrack@1.0-service.rc",
+    "vendor/etc/init/android.hardware.power@1.0-service.rc",
+    "vendor/etc/init/android.hardware.thermal@1.0-service.rc",
+    "vendor/etc/init/android.hardware.vr@1.0-service.rc",
+    "vendor/etc/init/hostapd.android.rc",
+    "vendor/etc/init/hw/init.qcom.factory.rc",
+    "vendor/etc/init/hw/init.qcom.rc",
+    "vendor/etc/init/hw/init.qcom.usb.rc",
+    "vendor/etc/init/sns_reg.rc",
+    "vendor/etc/init/vendor.display.color@1.0-service.rc",
+    "vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc",
+    "vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc",
+    "vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc",
+    "vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc",
+    "vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc",
+    "vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc",
+    "vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc",
+}
+
 DEBUG_GLOBS = (
     "vendor/bin/audioflacapp",
     "vendor/bin/fpc_tee_test",
@@ -195,7 +222,7 @@ def render_vendor_mk(remove_paths: set[str], removed_modules: set[str]) -> int:
 
     output = (
         "# Automatically generated from verified RED .118 stock.\n"
-        "# Android 15 contract: source-owned HAL wrappers and factory/debug payload are pruned.\n\n"
+        "# Android 15 contract: source-owned HAL wrappers, stale stock init, and factory/debug payload are pruned.\n\n"
         "PRODUCT_SOONG_NAMESPACES += \\\n"
         "    vendor/red/hydrogenone\n\n"
         + render_make_list("PRODUCT_COPY_FILES", copy_entries)
@@ -222,7 +249,7 @@ def main() -> int:
     original_files = manifest["files"]
     original_by_path = {entry["path"]: entry for entry in original_files}
 
-    remove_paths = set(FORBIDDEN_RC)
+    remove_paths = set(FORBIDDEN_RC) | set(STALE_INIT_RC)
     for path in original_by_path:
         if any(fnmatch.fnmatch(path, pattern) for pattern in DEBUG_GLOBS):
             remove_paths.add(path)
@@ -253,8 +280,9 @@ def main() -> int:
     }
     manifest["android15_contract"] = {
         "source_owned_modules_pruned": sorted(removed_modules & FORBIDDEN_MODULES),
+        "stale_init_paths_pruned": sorted(path for path in STALE_INIT_RC if path in original_by_path),
         "removed_path_count": len([path for path in original_by_path if path in remove_paths]),
-        "policy": "Retain RED hardware payload; replace source-owned Android 9 HAL wrappers with LineageOS 22.2 implementations.",
+        "policy": "Retain RED hardware payload; replace source-owned Android 9 HAL wrappers with LineageOS 22.2 implementations and remove stock init fragments whose executable owner is absent or whose destination is device-owned.",
     }
     write_json("proprietary-manifest.json", manifest)
 
@@ -264,6 +292,7 @@ def main() -> int:
         "branch": "lineage-22.2-android15-contract",
         "source_owned_wrappers_pruned": True,
         "debug_factory_payload_pruned": True,
+        "stale_init_pruned": True,
     }
     write_json("SOURCE_LOCK.json", source_lock)
 
@@ -291,9 +320,12 @@ def main() -> int:
         "total": len(retained_files),
     }
     notes = list(tree_audit.get("notes", []))
-    note = "Android 9 source-owned HAL wrappers and explicit factory/debug executables are pruned on the Android 15 contract branch."
-    if note not in notes:
-        notes.append(note)
+    for note in (
+        "Android 9 source-owned HAL wrappers and explicit factory/debug executables are pruned on the Android 15 contract branch.",
+        "Stock init fragments are retained only when their service executable has an owner; device-owned init.qcom.rc/init.qcom.usb.rc are not duplicated by vendor.",
+    ):
+        if note not in notes:
+            notes.append(note)
     tree_audit["notes"] = notes
     write_json("VENDOR_TREE_AUDIT.json", tree_audit)
 
@@ -314,6 +346,7 @@ def main() -> int:
         "removed_modules": sorted(removed_modules),
         "removed_manifest_paths": removed_manifest_paths,
         "deleted_payload_paths": deleted,
+        "stale_init_candidates": sorted(STALE_INIT_RC),
         "missing_retained_paths": missing,
         "duplicate_retained_paths": duplicates,
     }
