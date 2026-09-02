@@ -32,6 +32,9 @@ cc_prebuilt_binary {
     strip: {
         none: true,
     },
+    vintf_fragments: [
+        "vintf/fingerprint.xml",
+    ],
     target: {
         android_arm64: {
             srcs: [
@@ -120,6 +123,9 @@ cc_prebuilt_binary {
     strip: {
         none: true,
     },
+    vintf_fragments: [
+        "vintf/bluetooth.xml",
+    ],
     target: {
         android_arm64: {
             srcs: [
@@ -155,6 +161,9 @@ cc_prebuilt_binary {
         none: true,
     },
     check_elf_files: false,
+    vintf_fragments: [
+        "vintf/media-omx.xml",
+    ],
     target: {
         android_arm: {
             srcs: [
@@ -9737,6 +9746,9 @@ cc_prebuilt_binary {
     strip: {
         none: true,
     },
+    vintf_fragments: [
+        "vintf/radio.xml",
+    ],
     target: {
         android_arm64: {
             srcs: [
@@ -10029,6 +10041,9 @@ cc_prebuilt_binary {
     strip: {
         none: true,
     },
+    vintf_fragments: [
+        "vintf/thermal3d.xml",
+    ],
     target: {
         android_arm64: {
             srcs: [
@@ -10141,6 +10156,9 @@ cc_prebuilt_binary {
     strip: {
         none: true,
     },
+    vintf_fragments: [
+        "vintf/leia.xml",
+    ],
     target: {
         android_arm64: {
             srcs: [
@@ -10387,6 +10405,9 @@ cc_prebuilt_binary {
     strip: {
         none: true,
     },
+    vintf_fragments: [
+        "vintf/esepowermanager.xml",
+    ],
     target: {
         android_arm64: {
             srcs: [
@@ -11690,6 +11711,9 @@ cc_prebuilt_binary {
     strip: {
         none: true,
     },
+    vintf_fragments: [
+        "vintf/wifidisplay.xml",
+    ],
     target: {
         android_arm: {
             srcs: [

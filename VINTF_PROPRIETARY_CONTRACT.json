@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "stock_archive_sha256": "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e",
+  "target": "LineageOS 22.2 / Android 15 API 35",
+  "source_owned_exclusions": [
+    "android.hardware.gnss",
+    "android.hardware.nfc"
+  ],
+  "proprietary_fqname_count": 35,
+  "modules": {
+    "android.hardware.biometrics.fingerprint@2.1-service": {
+      "file": "vintf/fingerprint.xml",
+      "hals": {
+        "android.hardware.biometrics.fingerprint": [
+          "@2.1::IBiometricsFingerprint/default"
+        ],
+        "com.fingerprints.extension": [
+          "@1.0::IFingerprintSensorTest/default"
+        ]
+      }
+    },
+    "android.hardware.bluetooth@1.0-service-qti": {
+      "file": "vintf/bluetooth.xml",
+      "hals": {
+        "android.hardware.bluetooth": [
+          "@1.0::IBluetoothHci/default"
+        ],
+        "com.qualcomm.qti.ant": [
+          "@1.0::IAntHci/default"
+        ],
+        "vendor.qti.hardware.fm": [
+          "@1.0::IFmHci/default"
+        ]
+      }
+    },
+    "android.hardware.media.omx@1.0-service": {
+      "file": "vintf/media-omx.xml",
+      "hals": {
+        "android.hardware.media.omx": [
+          "@1.0::IOmx/default",
+          "@1.0::IOmxStore/default"
+        ]
+      }
+    },
+    "wifidisplayhalservice": {
+      "file": "vintf/wifidisplay.xml",
+      "hals": {
+        "com.qualcomm.qti.wifidisplayhal": [
+          "@1.0::IDSManager/wifidisplaydshal",
+          "@1.0::IHDCPSession/wifidisplayhdcphal"
+        ]
+      }
+    },
+    "vendor.cm.hardware.thermal3d@1.0-service.cm": {
+      "file": "vintf/thermal3d.xml",
+      "hals": {
+        "vendor.cm.hardware.thermal3d": [
+          "@1.0::IThermal3d/default"
+        ]
+      }
+    },
+    "vendor.leia.hardware.leiadisp@1.0-service": {
+      "file": "vintf/leia.xml",
+      "hals": {
+        "vendor.leia.hardware.leiadisp": [
+          "@1.0::ILeiadisp/default"
+        ]
+      }
+    },
+    "vendor.qti.esepowermanager@1.0-service": {
+      "file": "vintf/esepowermanager.xml",
+      "hals": {
+        "vendor.qti.esepowermanager": [
+          "@1.0::IEsePowerManager/default"
+        ]
+      }
+    },
+    "qcrild": {
+      "file": "vintf/radio.xml",
+      "hals": {
+        "android.hardware.radio": [
+          "@1.1::IRadio/slot1",
+          "@1.1::IRadio/slot2",
+          "@1.1::ISap/slot1",
+          "@1.1::ISap/slot2"
+        ],
+        "android.hardware.radio.config": [
+          "@1.0::IRadioConfig/default"
+        ],
+        "android.hardware.secure_element": [
+          "@1.0::ISecureElement/SIM1",
+          "@1.0::ISecureElement/SIM2"
+        ],
+        "vendor.qti.hardware.radio.am": [
+          "@1.0::IQcRilAudio/slot1",
+          "@1.0::IQcRilAudio/slot2"
+        ],
+        "vendor.qti.hardware.radio.ims": [
+          "@1.0::IImsRadio/imsradio0",
+          "@1.0::IImsRadio/imsradio1"
+        ],
+        "vendor.qti.hardware.radio.lpa": [
+          "@1.0::IUimLpa/UimLpa0",
+          "@1.0::IUimLpa/UimLpa1"
+        ],
+        "vendor.qti.hardware.radio.qcrilhook": [
+          "@1.0::IQtiOemHook/oemhook0",
+          "@1.0::IQtiOemHook/oemhook1"
+        ],
+        "vendor.qti.hardware.radio.qtiradio": [
+          "@1.0::IQtiRadio/slot1",
+          "@1.0::IQtiRadio/slot2"
+        ],
+        "vendor.qti.hardware.radio.uim": [
+          "@1.1::IUim/Uim0",
+          "@1.1::IUim/Uim1"
+        ],
+        "vendor.qti.hardware.radio.uim_remote_client": [
+          "@1.0::IUimRemoteServiceClient/uimRemoteClient0",
+          "@1.0::IUimRemoteServiceClient/uimRemoteClient1"
+        ],
+        "vendor.qti.hardware.radio.uim_remote_server": [
+          "@1.0::IUimRemoteServiceServer/uimRemoteServer0",
+          "@1.0::IUimRemoteServiceServer/uimRemoteServer1"
+        ]
+      }
+    }
+  }
+}

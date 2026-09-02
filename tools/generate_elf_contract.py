@@ -58,6 +58,17 @@ SOURCE_VERIFIED_DEPENDENCIES = {
     "libminijail",
 }
 
+VINTF_FRAGMENT_BY_MODULE = {
+    "android.hardware.biometrics.fingerprint@2.1-service": "vintf/fingerprint.xml",
+    "android.hardware.bluetooth@1.0-service-qti": "vintf/bluetooth.xml",
+    "android.hardware.media.omx@1.0-service": "vintf/media-omx.xml",
+    "wifidisplayhalservice": "vintf/wifidisplay.xml",
+    "vendor.cm.hardware.thermal3d@1.0-service.cm": "vintf/thermal3d.xml",
+    "vendor.leia.hardware.leiadisp@1.0-service": "vintf/leia.xml",
+    "vendor.qti.esepowermanager@1.0-service": "vintf/esepowermanager.xml",
+    "qcrild": "vintf/radio.xml",
+}
+
 
 def load_json(path: str) -> dict:
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
@@ -315,6 +326,11 @@ def render_block(block: dict, providers: dict[str, str], exceptions: dict, audit
     ]
     if is_exception:
         out.append("    check_elf_files: false,")
+    fragment = VINTF_FRAGMENT_BY_MODULE.get(block["name"])
+    if fragment:
+        out.append("    vintf_fragments: [")
+        out.append(f'        "{fragment}",')
+        out.append("    ],")
     out.append("    target: {")
     for arch in ("android_arm", "android_arm64"):
         if arch not in arch_info:
