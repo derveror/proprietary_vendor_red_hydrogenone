@@ -3,7 +3,12 @@
   "stock_archive_sha256": "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e",
   "stock_build": "H1A1000.082ho.01.00.10r.118",
   "stock_fingerprint": "RED/HydrogenONE/HydrogenONE:9/PKQ1.190118.001/118:userdebug/release-keys",
-  "selected_files": 583,
+  "selected_files": 532,
   "target_lineage": "lineage-22.2",
-  "target_android_api": 35
+  "target_android_api": 35,
+  "android15_contract": {
+    "branch": "lineage-22.2-android15-contract",
+    "source_owned_wrappers_pruned": true,
+    "debug_factory_payload_pruned": true
+  }
 }

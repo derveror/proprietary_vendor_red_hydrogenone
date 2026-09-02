@@ -1,4 +1,5 @@
 # Automatically generated from verified RED .118 stock.
+# Android 15 contract: source-owned HAL wrappers and factory/debug payload are pruned.
 
 PRODUCT_SOONG_NAMESPACES += \
     vendor/red/hydrogenone
@@ -9,31 +10,17 @@ PRODUCT_COPY_FILES += \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800h.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800h.bin \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800h_8998_660.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800h_8998_660.bin \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800s_dsp.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800s_dsp.bin \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.audio@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.audio@2.0-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.bluetooth@1.0-service-qti.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.boot@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.boot@1.0-service.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.camera.provider@2.4-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.camera.provider@2.4-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.cas@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.cas@1.0-service.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.configstore@1.1-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.configstore@1.1-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.drm@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.0-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.drm@1.1-service.clearkey.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.1-service.clearkey.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.1-service.widevine.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.graphics.allocator@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.graphics.allocator@2.0-service.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.graphics.composer@2.1-service.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.health@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.health@2.0-service.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.keymaster@3.0-service-qti.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.light@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.light@2.0-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.media.omx@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.media.omx@1.0-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.memtrack@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.memtrack@1.0-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.power@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.power@1.0-service.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.sensors@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.sensors@1.0-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.thermal@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.thermal@1.0-service.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.usb@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.usb@1.0-service.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.vibrator@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.vibrator@1.0-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.vr@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.vr@1.0-service.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.wifi@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.wifi@1.0-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/hostapd.android.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hostapd.android.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/hw/init.msm.usb.configfs.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.msm.usb.configfs.rc \
@@ -94,29 +81,15 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     adsprpcd \
-    android.hardware.audio.effect@2.0-impl \
-    android.hardware.audio.effect@4.0-impl \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio@2.0-service \
-    android.hardware.audio@4.0-impl \
     android.hardware.biometrics.fingerprint@2.1-service \
     android.hardware.bluetooth@1.0-impl-qti \
     android.hardware.bluetooth@1.0-service-qti \
-    android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service \
-    android.hardware.gnss@1.0-impl-qti \
     android.hardware.media.omx@1.0-service \
-    android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service \
-    android.hardware.soundtrigger@2.1-impl \
-    android.hardware.usb@1.0-service \
-    android.hardware.wifi@1.0-service \
     android.hidl.base@1.0 \
     audio.primary.default \
     audio.primary.msm8998 \
     audio.r_submix.default \
     audio.usb.default \
-    audioflacapp \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
     camera.device@3.3-impl \
@@ -143,7 +116,6 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne.server@2.2 \
     com.quicinc.cne.server@2.3 \
     eglSubDriverAndroid \
-    fpc_tee_test \
     gatekeeper.msm8998 \
     ims_rtp_daemon \
     imsdatadaemon \
@@ -382,19 +354,6 @@ PRODUCT_PACKAGES += \
     libxml \
     libxtadapter \
     libxtwifi_ulp_adaptor \
-    mm-adec-omxaac-test \
-    mm-adec-omxamr-test \
-    mm-adec-omxamrwbplus-test \
-    mm-adec-omxwma-test \
-    mm-aenc-omxaac-test \
-    mm-aenc-omxamr-test \
-    mm-aenc-omxevrc-test \
-    mm-aenc-omxqcelp13-test \
-    mm-audio-alsa-test \
-    mm-audio-ftm \
-    mm-qcamera-app \
-    mm-qomx-idec-test \
-    mm-qomx-ienc-test \
     netmgrd \
     nfc_nci.nqx.default \
     nfc_nci.nqx.default.hw \
@@ -404,11 +363,9 @@ PRODUCT_PACKAGES += \
     pm-service \
     qcrild \
     qcrild_librilutils \
-    qmi_simple_ril_test \
     qseecomd \
     rild \
     rmt_storage \
-    sensorrdiag \
     sensors.qti \
     thermal-engine \
     vendor.cm.hardware.thermal3d@1.0 \

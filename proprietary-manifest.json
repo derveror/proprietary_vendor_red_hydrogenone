@@ -10,10 +10,10 @@
     "sdk": 28
   },
   "counts": {
-    "P0": 137,
-    "P1": 431,
+    "P0": 123,
+    "P1": 394,
     "P2": 15,
-    "total": 583
+    "total": 532
   },
   "files": [
     {
@@ -66,12 +66,6 @@
     },
     {
       "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.audio@2.0-service.rc",
-      "size": 753,
-      "sha256": "352b45d78e59ac818086b470a1a3bd07a42c3c5f4c5fb5ae2688fce83c3d7c5f"
-    },
-    {
-      "tier": "P0",
       "path": "vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc",
       "size": 321,
       "sha256": "c45a07fb91845794ec2889d1c63e3826ee017da573c9a845d2b0ce027b3c9594"
@@ -84,27 +78,9 @@
     },
     {
       "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.boot@1.0-service.rc",
-      "size": 126,
-      "sha256": "3a0cca840c9a9e74bf93f18c3a97e256993c779eba034eec403bac38af20cac4"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.camera.provider@2.4-service.rc",
-      "size": 282,
-      "sha256": "b435d5a3c4421b6e3d4e742c717669a92f425c658bf8b855756a53aa0b57be7e"
-    },
-    {
-      "tier": "P0",
       "path": "vendor/etc/init/android.hardware.cas@1.0-service.rc",
       "size": 188,
       "sha256": "417086c63d3b4b87c4d6a8118bfbf06aca8cf5465c42e8657ebb890c1c77a1eb"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.configstore@1.1-service.rc",
-      "size": 144,
-      "sha256": "c051342d9c9bcadf188c45a11fc698141a8964ffbd568c0db9ff0911bfb41e11"
     },
     {
       "tier": "P0",
@@ -126,42 +102,6 @@
     },
     {
       "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc",
-      "size": 135,
-      "sha256": "7ce6d8a9f91c4493c39087950535164917b66755ed70c94446ab9533bbad1783"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.graphics.allocator@2.0-service.rc",
-      "size": 219,
-      "sha256": "bf196b7d0accd30fb6f35d4351e2708dfebcc3c00c03140a72a3064888aea5bd"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc",
-      "size": 311,
-      "sha256": "c84a49af029e6221cb2f4e54ab6ced4f4a6c1836256995447533f4b780226ecc"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.health@2.0-service.rc",
-      "size": 142,
-      "sha256": "c88235554fb49247d408a9db8762e82181611495c3fb785a6b7b0bb5b4214cd1"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc",
-      "size": 140,
-      "sha256": "69d8d0cc9afc4665deba3f578f0719094bba8a5b8c3ff59a90eaff98d6981717"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.light@2.0-service.rc",
-      "size": 250,
-      "sha256": "d58ae47acb422d005e064df3241fccd779239d79f57e1c1b0ca80b912814b520"
-    },
-    {
-      "tier": "P0",
       "path": "vendor/etc/init/android.hardware.media.omx@1.0-service.rc",
       "size": 211,
       "sha256": "92327bd0cbccbed25e25d68a67d3db0b06ee8763d474740a0deaaefc9e6e509f"
@@ -180,39 +120,15 @@
     },
     {
       "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.sensors@1.0-service.rc",
-      "size": 200,
-      "sha256": "55bd463913a15db8a55aea6a5e0ab8161f1fd53d8215eaf3c30bd0ff6085d4b3"
-    },
-    {
-      "tier": "P0",
       "path": "vendor/etc/init/android.hardware.thermal@1.0-service.rc",
       "size": 130,
       "sha256": "3c9c698550dd54bad4a7392cddf1bd7670004b1fc82e2b8092efc71d9388b059"
     },
     {
       "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.usb@1.0-service.rc",
-      "size": 122,
-      "sha256": "758f1b663ae70e2507496091f6cc135a1a7b9e09b435d5dc8b997fa8ca87ed87"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.vibrator@1.0-service.rc",
-      "size": 128,
-      "sha256": "d3227ec6d5b16308d39d8e87613316aa92c25c6a962de5148a086b8a1f4fea23"
-    },
-    {
-      "tier": "P0",
       "path": "vendor/etc/init/android.hardware.vr@1.0-service.rc",
       "size": 116,
       "sha256": "b60ee911f6e2350ed38c905b8eff74ea11d89a30e0928fe584b7ecd6614a0adb"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.wifi@1.0-service.rc",
-      "size": 173,
-      "sha256": "51e16c30b99057e14de3aaabe5a90d56c4b65042e2b84f289a111c40b25d62d7"
     },
     {
       "tier": "P0",
@@ -840,24 +756,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/bin/audioflacapp",
-      "size": 68488,
-      "sha256": "cddaa786261c26783b20aa159c7d1a67e0979e6c90254cd99c5fa99037d208df"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/fpc_tee_test",
-      "size": 69672,
-      "sha256": "b004e8dbbad58a0719bc6d67dd6337585a3a60b5b4592db8dfe91c299fe7911f"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/hw/android.hardware.audio@2.0-service",
-      "size": 15060,
-      "sha256": "c0a52b5a08e1ee6b8fd1e48ed5cd5589cbfd98cb8ff9c0756efe8c3a9e77b62e"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service",
       "size": 136968,
       "sha256": "99c49c5882a74e703a58ad093ddee515df344e13195b007aa61a76bd1ff05d0d"
@@ -870,33 +768,9 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/bin/hw/android.hardware.camera.provider@2.4-service",
-      "size": 10824,
-      "sha256": "56ba9d533eb6f6471de6157fab418d6c75247ee85e31e941d157e5ea6a3e0baf"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/bin/hw/android.hardware.media.omx@1.0-service",
       "size": 10948,
       "sha256": "9c130527c59717f0e1fa37083a3ced9fa68a333c2a11b198b9411c9536e4de49"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/hw/android.hardware.sensors@1.0-service",
-      "size": 68344,
-      "sha256": "d853cc001a30e6fe44fa5cf458cb598b04adf329fc09a182638bd0d18896c196"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/hw/android.hardware.usb@1.0-service",
-      "size": 69168,
-      "sha256": "1fa93a6cc02b0717fa783961d3bd6b3621fcf071b9a1419c4990564ed4057888"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/hw/android.hardware.wifi@1.0-service",
-      "size": 476480,
-      "sha256": "47aea5b6b72cd30e3b6559f48b9802fa7030f99afbd5fdefc3bd99fb8bf3c886"
     },
     {
       "tier": "P1",
@@ -966,84 +840,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/bin/mm-adec-omxaac-test",
-      "size": 68816,
-      "sha256": "7fd2ef8f00c096d86f71bd94db15c74ded6d4d3f47bf916ac4c01c492505e766"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/mm-adec-omxamr-test",
-      "size": 68632,
-      "sha256": "13d5384c27757d552d44255a4311bb48edc48a0eb5b32f1dfd70beaf9bacbce3"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/mm-adec-omxamrwbplus-test",
-      "size": 68712,
-      "sha256": "90f8ab0171e47b5b26f2c8815a4d3b82c5aa5cf149d39cabcff620ead96e5c14"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/mm-adec-omxwma-test",
-      "size": 68736,
-      "sha256": "5218b60bd86ab31905c1e54dcbcfb3f35147a320b3338a0b98b2b3820daab1f6"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/mm-aenc-omxaac-test",
-      "size": 68680,
-      "sha256": "f325e160d9e643ad574210def408464afe9670e1ac0623b6338c0da4618ec79b"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/mm-aenc-omxamr-test",
-      "size": 68632,
-      "sha256": "e0052941b54be7bf2011ca72c0fd55ed09ee13d8491426c29538d0921d89ae9f"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/mm-aenc-omxevrc-test",
-      "size": 68840,
-      "sha256": "eca205a5e5f4a41b797732fb7fe1b3201d05a37f2e0f900f74410cc5f9886290"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/mm-aenc-omxqcelp13-test",
-      "size": 68840,
-      "sha256": "ca25285e2c3885ebad83f51311f82b93c6269b49427b77cad5c2137fefbcbfef"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/mm-audio-alsa-test",
-      "size": 68336,
-      "sha256": "92e51b37be657458c6c4c936daafeb4b8e85f0e4cffb0c4c5662f7d955bafccb"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/mm-audio-ftm",
-      "size": 120364,
-      "sha256": "8eb5f7286f642ca3445825c01e8f7e41675530db5353383f5f4c529e55140589"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/mm-qcamera-app",
-      "size": 106612,
-      "sha256": "6f5b8be4cac1662e65ad6ebede16eb9856b3d9f9b5fa0ea17a4cfc5aed707f3f"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/mm-qomx-idec-test",
-      "size": 32724,
-      "sha256": "3934cfee76561b58141f403792a5218990328c2e535b8e5b7909dfa83556a21a"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/mm-qomx-ienc-test",
-      "size": 41052,
-      "sha256": "2bef835a7dab501fc26a90c2f2ec5842c09496b3270b09f80950ee48fe5147df"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/bin/netmgrd",
       "size": 1593608,
       "sha256": "6299917869e727a212bdb83bf77ffe8d54726c90f4a765ada1deb3589f40be4a"
@@ -1053,18 +849,6 @@
       "path": "vendor/bin/nqnfcinfo",
       "size": 68392,
       "sha256": "5b560bc4f7d016a2ddc1fd0f85b78aebcc9914a2d01ed27495a4d90a9d34045a"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/qmi_simple_ril_test",
-      "size": 202680,
-      "sha256": "7d3586688fd0923dfe2a05b81e21cfb8b850d160575caae0e1104dc72fbdebc1"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/bin/sensorrdiag",
-      "size": 68760,
-      "sha256": "055b6b2296255ec9813b3d58ae7b13f6512643ae88320bce2f332ada36184adf"
     },
     {
       "tier": "P1",
@@ -1326,57 +1110,9 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib/hw/android.hardware.audio.effect@2.0-impl.so",
-      "size": 217552,
-      "sha256": "dab5f241568a122374e58adb335265d59043cde3387f9046bc5f249efe568fe6"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/hw/android.hardware.audio.effect@4.0-impl.so",
-      "size": 217568,
-      "sha256": "1e9b9f0c53530725cfafb890baae2236c4f1b927fb770e7a194a1bb69acfa63c"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/hw/android.hardware.audio@2.0-impl.so",
-      "size": 219644,
-      "sha256": "ea130b81563422c18c5175f50153c413b3a0abec26ad7d785c0659f3656c946c"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/hw/android.hardware.audio@4.0-impl.so",
-      "size": 228024,
-      "sha256": "17db4232a3f1ac77d7ed42dfed3abbfc83f1acaec71506147d1b5f828742aec6"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so",
       "size": 204580,
       "sha256": "ad6e6c185d171c51f6b3a3be8607a42e3a4b60cafbd094125f00903f16adc3d8"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so",
-      "size": 178632,
-      "sha256": "44ef0050039da4d9f0e9dde9ed839881ce82177ddc944cddb7cff0f5c4a42047"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/hw/android.hardware.gnss@1.0-impl-qti.so",
-      "size": 134460,
-      "sha256": "43d210b6c24044825a1fee745711ac5d38f0a38d9c49193054a92728627129e7"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/hw/android.hardware.sensors@1.0-impl.so",
-      "size": 53348,
-      "sha256": "2aa88c3bfd019c56ca2f703faeb302462f47052ad1ec65122fd62e339be04cf5"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/hw/android.hardware.soundtrigger@2.1-impl.so",
-      "size": 37300,
-      "sha256": "8eda754e81c3f2c375de5ed4b92413bdc85edd6f901bc5417426b9b845931689"
     },
     {
       "tier": "P1",
@@ -2496,51 +2232,9 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib64/hw/android.hardware.audio.effect@2.0-impl.so",
-      "size": 333680,
-      "sha256": "e61a2c3be6ead37255721351d7fd9ff72882080b55e944dd79773f7a6c983402"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/hw/android.hardware.audio.effect@4.0-impl.so",
-      "size": 333672,
-      "sha256": "ac1bbcc4e3dc5f5e34fe64eb1a4cd30b84adcacf468f1fb5f84c479b6c8332b4"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/hw/android.hardware.audio@2.0-impl.so",
-      "size": 331752,
-      "sha256": "d96f1144b33b5eec19e38ee7efe4a508b77a553fa489e0b2369a299da3b38c86"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/hw/android.hardware.audio@4.0-impl.so",
-      "size": 331816,
-      "sha256": "37f39ad143bea6e21152003cc2fc2442aca23615d77a5a72289617134e65f4f9"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so",
       "size": 266704,
       "sha256": "d830e74451c031b7886fd8729d10366075e6832144d525c077eef5debaebbb62"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/hw/android.hardware.camera.provider@2.4-impl.so",
-      "size": 266568,
-      "sha256": "9e7c819558d623a01d9d56a65771a3bffa9cbccc9fa9a68babcb4689e9aa954b"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/hw/android.hardware.gnss@1.0-impl-qti.so",
-      "size": 201304,
-      "sha256": "6d405a988d622055c726db5f50fbed6958de4c82b1a8b683e206882dd095f936"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/hw/android.hardware.sensors@1.0-impl.so",
-      "size": 69440,
-      "sha256": "c94aac12464b8e925e3441269840bae5a7dbb4ffcb931904424b07b45d9c7c90"
     },
     {
       "tier": "P1",
@@ -3514,5 +3208,24 @@
       "size": 201992,
       "sha256": "78ba035ec0d797e587dcda58c49fa0078565a8bb286cd8411537f1d74056b27a"
     }
-  ]
+  ],
+  "android15_contract": {
+    "source_owned_modules_pruned": [
+      "android.hardware.audio.effect@2.0-impl",
+      "android.hardware.audio.effect@4.0-impl",
+      "android.hardware.audio@2.0-impl",
+      "android.hardware.audio@2.0-service",
+      "android.hardware.audio@4.0-impl",
+      "android.hardware.camera.provider@2.4-impl",
+      "android.hardware.camera.provider@2.4-service",
+      "android.hardware.gnss@1.0-impl-qti",
+      "android.hardware.sensors@1.0-impl",
+      "android.hardware.sensors@1.0-service",
+      "android.hardware.soundtrigger@2.1-impl",
+      "android.hardware.usb@1.0-service",
+      "android.hardware.wifi@1.0-service"
+    ],
+    "removed_path_count": 51,
+    "policy": "Retain RED hardware payload; replace source-owned Android 9 HAL wrappers with LineageOS 22.2 implementations."
+  }
 }

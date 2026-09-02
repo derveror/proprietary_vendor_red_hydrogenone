@@ -3,13 +3,14 @@
   "all_selected_sha256_verified": true,
   "stock_archive_verified": true,
   "counts": {
-    "P0": 137,
-    "P1": 431,
+    "P0": 123,
+    "P1": 394,
     "P2": 15,
-    "total": 583
+    "total": 532
   },
   "notes": [
     "No RED msm8998-common repository is used.",
-    "Android 9 proprietary binaries still require LineageOS 22.2 build/runtime compatibility validation."
+    "Android 9 proprietary binaries still require LineageOS 22.2 build/runtime compatibility validation.",
+    "Android 9 source-owned HAL wrappers and explicit factory/debug executables are pruned on the Android 15 contract branch."
   ]
 }
