@@ -90,8 +90,11 @@ jobs:
         run: |
           set -euo pipefail
           rm .github/workflows/apply-p0-daemon-completion.yml
+          find . -type d -name __pycache__ -prune -exec rm -rf {} +
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
           git commit -m 'vendor: complete RED .118 P0 daemon contract'
+          git fetch origin lineage-22.2-android15-contract
+          git rebase origin/lineage-22.2-android15-contract
           git push origin HEAD:lineage-22.2-android15-contract
