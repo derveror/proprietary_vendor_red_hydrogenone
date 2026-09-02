@@ -1,0 +1,111 @@
+name: Apply verified RED ELF contract
+
+on:
+  push:
+    branches:
+      - lineage-22.2-android15-contract
+    paths:
+      - .github/workflows/apply-elf-contract.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download verified stock parts
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/r118/parts"
+          ids=(
+            1_B7suPmaiZsibKtmSg_IfIcgGaPz4nvt
+            1AV1tt-lmg5z0MMn7aNKArS7bFfK8VHCp
+            1wxs2du2Ml_--JrOwGlyDb49QMlrPxVMB
+            1OMvS4diiiOCiX-yCKHH7HZKv77QaUCFn
+            18czKWOxP9Xiw5g6ljCHI1Gt68Ynzxfi4
+            19bMHqds6-PsYPtrs18okJ8XgdF85Z84L
+            1xKaDVx16zH11ozeSeOjSlldi1-xrHcuj
+            1XF4fPiTXBzVsVQU5I3VZGxw4Xm_T_DUe
+          )
+          sizes=(251658240 251658240 251658240 251658240 251658240 251658240 251658240 89063443)
+          for i in "${!ids[@]}"; do
+            out="$RUNNER_TEMP/r118/parts/part.$i"
+            url="https://drive.usercontent.google.com/download?id=${ids[$i]}&export=download&confirm=t"
+            curl --fail --location --retry 5 --retry-delay 2 --retry-all-errors "$url" --output "$out"
+            actual="$(stat -c %s "$out")"
+            test "$actual" = "${sizes[$i]}" || {
+              echo "part $i size mismatch: $actual != ${sizes[$i]}" >&2
+              exit 1
+            }
+          done
+          cat "$RUNNER_TEMP"/r118/parts/part.* > "$RUNNER_TEMP/r118/stock.rar"
+          echo '7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e  '"$RUNNER_TEMP/r118/stock.rar" | sha256sum -c -
+
+      - name: Extract RED .118 display dependency
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 5 \
+            https://github.com/ip7z/7zip/releases/download/26.02/7z2602-linux-x64.tar.xz \
+            --output "$RUNNER_TEMP/7zip.tar.xz"
+          mkdir -p "$RUNNER_TEMP/7zip" "$RUNNER_TEMP/r118/vendor" "$RUNNER_TEMP/r118/lib32" "$RUNNER_TEMP/r118/lib64"
+          tar -xJf "$RUNNER_TEMP/7zip.tar.xz" -C "$RUNNER_TEMP/7zip"
+          chmod +x "$RUNNER_TEMP/7zip/7zz"
+          seven="$RUNNER_TEMP/7zip/7zz"
+          archive_path='H1A1000.082ho.01.00.10r.118_userdebug_fastboot/fastboot/vendor.img'
+          "$seven" e -y -o"$RUNNER_TEMP/r118/vendor" "$RUNNER_TEMP/r118/stock.rar" "$archive_path"
+          test "$(stat -c %s "$RUNNER_TEMP/r118/vendor/vendor.img")" = 593264872
+          "$seven" e -y -o"$RUNNER_TEMP/r118/lib32" "$RUNNER_TEMP/r118/vendor/vendor.img" lib/libsdm-disp-apis.so
+          "$seven" e -y -o"$RUNNER_TEMP/r118/lib64" "$RUNNER_TEMP/r118/vendor/vendor.img" lib64/libsdm-disp-apis.so
+          echo '36d1ce9d762209699cba72a76f24905057d32cabb85b68b39c109c4813e60e1b  '"$RUNNER_TEMP/r118/lib32/libsdm-disp-apis.so" | sha256sum -c -
+          echo '849a8b2db319ad03eaebea51acd998b1652866f2a38bfc545351034a919759d2  '"$RUNNER_TEMP/r118/lib64/libsdm-disp-apis.so" | sha256sum -c -
+          install -D -m 0644 "$RUNNER_TEMP/r118/lib32/libsdm-disp-apis.so" proprietary/vendor/lib/libsdm-disp-apis.so
+          install -D -m 0644 "$RUNNER_TEMP/r118/lib64/libsdm-disp-apis.so" proprietary/vendor/lib64/libsdm-disp-apis.so
+
+      - name: Generate DT_NEEDED contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          command -v readelf
+          python3 tools/generate_elf_contract.py
+
+      - name: Verify generated contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m json.tool proprietary-manifest.json >/dev/null
+          python3 -m json.tool SOURCE_LOCK.json >/dev/null
+          python3 -m json.tool GENERATED_VENDOR_AUDIT.json >/dev/null
+          python3 -m json.tool VENDOR_TREE_AUDIT.json >/dev/null
+          python3 -m json.tool ANDROID15_ELF_EXCEPTIONS.json >/dev/null
+          python3 -m json.tool ANDROID15_ELF_AUDIT.json >/dev/null
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
+          git diff --check
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('ANDROID15_ELF_AUDIT.json').read_text())
+          s=a['summary']
+          assert s['total_modules'] == 336, s
+          assert s['checkelf_enabled'] == 317, s
+          assert s['checkelf_exceptions'] == 19, s
+          print(s)
+          PY
+
+      - name: Commit ELF checkpoint and remove one-shot workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/apply-elf-contract.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'vendor: establish Android 15 ELF dependency contract'
+          git push origin HEAD:lineage-22.2-android15-contract
