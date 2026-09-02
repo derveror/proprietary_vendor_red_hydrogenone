@@ -1,3 +1,4 @@
+# Retry after correcting the Soong list parser in tests.
 name: Apply proprietary VINTF contract
 
 on:
