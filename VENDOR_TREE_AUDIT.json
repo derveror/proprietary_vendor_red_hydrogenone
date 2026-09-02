@@ -3,10 +3,10 @@
   "all_selected_sha256_verified": true,
   "stock_archive_verified": true,
   "counts": {
-    "P0": 104,
+    "P0": 108,
     "P1": 376,
     "P2": 17,
-    "total": 497
+    "total": 501
   },
   "notes": [
     "No RED msm8998-common repository is used.",
@@ -16,6 +16,8 @@
     "RED .118 libsdm-disp-apis.so (32/64) is retained because the Leia display service DT_NEEDED graph requires it.",
     "Android.bp shared_libs are generated from the retained .118 ELF DT_NEEDED graph.",
     "317 of 336 proprietary ELF modules have check_elf_files enabled; the remaining 19 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
-    "316 of 334 proprietary ELF modules have check_elf_files enabled; the remaining 18 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json."
+    "316 of 334 proprietary ELF modules have check_elf_files enabled; the remaining 18 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
+    "RED .118 spdaemon/libspcom, hvdcp_opti, and energy-awareness are retained because the Android 15 rootdir contract and MSM8998 runtime dependency graph require them.",
+    "320 of 338 proprietary ELF modules have check_elf_files enabled; the remaining 18 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json."
   ]
 }

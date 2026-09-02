@@ -391,3 +391,10 @@ PRODUCT_PACKAGES += \
     wifidisplayhalservice \
     xtwifi-client \
     xtwifi-inet-agent
+
+# RED .118 P0 daemon completion
+PRODUCT_PACKAGES += \
+    energy-awareness \
+    hvdcp_opti \
+    libspcom \
+    spdaemon

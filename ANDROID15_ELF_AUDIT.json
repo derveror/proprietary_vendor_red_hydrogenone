@@ -15847,12 +15847,144 @@
           }
         }
       }
+    },
+    "spdaemon": {
+      "kind": "cc_prebuilt_binary",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/bin/spdaemon"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmdmdetect",
+            "libperipheral_client",
+            "libspcom",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/bin/spdaemon": [
+              "libspcom",
+              "libutils",
+              "libcutils",
+              "liblog",
+              "libmdmdetect",
+              "libperipheral_client",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libspcom": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libspcom.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libspcom.so": [
+              "libutils",
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "hvdcp_opti": {
+      "kind": "cc_prebuilt_binary",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/bin/hvdcp_opti"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/bin/hvdcp_opti": [
+              "libcutils",
+              "libutils",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "energy-awareness": {
+      "kind": "cc_prebuilt_binary",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/bin/energy-awareness"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/bin/energy-awareness": [
+              "libcutils",
+              "libutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
     }
   },
   "summary": {
-    "total_modules": 334,
-    "checkelf_enabled": 316,
+    "total_modules": 338,
+    "checkelf_enabled": 320,
     "checkelf_exceptions": 18,
-    "provider_sonames": 307
+    "provider_sonames": 308
   }
 }

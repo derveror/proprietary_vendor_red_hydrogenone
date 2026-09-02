@@ -10,10 +10,10 @@
     "sdk": 28
   },
   "counts": {
-    "P0": 104,
+    "P0": 108,
     "P1": 376,
     "P2": 17,
-    "total": 497
+    "total": 501
   },
   "files": [
     {
@@ -21,6 +21,18 @@
       "path": "vendor/bin/adsprpcd",
       "size": 68344,
       "sha256": "015c2379ef4a97e782aec5930eab7fe935d8720b3ec8abfc28da44e7e98490c8"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/bin/energy-awareness",
+      "size": 70120,
+      "sha256": "2b1ae7f5ef59b9a7518b3eabd4823eac5cce51330069f75bd120bcfc30767158"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/bin/hvdcp_opti",
+      "size": 202720,
+      "sha256": "4d1d5a97f2da8840912ffdb8351a20b278905ebd4f471cfdee81c4052cc80a03"
     },
     {
       "tier": "P0",
@@ -57,6 +69,12 @@
       "path": "vendor/bin/rmt_storage",
       "size": 69704,
       "sha256": "d95f9eebd42eab430121fa6a23d0c3d4fab9722ab473e9ab5e300a6246ee1cff"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/bin/spdaemon",
+      "size": 68656,
+      "sha256": "a157a177f899ad1783945b88fbe3cb2ddae35ea480d8595b5ddcac91ea16886d"
     },
     {
       "tier": "P0",
@@ -615,6 +633,12 @@
       "path": "vendor/lib64/libsdmutils.so",
       "size": 68520,
       "sha256": "3c5d3a9789f1a75ca74f0c16fa46b80c5ed6f89dede42cfbe28461a52b77b81a"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libspcom.so",
+      "size": 68464,
+      "sha256": "3f9e7b0ecd2ffd999ef58077a15fffa780754dd0f4fb0ae2d8eb49adbe924c4c"
     },
     {
       "tier": "P0",
