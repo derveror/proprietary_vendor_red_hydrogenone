@@ -15,6 +15,11 @@ SOURCE_OR_PLATFORM_EXECUTABLES = {
     "/system/bin/toybox",
 }
 
+DEVICE_OWNED_RC = {
+    "hw/init.qcom.rc",
+    "hw/init.qcom.usb.rc",
+}
+
 SERVICE_RE = re.compile(r"(?m)^\s*service\s+(\S+)\s+(\S+)")
 
 
@@ -40,6 +45,10 @@ class InitContractTest(unittest.TestCase):
                 if not (vendor_path.exists() or vendor_path.is_symlink()):
                     unresolved.append(f"{rc.relative_to(ROOT)}: {service} -> {executable}")
         self.assertEqual(unresolved, [], "retained rc references missing vendor executables:\n" + "\n".join(unresolved))
+
+    def test_device_owned_init_fragments_are_not_duplicated_in_vendor(self) -> None:
+        duplicates = sorted(relative for relative in DEVICE_OWNED_RC if (INIT_ROOT / relative).exists())
+        self.assertEqual(duplicates, [], f"device-owned init rc duplicated by vendor: {duplicates}")
 
     def test_no_factory_init_fragment_is_retained(self) -> None:
         factory = INIT_ROOT / "hw/init.qcom.factory.rc"
