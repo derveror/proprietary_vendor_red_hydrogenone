@@ -1,0 +1,93 @@
+name: Apply source-owned GNSS and NFC service pruning
+
+on:
+  push:
+    branches:
+      - lineage-22.2-android15-contract
+    paths:
+      - .github/workflows/apply-hal-ownership-prune.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extend deterministic ownership pruning rules
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          p = Path('tools/prune_android15_contract.py')
+          s = p.read_text()
+          marker = '    "libwpa_client",\n}'
+          replacement = '    "libwpa_client",\n    "vendor.qti.gnss@1.0-service",\n    "vendor.nxp.hardware.nfc@1.1-service",\n}'
+          if '"vendor.qti.gnss@1.0-service"' not in s.split('FORBIDDEN_RC', 1)[0]:
+              if marker not in s:
+                  raise SystemExit('FORBIDDEN_MODULES marker not found')
+              s = s.replace(marker, replacement, 1)
+
+          rc_marker = '    "vendor/etc/init/android.hardware.wifi@1.0-service.rc",\n}'
+          rc_replacement = (
+              '    "vendor/etc/init/android.hardware.wifi@1.0-service.rc",\n'
+              '    "vendor/etc/init/vendor.qti.gnss@1.0-service.rc",\n'
+              '    "vendor/etc/init/vendor.nxp.hardware.nfc@1.1-service.rc",\n'
+              '}'
+          )
+          if '"vendor/etc/init/vendor.qti.gnss@1.0-service.rc"' not in s.split('STALE_INIT_RC', 1)[0]:
+              if rc_marker not in s:
+                  raise SystemExit('FORBIDDEN_RC marker not found')
+              s = s.replace(rc_marker, rc_replacement, 1)
+
+          p.write_text(s)
+
+          t = Path('tests/test_android15_contract.py')
+          s = t.read_text()
+          s = s.replace('    "vendor/bin/hw/vendor.qti.gnss@1.0-service",\n', '')
+          s = s.replace('    "vendor/etc/init/vendor.qti.gnss@1.0-service.rc",\n', '')
+          t.write_text(s)
+          PY
+
+      - name: Apply prune and regenerate ELF graph
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/prune_android15_contract.py
+          python3 tools/generate_elf_contract.py
+
+      - name: Verify ownership and ELF contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m json.tool proprietary-manifest.json >/dev/null
+          python3 -m json.tool GENERATED_VENDOR_AUDIT.json >/dev/null
+          python3 -m json.tool ANDROID15_ELF_AUDIT.json >/dev/null
+          python3 -m json.tool ANDROID15_ELF_EXCEPTIONS.json >/dev/null
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
+          git diff --check
+          test ! -e proprietary/vendor/bin/hw/vendor.qti.gnss@1.0-service
+          test ! -e proprietary/vendor/etc/init/vendor.qti.gnss@1.0-service.rc
+          test ! -e proprietary/vendor/bin/hw/vendor.nxp.hardware.nfc@1.1-service
+          test ! -e proprietary/vendor/etc/init/vendor.nxp.hardware.nfc@1.1-service.rc
+          test -e proprietary/vendor/lib/hw/nfc_nci.nqx.default.so
+          test -e proprietary/vendor/lib64/libloc_core.so
+          test -e proprietary/vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
+
+      - name: Commit verified ownership checkpoint
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/apply-hal-ownership-prune.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'vendor: resolve source-owned GNSS and NFC HAL registration'
+          git push origin HEAD:lineage-22.2-android15-contract
