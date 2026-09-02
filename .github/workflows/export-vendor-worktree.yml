@@ -1,0 +1,39 @@
+name: Export Android 15 vendor checkpoint
+
+on:
+  push:
+    branches:
+      - lineage-22.2-android15-contract
+    paths:
+      - .github/workflows/export-vendor-worktree.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package exact checkout
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD > "$RUNNER_TEMP/VENDOR_COMMIT"
+          tar \
+            --exclude=.git \
+            -I 'zstd -10 -T0' \
+            -cf "$RUNNER_TEMP/vendor-worktree.tar.zst" .
+          sha256sum "$RUNNER_TEMP/vendor-worktree.tar.zst" > "$RUNNER_TEMP/vendor-worktree.tar.zst.sha256"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hydrogenone-vendor-android15-worktree
+          path: |
+            ${{ runner.temp }}/vendor-worktree.tar.zst
+            ${{ runner.temp }}/vendor-worktree.tar.zst.sha256
+            ${{ runner.temp }}/VENDOR_COMMIT
+          if-no-files-found: error
+          retention-days: 1
