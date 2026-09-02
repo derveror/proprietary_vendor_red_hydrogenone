@@ -12,6 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 # LineageOS 22.2. Keeping the Android 9 prebuilt wrapper as an active package
 # creates duplicate module/service ownership or starts the wrong legacy HAL.
 FORBIDDEN_VENDOR_MODULES = {
+    "android.hardware.audio.effect@2.0-impl",
+    "android.hardware.audio.effect@4.0-impl",
     "android.hardware.audio@2.0-impl",
     "android.hardware.audio@4.0-impl",
     "android.hardware.audio@2.0-service",
@@ -20,6 +22,7 @@ FORBIDDEN_VENDOR_MODULES = {
     "android.hardware.gnss@1.0-impl-qti",
     "android.hardware.sensors@1.0-impl",
     "android.hardware.sensors@1.0-service",
+    "android.hardware.soundtrigger@2.1-impl",
     "android.hardware.usb@1.0-service",
     "android.hardware.wifi@1.0-service",
 }
@@ -29,9 +32,11 @@ FORBIDDEN_STOCK_RC = {
     "vendor/etc/init/android.hardware.boot@1.0-service.rc",
     "vendor/etc/init/android.hardware.camera.provider@2.4-service.rc",
     "vendor/etc/init/android.hardware.configstore@1.1-service.rc",
+    "vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc",
     "vendor/etc/init/android.hardware.graphics.allocator@2.0-service.rc",
     "vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc",
     "vendor/etc/init/android.hardware.health@2.0-service.rc",
+    "vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc",
     "vendor/etc/init/android.hardware.light@2.0-service.rc",
     "vendor/etc/init/android.hardware.sensors@1.0-service.rc",
     "vendor/etc/init/android.hardware.usb@1.0-service.rc",
