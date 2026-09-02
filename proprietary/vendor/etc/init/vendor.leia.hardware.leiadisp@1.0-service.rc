@@ -1,0 +1,7 @@
+service leiadisp-hal-1-0 /vendor/bin/hw/vendor.leia.hardware.leiadisp@1.0-service
+    class hal
+    user system
+    group system
+
+on property:ro.product.name=aosp_arm64_ab
+    stop leiadisp-hal-1-0

@@ -1,0 +1,3518 @@
+{
+  "schema_version": 1,
+  "device": "hydrogenone",
+  "vendor": "red",
+  "target": "LineageOS 22.2 / Android 15 API 35",
+  "canonical_stock": {
+    "name": "H1A1000.082ho.01.00.10r.118_userdebug_fastboot.rar",
+    "sha256": "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e",
+    "android": "9",
+    "sdk": 28
+  },
+  "counts": {
+    "P0": 137,
+    "P1": 431,
+    "P2": 15,
+    "total": 583
+  },
+  "files": [
+    {
+      "tier": "P0",
+      "path": "vendor/bin/adsprpcd",
+      "size": 68344,
+      "sha256": "015c2379ef4a97e782aec5930eab7fe935d8720b3ec8abfc28da44e7e98490c8"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/bin/irsc_util",
+      "size": 68480,
+      "sha256": "5e182dcb29733d9ec649a8c182404da4f6687437357c4bb232615472d5bee8b7"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/bin/pd-mapper",
+      "size": 69072,
+      "sha256": "897e3328c37258efcf29deb3a401413089882f6069c9bbe5edbf14b6103dfce1"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/bin/pm-proxy",
+      "size": 68376,
+      "sha256": "d9f4edac19ae6e0d15e6707250a0e914fa3089945fd0c1df2d6d09be1eab04d5"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/bin/pm-service",
+      "size": 70928,
+      "sha256": "871f414c9c5d7610d4808661422fd38ecf347faf4d9fc1eb3785b3f8ff190dd4"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/bin/qseecomd",
+      "size": 68984,
+      "sha256": "90af5f52ea6ff6872c6710eb5ca8997b6ff3228e2781b2338f7dbd63d663873c"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/bin/rmt_storage",
+      "size": 69704,
+      "sha256": "d95f9eebd42eab430121fa6a23d0c3d4fab9722ab473e9ab5e300a6246ee1cff"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/bin/thermal-engine",
+      "size": 7098184,
+      "sha256": "50ba2c1d3b1b3f8cafabb6ca319fbcf675f3e9d4bace4f16d6268a8bb3e9efac"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.audio@2.0-service.rc",
+      "size": 753,
+      "sha256": "352b45d78e59ac818086b470a1a3bd07a42c3c5f4c5fb5ae2688fce83c3d7c5f"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc",
+      "size": 321,
+      "sha256": "c45a07fb91845794ec2889d1c63e3826ee017da573c9a845d2b0ce027b3c9594"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc",
+      "size": 210,
+      "sha256": "86b0cf7fe04b1f415773ef410d627f14482a7826945c38ecfe0450dd569edb8c"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.boot@1.0-service.rc",
+      "size": 126,
+      "sha256": "3a0cca840c9a9e74bf93f18c3a97e256993c779eba034eec403bac38af20cac4"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.camera.provider@2.4-service.rc",
+      "size": 282,
+      "sha256": "b435d5a3c4421b6e3d4e742c717669a92f425c658bf8b855756a53aa0b57be7e"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.cas@1.0-service.rc",
+      "size": 188,
+      "sha256": "417086c63d3b4b87c4d6a8118bfbf06aca8cf5465c42e8657ebb890c1c77a1eb"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.configstore@1.1-service.rc",
+      "size": 144,
+      "sha256": "c051342d9c9bcadf188c45a11fc698141a8964ffbd568c0db9ff0911bfb41e11"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.drm@1.0-service.rc",
+      "size": 188,
+      "sha256": "0ab16a366b057f06cbb3decf53fdaaf1efc3b60fac2868f7cab3e11c469733ea"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.drm@1.1-service.clearkey.rc",
+      "size": 205,
+      "sha256": "729d302c59d46806539f52c02667b95ffa063f825d16ca34cadf35239058777b"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc",
+      "size": 489,
+      "sha256": "d9f8637b57d98347dfba8dce35ad98398c596fa3d45825fa74b4309acef3cce6"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc",
+      "size": 135,
+      "sha256": "7ce6d8a9f91c4493c39087950535164917b66755ed70c94446ab9533bbad1783"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.graphics.allocator@2.0-service.rc",
+      "size": 219,
+      "sha256": "bf196b7d0accd30fb6f35d4351e2708dfebcc3c00c03140a72a3064888aea5bd"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc",
+      "size": 311,
+      "sha256": "c84a49af029e6221cb2f4e54ab6ced4f4a6c1836256995447533f4b780226ecc"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.health@2.0-service.rc",
+      "size": 142,
+      "sha256": "c88235554fb49247d408a9db8762e82181611495c3fb785a6b7b0bb5b4214cd1"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc",
+      "size": 140,
+      "sha256": "69d8d0cc9afc4665deba3f578f0719094bba8a5b8c3ff59a90eaff98d6981717"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.light@2.0-service.rc",
+      "size": 250,
+      "sha256": "d58ae47acb422d005e064df3241fccd779239d79f57e1c1b0ca80b912814b520"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.media.omx@1.0-service.rc",
+      "size": 211,
+      "sha256": "92327bd0cbccbed25e25d68a67d3db0b06ee8763d474740a0deaaefc9e6e509f"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.memtrack@1.0-service.rc",
+      "size": 132,
+      "sha256": "d2c696bd2aed77b119d307ff6e6287f07e0ac4875408afc588c4b1bc7d2bde27"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.power@1.0-service.rc",
+      "size": 126,
+      "sha256": "c01a01302c36f18eb231ce1217e1043109681cae23867811d1cfae026a43e76c"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.sensors@1.0-service.rc",
+      "size": 200,
+      "sha256": "55bd463913a15db8a55aea6a5e0ab8161f1fd53d8215eaf3c30bd0ff6085d4b3"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.thermal@1.0-service.rc",
+      "size": 130,
+      "sha256": "3c9c698550dd54bad4a7392cddf1bd7670004b1fc82e2b8092efc71d9388b059"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.usb@1.0-service.rc",
+      "size": 122,
+      "sha256": "758f1b663ae70e2507496091f6cc135a1a7b9e09b435d5dc8b997fa8ca87ed87"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.vibrator@1.0-service.rc",
+      "size": 128,
+      "sha256": "d3227ec6d5b16308d39d8e87613316aa92c25c6a962de5148a086b8a1f4fea23"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.vr@1.0-service.rc",
+      "size": 116,
+      "sha256": "b60ee911f6e2350ed38c905b8eff74ea11d89a30e0928fe584b7ecd6614a0adb"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.wifi@1.0-service.rc",
+      "size": 173,
+      "sha256": "51e16c30b99057e14de3aaabe5a90d56c4b65042e2b84f289a111c40b25d62d7"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc",
+      "size": 142,
+      "sha256": "58075d392673b9f33609693858cc245651652709aab03e60b68053cb26b87740"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/hostapd.android.rc",
+      "size": 599,
+      "sha256": "55768d655d9072056ee0b0e58cdb165118a165b4cf0cb501ce072f8063606442"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/hw/init.msm.usb.configfs.rc",
+      "size": 70649,
+      "sha256": "bb3e70de5082aa43f59a33cf50b8157b5062d8c40f94ef2f114650ef48596095"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/hw/init.qcom.factory.rc",
+      "size": 7869,
+      "sha256": "8a7bfd776d8e7f8b3a639ef3c6abb6bf83bf7ece8b056255f20805e67df03858"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/hw/init.qcom.rc",
+      "size": 43208,
+      "sha256": "bc0a61c8174e9b920cf470750479289b97dad0c47015c2288ef6452e5746c18f"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/vendor.display.color@1.0-service.rc",
+      "size": 125,
+      "sha256": "9f450ab55031c52612b8c662bb75947d1ed2a8ba7d91079e8276302b1fe56336"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc",
+      "size": 257,
+      "sha256": "66e0b919b5f7d189dfd6b4af221274ead1234ba9ef31eb617882a6a84aaebacd"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc",
+      "size": 357,
+      "sha256": "37be8bcc667dab325bcfe80495e3d03d048b9e7c3d915422a03ef1cb0c45dd0a"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc",
+      "size": 125,
+      "sha256": "91f4ededb629813b4303b6a7bfa0cfce378270310f780107e18ed4b3b0716458"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc",
+      "size": 144,
+      "sha256": "17adbae4280ef285988f3de5c5a39a7a1b2a18bd56ce873b576610d1a5f2269f"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc",
+      "size": 138,
+      "sha256": "90ab48bc6399a7ca5a9098d84c8011f7086792449bd1f6ce1500a6cf960016b7"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc",
+      "size": 261,
+      "sha256": "de0c771beebd9643fd58b39cae33ca435867af8b0f84a56b663edad95cbec145"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc",
+      "size": 136,
+      "sha256": "f3c8ff77022521f2d9a8f038dc548139711b83b245f6225fc0e0b5f1620d68b6"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/thermal-engine-3d.conf",
+      "size": 3878,
+      "sha256": "fe2aa9051f9eb16ada6a523eaa3442d2e069c3e692d6d3aecd15dc21c14278f4"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/thermal-engine.conf",
+      "size": 3726,
+      "sha256": "02f760c3da719a5f5447ed737ee4e252bec90b510ffe20284fb09cd63b6e71bc"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/a530_pfp.fw",
+      "size": 16820,
+      "sha256": "cc4f2b1cd6b3a9401592e2498ec43b87ba926a23848fa231f417ab08df9c47ba"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/a530_pm4.fw",
+      "size": 19652,
+      "sha256": "a02c9be11787472d4ab0173ed8552afbde1f31b1e81bcd87adf1fcea97b6115f"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/a530_zap.b00",
+      "size": 148,
+      "sha256": "5302ecf8978c825bdc9d8455a828a4ac1e1d762cf09ff821f9f506fb89a549e5"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/a530_zap.b01",
+      "size": 6536,
+      "sha256": "29f8cf59226e6b21c6a3b1b999e1171a60479165c54fef49ff6d0238db9aace4"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/a530_zap.b02",
+      "size": 4916,
+      "sha256": "0b710d5c7be3a69c6b384951b9f6e6b6b4fafdfe4023c55a082356726bb8c1d0"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/a530_zap.elf",
+      "size": 17204,
+      "sha256": "f6341bdb4e4f9ff60a09a077e85a0c6cc0ce8ea28989c9f6675b290d152c8e49"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/a530_zap.mdt",
+      "size": 6684,
+      "sha256": "fe3d363c5f4ac345c65c78a1f9cfcaebcacceeaeaaafefe2e2d1dc26ca792d21"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/a540_gpmu.fw2",
+      "size": 11736,
+      "sha256": "57d7653c4dcc1130ac2c31512ec7fbb6348613d4bcd99b9b6221e3f9ee52f535"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/a540_zap.b00",
+      "size": 148,
+      "sha256": "5302ecf8978c825bdc9d8455a828a4ac1e1d762cf09ff821f9f506fb89a549e5"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/a540_zap.b01",
+      "size": 6536,
+      "sha256": "b4c6e66c6750f4cbb77084fa995abf7576c367faded56d3fb54989a5a68a97f8"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/a540_zap.b02",
+      "size": 4916,
+      "sha256": "997933766e93f7692329f397808f8c23128a58b565d6305e48608cfce711e5d7"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/a540_zap.elf",
+      "size": 17204,
+      "sha256": "c2504508086541c5292903524710826e497ecaf30c45f898b7064d55bccda93d"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/a540_zap.mdt",
+      "size": 6684,
+      "sha256": "f952ba3898c5d7a5fa06f05a09292a4e5f491388fb2e93fe20788cd67e9160ff"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/egl/eglSubDriverAndroid.so",
+      "size": 66796,
+      "sha256": "eab1c3eed3a2914dd041263e45ee10ba3fe7edc92f803769c9744aa6c0db0ac7"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/egl/libEGL_adreno.so",
+      "size": 87924,
+      "sha256": "dcac93072d761bbbe5f36c72d7823901be4f47ddf23d3c32a6d103416cb50fa0"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/egl/libGLESv1_CM_adreno.so",
+      "size": 223800,
+      "sha256": "fc247c578b0a621a6cad2d66f830e5ceb17e9d3398839c1d0c94573962cedba3"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/egl/libGLESv2_adreno.so",
+      "size": 3432664,
+      "sha256": "b5122ad2e4edf9c0e65eee99efa6aaf094e33be0d60beba184a9f0b536be3ef3"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/egl/libQTapGLES.so",
+      "size": 96428,
+      "sha256": "6e1f3d61559115d144fcd53214e42a426a76dea3e173eebb1b9bafbce17fa2fe"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/egl/libq3dtools_adreno.so",
+      "size": 622156,
+      "sha256": "45e1b1cbc2e916f530e7e82a5b472ee4473fc67fea3be6805134217986537af0"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/egl/libq3dtools_esx.so",
+      "size": 363956,
+      "sha256": "db309fbe9d5b966efa6291e648f08a79661741f4a9899bfcf025bbbb0390c9f5"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/hw/gatekeeper.msm8998.so",
+      "size": 24024,
+      "sha256": "bcfa8066042c226f236b49a4b3855cdf2155336b7efdee13948a2b40129c76d5"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/hw/keystore.msm8998.so",
+      "size": 66284,
+      "sha256": "147f7b632d3b296dff876d1ce4017726fb5a1bd7749cde965b014d3eef40fb21"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libC2D2.so",
+      "size": 161328,
+      "sha256": "41b5ad6c29284c2e59d2d95e0384d54730711b478f492d7cfb76e0ea4de010dd"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libCB.so",
+      "size": 1598724,
+      "sha256": "f405428865f20650f357d7fc3b0f96d41b7d9609637deb1d8cb4997be4d28a5d"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libOpenCL.so",
+      "size": 91812,
+      "sha256": "16f6344e2fb0d737425c9feb3edfd990e2386df21df5d2d87e09c1bf825a49d4"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libQSEEComAPI.so",
+      "size": 36364,
+      "sha256": "571f3c4bf08cbb6993ca48b381457dec4aeb4ff6f58256feec7966e43955e86e"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libadreno_utils.so",
+      "size": 73152,
+      "sha256": "90de3d0be0461c44b5ffb51d0888a58f5ea83aa35bc05b186e84d0c7bb3dec62"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libadsprpc.so",
+      "size": 117792,
+      "sha256": "5110e7abf37d8cb53fd4de616fe593a2523f1e3d9899b9015c169da09683837a"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libc2d30_bltlib.so",
+      "size": 817948,
+      "sha256": "ae6d73cc4067630ab909939be1087a6fc23f2c22e4e7396c146edb019f8b4464"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libfastcvopt.so",
+      "size": 7769616,
+      "sha256": "a9a9b81c5c95f00542ef6c7b39731bef7c3ad3d31839d05ec3754cec4628b952"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libgsl.so",
+      "size": 1409192,
+      "sha256": "dc22e2b816dcb16a49797b9c758a2872ffa65a3bb4871a2b50b5866dcc4573cb"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libllvm-glnext.so",
+      "size": 11197408,
+      "sha256": "52f653c938b8bb4bf142d99377c45c290e4bc21d7397815463f3babf1ba6df38"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libllvm-qcom.so",
+      "size": 24231228,
+      "sha256": "a14d2eb9bc3bba3095978032c128cf94f2b2da871bf2864b9809d3b84ed59d41"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libqservice.so",
+      "size": 40852,
+      "sha256": "9ac08608a430aad71de6801582201ab1ef9ab3b3b43bd5b7bd70976d64ba9add"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/librpmb.so",
+      "size": 37524,
+      "sha256": "32890a2509a4ed38a16e0c6cd9e22b14307bdd410be05de7f00cacba8aea00de"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libsdm-disp-vndapis.so",
+      "size": 74180,
+      "sha256": "239bc8d6723a91eb485cb8e18c77fd1658a5f544cdc70c34556610f761869363"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libsdmutils.so",
+      "size": 32476,
+      "sha256": "1250bc6497deb387ff6d618c5c1c85494c8fc7ca4996494b5d73043fbcbbc0d6"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libthermalclient.so",
+      "size": 27928,
+      "sha256": "4d5ff75e2b1ae1b32ba913663291cae77127320cef9134a5fd339f173e1f2aaf"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libtime_genoff.so",
+      "size": 23888,
+      "sha256": "1e60a0e82c543ed07c9c7727b23e09613bc2d8be1c3439118613fcce90f5267a"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/egl/eglSubDriverAndroid.so",
+      "size": 78664,
+      "sha256": "9f0e7e9867ae7ee8fb583555561ae9796bca93bb1ae44de856bf9ba68960fd81"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/egl/libEGL_adreno.so",
+      "size": 107584,
+      "sha256": "fc1ead8740b79a24d6240200f15a9de16f8d8b972b3ed5909d7617334ae70cbb"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/egl/libGLESv1_CM_adreno.so",
+      "size": 250928,
+      "sha256": "0166425449e75ee08ea4876b0af62ae534e638db3bd423704ce48f3e02d5abbf"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/egl/libGLESv2_adreno.so",
+      "size": 4687088,
+      "sha256": "1daf932059448f11da3ab6916c95c4b85cb04d118fb8ee48250d0d5e2e5a5667"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/egl/libQTapGLES.so",
+      "size": 116160,
+      "sha256": "352d03d085d44d6e6de914383afc67adac1156b433e99fb439e448df4e30cb94"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/egl/libq3dtools_adreno.so",
+      "size": 860928,
+      "sha256": "674d11216111579eee87f00372317f5b86039456912798a0f00253a5496ad7fc"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/egl/libq3dtools_esx.so",
+      "size": 538176,
+      "sha256": "f3176491035a0e6df7ea3d5058a55f80d9489739a274d676ea75e737c19deb85"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/hw/gatekeeper.msm8998.so",
+      "size": 68560,
+      "sha256": "f2bd7167a894cb1711bc30eabb84fa55a8d0801784af42e5038a189a3fc95fc2"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/hw/keystore.msm8998.so",
+      "size": 73288,
+      "sha256": "1a4306477146307d9528bd23b99db8e1cb5aacc318775274d7cb872bd326562a"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/hw/vulkan.msm8998.so",
+      "size": 2134960,
+      "sha256": "0d0fc6112b4b6d32ced0eff2ea233b935d92c996908bb8d0218c090f64818775"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libC2D2.so",
+      "size": 196368,
+      "sha256": "c2cf119e4b767f922683c4908da7f51163d9a6270da760e0d3adfcacb9b96f6d"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libCB.so",
+      "size": 2055440,
+      "sha256": "8ec8d8afcd79750a2fd033d78c18c6b852c4ef7668b00d3e9a35dceeb2d33f18"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libOpenCL.so",
+      "size": 104640,
+      "sha256": "4fb26d4c37300586995437b94c14053257138e00d16489c9659bd7c063f473f7"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libQSEEComAPI.so",
+      "size": 68216,
+      "sha256": "fe6c0e4978e8101136ff29f3aa685622c1e64faafc7b01342c61dc346058a443"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libadreno_utils.so",
+      "size": 72232,
+      "sha256": "26d6e4a9f8260852d4d55f6df70f7df77a94d7096ceec6e13c93d65ca7a4c65f"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libadsp_default_listener.so",
+      "size": 68184,
+      "sha256": "44215dd9e00ce7da9ffc7b625ac26a85abd6e0803bd51eac2145bc717cabbe71"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libadsprpc.so",
+      "size": 201920,
+      "sha256": "e0b423c543fedcfbdfbf1d163cc75777afd2cec947bd2689789206f7e9d7ff1d"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libc2d30_bltlib.so",
+      "size": 1058224,
+      "sha256": "3c17c3d483e806e7c22ee7f47a5105acdf301da2b93e6b1d20e965a8e955382f"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libdiag.so",
+      "size": 210800,
+      "sha256": "2c56ec9074029c6fff0d1d9209d5e286cf95b0e7bf827b2ba66d7eca90667ab6"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libdrm.so",
+      "size": 134152,
+      "sha256": "c31936e37b90cb763fd53f3046c287d9739d7c847eace9320fdd4bf110c601fa"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libdrmfs.so",
+      "size": 68400,
+      "sha256": "d3ce4c856bd71d36fea9ee6979a1383c1821190a8ba656b98ceb3f079e1618d3"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libdrmutils.so",
+      "size": 68360,
+      "sha256": "b946ba1081347f0f363da181c9c9ae9cab2f7d518bb25899a62ff1c6e8e93715"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libdsutils.so",
+      "size": 134032,
+      "sha256": "21d7212d54dc72b2aa70b375771163745937dce2d7b8620f1111290a9a477c82"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libgsl.so",
+      "size": 1456624,
+      "sha256": "8018f2f0e5ec1777e26f46d3d5e97a059e139ee980499033466d025e176ac10f"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libhdr_tm.so",
+      "size": 199728,
+      "sha256": "c2ab02d64facf82c0560dd5170b9bc1c766e23e4956f7bc2ee984ea7cb51aaee"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libidl.so",
+      "size": 68160,
+      "sha256": "a77ae9e61316ee044cc53c58c10eef7329937d8ecfbef8415d3b96c999ac8aab"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libjson.so",
+      "size": 68536,
+      "sha256": "78c1a4cc03ecabcde83f83fcd994bf0fff193e3020b3841cf0e368af57e94e24"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libllvm-glnext.so",
+      "size": 15757416,
+      "sha256": "8a85e8f76bd75975196e02a338e3b074cf25696e67e2899957d5f2e0b41453f1"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libllvm-qcom.so",
+      "size": 32263152,
+      "sha256": "3324302cb9512b20e966e819da6ca5f901e6f965a4e3324dff4070f679404db9"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libmdmdetect.so",
+      "size": 68256,
+      "sha256": "697160a725eefbb423446caf196e6bdb2a51fcda830caacf2b4c24a57dd28c73"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libperipheral_client.so",
+      "size": 69288,
+      "sha256": "a9f81c622f7874d9096a519b04338524a6d7897c604137ead1aac54b3a5e2fdc"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libqmi_cci.so",
+      "size": 69152,
+      "sha256": "5c6a553acffacd7262e8aedd078ae11b6ca86a649bb4df92cbc49eae2715f167"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libqmi_client_qmux.so",
+      "size": 68368,
+      "sha256": "25ad435f41cc18315a8cd6ec8eac57253df4643d68091ddc424ecb53792f67b5"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libqmi_common_so.so",
+      "size": 68192,
+      "sha256": "5bb5ac145f43bb9818df1e14b7aa1b31be5b6d7e11991df620eec407a63afc38"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libqmi_csi.so",
+      "size": 68920,
+      "sha256": "fca0d3fbc2d4ad2433d5e2d1677b470b1b0a478824de79b5f93e9bf9cd4d5186"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libqmi_encdec.so",
+      "size": 68192,
+      "sha256": "11ec1ee2dba3872b9fd5c1ce0baad811fe9947effb0f0fc259e14abe537d1ff6"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libqmiservices.so",
+      "size": 202704,
+      "sha256": "23b06b4157692d420d6c5cdb323fc960e08eab322838251d3a8e4875c841f674"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libqseed3.so",
+      "size": 65240,
+      "sha256": "10791ee4f1137b5e44475c7fa2492cf2f115101815cb3ebd63b6993807f59e67"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libqservice.so",
+      "size": 69312,
+      "sha256": "f77605784fd4a638f3f767e63819622d2d15020a6c23ea20bfab5ceabfe016cf"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/librpmb.so",
+      "size": 69592,
+      "sha256": "7744774d643fc10d39f821bab60d675200ade8c54893c727d9573c838c24b93d"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libsdedrm.so",
+      "size": 200288,
+      "sha256": "d817d8fa95b69e26e6a1f0b4c748d5aa9a90d06ebab2b237fb6c569a6a0bfa5e"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libsdm-color.so",
+      "size": 331616,
+      "sha256": "e31d0f98a9755c7824edd9904c6e055548c0b90aa66f2ea4eff0c2e92556313e"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libsdm-diag.so",
+      "size": 133992,
+      "sha256": "0aca1c5563a1016ec9170f9acfaab69ec86981dcec610dc9447ec38dbcdc9ad8"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libsdm-disp-vndapis.so",
+      "size": 134744,
+      "sha256": "73cafe1140b5df54e57e7366fed5b406c8ecb21cad48bdd91a791681a8e00e64"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libsdmextension.so",
+      "size": 397176,
+      "sha256": "12fe7e20863dbae6787291bd67cb5f712cc7ad52c72495f693a7ff9dbe04f9bd"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libsdmutils.so",
+      "size": 68520,
+      "sha256": "3c5d3a9789f1a75ca74f0c16fa46b80c5ed6f89dede42cfbe28461a52b77b81a"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libthermalclient.so",
+      "size": 68904,
+      "sha256": "49b6f127d3fc0b426559cebeba366e296ab5a29132cc4326798ad12df3d2c4e7"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libthermalioctl.so",
+      "size": 68192,
+      "sha256": "10a255d83beb9f14743e9f095330064fb230f75fb6169d3258c4cbfcfe43964e"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libtime_genoff.so",
+      "size": 68112,
+      "sha256": "2a8a5f59662b3d1906a9dd800f405abbf07b115c3fce947c4ff4af7df8e60fab"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libtinyxml2_1.so",
+      "size": 134608,
+      "sha256": "9a0455da666d9a13aa6d5de5ef0a3fe1013aa8e2b6c0c4808deca1d0975c4d2d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/audioflacapp",
+      "size": 68488,
+      "sha256": "cddaa786261c26783b20aa159c7d1a67e0979e6c90254cd99c5fa99037d208df"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/fpc_tee_test",
+      "size": 69672,
+      "sha256": "b004e8dbbad58a0719bc6d67dd6337585a3a60b5b4592db8dfe91c299fe7911f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/hw/android.hardware.audio@2.0-service",
+      "size": 15060,
+      "sha256": "c0a52b5a08e1ee6b8fd1e48ed5cd5589cbfd98cb8ff9c0756efe8c3a9e77b62e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service",
+      "size": 136968,
+      "sha256": "99c49c5882a74e703a58ad093ddee515df344e13195b007aa61a76bd1ff05d0d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti",
+      "size": 68360,
+      "sha256": "aec27fcbb004d686b19d55cb07dd517e412262b655da4bf34f619d25e3f69489"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/hw/android.hardware.camera.provider@2.4-service",
+      "size": 10824,
+      "sha256": "56ba9d533eb6f6471de6157fab418d6c75247ee85e31e941d157e5ea6a3e0baf"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/hw/android.hardware.media.omx@1.0-service",
+      "size": 10948,
+      "sha256": "9c130527c59717f0e1fa37083a3ced9fa68a333c2a11b198b9411c9536e4de49"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/hw/android.hardware.sensors@1.0-service",
+      "size": 68344,
+      "sha256": "d853cc001a30e6fe44fa5cf458cb598b04adf329fc09a182638bd0d18896c196"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/hw/android.hardware.usb@1.0-service",
+      "size": 69168,
+      "sha256": "1fa93a6cc02b0717fa783961d3bd6b3621fcf071b9a1419c4990564ed4057888"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/hw/android.hardware.wifi@1.0-service",
+      "size": 476480,
+      "sha256": "47aea5b6b72cd30e3b6559f48b9802fa7030f99afbd5fdefc3bd99fb8bf3c886"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/hw/qcrild",
+      "size": 68496,
+      "sha256": "278c231aaa5a38735a8161643bd7f4ab9e9023eb141ef3e2cf6e810db67875e7"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/hw/rild",
+      "size": 68528,
+      "sha256": "73611a06614ea1b9cca130aa057637a505f9b02588e7bd8c966c6cd2db86eaa9"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/hw/vendor.nxp.hardware.nfc@1.1-service",
+      "size": 69352,
+      "sha256": "ed6edddc5d3b90f14223b1c22b8b19c52284e5f83c878d84ec047bf65e5959a3"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/hw/vendor.qti.esepowermanager@1.0-service",
+      "size": 68344,
+      "sha256": "b0d81db40a7b8a870b6242064149a440e7c6fd4010350540bbb6bfeb7dab7f7c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/hw/vendor.qti.gnss@1.0-service",
+      "size": 68344,
+      "sha256": "903a5492f612335c2e5b2f66df4b726b3d4f7a4bba5170f7952b668a5cc5a7f6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/ims_rtp_daemon",
+      "size": 201584,
+      "sha256": "290f80b61ed337c5bbe9a46fe5514f503dae322f1215865f16982aa29a4b3dbd"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/imsdatadaemon",
+      "size": 201744,
+      "sha256": "30d2e071021fe7d46de594024879e806bc17e5b23770e78d269e2b37362dd06a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/imsqmidaemon",
+      "size": 135456,
+      "sha256": "e46d7b2c6c81f465682129c0a7b47d6989c8e2f09352a7f3d330a22465cd40bc"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/imsrcsd",
+      "size": 68776,
+      "sha256": "97ed6d5685ebfa67380089a352c5a994e283e3365b0c3c0bd0276fda880dc135"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/init.qcom.sensors.sh",
+      "size": 2035,
+      "sha256": "1f99fab033c72faa599e7d03f6a93020fd378c41b8b8f172f7d87cf0468c5f0d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/init.qti.ims.sh",
+      "size": 2188,
+      "sha256": "6eee8b074b1688b0e8a19c58660282d43ebeb05ce7b3d1d1b00055a5a85e1d59"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/mm-adec-omxaac-test",
+      "size": 68816,
+      "sha256": "7fd2ef8f00c096d86f71bd94db15c74ded6d4d3f47bf916ac4c01c492505e766"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/mm-adec-omxamr-test",
+      "size": 68632,
+      "sha256": "13d5384c27757d552d44255a4311bb48edc48a0eb5b32f1dfd70beaf9bacbce3"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/mm-adec-omxamrwbplus-test",
+      "size": 68712,
+      "sha256": "90f8ab0171e47b5b26f2c8815a4d3b82c5aa5cf149d39cabcff620ead96e5c14"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/mm-adec-omxwma-test",
+      "size": 68736,
+      "sha256": "5218b60bd86ab31905c1e54dcbcfb3f35147a320b3338a0b98b2b3820daab1f6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/mm-aenc-omxaac-test",
+      "size": 68680,
+      "sha256": "f325e160d9e643ad574210def408464afe9670e1ac0623b6338c0da4618ec79b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/mm-aenc-omxamr-test",
+      "size": 68632,
+      "sha256": "e0052941b54be7bf2011ca72c0fd55ed09ee13d8491426c29538d0921d89ae9f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/mm-aenc-omxevrc-test",
+      "size": 68840,
+      "sha256": "eca205a5e5f4a41b797732fb7fe1b3201d05a37f2e0f900f74410cc5f9886290"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/mm-aenc-omxqcelp13-test",
+      "size": 68840,
+      "sha256": "ca25285e2c3885ebad83f51311f82b93c6269b49427b77cad5c2137fefbcbfef"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/mm-audio-alsa-test",
+      "size": 68336,
+      "sha256": "92e51b37be657458c6c4c936daafeb4b8e85f0e4cffb0c4c5662f7d955bafccb"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/mm-audio-ftm",
+      "size": 120364,
+      "sha256": "8eb5f7286f642ca3445825c01e8f7e41675530db5353383f5f4c529e55140589"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/mm-qcamera-app",
+      "size": 106612,
+      "sha256": "6f5b8be4cac1662e65ad6ebede16eb9856b3d9f9b5fa0ea17a4cfc5aed707f3f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/mm-qomx-idec-test",
+      "size": 32724,
+      "sha256": "3934cfee76561b58141f403792a5218990328c2e535b8e5b7909dfa83556a21a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/mm-qomx-ienc-test",
+      "size": 41052,
+      "sha256": "2bef835a7dab501fc26a90c2f2ec5842c09496b3270b09f80950ee48fe5147df"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/netmgrd",
+      "size": 1593608,
+      "sha256": "6299917869e727a212bdb83bf77ffe8d54726c90f4a765ada1deb3589f40be4a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/nqnfcinfo",
+      "size": 68392,
+      "sha256": "5b560bc4f7d016a2ddc1fd0f85b78aebcc9914a2d01ed27495a4d90a9d34045a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/qmi_simple_ril_test",
+      "size": 202680,
+      "sha256": "7d3586688fd0923dfe2a05b81e21cfb8b850d160575caae0e1104dc72fbdebc1"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/sensorrdiag",
+      "size": 68760,
+      "sha256": "055b6b2296255ec9813b3d58ae7b13f6512643ae88320bce2f332ada36184adf"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/sensors.qti",
+      "size": 270624,
+      "sha256": "417bc3c14fc0dfc11f25d4a6cf920c77c6deefcf91773caa452ae2d6811a2f74"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/wcnss_filter",
+      "size": 139800,
+      "sha256": "2776c4a7c0c68710192840f78f5c08143c7761ad80875219b3132904ead3fa1b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/wifidisplayhalservice",
+      "size": 19896,
+      "sha256": "98b7e269c41f89f39482aa00af9334993d4d858dbd0b8d8f72e82e8b82100350"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/xtwifi-client",
+      "size": 1817360,
+      "sha256": "f8c9364abb0ba7293b3975e6749a7fd131f2327bdbc5adf671676b289e5d546b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/bin/xtwifi-inet-agent",
+      "size": 138248,
+      "sha256": "93ae8b13f39d453e8b0b757f9b4cec2773e15b0ac201a58f03657e9208e4d03a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/init/hw/init.qcom.usb.rc",
+      "size": 92859,
+      "sha256": "925275038bb0ebb7cad79c4a0a2ae6648b0ee328b023ffdc2aa7439bfe5c2f1f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/init/qcrild.rc",
+      "size": 629,
+      "sha256": "c19123a96e327e9138a10f42e60d3ea4f655f77c7dc050bc953d576ab8a7033c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/init/rild.rc",
+      "size": 198,
+      "sha256": "8debba2b3bfb53b586a6867182dc2abb590139013dc443e354504c531344d270"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/init/sns_reg.rc",
+      "size": 645,
+      "sha256": "4832771975fe1d09a01ca13e3c718348204958126d94edb22c57f9bd08ee69df"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/init/vendor.nxp.hardware.nfc@1.1-service.rc",
+      "size": 1687,
+      "sha256": "eac46802b1f6ffb7eeee68748de80ceaa82750de0a58a71911509421c2989ccf"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc",
+      "size": 141,
+      "sha256": "12961d0b42c81bd2d05ddbaa7f701608c245bd5db3980b8bb214f4c971bb1820"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/init/vendor.qti.gnss@1.0-service.rc",
+      "size": 122,
+      "sha256": "cbbf04e5721761cdcd84d2a5f3cee1f2cceedb9a37671389aca053416d8e7b25"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/init/vendor.rild.rc",
+      "size": 220,
+      "sha256": "2e0a2b18ed430c745f911bf6226425f9a1dfac5a7b716779c6d9bf6dfc9bfe6f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/libnfc-mtp-NQ3XX.conf",
+      "size": 27535,
+      "sha256": "0abe5bd620d39c17dc00059ea26455dc6564fa7aa6971f521a26c8b48f776423"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/libnfc-mtp-NQ4XX.conf",
+      "size": 22737,
+      "sha256": "7f4e69f27918e9068c46b256afb0a3f5ff88590dfaed952a0df9c7942a6b7c32"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/libnfc-mtp_default.conf",
+      "size": 14854,
+      "sha256": "4c6405110ceada7841bbaf39cabaa1d2b01f7edb13d3ef4d4d39a4372c9740d8"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/libnfc-mtp_rf1.conf",
+      "size": 14854,
+      "sha256": "4c6405110ceada7841bbaf39cabaa1d2b01f7edb13d3ef4d4d39a4372c9740d8"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/libnfc-mtp_rf2.conf",
+      "size": 14305,
+      "sha256": "1309475233b013304444f6847e2027d6c92b9d606086ce3cdc357f4f51c0d1f8"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/libnfc-nci.conf",
+      "size": 5131,
+      "sha256": "9cad54e6ffde8707e2e7f6f4ae418398443fff18273e6724bde69e691b38ac4d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/libnfc-nci_NCI2_0.conf",
+      "size": 5154,
+      "sha256": "892dac4a70552a368b30b8dca0468c4a08e09926d3c8bf8d5573d08be4c5694c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/libnfc-nxp_default.conf",
+      "size": 14922,
+      "sha256": "af152b8705c3a8362fd10ad970ef2213d1f0c97129063c544f03e31d215c726d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/libnfc-qrd-NQ3XX.conf",
+      "size": 23310,
+      "sha256": "704ecd064014c7c38236c22be873cb4a19b9f56ecef5bf5bdd77da46ac1252ed"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/libnfc-qrd-NQ4XX.conf",
+      "size": 22737,
+      "sha256": "7f4e69f27918e9068c46b256afb0a3f5ff88590dfaed952a0df9c7942a6b7c32"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/libnfc-qrd_default.conf",
+      "size": 14854,
+      "sha256": "945e4eea2acaa6c6af4ba39a1dff44c3d7fcf56256ee5d093a452d27e8bb9ca6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/libnfc-qrd_rf1.conf",
+      "size": 14305,
+      "sha256": "1309475233b013304444f6847e2027d6c92b9d606086ce3cdc357f4f51c0d1f8"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/libnfc-qrd_rf2.conf",
+      "size": 14854,
+      "sha256": "945e4eea2acaa6c6af4ba39a1dff44c3d7fcf56256ee5d093a452d27e8bb9ca6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/permissions/android.hardware.nfc.hce.xml",
+      "size": 888,
+      "sha256": "f85135c947e0c0f3a1d45e1cbe0560d3495a741337eb010c951528408859ea39"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/permissions/android.hardware.nfc.hcef.xml",
+      "size": 891,
+      "sha256": "29ff91747071c1bf9c493c3cfb9e4b7b017b86d69d46180cf55050850daa9fb2"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/permissions/android.hardware.nfc.xml",
+      "size": 921,
+      "sha256": "74bff215c9df0c05cf2ca1d81da661c4e4ddf18f6812559ab90bcb10349e8a25"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/permissions/com.android.nfc_extras.xml",
+      "size": 810,
+      "sha256": "6c955a65915f4c92395fa482cdcf85c477427cf9581617fc3d65df5e1c746a79"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/android.hidl.base@1.0.so",
+      "size": 62416,
+      "sha256": "215d9cebf8d33286876bbe7243e2f86f99074a99a522c9c9b74244dd351bb43a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/camera.device@1.0-impl.so",
+      "size": 120412,
+      "sha256": "19c1d6cb34da39cce3b6f5caa0bb8b93f38c119da9d35961f9bcf7ebdf87b935"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/camera.device@3.2-impl.so",
+      "size": 174448,
+      "sha256": "fb747720294c8bc89a02e8c313d2c4cc8e7909926e2bb20710b57050e8ed9c5c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/camera.device@3.3-impl.so",
+      "size": 32144,
+      "sha256": "601c58773b031fd2581e298c358dd7997e224544e0dbe715a03545272a1a96b2"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/camera.device@3.4-external-impl.so",
+      "size": 240804,
+      "sha256": "c3348cc51ab5cd8796c1b5b743097e6178f0e4cc22d4e38fc0ab1b98ec238150"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/camera.device@3.4-impl.so",
+      "size": 120096,
+      "sha256": "100e05bd658fef15d1eaed14c1f3b64bbd2ded146c0fb6fc5d211385b9136527"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so",
+      "size": 168532,
+      "sha256": "5bfabbbc19181e481b8ef957c6af9cfb174a0885feff73fc23e3678a1351ef69"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/com.qualcomm.qti.imscmservice@1.0.so",
+      "size": 240104,
+      "sha256": "5ccd36356c614aef8b2ff1fc81785f9e27d1bd86bde9217f9d8f105e441599e2"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/com.qualcomm.qti.imscmservice@2.0.so",
+      "size": 245144,
+      "sha256": "15552fd5accc8bf8b641be3a1667ba49a348c4f2955035fddea7f8e8787b0f93"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/com.qualcomm.qti.imscmservice@2.1.so",
+      "size": 233172,
+      "sha256": "fdcd6674c64be3977021698d8d3e8042705e48ac598dfd5a8af591be7c82ab30"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/com.qualcomm.qti.uceservice@2.0.so",
+      "size": 373488,
+      "sha256": "267b79e668132ada56d3b0fe731a0b4c0f0b0f61c10f808248155eaa6b6dfbee"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so",
+      "size": 32416,
+      "sha256": "fb700d22f1e24f4f8ecbf435c4c607c8b60b7c9d8e0bf6e63d2ca313fdc675f3"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so",
+      "size": 198332,
+      "sha256": "8c18ee233d161f2b68110bff6824b8f8443ec4b9d56367e428808b87dddc77ba"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/android.hardware.audio.effect@2.0-impl.so",
+      "size": 217552,
+      "sha256": "dab5f241568a122374e58adb335265d59043cde3387f9046bc5f249efe568fe6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/android.hardware.audio.effect@4.0-impl.so",
+      "size": 217568,
+      "sha256": "1e9b9f0c53530725cfafb890baae2236c4f1b927fb770e7a194a1bb69acfa63c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/android.hardware.audio@2.0-impl.so",
+      "size": 219644,
+      "sha256": "ea130b81563422c18c5175f50153c413b3a0abec26ad7d785c0659f3656c946c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/android.hardware.audio@4.0-impl.so",
+      "size": 228024,
+      "sha256": "17db4232a3f1ac77d7ed42dfed3abbfc83f1acaec71506147d1b5f828742aec6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so",
+      "size": 204580,
+      "sha256": "ad6e6c185d171c51f6b3a3be8607a42e3a4b60cafbd094125f00903f16adc3d8"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so",
+      "size": 178632,
+      "sha256": "44ef0050039da4d9f0e9dde9ed839881ce82177ddc944cddb7cff0f5c4a42047"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/android.hardware.gnss@1.0-impl-qti.so",
+      "size": 134460,
+      "sha256": "43d210b6c24044825a1fee745711ac5d38f0a38d9c49193054a92728627129e7"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/android.hardware.sensors@1.0-impl.so",
+      "size": 53348,
+      "sha256": "2aa88c3bfd019c56ca2f703faeb302462f47052ad1ec65122fd62e339be04cf5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/android.hardware.soundtrigger@2.1-impl.so",
+      "size": 37300,
+      "sha256": "8eda754e81c3f2c375de5ed4b92413bdc85edd6f901bc5417426b9b845931689"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/audio.primary.default.so",
+      "size": 11588,
+      "sha256": "e28fe51247b5ac4df63d52f2bd19938995438be06e1edf9710d5c859164ad1d5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/audio.primary.msm8998.so",
+      "size": 548588,
+      "sha256": "1c123a3bed059261ebd14a1f6c3f6102f49155f758e21d206ac4587e915ae31c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/audio.r_submix.default.so",
+      "size": 33124,
+      "sha256": "1be1553ef85ae4165947692cb8085bd3ace763422f65809af0253be6fd8f4cf5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/audio.usb.default.so",
+      "size": 15664,
+      "sha256": "be4c7b2be391708ae36ca1162d2530d0df5b5c1f06a65879d1e07febad63fbbe"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/camera.msm8998.so",
+      "size": 1247340,
+      "sha256": "252825edea8c8bb139e3c1fcb570558d5ac8726211159772265ba64057e0fec0"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so",
+      "size": 41116,
+      "sha256": "ecf1753641950d081be9072bf2c997e104054351cff9257f0d1ab7bb30f49394"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/nfc_nci.nqx.default.so",
+      "size": 228144,
+      "sha256": "0a18a3c5f9fc63b2d0fd39d4a2de6f4c2a83923a388af5d0413f0c760a4f0011"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so",
+      "size": 36688,
+      "sha256": "20c2c6a2414076b679bccbd6ee5c902364635c7c3a379a4572a61f12da42edb1"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/hw/vendor.qti.gnss@1.0-impl.so",
+      "size": 197964,
+      "sha256": "1f1043b7f1e4141f3f41441af96533c7bea188cd4b2f9f4f5b9ef120abec25e9"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/lib-imscmservice.so",
+      "size": 195800,
+      "sha256": "386604c0e307a691680300f988488b71b21d1e531a6781687b7f1752b021a213"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/lib-imsdpl.so",
+      "size": 651556,
+      "sha256": "adbf59ee34baade581bc2dcec88a4d28984e456a2f21bb6f3ed306d1e1a96f01"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/lib-imsqimf.so",
+      "size": 270916,
+      "sha256": "ee5ed3f0318a303c024f5fce5cb3241ee0f16212a74c19bae0a1b3541afe09c2"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/lib-imsrcs-v2.so",
+      "size": 316796,
+      "sha256": "eca57d246a901104d86a12468bf3f07169afb0fffcd281803ecbb4e0c4bbe7a3"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/lib-imsrcsbaseimpl.so",
+      "size": 92100,
+      "sha256": "fa8123e4fc081d81a07e33eb92b555b8a11e2161505e32604b51ef025d76cc27"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/lib-imsxml.so",
+      "size": 612060,
+      "sha256": "6c6993709667ac78116fe9021cb6a2aa47a31fddfd4c13e1cd6b2068f163df67"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/lib-siputility.so",
+      "size": 113860,
+      "sha256": "0bf8eb52deda05a80330967c492d8bb6d5e8bd1e8449ee1fdd9875b3417e9623"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libDRPlugin.so",
+      "size": 24016,
+      "sha256": "21f986e72513b75289a9ad1fad3fa9f39e321d4e8e2a2633b175313bfdaed318"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libalsautils.so",
+      "size": 19336,
+      "sha256": "e032216be21df4d9719cc6d73f8272f95e8686cd74a172bc6314642d13a2e06c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libarcsoft_antishaking.so",
+      "size": 472852,
+      "sha256": "960e6f446d9087deac2d062d3f54f50567c8b01ba2afefd2648f0f41d8b358cc"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libarcsoft_beautyshot.so",
+      "size": 13999032,
+      "sha256": "7d4bfac9c83bcd98b5729b78ec3afa4878864878e5484bc9712d9cc13c1c3a3c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libarcsoft_dualcam_refocus.so",
+      "size": 2419080,
+      "sha256": "7b412580964246b90c60fe99be2cbf8c8b6a4a7312e164910fa9c242199763fc"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libarcsoft_high_dynamic_range.so",
+      "size": 3057804,
+      "sha256": "652ea9507e0d5afc7a8576228f2f3e0a8736c8fb8ef8cedb90c0f379f4056ad5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libarcsoft_low_light_shot.so",
+      "size": 480988,
+      "sha256": "7ebd52faf618caf6216c05afa73d78001096a3c355c5f9155492548b522cf050"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libaudio_log_utils.so",
+      "size": 23896,
+      "sha256": "1a5192a252dd695056d00e46ada61712d384f5cbd83bfcddbc6cbbf00c45770e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libavservices_minijail_vendor.so",
+      "size": 10756,
+      "sha256": "5e980ff7720692b25445058194e554113e99a01519e09ddbcb401bbd53808670"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libconfigdb.so",
+      "size": 28140,
+      "sha256": "c86116337239fd3db3b2e4df2f1acfc9c1ef7e0547e923869f94de2cbb23f921"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libdataitems.so",
+      "size": 159148,
+      "sha256": "4643675dd491e4b1255cbef7fcaa8ab8752fddb2bbf769b18aaf8533afbe5c10"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libdepthmapwrapper.so",
+      "size": 19672,
+      "sha256": "fc42ef15652d9905493666ccfae39d6f5bd570f3bc986e4abd878e74c5685ec0"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libdiag.so",
+      "size": 145924,
+      "sha256": "f94404cd811280a75993e74ea6caac443ba57a0942db27f37f85bb7015844402"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libdrplugin_client.so",
+      "size": 28224,
+      "sha256": "c54e8b00096a007c2e97421710fa76b5a7ee4c4b45a0308732cc4698b4c446f8"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libdsi_netctrl.so",
+      "size": 453840,
+      "sha256": "2c56f0f4d0eac81f2418995a0108dece74f3ebc899e6406f18a0dcb01ff47d6b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libdsutils.so",
+      "size": 82120,
+      "sha256": "0458068b9249a2642afd2d9eabc77ee33d986f92b19358b65c811ed79541e24a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libeffects.so",
+      "size": 19684,
+      "sha256": "94608d1099e71fd037c40bd9d8c4e97ad85c1fb7ef0306b6203c56be0ff4b139"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libeffectsconfig.so",
+      "size": 19284,
+      "sha256": "fcbc5ab5d8003a40d6d2c67d498d9b264df8cb23c6b1d456ec6c7b5f4b1ff557"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libevent_observer.so",
+      "size": 23872,
+      "sha256": "18a877459d6218e0f67ca7754e1503f488799a72f533406d082ef07748a014cf"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libflp.so",
+      "size": 62256,
+      "sha256": "611d1881641ca0f697e9a01582893de0034be47760fa46d26a8244b0a0f6f8f3"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libgeofence.so",
+      "size": 53596,
+      "sha256": "50ec2512704349957d38e421b101beb269685989e5d86b8fe64bb408d711067a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libgnss.so",
+      "size": 127112,
+      "sha256": "52ce44f441cf3ac9cdbd0d2c662599a643426c8f68b8da13f78ebc45b8b2ae0d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libgnsspps.so",
+      "size": 19712,
+      "sha256": "d389608513b75ffab007914c772f14f41ea94441803f0c0cd767df4491aa9d5b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libgps.utils.so",
+      "size": 74448,
+      "sha256": "ed2bbc9a7d48a221d8224d53919689c47ce534f4adbda86e3e60144d724a8662"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libgui_vendor.so",
+      "size": 493060,
+      "sha256": "c97538573ab128f6301dc83827d2b2e898aa416649201b56323648fcd32f6efe"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libhal_dbg.so",
+      "size": 28236,
+      "sha256": "9ffa3be9e6142383730cb5a4c390683157c727cf794acef29491cdc1382e99eb"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libidl.so",
+      "size": 23960,
+      "sha256": "a233388455343278c27a414e3e35fdd967300636dfe2f56bc5b9e43d69efcfee"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libizat_client_api.so",
+      "size": 125748,
+      "sha256": "5fb903cbde7ed19d1051b9a5f7201a3394ed36bd4b84db322c117ccc51d21ba0"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libizat_core.so",
+      "size": 158792,
+      "sha256": "48e2d1d748c043f33cfe79134ce3b53c3b44170b9a4a211a2d05768e51f28a00"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/liblbs_core.so",
+      "size": 82604,
+      "sha256": "e6f98fcfba6bd292a13e78417b95a111a73e2b1038c5974bdfb20e22c0daf8c1"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libloc_api_v02.so",
+      "size": 119556,
+      "sha256": "90903f7c334c80a70982eb6f861e9aa7211ba9f9062f8effd1f509cac07c3928"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libloc_core.so",
+      "size": 243124,
+      "sha256": "6b6b76aa0a16d49caa9ae6703fdb5a0ff3f3babf388dd29f8b85576c6214898c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/liblocation_api.so",
+      "size": 75712,
+      "sha256": "57d8f4160e212ed32e58a25b8e7ec13e6422b26e370ab889c1f401a1abce2395"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/liblocationservice.so",
+      "size": 398516,
+      "sha256": "4552aa2ab651d4ce79fc896c80c6331dee7dafd3c7af7de3ad8437c873750f97"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/liblocationservice_glue.so",
+      "size": 32308,
+      "sha256": "efe8d1fb7a7a85fc60526b28ffe80b065587401f87b418d84c94ac0ecbb885a6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/liblowi_client.so",
+      "size": 230264,
+      "sha256": "7858c2b41a6ab43b013fe46367fcce40cacfe22aecdee5bd783a230995da242f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmdmdetect.so",
+      "size": 23904,
+      "sha256": "41c787d9a97fe269398312fc79b49fc4166b3090c5f18d5e2afd211fe496c0de"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_c2d_module.so",
+      "size": 94476,
+      "sha256": "da848818b077106c8c83ec18d6d68482e2a6561b28ade819128ec29d31270750"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_cpp_module.so",
+      "size": 597636,
+      "sha256": "d175f0b3c1e068270a73fde9ceaf80570aeafed28f1eecdaba12a05ad5c19e00"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_frame_algorithm.so",
+      "size": 23848,
+      "sha256": "9b47a717428e179aced631d1621a2b6849d3e9998f60e3a176df9dcabb83700c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_iface_modules.so",
+      "size": 433880,
+      "sha256": "3fbd9bcbe82193f20ea904f9dad4a727789f97264a6250cbe7ce98ef42f6b32f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_imglib_modules.so",
+      "size": 689124,
+      "sha256": "1c2750fb522bb7f51c151a72faa5a6e3b3b24596e54fa71b05ce2c8eeef37ec5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_is.so",
+      "size": 110528,
+      "sha256": "e0d9ded92b1957f78a592d724f27ce1e7ec0b7ad099eec4530f498051d182598"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_isp_modules.so",
+      "size": 512908,
+      "sha256": "ec16889a2efba47e3b1193ed9e0b96d2b38aeb03d560b62936f4ed19c60d5096"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_mct.so",
+      "size": 183960,
+      "sha256": "e78927faa3ace5dd9f7b2c6d78636d9737495c4f3ab44e77dde14842aa64d40a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_mct_shimlayer.so",
+      "size": 32140,
+      "sha256": "0ab18099dc84adf5052198ea136c4a044bff9cb48b7b339bb13489c1b5f23833"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_pp_buf_mgr.so",
+      "size": 31976,
+      "sha256": "412bdda0f4244ef0b0433a94a9ca12084ebd2ae0da80cde200de0ba5ac07f1c2"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_pproc_modules.so",
+      "size": 86756,
+      "sha256": "0894213e521e3d3a12b4cf75d41deeec6b2fb071317a76d9bd71dd0340b481f2"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_q3a_core.so",
+      "size": 825524,
+      "sha256": "307ebbfcb0ecf387c37769a9975d2cfd2c322374059e5d61da12af056b0cd67d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_sensor_modules.so",
+      "size": 1479556,
+      "sha256": "0d423fc281373b47136c4eac48b3da4bafc27024505c9ae5a6c3a196361db234"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_stats_algorithm.so",
+      "size": 93484,
+      "sha256": "efc1b958f789af84ca29f350c58e17ab2d3e5191614c99174cd363db1173b53a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_stats_lib.so",
+      "size": 256880,
+      "sha256": "f76bfdaa719c3163419567e8d540928decd8e6327ecec990cdbc6a3214d2561c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera2_stats_modules.so",
+      "size": 632424,
+      "sha256": "0301fa336033cc338bf59b3b8d35b84cbdba281087b2d21ade8542eafb04c7cf"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_arcsoftbokeh_lib.so",
+      "size": 36528,
+      "sha256": "80df5a9ddba1282098b601dae39beb86b3cd789394e422695f5fce370a4924c8"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_arcsoftlls.so",
+      "size": 174832,
+      "sha256": "e244b62800eef83ef2eda94db63406854f0d6c482b746d57e4e94c8b6ea1fa5b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_atmel_at24c32e_eeprom.so",
+      "size": 39944,
+      "sha256": "49ca1b3d7e0307a46c28a1f00a1991afe5357c191f89e18162ff3992714fb8f7"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_blackwhite.so",
+      "size": 23452,
+      "sha256": "6945323c05216c7b5c12839ecc8f2521b5bdd2b6117de6dce066736aecea92ca"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_bokeh.so",
+      "size": 78628,
+      "sha256": "2d59e0f9b239fc9693da5260385190d6eed93f1ce720d895c35a807fe49ce746"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_csidtg.so",
+      "size": 826348,
+      "sha256": "e56add3108a169bc1d27da172942417e819302c34f43a5d68a2158e9039235ae"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_dbg.so",
+      "size": 46728,
+      "sha256": "1e642a9358a7aca30a2d79ed26427a6f933c30de233607f1f37a514963254858"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_depth_map.so",
+      "size": 19728,
+      "sha256": "a29d362765892c7ef4a010faa857acd1ea1077b1bc33f6092b60cd800b0fd241"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_dummyalgo.so",
+      "size": 23460,
+      "sha256": "36cae0bd7698e2fcdcee9d7fc22c1bcaf130f87cd49362a8f2626f22d46b6cc7"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_dw9761b_2d_eeprom.so",
+      "size": 39880,
+      "sha256": "05abb5197e805b14b3a8a81f40357871e636697c56891bb562f5d5deee426b68"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_eebinparse.so",
+      "size": 19700,
+      "sha256": "edcdec26f9b947644fee08e67c832f14126335942fa0c6c2480c00cf30e4e89c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_eeprom_util.so",
+      "size": 32200,
+      "sha256": "925b96807c5cec7647a084d6627d52c8c9ba5fd6ac9806d545c0d3fb854b219f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_eztune_module.so",
+      "size": 24056,
+      "sha256": "26fa3c5300ee13b58b223552fbf9afc5c82b8400119bcd91e0a944c59abab81b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_facedetection_lib.so",
+      "size": 32288,
+      "sha256": "05d03b1de87fcbf3aadd652c7360390616ff38e597e11b6e59649f7342fde242"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_faceproc.so",
+      "size": 1246820,
+      "sha256": "388cd36dcd54f7c3842c8178ad0888fabbed045f791de0d6d3c3c29876c3a056"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_faceproc2.so",
+      "size": 1337180,
+      "sha256": "7c5ec710ea2d4030f9e47e352908f26027d4bbcee17b14c8852f6399c3abfc5b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_gt24p64b_main_eeprom.so",
+      "size": 39884,
+      "sha256": "48c3c9e26f2ec9018a94641e6b380bc4067af80ec26c435d6a396096753c7582"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_gt24p64b_sub_eeprom.so",
+      "size": 39856,
+      "sha256": "84962955860b2b753fefc6ab41f4820f8385b50f8506b1b0dbd6fd273cf714da"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_hdr_gb_lib.so",
+      "size": 260324,
+      "sha256": "366008a3d9443926d9c59ef6c567f951dd9a9b957a212d4c1a4e6537bfc14046"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_hdrgreyscale.so",
+      "size": 23468,
+      "sha256": "dc21504ac96c6312f9bf643ea4376187eb696cc3d992705496d850ac99fc2a53"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_highcontrast.so",
+      "size": 23456,
+      "sha256": "d0afdba78e44ec2dc59a48706f1737ef7a429d2ebc8447247c7f13768a85d33e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_hvx_add_constant.so",
+      "size": 19752,
+      "sha256": "ae5e483364a94c9bcf3a3973e7569c6327eb93da04ecdf1663d47c960f0dfe80"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_hvx_grid_sum.so",
+      "size": 19772,
+      "sha256": "d450184226b5ec76d70a0f326e8e5c6510054a800e64f4f1d2a75b0d8edd8c9e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imglib.so",
+      "size": 532340,
+      "sha256": "140f688ef421c3c59d6e2f1193c4fde3405d856c082254183b10c89ad404c1ce"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imglib_faceproc_adspstub.so",
+      "size": 37356,
+      "sha256": "97e3f436bb956c30de02bae706a60d5a0d398c78beeaa0a11b79dcd8d5530e3e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx214.so",
+      "size": 826432,
+      "sha256": "69196665f8d9db4c7aff3f380695503426664021fa2efb35cae400009d4cd34f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx230.so",
+      "size": 826492,
+      "sha256": "f392b92d2c389653e0c53f20657fb468656fe375eb76168c8dd6ac8cf2128b32"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx258.so",
+      "size": 826392,
+      "sha256": "dd78e3154d996260b29250a5562fcee28eb21c66368ed76870f93e94f5117322"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx258_gt24c16_eeprom.so",
+      "size": 44060,
+      "sha256": "638639e2249e8830ebf3bdd083248e9343c6a8644d59ffbf5648b85374edd2e9"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx258_gt24c32_eeprom.so",
+      "size": 39848,
+      "sha256": "5f978156378f79e3b0e7602fc87bf49b138b395cb4ac87936e4dc6402b00bbd5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx258_mono.so",
+      "size": 826388,
+      "sha256": "fde3fa3551a0d40b462a2693b5f2ec475910731aeb54f23f5cd05a3ab28af498"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx258_mono_gt24c32_eeprom.so",
+      "size": 35740,
+      "sha256": "80a5b6892627af1affb739c20b002cc84558d30c4c8116f28b5a53bb8179834d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx268_main.so",
+      "size": 826376,
+      "sha256": "42998f355fdd5deacfe39ee84a6c393bd8564bb71d7586b5778129924d05ee9c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx268_sub.so",
+      "size": 826372,
+      "sha256": "29c4d1e06b8b701e86e75ddebd9b2faac9fcd3956841cc8bbc6c6c6b8735b45d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx298.so",
+      "size": 830516,
+      "sha256": "2e15ecb1b16b21c878fba30dd7ecf73faaa15eb19b2bfa9906abb623014657b7"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx318.so",
+      "size": 830600,
+      "sha256": "6e72a371df994185ba6f15cada9e5f68f8d7fcaf445fb704fc9f88196f5e6a92"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx362.so",
+      "size": 826440,
+      "sha256": "655bc41d0e01700db59b62a4ac9d3fb1309f11f1bc98c247d4d92217872fff96"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx362_gt24c64a.so",
+      "size": 826440,
+      "sha256": "edaa9929229f292ca8f813ebf6facf17fd4baf823463bf893f4526c7ad90eb06"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx376.so",
+      "size": 826372,
+      "sha256": "175222d3a0194b2f593ef27fbaef42725c031771da6459388be667eb23860a39"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx378.so",
+      "size": 830492,
+      "sha256": "46d520e4fd7e9e331e633fb85e5e686fdef2cf4c848746f808c5dc6773bf4ec1"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx380_main.so",
+      "size": 830532,
+      "sha256": "0653ef2b36850ffe93e085582616fabfb819bf6dfe3b821523e38ee9e6a950cb"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_imx380_sub.so",
+      "size": 830532,
+      "sha256": "1529ae06a3e5ce35ee65fd6d34414cc9c762562b3ac6f0b76e309881b51e18a4"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_interface.so",
+      "size": 220312,
+      "sha256": "1027f4b5bb00fa050088ccdd484ec23ae48a601bb4c8549df3dc1fcb9c832531"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_irs1645.so",
+      "size": 826416,
+      "sha256": "43b94df4167b4a1556d2803658b940ef20fb09bffdc0df928b22478632fbd80c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_abf48.so",
+      "size": 50256,
+      "sha256": "1240d673358134c4470c6e9a0a3037cf984162f232b663dd4935c9432be623f4"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_aec_bg_stats47.so",
+      "size": 32736,
+      "sha256": "17a0df70a75d461c6c1f7f175f526e48a2de8f1412409b4eab85e179b90cf453"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_bf_stats47.so",
+      "size": 61868,
+      "sha256": "c5450e0c83eb3fcc6b66091e265966afd89fe05725bfa1710b9843c1e37a2a2c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_bg_stats46.so",
+      "size": 32740,
+      "sha256": "fc6a19019d82f3da7c4926483ebad5bffd8f179161f27744413f03192596177f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_bhist_stats44.so",
+      "size": 28612,
+      "sha256": "1d99f58f560ddd803933fb953054bcaa865505fdbd9bb6cf43d42cb0917995f6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_black_level48.so",
+      "size": 28580,
+      "sha256": "db0d28f9e63f6a942a21880190cd1fba5e805bdc71a2780dfc9dca4a289b2bcb"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_sub_module.so",
+      "size": 69740,
+      "sha256": "66851adf9c27bc46dc5ef41c3fff325e97a34897d4f123459a129a05d70eeef2"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_pdaf.so",
+      "size": 86412,
+      "sha256": "90d2ded522ecb34b31e261cc9c8e402ac7c5e98cf6d599fc9d2a8e5ba1a190ff"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_pdafcamif.so",
+      "size": 86420,
+      "sha256": "84e0bbbf3b3ec66352333f6ba5d8a2bf4a406dead1b79773c7f22f48cd0541c6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_ppbase_module.so",
+      "size": 32432,
+      "sha256": "20308f62f9607590d04c192b9e96a899e0b7c2094e2f341b5b077a5756dc1acd"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_thread_services.so",
+      "size": 44504,
+      "sha256": "095d0451d9139cb44db79e5689587408ae35957683a1f7237a0857e275defbac"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmjpeg_interface.so",
+      "size": 86348,
+      "sha256": "3c8cd8597e0435af2e166725d0b642eafef1bb1b14afbf79548a5230fe74d524"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmlib2d_interface.so",
+      "size": 23524,
+      "sha256": "4567e9ef0ffec9b53421834ca365b3d64c6ec8d95013eb62cc66570f7b15c4e3"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmosal_proprietary.so",
+      "size": 40852,
+      "sha256": "d22237f743fc890f4ad68e13fc09dd8d1ead033b67efe5ea386206e52234b154"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmpbase.so",
+      "size": 6132,
+      "sha256": "1acf932f44a324e90f54b7fc4f884c85d933895bc0d5861962e4b5a50af107be"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libnbaio_mono.so",
+      "size": 15256,
+      "sha256": "077f22cf0d830196186a3549fe3108f8a4f5c9b8954e69a5993ce302b1943c49"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libnetmgr.so",
+      "size": 126692,
+      "sha256": "567c2a325fe23fcb923032772e032410484fe50d6ed1cbeb1094d4f58b645ccb"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libperipheral_client.so",
+      "size": 53940,
+      "sha256": "5d32535adf5ffd44694b84dcd2294506457a5b511862380934b53e5935ed354c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libqcrilFramework.so",
+      "size": 322164,
+      "sha256": "dab04681d06f9f0897f711f568801beb86c0191798996e105cecb994a0dd270d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libqdMetaData.so",
+      "size": 15104,
+      "sha256": "5c84269262d56aca61e8ed3969fa6ebdb8f021a8d6206a1460aaf152545f3b28"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libqdi.so",
+      "size": 126628,
+      "sha256": "ccb421de1ec61cdd1e1fb11cdd6bc37ba4c0fe0a77d232549be4baca9f6ee9a9"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libqmi.so",
+      "size": 202396,
+      "sha256": "94b6415dab0897bd419052611d0f40ff139f48cdadc91c1710b1d95c95743f88"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libqmi_cci.so",
+      "size": 58040,
+      "sha256": "9539dc1647f849a6ea63cce25de928870a0d704c4cf2aa5e18df1e72bf7b0c04"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libqmi_client_helper.so",
+      "size": 27984,
+      "sha256": "99893d53ea96680da5cbe552d594190de6dae360284e2cb90d9f28916c59d6d2"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libqmi_client_qmux.so",
+      "size": 44668,
+      "sha256": "68585ee71d54d2018abe0c9fef85cef24b2ad80366bb073bdeb335eab016be3e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libqmi_common_so.so",
+      "size": 19652,
+      "sha256": "f61cc30a09a83b2997412fbd3da3444f08d0d4e23292b24619509875043e4879"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libqmi_encdec.so",
+      "size": 28096,
+      "sha256": "d3ea0bb08074284820057d2d00289cc9483b3650e6d03b577183cc3f12ba1e1c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libqmiservices.so",
+      "size": 124372,
+      "sha256": "7247a75cb0bf409bb380dd1b48913106c7d6b1713444e0be9eed7068dcd123d4"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libqomx_core.so",
+      "size": 23896,
+      "sha256": "3185094542fbd26eda5124c1922d3bc5325e0d37fd295afc32584f5f4ee7a6de"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libril-qcril-hook-oem.so",
+      "size": 19660,
+      "sha256": "220ae9c2790ce90ee0384b2cec65f353d5b5b3d028ced916a3d425290b36db2f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libril.so",
+      "size": 239600,
+      "sha256": "6758deb395334790638d0d9a1f977ffbdaad440e065cb3ddeb31a31a289f3d77"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/librilutils.so",
+      "size": 19680,
+      "sha256": "ec77eaca406169f5b07bc381090d54a6a8bf4736da36d39a807c513c92b48503"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libsensor1.so",
+      "size": 76516,
+      "sha256": "b6d3e15ef3706ac1832c1cc5883947aea99b57df4c0922b04228824a39e5bb83"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libsettings.so",
+      "size": 211248,
+      "sha256": "f0c4e6b163e24f913baea635b1893fff0cb656baa7d163da60ba3d3eea0e67ae"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libtinycompress_vendor.so",
+      "size": 28320,
+      "sha256": "2859911ea3c7b895b8d78e9681f6ee950f5ddfd95df09913998358bfb79e898e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libulp2.so",
+      "size": 116644,
+      "sha256": "a8d0759b53e79da245aed95c8594e2108330aee0e60d1d107dda824e557e79bc"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libwfdcommonutils_proprietary.so",
+      "size": 44752,
+      "sha256": "a699058d4f4fa8f46cddc300c67e493b9d047e9bf8a16a81ef93638b23abd6e5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libwfdhaldsmanager.so",
+      "size": 24000,
+      "sha256": "07ead226ed1314339dd494471e8d4635d9dfa3f9e1cbff9ef17b32cf4dd43239"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libwfdhdcpcp.so",
+      "size": 28156,
+      "sha256": "c93d4d6d98d5ea6a3d40acfc5643328107a8f886ea22e0a23f944c85746b5c8e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libwfdmmservice.so",
+      "size": 66360,
+      "sha256": "85f6d37d31302bca17b6749d96b4dced3891a4511e6f23983ffe4022d463f370"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libwfdmodulehdcpsession.so",
+      "size": 32500,
+      "sha256": "d1f46f8298ee93a9ef4180ccde9059af267af2f18589a0267d2de4e79a9fc5c4"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libxml.so",
+      "size": 44752,
+      "sha256": "887b531094e813028512df76cf825f9d32e354e1ab451f12ff0d4f973b537c37"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libxtadapter.so",
+      "size": 23880,
+      "sha256": "6aeebf45202e5e3b0b0cbc62b00e19dbc67f999899ae2b404c6a5e13cf9c7876"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/nfc_nci.nqx.default.hw.so",
+      "size": 228144,
+      "sha256": "3f206c904998c78418f37d1a7c3e601a6a9687041f43ef613ad92642f9829e09"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/qcrild_librilutils.so",
+      "size": 19688,
+      "sha256": "b969af9b2ab3a1b4c93b5f564a0ba1c7440fa72aec5ddbd83813f94843615254"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/vendor.qti.esepowermanager@1.0.so",
+      "size": 78892,
+      "sha256": "31cade5866c0673d5bce5fe942d3aa5cdb7665aa727eb5804c5e12ae20e505fc"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/vendor.qti.gnss@1.0.so",
+      "size": 922224,
+      "sha256": "519ac25f0c5aa1e4c351882fd4d02e01f09b1693d7599f97bcf96e4a81461e0f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/vendor.qti.hardware.camera.device@1.0.so",
+      "size": 83204,
+      "sha256": "9e83e5abca9a6e94aefce7b1f427f1819e29a84bd26ad31ffd609c85e9cfff0e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0.so",
+      "size": 143216,
+      "sha256": "efca808080a845a71557dee8e2c63d31123628807ba5795f776604232d4e6bc4"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/vendor.qti.ims.callinfo@1.0.so",
+      "size": 100788,
+      "sha256": "e97a0280ac72122c747eab5dfd96f1abd4a52080d1ce5be12ef89b6baf05e148"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/vndk/libstagefright_foundation.so",
+      "size": 150348,
+      "sha256": "aa0926cc75878d82ead74bcfbdbcb3e681d1ffb2abb77aa9f958e2523a8edc2b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/vndk/libstagefright_omx.so",
+      "size": 306416,
+      "sha256": "23bbc5282e5cdaeb014dd2c837c1fd29a0f9aba6facfcc207024530c8c208165"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/camera.device@1.0-impl.so",
+      "size": 200840,
+      "sha256": "916deee6f3581889c6989d6255b9bc576f55ed96f0df7dfc9f43f4bcc2fb7fe1"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/camera.device@3.2-impl.so",
+      "size": 266664,
+      "sha256": "9151e5e8f42ff8c8844c1c11ce7a35638dd280f8165c9487d268fa055b8b6177"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/camera.device@3.3-impl.so",
+      "size": 68928,
+      "sha256": "2e2bba086337cce4ba2e563b9242388eb21507e7e1315b1fb7144726fdbb01b9"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/camera.device@3.4-external-impl.so",
+      "size": 332616,
+      "sha256": "ef6efa3bfdac341eedd4643cfc340a7ee90ffcaf9c4080be37ae26f378f5cd30"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/camera.device@3.4-impl.so",
+      "size": 200896,
+      "sha256": "adc6c9e6ff21d05e313487c47931f33c243d8d45bcd7e5b3cb286e8a29af5bc6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.fingerprints.extension@1.0.so",
+      "size": 868280,
+      "sha256": "7286119253f38d8cdd15a37b1deb1a1285aa9d7f3445597b8b4ce5bf62491aa8"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.qualcomm.qti.ant@1.0.so",
+      "size": 201928,
+      "sha256": "bf3f119e6f04e43670e346d9169b718722d33920521008b9a9d8d3d1a4873dec"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so",
+      "size": 269176,
+      "sha256": "f1926e0bc0df57aeee8f7e1d9cbe89804c27a4df67c6293a97f1c1897c428cfe"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so",
+      "size": 335616,
+      "sha256": "bf436ce8b675ae4e406ee3a7ca0c313102958ac462b1026ea3880e26f867bcda"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so",
+      "size": 336400,
+      "sha256": "b929ab3bc5b7e6d1570155649f5ce0731b3ec7e3df00cd78a75e24efd4e44b94"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so",
+      "size": 336800,
+      "sha256": "b98153ebb211f387be4b52a9baae8c69d7d03ea233a4b9c0ded3f5e24330e7c1"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.qualcomm.qti.uceservice@2.0.so",
+      "size": 536760,
+      "sha256": "ae9ed74f82618eff88a0a38f7fbd735908eed7a611fcaccf80ea9776decf63a9"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.quicinc.cne.api@1.0.so",
+      "size": 335672,
+      "sha256": "8ca82c725cca5a408d326b8b6b2abd7a22272738d84e84ab97aad68a13462a8c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.quicinc.cne.api@1.1.so",
+      "size": 203112,
+      "sha256": "7573bcfbcc225e7da17d50b9a0dfc5a60be046960947e043adf2f3d58a66d342"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.quicinc.cne.constants@1.0.so",
+      "size": 67992,
+      "sha256": "de1590d6d6f7571e94cbff3d5159c06abfd3c654d7bb0a277826b735de304b76"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.quicinc.cne.constants@2.0.so",
+      "size": 67992,
+      "sha256": "46317f13b27aa9b81dcfade7a97008f6649ed11c2b7130948313aa62bf54cb7c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.quicinc.cne.constants@2.1.so",
+      "size": 68008,
+      "sha256": "e4aaee9050457288ef98c247bbf350dca58604a3d043b8eb40795b5ceb7a2619"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.quicinc.cne.server@2.0.so",
+      "size": 336776,
+      "sha256": "ed8dcfaa435b761ab71c069fcadd99a2577952b901ffdf2ac6837242ddac82b3"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.quicinc.cne.server@2.1.so",
+      "size": 337152,
+      "sha256": "c3b9500ecf1d1c1f8a63c179e8dc28c3dcab4c0dda98ef5a67b6b299d5631a47"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.quicinc.cne.server@2.2.so",
+      "size": 337648,
+      "sha256": "6712255f4179611019d05533225873e57b38c4b37b062acb1995c7d07459926d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/com.quicinc.cne.server@2.3.so",
+      "size": 337720,
+      "sha256": "0ee085c897ae83a184f5dbebf9411874f2dbd2981fc6bf2ccf151176bd8ed55d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/android.hardware.audio.effect@2.0-impl.so",
+      "size": 333680,
+      "sha256": "e61a2c3be6ead37255721351d7fd9ff72882080b55e944dd79773f7a6c983402"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/android.hardware.audio.effect@4.0-impl.so",
+      "size": 333672,
+      "sha256": "ac1bbcc4e3dc5f5e34fe64eb1a4cd30b84adcacf468f1fb5f84c479b6c8332b4"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/android.hardware.audio@2.0-impl.so",
+      "size": 331752,
+      "sha256": "d96f1144b33b5eec19e38ee7efe4a508b77a553fa489e0b2369a299da3b38c86"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/android.hardware.audio@4.0-impl.so",
+      "size": 331816,
+      "sha256": "37f39ad143bea6e21152003cc2fc2442aca23615d77a5a72289617134e65f4f9"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so",
+      "size": 266704,
+      "sha256": "d830e74451c031b7886fd8729d10366075e6832144d525c077eef5debaebbb62"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/android.hardware.camera.provider@2.4-impl.so",
+      "size": 266568,
+      "sha256": "9e7c819558d623a01d9d56a65771a3bffa9cbccc9fa9a68babcb4689e9aa954b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/android.hardware.gnss@1.0-impl-qti.so",
+      "size": 201304,
+      "sha256": "6d405a988d622055c726db5f50fbed6958de4c82b1a8b683e206882dd095f936"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/android.hardware.sensors@1.0-impl.so",
+      "size": 69440,
+      "sha256": "c94aac12464b8e925e3441269840bae5a7dbb4ffcb931904424b07b45d9c7c90"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/audio.primary.default.so",
+      "size": 68864,
+      "sha256": "89ce0aec2f65e5ff3acd12f75b48ac041e290d0f331effef6fcfe54ed35024e8"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/audio.primary.msm8998.so",
+      "size": 560736,
+      "sha256": "6f516866c1540f948a37788e638c1495e3fda24024f0be36e74de9ba5d0fb701"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/audio.r_submix.default.so",
+      "size": 69696,
+      "sha256": "9649a7c55cb60a61623c60cd12f852c4da1240c1bd7679cb1107f33995ae5570"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/audio.usb.default.so",
+      "size": 68936,
+      "sha256": "81a04c9b885f006326ad65ebb500323c8cd46743ad9b7170f2837345970b5105"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so",
+      "size": 68968,
+      "sha256": "0d64852dbf09f5bff8919d7aeeac393961db95f3b29dc5365c05e44e52c4abaf"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/nfc_nci.nqx.default.so",
+      "size": 313160,
+      "sha256": "ab65a52e6aaba23422d75a0e0b7b6530136684edea7700306964bc5f379c9aa4"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so",
+      "size": 68736,
+      "sha256": "fe3849bd8ed80de7fd3241a69b751a1279d8d63acdae1f578c5692d0615f3ef9"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so",
+      "size": 267880,
+      "sha256": "42362a93e6de9668195e48fdeaadb98459dd49e7d07d7ed4fa7ec5193f3c15c5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/lib-dplmedia.so",
+      "size": 134624,
+      "sha256": "ea4952c7d6f6894c8b797a3539a5217393fb69b6ca1e93f7c873b08cd22e5d53"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/lib-imscmservice.so",
+      "size": 267016,
+      "sha256": "f68b1725c630f9f534b97dcd40ea84ac67c871e20f23be96ef42970c3719897b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/lib-imsdpl.so",
+      "size": 789928,
+      "sha256": "3914cac910d9cead549d709dac747760012eb6a2837906399b9a6d2e77b08dbc"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/lib-imsqimf.so",
+      "size": 397632,
+      "sha256": "630c9fec5cb998cef1c8b3e7047920223eade47bfafdadd969e9396f296a938e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/lib-imsrcs-v2.so",
+      "size": 401480,
+      "sha256": "b5bd88f6c68e6ec777a7a2f7d62a82fce887144134e40115633f24a871d4aed7"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/lib-imsrcsbaseimpl.so",
+      "size": 135376,
+      "sha256": "a55523edfc53141a6331b53c3855f1df0e0c65fdafbb414090974eb112e10e18"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/lib-imsxml.so",
+      "size": 896328,
+      "sha256": "5b654b82ad6f0b5ad0b010869a3da848bd39ad411475040b5858eb207e700af9"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/lib-rtpcommon.so",
+      "size": 68312,
+      "sha256": "0a297e529743fbc05e4d575f45f3b632f0efe22f8d834625f47c7290dd2e3689"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/lib-rtpcore.so",
+      "size": 593784,
+      "sha256": "2e633659d3e23d3d4137985a9d9d01f17659c8a701a50e13aa3ae151df88ba0b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/lib-rtpdaemoninterface.so",
+      "size": 68200,
+      "sha256": "f39abebcea367db6f47f2eb3720ed752d4ac91293d0c156b9f10f29a781ee1c6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/lib-rtpsl.so",
+      "size": 166224,
+      "sha256": "356f2a69a309c1d9c37fa464cd2bdf1b12e7af5e13b9741070a3e5b4b2926a42"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/lib-siputility.so",
+      "size": 135728,
+      "sha256": "fe5530caecc864fe920202f5b15c39f56c9ef39ed2a87a3c5b4e973d6197f5a5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libDRPlugin.so",
+      "size": 68432,
+      "sha256": "3b37614c0761ecc8dddfc1c61b0779bf9ff061680d390e446553fc80880407db"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libFlacSwDec.so",
+      "size": 69232,
+      "sha256": "13bf73149f47934d84ee5d1c3b91884c43179a3e8a0e7368111b96fbf5df56c5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libOmxAacDec.so",
+      "size": 133784,
+      "sha256": "4cc59cb85b3a69cc66e272a82932b9e0dbddf7178aecf1bd102a8fa9c9c8c93e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libOmxAacEnc.so",
+      "size": 68216,
+      "sha256": "8576a5b441fb839ef9182773421983c4e340c7b2e9510c4bc15adbb3de51ccaa"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libOmxAmrDec.so",
+      "size": 68224,
+      "sha256": "f4985b13dc18a24dd229cc54faa5aecd9fa89961d81b66c58e10e55f6e7f488b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libOmxAmrEnc.so",
+      "size": 68216,
+      "sha256": "964f37ed31da1bb833c314d52b2206d42cae43464670e624af151dbb7ddd9bfc"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libOmxAmrwbplusDec.so",
+      "size": 68224,
+      "sha256": "9b8d36595eeda75fcd9a5529cb9e366077fa96c8705c8d15eaa075aeb36d3a4b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libOmxEvrcEnc.so",
+      "size": 68224,
+      "sha256": "2676fcd265ad310d0f30a10da56c1ad006bc580aa0c84e7df2a6aaf6ff07ecfc"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libOmxQcelp13Enc.so",
+      "size": 68224,
+      "sha256": "7de25dc9928c5a22d2e54ce52828d3e02189e049af02b57f9d22ea3c8a4184da"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libOmxWmaDec.so",
+      "size": 68224,
+      "sha256": "ecb658425fb7dba8a0b3461b9ce8d0a5559e53cd3112abd50b6404505741c25a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libalsautils.so",
+      "size": 68256,
+      "sha256": "abd7a6c75cef012e09962ec09796344dc3d0dfe19d0e00cf6be193f8a5921166"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libaudio_log_utils.so",
+      "size": 68376,
+      "sha256": "a7c642f99b732e70408b037be2aeae9531a9610fe2738e0f05d75bca029fe081"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libaudioalsa.so",
+      "size": 68200,
+      "sha256": "514207ea84ddfa1774b0b4fb623edf0b78c5ccf2d248adb10e5f3b0725d67aa0"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libbtnv.so",
+      "size": 68192,
+      "sha256": "6c4623aa9abccbc0ad6ef082083e6bb98537da7200f9fdd03b60faf257ceb5c1"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libcld80211.so",
+      "size": 68216,
+      "sha256": "5fe4c8eab9b90ead61783e97058eae0eac2047baa88fdb55f15cd8ae0652d5b6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libcneapiclient.so",
+      "size": 200600,
+      "sha256": "bbadeacdbbee995026a7e60eecc4d732d30642cb4136b459def6b73f7891e94f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libconfigdb.so",
+      "size": 68424,
+      "sha256": "48551bc0d7ec7880a92969ca27cd7c7b742c03e85ef5df8ae15e6c5569c4f7ee"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libdataitems.so",
+      "size": 266992,
+      "sha256": "99adaec7ddde318db88c08dbf70a6d1ee8c78676891ddf3777ef2943cfcd0c0a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libdrplugin_client.so",
+      "size": 68488,
+      "sha256": "f0575c6d7e25e818eb73e3607609074bc6ad3f605afe79bce910e2a53e58afcb"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libdsi_netctrl.so",
+      "size": 595616,
+      "sha256": "7a746344d8e777c26b50a84f5f9753eb28882cdeaa3fa4fa3bafaef5b9960632"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libeffects.so",
+      "size": 40880,
+      "sha256": "adbb734331b71bbf9ae7469df35b36c53a615275dbd91cef2a9e2b7788b53ecc"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libeffectsconfig.so",
+      "size": 49136,
+      "sha256": "c190df3ea67e1675981e4dd2d65bce4bfb3df4050f2eb47fbdeb0db76e390999"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libevent_observer.so",
+      "size": 68256,
+      "sha256": "5f3403942ea4edd473832aa7005f659ae9ce3659c915c69087a527bcff2ad6c9"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libflp.so",
+      "size": 69152,
+      "sha256": "c1150ad0209c20d2df62700ad26ef06111e60f29c83c0813ef5d18fdadd03c9f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libgdtap.so",
+      "size": 69016,
+      "sha256": "e0882fc3f4c7364fd4f281cb64de635e4f463985499046074e37076e22102a24"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libgeofence.so",
+      "size": 68912,
+      "sha256": "dd026e6d88814f76361bb3696aac50508b4c867bf50adb059c31060049ef477c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libgnss.so",
+      "size": 202480,
+      "sha256": "74a062f3384b8fc105cc69548829c0e8a269e0bff11e09ff2ecab90d9ec12226"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libgnsspps.so",
+      "size": 68192,
+      "sha256": "697747a6ffc65bfe7f32a32299c2fdeceecba6d12be1017a9383d45f40fc3f1a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libgps.utils.so",
+      "size": 134464,
+      "sha256": "dc61233f6157b0ea63a002b4a6e8c1e63693735338211a4bb0efc2b511d7d9e1"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libgpustats.so",
+      "size": 201808,
+      "sha256": "3923af61c74c90bf955df2308937d5a679bb60d17641d2918376082d172befa2"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libizat_client_api.so",
+      "size": 200840,
+      "sha256": "7943cd61d0b79454fe28900bf8fca88e03da0f4064ed779f4c9320ee5496543e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libizat_core.so",
+      "size": 200872,
+      "sha256": "0f0d6acf86947c8715c53a7ee0543e3aa7eace6dfe049ee37402d51a183997ea"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libkeystore-engine-wifi-hidl.so",
+      "size": 32824,
+      "sha256": "3de8dd503ad0d8c63017075bd6a41b436b94916b20fc543926efb2cdd44137e2"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libkeystore-wifi-hidl.so",
+      "size": 23704,
+      "sha256": "559ba6c4bb89910cde1b56b1d5d27fd319bf8d3d4e90ab73ec80e3b22b014768"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/liblbs_core.so",
+      "size": 134568,
+      "sha256": "1f5918273876d0e96b0e592e07d2f8cc790c264e19d1553fccc768dda5d25f67"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libloc_api_v02.so",
+      "size": 200008,
+      "sha256": "dd77478d9713932a5660609e47b0f3ecbb71ec4f42f0878d18562e3bd7d06f06"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libloc_core.so",
+      "size": 268296,
+      "sha256": "00f042d2284a63ee359bcc975c16296f7b944946d9c2e28cb21a19d80eda8af5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/liblocation_api.so",
+      "size": 135464,
+      "sha256": "5528d33c29fd78b185a16430c23d276f22150a45cff779bb1efcbb9c87392573"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/liblocationservice.so",
+      "size": 531448,
+      "sha256": "f2436ec9056b2fbbc561f2a5f3f86e605614df2b9b79efc192b37e207c1b6a21"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/liblocationservice_glue.so",
+      "size": 68424,
+      "sha256": "8634a6d3976bca95e8c7b77242a3aa69c68f41c6e3be5fb89f783387951a9869"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/liblowi_client.so",
+      "size": 332400,
+      "sha256": "c7977c1aefb48161dbd955706d71974759a8c949095890138b35137611b4ef8a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/liblowi_wifihal.so",
+      "size": 201632,
+      "sha256": "4763ec3da54fe482f9020e499e92c889ee93df8f9d8d537fcffa9f8b011d95c1"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/liblqe.so",
+      "size": 68472,
+      "sha256": "606785f34b0589db8962b00d777bcfaffaabbdb4da1ef77fd8dc21fdac1325b2"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libmm-omxcore.so",
+      "size": 74200,
+      "sha256": "46e108d81acabba9239a0c469785e0bec3227e2ba762dcc435378009a3247944"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libmmcamera2_frame_algorithm.so",
+      "size": 68112,
+      "sha256": "3ef98591aaa7c94ffbde6eedeaf8b6dfa6c8917482be2b71e278face703fa841"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libmmcamera2_is.so",
+      "size": 109368,
+      "sha256": "970dfe45dbec8df15beabc008176c7bd13408f4aed5e55a46e40290b37481d3d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libmmcamera2_q3a_core.so",
+      "size": 914712,
+      "sha256": "f2123e70f5f52421d4e3db5b229ade0fc41ad546ddf9b0218b37f31fe827636f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libmmcamera2_stats_algorithm.so",
+      "size": 109512,
+      "sha256": "e600b1b215eb3716729e25e1c7248faa0cbb10762cc4a7727ab33018304a0819"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libmmcamera2_stats_lib.so",
+      "size": 274544,
+      "sha256": "4ce1ce19146b3a9b35b85a9190146b9b1dc611ca1bab165bb7ab5d898f4f8161"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libmmcamera_dbg.so",
+      "size": 64016,
+      "sha256": "eebee1cee8346143d8a2efba89b1554b61c77a896fd53f8d455de31cc86a00ce"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libmmcamera_faceproc.so",
+      "size": 1312840,
+      "sha256": "e5aad3eb48220d4a5ef98bf4ba7a56bba846e231857a51f51fb76e8cd8bafed6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libmmcamera_faceproc2.so",
+      "size": 1419512,
+      "sha256": "37582702d1638efb462b442f13a537fb6b778a961abd066073a88dc13f8768d8"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libmmcamera_tintless_algo.so",
+      "size": 105088,
+      "sha256": "ae86bf521eb468cbf5c0e31d32ca30c762651de9f4c36523a490b648809dd52c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libmmcamera_tintless_bg_pca_algo.so",
+      "size": 174744,
+      "sha256": "c604eef46a778c73937bb00f72d3d65edac6a6a1a2b94e7b237796357fdff53c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libnbaio_mono.so",
+      "size": 37424,
+      "sha256": "4e95ffa4f61239ebe3ff67615072265c360258d35f72a203b18765ef85f38d9c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libnetmgr.so",
+      "size": 134000,
+      "sha256": "83fdf520485634df5aa6d18744295bee5779044a136fd3e3f098016bd16174ab"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libnetmgr_common.so",
+      "size": 68400,
+      "sha256": "e5b5636e86549c9bb9589b370b3642c283503e2dcaa97a366d1a744789d4c206"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libnlnetmgr.so",
+      "size": 68200,
+      "sha256": "497c85c87e2c81bb98b1ad5bc56ea2800ec90d9463899c86bf17cf32937c3b6a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libpdmapper.so",
+      "size": 68424,
+      "sha256": "d01c2d219966f4190753e3b3dac20c4ec2663eea6fd13fbb53539df37e07ff49"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libpdnotifier.so",
+      "size": 68424,
+      "sha256": "ae6f287b0a3971e4b4c763f56be57d0942603baa3bc0b6128614e62d74bc6a88"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libqcci_legacy.so",
+      "size": 68304,
+      "sha256": "4fa1c6d5f286a0df6e3a433ee290b6db4801ff892f49ddadd909e2a91af886df"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libqcrilFramework.so",
+      "size": 465272,
+      "sha256": "639d3190b19b12c26e2751af61d235be05739c94073545c169a4099ebcd63ea4"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libqdi.so",
+      "size": 134016,
+      "sha256": "6fd789134ac8274b7a02b31b7aeeea0d203dfa64fc3c3307ccd4d739cecfd274"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libqdp.so",
+      "size": 134320,
+      "sha256": "ed571ea4f4d66043ab9263d2a6ca7e96c86dfd8b7cb0904297ed850c9ba22698"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libqmi.so",
+      "size": 265656,
+      "sha256": "5163ebd04b11e7048afde28bf79d7062ca2bb6b31a126c84819f41614d535e31"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libqmi_client_helper.so",
+      "size": 68304,
+      "sha256": "968399fd19953b3b171961f8790056853126b08d79e7c65db22e7347d772adab"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libril-qc-hal-qmi.so",
+      "size": 12954264,
+      "sha256": "a39268464a8cd6e0647188ee664db007178c27bde285d2854c81425ce134b901"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libril-qc-ltedirectdisc.so",
+      "size": 68096,
+      "sha256": "ff545b5ea968c5bf802878eff8167d10f03b35c7d0a3d85ae575ac5b95026e4a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libril-qc-radioconfig.so",
+      "size": 68192,
+      "sha256": "ae391d655ecff718ec1d22d86f1e54fabe7e92e54c828980c42405a0313403e1"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libril-qcril-hook-oem.so",
+      "size": 68000,
+      "sha256": "0ae3723bd956d67678aacee379001907931cf718b6ad0c870852763bd06a0998"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libril.so",
+      "size": 400072,
+      "sha256": "5d063e2a47d320de92804e28d22e20a8d219cea01b3c1e52f8ddf1f765832ebe"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/librilqmiservices.so",
+      "size": 68400,
+      "sha256": "793c986d7736816b4523f74e56818e725f85f13ddeea52e19614895e4d96c544"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/librilutils.so",
+      "size": 68112,
+      "sha256": "391675da16bfa7591ee4ceed764a5523677b2dcdbcba4a815b33036a57eacb2d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/librmnetctl.so",
+      "size": 70640,
+      "sha256": "ad42b64ecbd587028eb91323c11c1e3ef9f7e3a2638f1349dfa9d64e52de52d2"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libsensor1.so",
+      "size": 138304,
+      "sha256": "bb2de603ff9a2a76ad10255c92df96a38333f5abac1b98c76d3ff24942ed04b0"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libsettings.so",
+      "size": 268032,
+      "sha256": "52e804e9878844810e7381e011588500e78e648917c0ce251a2b2bb97dfca123"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libsystem_health_mon.so",
+      "size": 68104,
+      "sha256": "78f6bb1d755faa0c5541f08caaedf48f7058f3725e16cf518db5f1372aa9fdb7"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libtinycompress_vendor.so",
+      "size": 68336,
+      "sha256": "dd9ed8d1e08b515a48b33f668e0f43b0894330714873677388b3dc07cf000b35"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libulp2.so",
+      "size": 135728,
+      "sha256": "0172902edeef1232c1a456758d02b5b45c6d4bbf99aa3703877b2363a50add37"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libwebrtc_audio_preprocessing.so",
+      "size": 1253728,
+      "sha256": "985a9b9e154e61b3daf2713aa37eb45dbc78ec378206799032d68eeb7897204b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libwifi-hal-qcom.so",
+      "size": 368200,
+      "sha256": "29392c4f9c729784901bf86882acc347d1c49b319ad8801cd974f007ce7cf0c8"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libwifi-hal.so",
+      "size": 369808,
+      "sha256": "2716e3961b030fa21e8ac2d53d5990f8d22439dd6373acb726ce2fe007088dfb"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libwpa_client.so",
+      "size": 40560,
+      "sha256": "9597954d986cebabc13066891f68f2589db3cc11fcfd64d1edb7f88f08e37cf0"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libxml.so",
+      "size": 68416,
+      "sha256": "784705b38d6a651e7649763696bc557fae2068fc08366fe7d84eb5aa70616b4f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libxtadapter.so",
+      "size": 68368,
+      "sha256": "c716a1674542f6dc931c0818d29d21fa7006a55cd10d4e12f4ea5056b377bf1c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libxtwifi_ulp_adaptor.so",
+      "size": 134856,
+      "sha256": "ce89254e9891d01bfa69e481530e6ead49767c030ffbaec3661dc42a86fe7228"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/nfc_nci.nqx.default.hw.so",
+      "size": 313160,
+      "sha256": "f679e1c4829216ddfd9fb77c9d0fdd64e9e4ae906af65cbab3fdb39c0fabaa3a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/qcrild_librilutils.so",
+      "size": 68008,
+      "sha256": "5dbe16f41d2561681a5f8132c229f57d84c5596979de48f023582e74d87d8835"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/soundfx/libaudiopreprocessing.so",
+      "size": 47112,
+      "sha256": "eb1027c469f5a8ea1867956e9b19c07c77ebd180de1d1aa81fba64a58a016b04"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.nxp.hardware.nfc@1.0.so",
+      "size": 135688,
+      "sha256": "f0dfa498c2073a5535a8bbf1b55eeaf5ecb002fedc214e26283a7832486051f0"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.data.factory@1.0.so",
+      "size": 202304,
+      "sha256": "71977a9793b6ce1d4a187664d05fa83119a9d172468a5832371ddfa384807bc0"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.data.factory@1.1.so",
+      "size": 136712,
+      "sha256": "dbbefb5e5787d7f7059348f0a6967aa684c697ea914a6069afde030f3084543f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.esepowermanager@1.0.so",
+      "size": 135576,
+      "sha256": "fe8856f3630c54540ad7aca1d1b5441c0a844ce44683fbc4eb871132d3ce4631"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.gnss@1.0.so",
+      "size": 1264592,
+      "sha256": "ef6cf69a6049248b7920a56b44b6179ec9781c5b4febf4ebfa13581bcba5819f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.gnss@1.1.so",
+      "size": 1199784,
+      "sha256": "914e722fb2bd72679066b379033a9f6aa13c442a353e4dccd8e6e328dd07a105"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.gnss@1.2.so",
+      "size": 334512,
+      "sha256": "b783e6d028eca9daada9e4d6de1a0574be08bdfaa8c207d1ec4df7ff60839e21"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.gnss@2.0.so",
+      "size": 201792,
+      "sha256": "cd6b4c31e5e47b432cb77e4f43d49d8128c9b280a2690fcce62161bdaae49b0c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.gnss@2.1.so",
+      "size": 998392,
+      "sha256": "d8a50f72c91342a20ed707ae721ecb0cf720d8fc343e1554da68931291bf5615"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.camera.device@1.0.so",
+      "size": 135768,
+      "sha256": "02a5a67a8fe6433bfb07f3733fa32f3eecc2152b7ae21a1bebd7b42db296e031"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.data.connection@1.0.so",
+      "size": 268624,
+      "sha256": "7fa6df534504b60f384a8a64e56904bbc370a509beda4bffa9d92ebef4eb12f8"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so",
+      "size": 335672,
+      "sha256": "c87eb21f7b59b3fd59606cba46546bfaa9f0407ba54a4c95e16ad75854086f6d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so",
+      "size": 203240,
+      "sha256": "6bcd58e1786c65ef0cf75019b09ee22da50763e59530f4ed920c8b458a55e35d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so",
+      "size": 534920,
+      "sha256": "69e9a33c27306883b9f3499acdf48c22c12fc67f5fa77b8d0806e93f543e258d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.fm@1.0.so",
+      "size": 201880,
+      "sha256": "bef6828683f353fe570f81a6b78a0885666093550158a29ae1f2138b4a321cb3"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.am@1.0.so",
+      "size": 202288,
+      "sha256": "f3847c5600c94a757d15907f0ceb86f8b7aa2c47646b4bec96706cc1d2d1f3c4"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so",
+      "size": 135736,
+      "sha256": "dbef80e8bbc81eaee1904f7d862d6fcbcba8784463148ee09668b083fc1ada3a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so",
+      "size": 802080,
+      "sha256": "f2102eee84dd39e7e1536c2c58b66916c7928caca22872ac93e05ca2a8c3f9a5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.ims@1.1.so",
+      "size": 405168,
+      "sha256": "3034376255295abe8dbe521d9222beabd780116b78f1b8912070b9547c56e630"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.ims@1.2.so",
+      "size": 672776,
+      "sha256": "8f1670b7047006f57ba02906d88e49194f2ce8055d90b50f05a4011be533c409"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.ims@1.3.so",
+      "size": 738944,
+      "sha256": "64fdbbd0fa43be13beb1e4ef3dd1bdfefffd08a60a2baad49615b5fbc7dfb2d0"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.ims@1.4.so",
+      "size": 740048,
+      "sha256": "364ea28d945f34739d27ec55af1460b895adfb3ece3bdfdd268e84873965bd56"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so",
+      "size": 269040,
+      "sha256": "a5804b9c99928427a025706b66f5f31735392e18a259d26f3f7337b76cbf586e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so",
+      "size": 202928,
+      "sha256": "f69d708cb0d2b25b40b7a7ee0277cfe31b79838217fa0cd884aa3fa53250e8a6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so",
+      "size": 202912,
+      "sha256": "5aeacd222dc3b2c45ff7c31bf551619f0077bc8b005e9463f3d691f5856e391c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.0.so",
+      "size": 336064,
+      "sha256": "7aa461c287030b28e058af92e2591587c1cd7a9d657fe02b5478b781680cbc79"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.1.so",
+      "size": 336864,
+      "sha256": "ab68f1d54dee966307188765d891542ca45ffe7b8075a95a2efab3c3d3e49b7d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so",
+      "size": 202880,
+      "sha256": "1d7c334a10e9a8daf4fb346b50e671e0d9f5dbc65634a7e1f1213d6969808cb3"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so",
+      "size": 202552,
+      "sha256": "160cc9e8a2a1386bd3634ddb227a9572bbbc5a2ba0ae834239ff1f8612732790"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so",
+      "size": 269312,
+      "sha256": "0102df82b39921ed91a631fe799c2a75b713f9f05c92ed541b456916c9ecab0a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so",
+      "size": 335672,
+      "sha256": "5003b9f29aeb8a38541705563b75314833844e3185ccf6507f57f3d3d475c103"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so",
+      "size": 202816,
+      "sha256": "7d1bacb44869445466ebc0cf2cbf06de851e53c41ee0beff9a95a1bd28d44e61"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so",
+      "size": 804192,
+      "sha256": "3b239b97415a0eddb7f076de6349a1560a1fd66451a434f550eac6bf97e5031a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.ims.callinfo@1.0.so",
+      "size": 136472,
+      "sha256": "9b1d32e7efee33f1a1d06e5db4155c15f3adb8f9baddee5e03f16f2de829b4b5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so",
+      "size": 202856,
+      "sha256": "3e62140a31d8bf72c7f7f895d0213a9709dd9c4b7a9b71f26b526025aeffc782"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so",
+      "size": 68576,
+      "sha256": "cd03998b869f4a6e1fbc36e152dfb1b5da7e8093a6ccda30fb601ee47aaa3130"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.imsrtpservice@1.0.so",
+      "size": 333936,
+      "sha256": "756c73d9391f591fb91188e69f6c4208ee3b0f52a85f943b1f20c113a2a17f5a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/vendor.qti.latency@2.0.so",
+      "size": 136600,
+      "sha256": "395933ecf187f447a73f122c500868e16f303db3e7653b35e81a45b1ae86cdb0"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/bin/hw/vendor.cm.hardware.thermal3d@1.0-service.cm",
+      "size": 68864,
+      "sha256": "27716fd118f638b405ff6f8f68d3e60e43be966fadcfab65961bb1cb651f24cc"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/bin/hw/vendor.leia.hardware.leiadisp@1.0-service",
+      "size": 68808,
+      "sha256": "28eca77480bcee903ffa2c2ee70cb5a13accf9383c20acadd3a4183593bc9356"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/etc/hbtp/qtc800h.bin",
+      "size": 41000,
+      "sha256": "930391cc3ba9ea4ba232d63faf56fe7e4d28df6dd40fbfda816e5bd8278cc308"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/etc/hbtp/qtc800h_8998_660.bin",
+      "size": 16384,
+      "sha256": "2769dbdcfb476075abc730f21df08a0a9c4681ae9151900199b673af6d6373ef"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/etc/hbtp/qtc800s_dsp.bin",
+      "size": 20480,
+      "sha256": "d0aaad0899bbbf970ba58b098042bfbaf6e86b3de83c04ac448c4e657d9cd406"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/etc/init/vendor.cm.hardware.thermal3d@1.0-service.cm.rc",
+      "size": 419,
+      "sha256": "8c50d569d52e2b6b8507ced54bdf03dcd51da61eec0ec1ccd08573abb0bbb09b"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/etc/init/vendor.leia.hardware.leiadisp@1.0-service.rc",
+      "size": 198,
+      "sha256": "89ef44c020555100017174153a9f1fdfdd14c5071352b31f150f63f4c0f66360"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/firmware/leia_pfp_470.fw",
+      "size": 1156,
+      "sha256": "cb7274d7966b02540895f4399e8567faecbb9503d6d95332046412fcd8b0710e"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/firmware/leia_pm4_470.fw",
+      "size": 9220,
+      "sha256": "d99151ad14fce57f9af4f5d80683a837179b9ea2195a7ddae390cd3cb56fb276"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/lib/vendor.cm.hardware.thermal3d@1.0.so",
+      "size": 70596,
+      "sha256": "a4bb060274f4a9209ada85034770ef8c84ec2b7dcf756aec017a00dc31b28bf8"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/lib/vendor.leia.hardware.leiadisp@1.0.so",
+      "size": 109016,
+      "sha256": "4c7b40153d02fcd96ec749e5c9864766efa0328a3d5cdb9a24d2ee09ae427c3e"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/lib64/hw/vendor.cm.hardware.thermal3d@1.0-impl.so",
+      "size": 68656,
+      "sha256": "b7a2be26ba665e30cca76deb236af7eced53262db7b935df2ef0c2ce7685ffa0"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/lib64/hw/vendor.leia.hardware.leiadisp@1.0-impl.so",
+      "size": 68576,
+      "sha256": "40382579c493183b2583ba526e1235b04389dca4f2d6f29b4a5c066979d08dfc"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/lib64/vendor.cm.hardware.thermal3d@1.0.so",
+      "size": 135528,
+      "sha256": "da20531f69a2b4c262315fd4569d2494c7afdd5e4fd42797f78fd364af20aa08"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/lib64/vendor.leia.hardware.leiadisp@1.0.so",
+      "size": 201992,
+      "sha256": "78ba035ec0d797e587dcda58c49fa0078565a8bb286cd8411537f1d74056b27a"
+    }
+  ]
+}

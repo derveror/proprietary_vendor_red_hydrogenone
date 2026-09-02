@@ -1,0 +1,31 @@
+service update_sns_reg /vendor/bin/deviceftm update_sns_reg
+    class late_start
+    user root
+    group system
+    oneshot
+
+service set_hw_ver /vendor/bin/deviceftm hw_ver
+    class late_start
+    user root
+    oneshot
+
+service set_hw_pcbid /vendor/bin/deviceftm hw_pcbid
+    class late_start
+    user root
+    oneshot
+
+service set_vender_hw_serialno /vendor/bin/deviceftm pid
+    class late_start
+    user root
+    oneshot
+
+service set_vender_hw_ver /vendor/bin/deviceftm hw_ver
+    class late_start
+    user root
+    oneshot
+
+service ftm_info_get /vendor/bin/deviceftm info_get
+    class late_start
+    user root
+    group system
+    oneshot

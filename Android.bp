@@ -1,0 +1,6901 @@
+// Automatically generated from verified RED Hydrogen One .118 stock.
+// Android 9 blobs require Android 15 runtime validation; check_elf_files is
+// intentionally disabled per prebuilt while the compatibility closure is audited.
+
+soong_namespace {
+    imports: [
+        "device/red/hydrogenone",
+        "hardware/qcom-caf/msm8998",
+        "hardware/qcom-caf/wlan",
+    ],
+}
+
+cc_prebuilt_binary {
+    name: "adsprpcd",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/adsprpcd"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.audio@2.0-service",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/bin/hw/android.hardware.audio@2.0-service"],
+        },
+    },
+    compile_multilib: "32",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.biometrics.fingerprint@2.1-service",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service"],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.bluetooth@1.0-service-qti",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti"],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.camera.provider@2.4-service",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/bin/hw/android.hardware.camera.provider@2.4-service"],
+        },
+    },
+    compile_multilib: "32",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.media.omx@1.0-service",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/bin/hw/android.hardware.media.omx@1.0-service"],
+        },
+    },
+    compile_multilib: "32",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.sensors@1.0-service",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/hw/android.hardware.sensors@1.0-service"],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.usb@1.0-service",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/hw/android.hardware.usb@1.0-service"],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.wifi@1.0-service",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/hw/android.hardware.wifi@1.0-service"],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "audioflacapp",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/audioflacapp"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "fpc_tee_test",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/fpc_tee_test"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "ims_rtp_daemon",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/ims_rtp_daemon"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "imsdatadaemon",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/imsdatadaemon"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "imsqmidaemon",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/imsqmidaemon"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "imsrcsd",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/imsrcsd"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "irsc_util",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/irsc_util"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "mm-adec-omxaac-test",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/mm-adec-omxaac-test"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "mm-adec-omxamr-test",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/mm-adec-omxamr-test"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "mm-adec-omxamrwbplus-test",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/mm-adec-omxamrwbplus-test"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "mm-adec-omxwma-test",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/mm-adec-omxwma-test"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "mm-aenc-omxaac-test",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/mm-aenc-omxaac-test"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "mm-aenc-omxamr-test",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/mm-aenc-omxamr-test"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "mm-aenc-omxevrc-test",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/mm-aenc-omxevrc-test"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "mm-aenc-omxqcelp13-test",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/mm-aenc-omxqcelp13-test"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "mm-audio-alsa-test",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/mm-audio-alsa-test"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "mm-audio-ftm",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/bin/mm-audio-ftm"],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "mm-qcamera-app",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/bin/mm-qcamera-app"],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "mm-qomx-idec-test",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/bin/mm-qomx-idec-test"],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "mm-qomx-ienc-test",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/bin/mm-qomx-ienc-test"],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "netmgrd",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/netmgrd"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "nqnfcinfo",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/nqnfcinfo"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "pd-mapper",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/pd-mapper"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "pm-proxy",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/pm-proxy"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "pm-service",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/pm-service"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "qcrild",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/hw/qcrild"],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "qmi_simple_ril_test",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/qmi_simple_ril_test"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "qseecomd",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/qseecomd"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "rild",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/hw/rild"],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "rmt_storage",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/rmt_storage"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "sensorrdiag",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/sensorrdiag"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "sensors.qti",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/sensors.qti"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "thermal-engine",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/thermal-engine"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "vendor.cm.hardware.thermal3d@1.0-service.cm",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/hw/vendor.cm.hardware.thermal3d@1.0-service.cm"],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "vendor.leia.hardware.leiadisp@1.0-service",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/hw/vendor.leia.hardware.leiadisp@1.0-service"],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "vendor.nxp.hardware.nfc@1.1-service",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/hw/vendor.nxp.hardware.nfc@1.1-service"],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "vendor.qti.esepowermanager@1.0-service",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/hw/vendor.qti.esepowermanager@1.0-service"],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "vendor.qti.gnss@1.0-service",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/hw/vendor.qti.gnss@1.0-service"],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "wcnss_filter",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/wcnss_filter"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "wifidisplayhalservice",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/bin/wifidisplayhalservice"],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "xtwifi-client",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/xtwifi-client"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "xtwifi-inet-agent",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/xtwifi-inet-agent"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.audio.effect@2.0-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/android.hardware.audio.effect@2.0-impl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/android.hardware.audio.effect@2.0-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.audio.effect@4.0-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/android.hardware.audio.effect@4.0-impl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/android.hardware.audio.effect@4.0-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.audio@2.0-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/android.hardware.audio@2.0-impl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/android.hardware.audio@2.0-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.audio@4.0-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/android.hardware.audio@4.0-impl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/android.hardware.audio@4.0-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.bluetooth@1.0-impl-qti",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.camera.provider@2.4-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/android.hardware.camera.provider@2.4-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.gnss@1.0-impl-qti",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/android.hardware.gnss@1.0-impl-qti.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/android.hardware.gnss@1.0-impl-qti.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.sensors@1.0-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/android.hardware.sensors@1.0-impl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/android.hardware.sensors@1.0-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.soundtrigger@2.1-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/android.hardware.soundtrigger@2.1-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hidl.base@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/android.hidl.base@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "audio.primary.default",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/audio.primary.default.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/audio.primary.default.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "audio.primary.msm8998",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/audio.primary.msm8998.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/audio.primary.msm8998.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "audio.r_submix.default",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/audio.r_submix.default.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/audio.r_submix.default.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "audio.usb.default",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/audio.usb.default.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/audio.usb.default.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "camera.device@1.0-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/camera.device@1.0-impl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/camera.device@1.0-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "camera.device@3.2-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/camera.device@3.2-impl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/camera.device@3.2-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "camera.device@3.3-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/camera.device@3.3-impl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/camera.device@3.3-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "camera.device@3.4-external-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/camera.device@3.4-external-impl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/camera.device@3.4-external-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "camera.device@3.4-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/camera.device@3.4-impl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/camera.device@3.4-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "camera.msm8998",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/camera.msm8998.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.fingerprints.extension@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.fingerprints.extension@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.ant@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.qualcomm.qti.ant@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.bluetooth_audio@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.bluetooth_audio@1.0-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.imscmservice@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/com.qualcomm.qti.imscmservice@1.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.imscmservice@2.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/com.qualcomm.qti.imscmservice@2.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.imscmservice@2.1",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/com.qualcomm.qti.imscmservice@2.1.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.uceservice@2.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/com.qualcomm.qti.uceservice@2.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.qualcomm.qti.uceservice@2.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.wifidisplayhal@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.wifidisplayhal@1.0-halimpl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.quicinc.cne.api@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.quicinc.cne.api@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.quicinc.cne.api@1.1",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.quicinc.cne.api@1.1.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.quicinc.cne.constants@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.quicinc.cne.constants@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.quicinc.cne.constants@2.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.quicinc.cne.constants@2.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.quicinc.cne.constants@2.1",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.quicinc.cne.constants@2.1.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.quicinc.cne.server@2.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.quicinc.cne.server@2.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.quicinc.cne.server@2.1",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.quicinc.cne.server@2.1.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.quicinc.cne.server@2.2",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.quicinc.cne.server@2.2.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.quicinc.cne.server@2.3",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.quicinc.cne.server@2.3.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "eglSubDriverAndroid",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/egl/eglSubDriverAndroid.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/egl/eglSubDriverAndroid.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "egl",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "gatekeeper.msm8998",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/gatekeeper.msm8998.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/gatekeeper.msm8998.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "keystore.msm8998",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/keystore.msm8998.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/keystore.msm8998.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-dplmedia",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-dplmedia.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-imscmservice",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/lib-imscmservice.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-imscmservice.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-imsdpl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/lib-imsdpl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-imsdpl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-imsqimf",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/lib-imsqimf.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-imsqimf.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-imsrcs-v2",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/lib-imsrcs-v2.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-imsrcs-v2.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-imsrcsbaseimpl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/lib-imsrcsbaseimpl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-imsrcsbaseimpl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-imsxml",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/lib-imsxml.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-imsxml.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-rtpcommon",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-rtpcommon.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-rtpcore",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-rtpcore.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-rtpdaemoninterface",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-rtpdaemoninterface.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-rtpsl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-rtpsl.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-siputility",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/lib-siputility.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-siputility.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libC2D2",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libC2D2.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libC2D2.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libCB",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libCB.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libCB.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libDRPlugin",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libDRPlugin.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libDRPlugin.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libEGL_adreno",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/egl/libEGL_adreno.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/egl/libEGL_adreno.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "egl",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libFlacSwDec",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libFlacSwDec.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libGLESv1_CM_adreno",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/egl/libGLESv1_CM_adreno.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/egl/libGLESv1_CM_adreno.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "egl",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libGLESv2_adreno",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/egl/libGLESv2_adreno.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/egl/libGLESv2_adreno.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "egl",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libOmxAacDec",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libOmxAacDec.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libOmxAacEnc",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libOmxAacEnc.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libOmxAmrDec",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libOmxAmrDec.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libOmxAmrEnc",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libOmxAmrEnc.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libOmxAmrwbplusDec",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libOmxAmrwbplusDec.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libOmxEvrcEnc",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libOmxEvrcEnc.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libOmxQcelp13Enc",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libOmxQcelp13Enc.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libOmxWmaDec",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libOmxWmaDec.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libOpenCL",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libOpenCL.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libOpenCL.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libQSEEComAPI",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libQSEEComAPI.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libQSEEComAPI.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libQTapGLES",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/egl/libQTapGLES.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/egl/libQTapGLES.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "egl",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libadreno_utils",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libadreno_utils.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libadreno_utils.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libadsp_default_listener",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libadsp_default_listener.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libadsprpc",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libadsprpc.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libadsprpc.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libalsautils",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libalsautils.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libalsautils.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libarcsoft_antishaking",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libarcsoft_antishaking.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libarcsoft_beautyshot",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libarcsoft_beautyshot.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libarcsoft_dualcam_refocus",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libarcsoft_dualcam_refocus.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libarcsoft_high_dynamic_range",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libarcsoft_high_dynamic_range.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libarcsoft_low_light_shot",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libarcsoft_low_light_shot.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libaudio_log_utils",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libaudio_log_utils.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libaudio_log_utils.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libaudioalsa",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libaudioalsa.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libaudiopreprocessing",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/soundfx/libaudiopreprocessing.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "soundfx",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libavservices_minijail_vendor",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libavservices_minijail_vendor.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libbtnv",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libbtnv.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libc2d30_bltlib",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libc2d30_bltlib.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libc2d30_bltlib.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libcld80211",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libcld80211.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libcneapiclient",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libcneapiclient.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libconfigdb",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libconfigdb.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libconfigdb.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdataitems",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libdataitems.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libdataitems.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdepthmapwrapper",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libdepthmapwrapper.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdiag",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libdiag.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libdiag.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdrm",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libdrm.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdrmfs",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libdrmfs.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdrmutils",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libdrmutils.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdrplugin_client",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libdrplugin_client.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libdrplugin_client.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdsi_netctrl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libdsi_netctrl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libdsi_netctrl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdsutils",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libdsutils.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libdsutils.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libeffects",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libeffects.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libeffects.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libeffectsconfig",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libeffectsconfig.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libeffectsconfig.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libevent_observer",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libevent_observer.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libevent_observer.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libfastcvopt",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libfastcvopt.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libflp",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libflp.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libflp.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libgdtap",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libgdtap.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libgeofence",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libgeofence.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libgeofence.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libgnss",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libgnss.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libgnss.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libgnsspps",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libgnsspps.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libgnsspps.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libgps.utils",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libgps.utils.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libgps.utils.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libgpustats",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libgpustats.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libgsl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libgsl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libgsl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libgui_vendor",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libgui_vendor.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libhal_dbg",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libhal_dbg.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libhdr_tm",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libhdr_tm.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libidl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libidl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libidl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libizat_client_api",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libizat_client_api.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libizat_client_api.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libizat_core",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libizat_core.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libizat_core.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjson",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libjson.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libkeystore-engine-wifi-hidl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libkeystore-engine-wifi-hidl.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libkeystore-wifi-hidl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libkeystore-wifi-hidl.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liblbs_core",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/liblbs_core.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/liblbs_core.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libllvm-glnext",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libllvm-glnext.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libllvm-glnext.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libllvm-qcom",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libllvm-qcom.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libllvm-qcom.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libloc_api_v02",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libloc_api_v02.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libloc_api_v02.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libloc_core",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libloc_core.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libloc_core.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liblocation_api",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/liblocation_api.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/liblocation_api.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liblocationservice",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/liblocationservice.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/liblocationservice.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liblocationservice_glue",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/liblocationservice_glue.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/liblocationservice_glue.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liblowi_client",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/liblowi_client.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/liblowi_client.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liblowi_wifihal",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/liblowi_wifihal.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liblqe",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/liblqe.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmdmdetect",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmdmdetect.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libmdmdetect.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmm-omxcore",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libmm-omxcore.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_c2d_module",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_c2d_module.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_cpp_module",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_cpp_module.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_frame_algorithm",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_frame_algorithm.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libmmcamera2_frame_algorithm.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_iface_modules",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_iface_modules.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_imglib_modules",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_imglib_modules.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_is",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_is.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libmmcamera2_is.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_isp_modules",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_isp_modules.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_mct",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_mct.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_mct_shimlayer",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_mct_shimlayer.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_pp_buf_mgr",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_pp_buf_mgr.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_pproc_modules",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_pproc_modules.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_q3a_core",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_q3a_core.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libmmcamera2_q3a_core.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_sensor_modules",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_sensor_modules.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_stats_algorithm",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_stats_algorithm.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libmmcamera2_stats_algorithm.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_stats_lib",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_stats_lib.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libmmcamera2_stats_lib.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera2_stats_modules",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera2_stats_modules.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_arcsoftbokeh_lib",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_arcsoftbokeh_lib.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_arcsoftlls",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_arcsoftlls.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_atmel_at24c32e_eeprom",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_atmel_at24c32e_eeprom.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_blackwhite",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_blackwhite.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_bokeh",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_bokeh.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_csidtg",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_csidtg.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_dbg",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_dbg.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libmmcamera_dbg.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_depth_map",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_depth_map.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_dummyalgo",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_dummyalgo.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_dw9761b_2d_eeprom",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_dw9761b_2d_eeprom.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_eebinparse",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_eebinparse.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_eeprom_util",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_eeprom_util.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_eztune_module",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_eztune_module.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_facedetection_lib",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_facedetection_lib.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_faceproc",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_faceproc.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libmmcamera_faceproc.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_faceproc2",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_faceproc2.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libmmcamera_faceproc2.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_gt24p64b_main_eeprom",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_gt24p64b_main_eeprom.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_gt24p64b_sub_eeprom",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_gt24p64b_sub_eeprom.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_hdr_gb_lib",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_hdr_gb_lib.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_hdrgreyscale",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_hdrgreyscale.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_highcontrast",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_highcontrast.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_hvx_add_constant",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_hvx_add_constant.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_hvx_grid_sum",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_hvx_grid_sum.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imglib",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imglib.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imglib_faceproc_adspstub",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imglib_faceproc_adspstub.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx214",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx214.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx230",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx230.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx258",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx258.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx258_gt24c16_eeprom",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx258_gt24c16_eeprom.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx258_gt24c32_eeprom",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx258_gt24c32_eeprom.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx258_mono",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx258_mono.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx258_mono_gt24c32_eeprom",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx258_mono_gt24c32_eeprom.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx268_main",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx268_main.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx268_sub",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx268_sub.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx298",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx298.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx318",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx318.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx362",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx362.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx362_gt24c64a",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx362_gt24c64a.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx376",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx376.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx378",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx378.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx380_main",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx380_main.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_imx380_sub",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_imx380_sub.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_interface",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_interface.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_irs1645",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_irs1645.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_isp_abf48",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_isp_abf48.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_isp_aec_bg_stats47",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_isp_aec_bg_stats47.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_isp_bf_stats47",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_isp_bf_stats47.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_isp_bg_stats46",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_isp_bg_stats46.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_isp_bhist_stats44",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_isp_bhist_stats44.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_isp_black_level48",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_isp_black_level48.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_isp_sub_module",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_isp_sub_module.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_pdaf",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_pdaf.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_pdafcamif",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_pdafcamif.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_ppbase_module",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_ppbase_module.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_thread_services",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_thread_services.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_tintless_algo",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libmmcamera_tintless_algo.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmcamera_tintless_bg_pca_algo",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libmmcamera_tintless_bg_pca_algo.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmjpeg_interface",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmjpeg_interface.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmlib2d_interface",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmlib2d_interface.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmosal_proprietary",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmosal_proprietary.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmpbase",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmpbase.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libnbaio_mono",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libnbaio_mono.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libnbaio_mono.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libnetmgr",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libnetmgr.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libnetmgr.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libnetmgr_common",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libnetmgr_common.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libnlnetmgr",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libnlnetmgr.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libpdmapper",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libpdmapper.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libpdnotifier",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libpdnotifier.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libperipheral_client",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libperipheral_client.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libperipheral_client.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libq3dtools_adreno",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/egl/libq3dtools_adreno.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/egl/libq3dtools_adreno.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "egl",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libq3dtools_esx",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/egl/libq3dtools_esx.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/egl/libq3dtools_esx.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "egl",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqcci_legacy",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqcci_legacy.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqcrilFramework",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqcrilFramework.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqcrilFramework.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqdMetaData",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqdMetaData.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqdi",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqdi.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqdi.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqdp",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqdp.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqmi",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqmi.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqmi.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqmi_cci",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqmi_cci.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqmi_cci.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqmi_client_helper",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqmi_client_helper.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqmi_client_helper.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqmi_client_qmux",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqmi_client_qmux.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqmi_client_qmux.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqmi_common_so",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqmi_common_so.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqmi_common_so.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqmi_csi",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqmi_csi.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqmi_encdec",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqmi_encdec.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqmi_encdec.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqmiservices",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqmiservices.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqmiservices.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqomx_core",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqomx_core.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqseed3",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqseed3.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqservice",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqservice.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqservice.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libril",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libril.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libril.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libril-qc-hal-qmi",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libril-qc-hal-qmi.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libril-qc-ltedirectdisc",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libril-qc-ltedirectdisc.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libril-qc-radioconfig",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libril-qc-radioconfig.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libril-qcril-hook-oem",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libril-qcril-hook-oem.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libril-qcril-hook-oem.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "librilqmiservices",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/librilqmiservices.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "librilutils",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/librilutils.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/librilutils.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "librmnetctl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/librmnetctl.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "librpmb",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/librpmb.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/librpmb.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsdedrm",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsdedrm.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsdm-color",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsdm-color.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsdm-diag",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsdm-diag.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsdm-disp-vndapis",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libsdm-disp-vndapis.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsdm-disp-vndapis.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsdmextension",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsdmextension.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsdmutils",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libsdmutils.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsdmutils.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsensor1",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libsensor1.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsensor1.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsettings",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libsettings.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsettings.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libstagefright_foundation",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/vndk/libstagefright_foundation.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    relative_install_path: "vndk",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libstagefright_omx",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/vndk/libstagefright_omx.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    relative_install_path: "vndk",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsystem_health_mon",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsystem_health_mon.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libthermalclient",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libthermalclient.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libthermalclient.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libthermalioctl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libthermalioctl.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libtime_genoff",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libtime_genoff.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libtime_genoff.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libtinycompress_vendor",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libtinycompress_vendor.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libtinycompress_vendor.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libtinyxml2_1",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libtinyxml2_1.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libulp2",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libulp2.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libulp2.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwebrtc_audio_preprocessing",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libwebrtc_audio_preprocessing.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfdcommonutils_proprietary",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libwfdcommonutils_proprietary.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfdhaldsmanager",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libwfdhaldsmanager.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfdhdcpcp",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libwfdhdcpcp.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfdmmservice",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libwfdmmservice.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfdmodulehdcpsession",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libwfdmodulehdcpsession.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwifi-hal",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libwifi-hal.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwifi-hal-qcom",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libwifi-hal-qcom.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwpa_client",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libwpa_client.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libxml",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libxml.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libxml.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libxtadapter",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libxtadapter.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libxtadapter.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libxtwifi_ulp_adaptor",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libxtwifi_ulp_adaptor.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "nfc_nci.nqx.default",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/nfc_nci.nqx.default.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/nfc_nci.nqx.default.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "nfc_nci.nqx.default.hw",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/nfc_nci.nqx.default.hw.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/nfc_nci.nqx.default.hw.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "qcrild_librilutils",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/qcrild_librilutils.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/qcrild_librilutils.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.cm.hardware.thermal3d@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/vendor.cm.hardware.thermal3d@1.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.cm.hardware.thermal3d@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.cm.hardware.thermal3d@1.0-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/vendor.cm.hardware.thermal3d@1.0-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.leia.hardware.leiadisp@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/vendor.leia.hardware.leiadisp@1.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.leia.hardware.leiadisp@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.leia.hardware.leiadisp@1.0-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/vendor.leia.hardware.leiadisp@1.0-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.nxp.hardware.nfc@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.nxp.hardware.nfc@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.data.factory@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.data.factory@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.data.factory@1.1",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.data.factory@1.1.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.esepowermanager@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/vendor.qti.esepowermanager@1.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.esepowermanager@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.esepowermanager@1.0-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.gnss@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/vendor.qti.gnss@1.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.gnss@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.gnss@1.0-impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/vendor.qti.gnss@1.0-impl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.gnss@1.1",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.gnss@1.1.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.gnss@1.2",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.gnss@1.2.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.gnss@2.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.gnss@2.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.gnss@2.1",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.gnss@2.1.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.camera.device@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/vendor.qti.hardware.camera.device@1.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.camera.device@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.data.connection@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.data.connection@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.data.dynamicdds@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.data.qmi@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.fingerprint@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.fm@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.fm@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.am@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.am@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.atcmdfwd@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.ims@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.ims@1.1",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.ims@1.1.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.ims@1.2",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.ims@1.2.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.ims@1.3",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.ims@1.3.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.ims@1.4",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.ims@1.4.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.lpa@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.qcrilhook@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.qtiradio@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.qtiradio@2.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.qtiradio@2.1",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.1.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.uim@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.uim@1.1",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.uim_remote_client@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.uim_remote_server@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.wifi.hostapd@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.wifi.supplicant@2.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.ims.callinfo@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/vendor.qti.ims.callinfo@1.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.ims.callinfo@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.ims.rcsconfig@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.imsrtpservice@1.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.imsrtpservice@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.imsrtpservice@1.0-service-Impl",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.latency@2.0",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.latency@2.0.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vulkan.msm8998",
+    owner: "red",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/vulkan.msm8998.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}

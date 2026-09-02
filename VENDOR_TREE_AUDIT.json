@@ -1,0 +1,15 @@
+{
+  "status": "generated_from_verified_stock",
+  "all_selected_sha256_verified": true,
+  "stock_archive_verified": true,
+  "counts": {
+    "P0": 137,
+    "P1": 431,
+    "P2": 15,
+    "total": 583
+  },
+  "notes": [
+    "No RED msm8998-common repository is used.",
+    "Android 9 proprietary binaries still require LineageOS 22.2 build/runtime compatibility validation."
+  ]
+}

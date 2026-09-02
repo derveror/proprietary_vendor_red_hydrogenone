@@ -1,0 +1,9 @@
+service vendor.thermal3d-hal-1-0 /vendor/bin/hw/vendor.cm.hardware.thermal3d@1.0-service.cm
+    class hal
+    user system
+    group system
+
+# reset touch and thermal-engine when framework died and thermal-engine is in 3d mode
+on property:init.svc.zygote=restarting && property:sys.cm.thermalcfg=/vendor/etc/thermal-engine-3d.conf
+   setprop sys.cm.thermalcfg "/vendor/etc/thermal-engine.conf"
+   restart thermal-engine
