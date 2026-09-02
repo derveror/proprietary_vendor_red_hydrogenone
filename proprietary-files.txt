@@ -506,3 +506,5 @@ vendor/lib64/hw/vendor.cm.hardware.thermal3d@1.0-impl.so
 vendor/lib64/hw/vendor.leia.hardware.leiadisp@1.0-impl.so
 vendor/lib64/vendor.cm.hardware.thermal3d@1.0.so
 vendor/lib64/vendor.leia.hardware.leiadisp@1.0.so
+vendor/lib/libsdm-disp-apis.so
+vendor/lib64/libsdm-disp-apis.so

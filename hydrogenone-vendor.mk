@@ -302,6 +302,7 @@ PRODUCT_PACKAGES += \
     libsdedrm \
     libsdm-color \
     libsdm-diag \
+    libsdm-disp-apis \
     libsdm-disp-vndapis \
     libsdmextension \
     libsdmutils \

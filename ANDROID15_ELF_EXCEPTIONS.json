@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "policy": "check_elf_files is disabled only when at least one DT_NEEDED provider has not yet been proven vendor-compatible in the pinned LineageOS 22.2 product graph.",
+  "exceptions": {
+    "android.hardware.media.omx@1.0-service": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "libstagefright_xmlparser"
+      ],
+      "evidence": [
+        "proprietary/vendor/bin/hw/android.hardware.media.omx@1.0-service: DT_NEEDED -> libmedia_omx, libbinder, libutils, liblog, libbase, libavservices_minijail_vendor, libcutils, libhwbinder, libhidltransport, libstagefright_omx, libstagefright_xmlparser, android.hardware.media.omx@1.0, android.hidl.memory@1.0, libc++, libc, libm, libdl"
+      ]
+    },
+    "camera.device@1.0-impl": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "android.hardware.graphics.allocator@2.0",
+        "android.hardware.graphics.common@1.0",
+        "android.hardware.graphics.mapper@2.0"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib/camera.device@1.0-impl.so: DT_NEEDED -> libhidlbase, libhidlmemory, libhidltransport, libhwbinder, libutils, android.hardware.camera.device@1.0, vendor.qti.hardware.camera.device@1.0, android.hardware.camera.common@1.0, android.hardware.graphics.allocator@2.0, android.hardware.graphics.mapper@2.0, android.hardware.graphics.common@1.0, android.hidl.allocator@1.0, android.hidl.memory@1.0, libcutils, liblog, libhardware, libcamera_metadata, libc++, libc, libm, libdl",
+        "proprietary/vendor/lib64/camera.device@1.0-impl.so: DT_NEEDED -> libhidlbase, libhidlmemory, libhidltransport, libhwbinder, libutils, android.hardware.camera.device@1.0, vendor.qti.hardware.camera.device@1.0, android.hardware.camera.common@1.0, android.hardware.graphics.allocator@2.0, android.hardware.graphics.mapper@2.0, android.hardware.graphics.common@1.0, android.hidl.allocator@1.0, android.hidl.memory@1.0, libcutils, liblog, libhardware, libcamera_metadata, libc++, libc, libm, libdl"
+      ]
+    },
+    "camera.device@3.2-impl": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "android.hardware.graphics.mapper@2.0"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib/camera.device@3.2-impl.so: DT_NEEDED -> libhidlbase, libhidltransport, libutils, libcutils, android.hardware.camera.device@3.2, android.hardware.camera.provider@2.4, android.hardware.graphics.mapper@2.0, liblog, libhardware, libcamera_metadata, libfmq, libc++, libc, libm, libdl",
+        "proprietary/vendor/lib64/camera.device@3.2-impl.so: DT_NEEDED -> libhidlbase, libhidltransport, libutils, libcutils, android.hardware.camera.device@3.2, android.hardware.camera.provider@2.4, android.hardware.graphics.mapper@2.0, liblog, libhardware, libcamera_metadata, libfmq, libc++, libc, libm, libdl"
+      ]
+    },
+    "camera.device@3.3-impl": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "android.hardware.graphics.mapper@2.0"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib/camera.device@3.3-impl.so: DT_NEEDED -> libhidlbase, libhidltransport, libutils, libcutils, camera.device@3.2-impl, android.hardware.camera.device@3.2, android.hardware.camera.device@3.3, android.hardware.camera.provider@2.4, android.hardware.graphics.mapper@2.0, liblog, libhardware, libcamera_metadata, libfmq, libc++, libc, libm, libdl",
+        "proprietary/vendor/lib64/camera.device@3.3-impl.so: DT_NEEDED -> libhidlbase, libhidltransport, libutils, libcutils, camera.device@3.2-impl, android.hardware.camera.device@3.2, android.hardware.camera.device@3.3, android.hardware.camera.provider@2.4, android.hardware.graphics.mapper@2.0, liblog, libhardware, libcamera_metadata, libfmq, libc++, libc, libm, libdl"
+      ]
+    },
+    "camera.device@3.4-external-impl": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "android.hardware.graphics.mapper@2.0",
+        "libexif",
+        "libjpeg",
+        "libtinyxml2",
+        "libyuv"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib/camera.device@3.4-external-impl.so: DT_NEEDED -> libhidlbase, libhidltransport, libutils, libcutils, camera.device@3.2-impl, camera.device@3.3-impl, android.hardware.camera.device@3.2, android.hardware.camera.device@3.3, android.hardware.camera.device@3.4, android.hardware.camera.provider@2.4, android.hardware.graphics.mapper@2.0, liblog, libhardware, libcamera_metadata, libfmq, libsync, libyuv, libjpeg, libexif, libtinyxml2, libc++, libc, libm, libdl",
+        "proprietary/vendor/lib64/camera.device@3.4-external-impl.so: DT_NEEDED -> libhidlbase, libhidltransport, libutils, libcutils, camera.device@3.2-impl, camera.device@3.3-impl, android.hardware.camera.device@3.2, android.hardware.camera.device@3.3, android.hardware.camera.device@3.4, android.hardware.camera.provider@2.4, android.hardware.graphics.mapper@2.0, liblog, libhardware, libcamera_metadata, libfmq, libsync, libyuv, libjpeg, libexif, libtinyxml2, libc++, libc, libm, libdl"
+      ]
+    },
+    "camera.device@3.4-impl": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "android.hardware.graphics.mapper@2.0"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib/camera.device@3.4-impl.so: DT_NEEDED -> libhidlbase, libhidltransport, libutils, libcutils, camera.device@3.2-impl, camera.device@3.3-impl, android.hardware.camera.device@3.2, android.hardware.camera.device@3.3, android.hardware.camera.device@3.4, android.hardware.camera.provider@2.4, android.hardware.graphics.mapper@2.0, liblog, libhardware, libcamera_metadata, libfmq, libc++, libc, libm, libdl",
+        "proprietary/vendor/lib64/camera.device@3.4-impl.so: DT_NEEDED -> libhidlbase, libhidltransport, libutils, libcutils, camera.device@3.2-impl, camera.device@3.3-impl, android.hardware.camera.device@3.2, android.hardware.camera.device@3.3, android.hardware.camera.device@3.4, android.hardware.camera.provider@2.4, android.hardware.graphics.mapper@2.0, liblog, libhardware, libcamera_metadata, libfmq, libc++, libc, libm, libdl"
+      ]
+    },
+    "libaudiopreprocessing": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "libclang_rt.ubsan_standalone-aarch64-android",
+        "libspeexresampler"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib64/soundfx/libaudiopreprocessing.so: DT_NEEDED -> libwebrtc_audio_preprocessing, libspeexresampler, libutils, liblog, libc++, libclang_rt.ubsan_standalone-aarch64-android, libc, libm, libdl"
+      ]
+    },
+    "libeffects": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "libclang_rt.ubsan_standalone-aarch64-android"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib/libeffects.so: DT_NEEDED -> libcutils, liblog, libeffectsconfig, libc++, libc, libm, libdl",
+        "proprietary/vendor/lib64/libeffects.so: DT_NEEDED -> libclang_rt.ubsan_standalone-aarch64-android, libcutils, liblog, libeffectsconfig, libc++, libc, libm, libdl"
+      ]
+    },
+    "libeffectsconfig": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "libclang_rt.ubsan_standalone-aarch64-android",
+        "libtinyxml2"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib/libeffectsconfig.so: DT_NEEDED -> liblog, libtinyxml2, libc++, libc, libm, libdl",
+        "proprietary/vendor/lib64/libeffectsconfig.so: DT_NEEDED -> libclang_rt.ubsan_standalone-aarch64-android, liblog, libtinyxml2, libc++, libc, libm, libdl"
+      ]
+    },
+    "libgui_vendor": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "android.hardware.configstore-utils",
+        "android.hardware.configstore@1.0",
+        "android.hardware.graphics.bufferqueue@1.0",
+        "android.hardware.graphics.common@1.1",
+        "android.hidl.token@1.0-utils"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib/libgui_vendor.so: DT_NEEDED -> android.hardware.graphics.common@1.1, libsync, libbinder, libcutils, libEGL, libGLESv2, libui, libutils, libnativewindow, liblog, libhidlbase, libhidltransport, android.hidl.token@1.0-utils, android.hardware.graphics.bufferqueue@1.0, android.hardware.configstore@1.0, android.hardware.configstore-utils, libc++, libc, libm, libdl"
+      ]
+    },
+    "libkeystore-engine-wifi-hidl": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "android.system.wifi.keystore@1.0",
+        "libclang_rt.ubsan_standalone-aarch64-android"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib64/libkeystore-engine-wifi-hidl.so: DT_NEEDED -> android.system.wifi.keystore@1.0, libcrypto, liblog, libhidlbase, libhidltransport, libcutils, libutils, libc++, libclang_rt.ubsan_standalone-aarch64-android, libc, libm, libdl"
+      ]
+    },
+    "libkeystore-wifi-hidl": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "android.system.wifi.keystore@1.0",
+        "libclang_rt.ubsan_standalone-aarch64-android"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib64/libkeystore-wifi-hidl.so: DT_NEEDED -> libclang_rt.ubsan_standalone-aarch64-android, android.system.wifi.keystore@1.0, libbase, libhidlbase, libhidltransport, liblog, libutils, libc++, libc, libm, libdl"
+      ]
+    },
+    "libnbaio_mono": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "libclang_rt.ubsan_standalone-aarch64-android"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib/libnbaio_mono.so: DT_NEEDED -> libaudioutils, liblog, libutils, libc++, libc, libm, libdl",
+        "proprietary/vendor/lib64/libnbaio_mono.so: DT_NEEDED -> libclang_rt.ubsan_standalone-aarch64-android, libaudioutils, liblog, libutils, libc++, libc, libm, libdl"
+      ]
+    },
+    "libstagefright_omx": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "android.hardware.graphics.bufferqueue@1.0",
+        "libstagefright_bufferqueue_helper",
+        "libstagefright_xmlparser"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib/vndk/libstagefright_omx.so: DT_NEEDED -> libbase, libbinder, libmedia_omx, libutils, liblog, libui, libgui_vendor, libcutils, libstagefright_foundation, libstagefright_bufferqueue_helper, libstagefright_xmlparser, libhidlbase, libhidlmemory, libhidltransport, libnativewindow, libvndksupport, android.hardware.media.omx@1.0, android.hardware.graphics.bufferqueue@1.0, libc++, libc, libm, libdl"
+      ]
+    },
+    "nfc_nci.nqx.default": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "android.hardware.nfc@1.0",
+        "android.hardware.nfc@1.1"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib/hw/nfc_nci.nqx.default.so: DT_NEEDED -> libbase, libcutils, liblog, libhwbinder, libhardware, libhardware_legacy, libhidlbase, libhidltransport, libutils, android.hardware.nfc@1.0, android.hardware.nfc@1.1, android.hardware.secure_element@1.0, libc++, libc, libm, libdl",
+        "proprietary/vendor/lib64/hw/nfc_nci.nqx.default.so: DT_NEEDED -> libbase, libcutils, liblog, libhwbinder, libhardware, libhardware_legacy, libhidlbase, libhidltransport, libutils, android.hardware.nfc@1.0, android.hardware.nfc@1.1, android.hardware.secure_element@1.0, libc++, libc, libm, libdl"
+      ]
+    },
+    "nfc_nci.nqx.default.hw": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "android.hardware.nfc@1.0",
+        "android.hardware.nfc@1.1"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib/nfc_nci.nqx.default.hw.so: DT_NEEDED -> libbase, libcutils, liblog, libhwbinder, libhardware, libhardware_legacy, libhidlbase, libhidltransport, libutils, android.hardware.nfc@1.0, android.hardware.nfc@1.1, android.hardware.secure_element@1.0, libc++, libc, libm, libdl",
+        "proprietary/vendor/lib64/nfc_nci.nqx.default.hw.so: DT_NEEDED -> libbase, libcutils, liblog, libhwbinder, libhardware, libhardware_legacy, libhidlbase, libhidltransport, libutils, android.hardware.nfc@1.0, android.hardware.nfc@1.1, android.hardware.secure_element@1.0, libc++, libc, libm, libdl"
+      ]
+    },
+    "vendor.nxp.hardware.nfc@1.1-service": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "android.hardware.nfc@1.0",
+        "android.hardware.nfc@1.1"
+      ],
+      "evidence": [
+        "proprietary/vendor/bin/hw/vendor.nxp.hardware.nfc@1.1-service: DT_NEEDED -> nfc_nci.nqx.default.hw, libhidlbase, libhidltransport, libutils, liblog, libhwbinder, android.hardware.nfc@1.1, android.hardware.nfc@1.0, vendor.nxp.hardware.nfc@1.0, libc++, libc, libm, libdl"
+      ]
+    },
+    "vendor.qti.hardware.wifi.hostapd@1.0": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "android.hardware.wifi.hostapd@1.0",
+        "android.hardware.wifi.supplicant@1.0"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so: DT_NEEDED -> android.hardware.wifi.hostapd@1.0, android.hardware.wifi.supplicant@1.0, libhidlbase, libhidltransport, libhwbinder, liblog, libutils, libcutils, libc++, libc, libm, libdl"
+      ]
+    },
+    "vendor.qti.hardware.wifi.supplicant@2.0": {
+      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
+      "blocking_dependencies": [
+        "android.hardware.wifi.supplicant@1.0",
+        "android.hardware.wifi.supplicant@1.1"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so: DT_NEEDED -> android.hardware.wifi.supplicant@1.0, android.hardware.wifi.supplicant@1.1, libhidlbase, libhidltransport, libhwbinder, liblog, libutils, libcutils, libc++, libc, libm, libdl"
+      ]
+    }
+  }
+}

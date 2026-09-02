@@ -12,8 +12,8 @@
   "counts": {
     "P0": 104,
     "P1": 380,
-    "P2": 15,
-    "total": 499
+    "P2": 17,
+    "total": 501
   },
   "files": [
     {
@@ -2976,6 +2976,12 @@
     },
     {
       "tier": "P2",
+      "path": "vendor/lib/libsdm-disp-apis.so",
+      "size": 38064,
+      "sha256": "36d1ce9d762209699cba72a76f24905057d32cabb85b68b39c109c4813e60e1b"
+    },
+    {
+      "tier": "P2",
       "path": "vendor/lib/vendor.cm.hardware.thermal3d@1.0.so",
       "size": 70596,
       "sha256": "a4bb060274f4a9209ada85034770ef8c84ec2b7dcf756aec017a00dc31b28bf8"
@@ -2997,6 +3003,12 @@
       "path": "vendor/lib64/hw/vendor.leia.hardware.leiadisp@1.0-impl.so",
       "size": 68576,
       "sha256": "40382579c493183b2583ba526e1235b04389dca4f2d6f29b4a5c066979d08dfc"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/lib64/libsdm-disp-apis.so",
+      "size": 69312,
+      "sha256": "849a8b2db319ad03eaebea51acd998b1652866f2a38bfc545351034a919759d2"
     },
     {
       "tier": "P2",
