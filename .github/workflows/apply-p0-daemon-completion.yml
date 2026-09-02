@@ -63,152 +63,22 @@ jobs:
             lib64/libspcom.so \
             bin/hvdcp_opti \
             bin/energy-awareness
-
-          echo 'a157a177f899ad1783945b88fbe3cb2ddae35ea480d8595b5ddcac91ea16886d  '"$RUNNER_TEMP/r118/p0/spdaemon" | sha256sum -c -
-          echo '3f9e7b0ecd2ffd999ef58077a15fffa780754dd0f4fb0ae2d8eb49adbe924c4c  '"$RUNNER_TEMP/r118/p0/libspcom.so" | sha256sum -c -
-          echo '4d1d5a97f2da8840912ffdb8351a20b278905ebd4f471cfdee81c4052cc80a03  '"$RUNNER_TEMP/r118/p0/hvdcp_opti" | sha256sum -c -
-          echo '2b1ae7f5ef59b9a7518b3eabd4823eac5cce51330069f75bd120bcfc30767158  '"$RUNNER_TEMP/r118/p0/energy-awareness" | sha256sum -c -
-          test "$(stat -c %s "$RUNNER_TEMP/r118/p0/spdaemon")" = 68656
-          test "$(stat -c %s "$RUNNER_TEMP/r118/p0/libspcom.so")" = 68464
-          test "$(stat -c %s "$RUNNER_TEMP/r118/p0/hvdcp_opti")" = 202720
-          test "$(stat -c %s "$RUNNER_TEMP/r118/p0/energy-awareness")" = 70120
-
           install -D -m 0644 "$RUNNER_TEMP/r118/p0/spdaemon" proprietary/vendor/bin/spdaemon
           install -D -m 0644 "$RUNNER_TEMP/r118/p0/libspcom.so" proprietary/vendor/lib64/libspcom.so
           install -D -m 0644 "$RUNNER_TEMP/r118/p0/hvdcp_opti" proprietary/vendor/bin/hvdcp_opti
           install -D -m 0644 "$RUNNER_TEMP/r118/p0/energy-awareness" proprietary/vendor/bin/energy-awareness
 
-      - name: Add deterministic P0 selection metadata and ELF modules
+      - name: Apply deterministic P0 contract
         shell: bash
         run: |
           set -euo pipefail
-          python3 - <<'PY'
-          from collections import Counter
-          from pathlib import Path
-          import json
-          import re
-          import subprocess
-
-          ROOT = Path('.')
-          required = [
-              {"tier": "P0", "path": "vendor/bin/spdaemon", "size": 68656, "sha256": "a157a177f899ad1783945b88fbe3cb2ddae35ea480d8595b5ddcac91ea16886d", "module": "spdaemon", "kind": "cc_prebuilt_binary"},
-              {"tier": "P0", "path": "vendor/lib64/libspcom.so", "size": 68464, "sha256": "3f9e7b0ecd2ffd999ef58077a15fffa780754dd0f4fb0ae2d8eb49adbe924c4c", "module": "libspcom", "kind": "cc_prebuilt_library_shared"},
-              {"tier": "P0", "path": "vendor/bin/hvdcp_opti", "size": 202720, "sha256": "4d1d5a97f2da8840912ffdb8351a20b278905ebd4f471cfdee81c4052cc80a03", "module": "hvdcp_opti", "kind": "cc_prebuilt_binary"},
-              {"tier": "P0", "path": "vendor/bin/energy-awareness", "size": 70120, "sha256": "2b1ae7f5ef59b9a7518b3eabd4823eac5cce51330069f75bd120bcfc30767158", "module": "energy-awareness", "kind": "cc_prebuilt_binary"},
-          ]
-
-          manifest_path = ROOT / 'proprietary-manifest.json'
-          manifest = json.loads(manifest_path.read_text())
-          by_path = {entry['path']: entry for entry in manifest['files']}
-          for item in required:
-              identity = {key: item[key] for key in ('tier', 'path', 'size', 'sha256')}
-              current = by_path.get(item['path'])
-              if current is not None and current != identity:
-                  raise SystemExit(f"manifest identity mismatch for {item['path']}: {current}")
-              if current is None:
-                  manifest['files'].append(identity)
-          manifest['files'].sort(key=lambda entry: (entry['tier'], entry['path']))
-          counts = Counter(entry['tier'] for entry in manifest['files'])
-          manifest['counts'] = {"P0": counts.get('P0', 0), "P1": counts.get('P1', 0), "P2": counts.get('P2', 0), "total": len(manifest['files'])}
-          manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
-
-          proprietary = ROOT / 'proprietary-files.txt'
-          lines = proprietary.read_text().rstrip().splitlines()
-          selected = {raw.strip().split(';', 1)[0].split(':', 1)[0].lstrip('-') for raw in lines if raw.strip() and not raw.strip().startswith('#')}
-          lines.extend(item['path'] for item in required if item['path'] not in selected)
-          proprietary.write_text('\n'.join(lines) + '\n')
-
-          bp_path = ROOT / 'Android.bp'
-          bp = bp_path.read_text()
-          existing = set(re.findall(r'(?m)^\s*name:\s*"([^"]+)"\s*,?$', bp))
-          blocks = []
-          for item in required:
-              if item['module'] in existing:
-                  continue
-              elf = ROOT / 'proprietary' / item['path']
-              header = subprocess.check_output(['readelf', '-h', str(elf)], text=True)
-              if 'ELF64' in header:
-                  arch, multilib = 'android_arm64', '64'
-              elif 'ELF32' in header:
-                  arch, multilib = 'android_arm', '32'
-              else:
-                  raise SystemExit(f"unknown ELF class for {item['path']}")
-              blocks.append(f'''{item['kind']} {{
-              name: "{item['module']}",
-              owner: "red",
-              strip: {{
-                  none: true,
-              }},
-              target: {{
-                  {arch}: {{
-                      srcs: [
-                          "proprietary/{item['path']}",
-                      ],
-                  }},
-              }},
-              compile_multilib: "{multilib}",
-              prefer: true,
-              soc_specific: true,
-          }}''')
-          if blocks:
-              bp_path.write_text(bp.rstrip() + '\n\n' + '\n\n'.join(blocks) + '\n')
-
-          mk_path = ROOT / 'hydrogenone-vendor.mk'
-          mk = mk_path.read_text().rstrip()
-          missing_modules = [
-              item['module']
-              for item in required
-              if not re.search(rf'(?m)^\s*{re.escape(item["module"])}\s*\\?\s*$', mk)
-          ]
-          if missing_modules:
-              section = ['', '', '# RED .118 P0 daemon completion', 'PRODUCT_PACKAGES += \\']
-              for index, module in enumerate(sorted(missing_modules)):
-                  suffix = ' \\' if index < len(missing_modules) - 1 else ''
-                  section.append(f'    {module}{suffix}')
-              mk += '\n'.join(section)
-          mk_path.write_text(mk.rstrip() + '\n')
-
-          selected_bytes = sum(int(entry['size']) for entry in manifest['files'])
-          generated_path = ROOT / 'GENERATED_VENDOR_AUDIT.json'
-          generated = json.loads(generated_path.read_text())
-          generated.update({"selected_files": len(manifest['files']), "p0": counts.get('P0', 0), "p1": counts.get('P1', 0), "p2": counts.get('P2', 0), "selected_bytes": selected_bytes})
-          generated_path.write_text(json.dumps(generated, indent=2) + '\n')
-
-          lock_path = ROOT / 'SOURCE_LOCK.json'
-          lock = json.loads(lock_path.read_text())
-          lock['selected_files'] = len(manifest['files'])
-          android15 = lock.setdefault('android15_contract', {})
-          android15['p0_rootdir_daemon_payload_completed_from_red_118'] = True
-          lock_path.write_text(json.dumps(lock, indent=2) + '\n')
-
-          audit_path = ROOT / 'VENDOR_TREE_AUDIT.json'
-          audit = json.loads(audit_path.read_text())
-          audit['counts'] = manifest['counts']
-          notes = list(audit.get('notes', []))
-          note = 'RED .118 spdaemon/libspcom, hvdcp_opti, and energy-awareness are retained because the Android 15 rootdir contract and MSM8998 runtime dependency graph require them.'
-          if note not in notes:
-              notes.append(note)
-          audit['notes'] = notes
-          audit_path.write_text(json.dumps(audit, indent=2) + '\n')
-
-          docs = ROOT / 'docs/ANDROID15_P0_DAEMONS.md'
-          docs.write_text('''# RED Hydrogen One Android 15 P0 daemon completion
-
-Stock authority: RED `.118`, SHA-256 `7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e`.
-
-The Android 15 rootdir contract requires three RED/Qualcomm daemons that were omitted from the first vendor selection: `spdaemon`, `hvdcp_opti`, and `energy-awareness`. `spdaemon` also has a direct RED `.118` DT_NEEDED dependency on `libspcom.so`, so the matching 64-bit provider is retained with it.
-
-All four files are pinned by exact size and SHA-256 in `proprietary-manifest.json` and are validated by `tests/test_p0_daemon_completion.py`. They are not donor blobs.
-
-`tools/generate_elf_contract.py` derives their `shared_libs` from their real `DT_NEEDED` records; the normal checkelf policy applies and no blanket exception is introduced.
-''')
-          PY
-
-      - name: Regenerate and verify full Android 15 vendor contract
-        shell: bash
-        run: |
-          set -euo pipefail
+          python3 tools/apply_p0_daemon_completion.py
           python3 tools/generate_elf_contract.py
+
+      - name: Verify complete vendor contract
+        shell: bash
+        run: |
+          set -euo pipefail
           python3 -m unittest discover -s tests -p 'test_*.py' -v
           python3 -m json.tool proprietary-manifest.json >/dev/null
           python3 -m json.tool GENERATED_VENDOR_AUDIT.json >/dev/null
