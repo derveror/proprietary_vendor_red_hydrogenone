@@ -1,0 +1,147 @@
+name: Prune source-owned AOSP copy collisions
+
+on:
+  push:
+    branches:
+      - lineage-22.2-android15-contract
+    paths:
+      - .github/workflows/prune-source-owned-copy-collisions.yml
+
+permissions:
+  contents: write
+
+jobs:
+  prune:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Remove AOSP-identical permission XMLs from proprietary ownership
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          import re
+
+          root = Path('.')
+          remove = {
+              'vendor/etc/permissions/android.hardware.nfc.hce.xml',
+              'vendor/etc/permissions/android.hardware.nfc.xml',
+          }
+
+          # Selection list.
+          p = root / 'proprietary-files.txt'
+          lines = p.read_text(encoding='utf-8').splitlines()
+          kept = []
+          for line in lines:
+              stripped = line.strip()
+              selected = None
+              if stripped and not stripped.startswith('#'):
+                  body = stripped.split(';', 1)[0]
+                  selected = body.split(':', 1)[0].lstrip('-')
+              if selected in remove:
+                  continue
+              kept.append(line)
+          p.write_text('\n'.join(kept).rstrip() + '\n', encoding='utf-8')
+
+          # Generated PRODUCT_COPY_FILES ownership.
+          mk = root / 'hydrogenone-vendor.mk'
+          mk_lines = mk.read_text(encoding='utf-8').splitlines()
+          mk_kept = []
+          for line in mk_lines:
+              if any(f'proprietary/{path}:' in line for path in remove):
+                  continue
+              mk_kept.append(line)
+          mk.write_text('\n'.join(mk_kept).rstrip() + '\n', encoding='utf-8')
+
+          # Manifest is the authority for counts and bytes.
+          manifest_path = root / 'proprietary-manifest.json'
+          manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+          before = {entry['path']: entry for entry in manifest['files']}
+          missing = sorted(remove - set(before))
+          if missing:
+              raise SystemExit(f'paths missing from manifest before prune: {missing}')
+          files = [entry for entry in manifest['files'] if entry['path'] not in remove]
+          manifest['files'] = files
+          counts = {tier: sum(1 for entry in files if entry['tier'] == tier) for tier in ('P0', 'P1', 'P2')}
+          counts['total'] = len(files)
+          manifest['counts'] = counts
+          contract = manifest.setdefault('android15_contract', {})
+          contract['source_owned_aosp_identical_copy_paths'] = sorted(remove)
+          manifest_path.write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
+
+          selected_bytes = sum(int(entry['size']) for entry in files)
+
+          lock_path = root / 'SOURCE_LOCK.json'
+          lock = json.loads(lock_path.read_text(encoding='utf-8'))
+          lock['selected_files'] = len(files)
+          lock.setdefault('android15_contract', {})['source_owned_aosp_identical_copy_pruned'] = True
+          lock_path.write_text(json.dumps(lock, indent=2) + '\n', encoding='utf-8')
+
+          generated_path = root / 'GENERATED_VENDOR_AUDIT.json'
+          generated = json.loads(generated_path.read_text(encoding='utf-8'))
+          generated['selected_files'] = len(files)
+          generated['p0'] = counts['P0']
+          generated['p1'] = counts['P1']
+          generated['p2'] = counts['P2']
+          generated['selected_bytes'] = selected_bytes
+          generated['copy_files'] = sum(
+              1 for line in mk_kept
+              if ':$(TARGET_COPY_OUT_' in line and 'proprietary/' in line
+          )
+          generated_path.write_text(json.dumps(generated, indent=2) + '\n', encoding='utf-8')
+
+          tree_path = root / 'VENDOR_TREE_AUDIT.json'
+          tree = json.loads(tree_path.read_text(encoding='utf-8'))
+          tree['counts'] = counts
+          note = (
+              'AOSP-identical NFC feature declaration XMLs are source-owned by '
+              'device/red/hydrogenone; vendor retains RED .118 NFC and thermal hardware configs.'
+          )
+          notes = tree.setdefault('notes', [])
+          if note not in notes:
+              notes.append(note)
+          tree_path.write_text(json.dumps(tree, indent=2) + '\n', encoding='utf-8')
+
+          for path in sorted(remove):
+              payload = root / 'proprietary' / path
+              if not payload.is_file():
+                  raise SystemExit(f'payload missing before prune: {payload}')
+              payload.unlink()
+
+          print('removed:', ', '.join(sorted(remove)))
+          print('counts:', counts)
+          print('selected_bytes:', selected_bytes)
+          print('copy_files:', generated['copy_files'])
+          PY
+
+      - name: Verify vendor contract GREEN
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m json.tool proprietary-manifest.json >/dev/null
+          python3 -m json.tool SOURCE_LOCK.json >/dev/null
+          python3 -m json.tool GENERATED_VENDOR_AUDIT.json >/dev/null
+          python3 -m json.tool VENDOR_TREE_AUDIT.json >/dev/null
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
+          git diff --check
+          ! grep -Fq 'vendor/etc/permissions/android.hardware.nfc.hce.xml' proprietary-files.txt
+          ! grep -Fq 'vendor/etc/permissions/android.hardware.nfc.xml' proprietary-files.txt
+          grep -Fq 'vendor/etc/libnfc-nci.conf' proprietary-files.txt
+          grep -Fq 'vendor/etc/thermal-engine.conf' proprietary-files.txt
+
+      - name: Commit verified ownership prune
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/prune-source-owned-copy-collisions.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --check
+          git commit -m 'vendor: prune source-owned AOSP copy collisions'
+          git push origin HEAD:lineage-22.2-android15-contract
