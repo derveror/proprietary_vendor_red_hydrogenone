@@ -24,6 +24,13 @@ FORBIDDEN_MODULES = {
     "android.hardware.soundtrigger@2.1-impl",
     "android.hardware.usb@1.0-service",
     "android.hardware.wifi@1.0-service",
+    "audio.primary.msm8998",
+    "audio.r_submix.default",
+    "audio.usb.default",
+    "libgnss",
+    "libgnsspps",
+    "libwifi-hal-qcom",
+    "libwpa_client",
 }
 
 FORBIDDEN_RC = {
