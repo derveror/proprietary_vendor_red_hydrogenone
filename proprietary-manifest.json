@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 108,
-    "P1": 376,
+    "P1": 374,
     "P2": 17,
-    "total": 501
+    "total": 499
   },
   "files": [
     {
@@ -882,21 +882,9 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/etc/permissions/android.hardware.nfc.hce.xml",
-      "size": 888,
-      "sha256": "f85135c947e0c0f3a1d45e1cbe0560d3495a741337eb010c951528408859ea39"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/etc/permissions/android.hardware.nfc.hcef.xml",
       "size": 891,
       "sha256": "29ff91747071c1bf9c493c3cfb9e4b7b017b86d69d46180cf55050850daa9fb2"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/etc/permissions/android.hardware.nfc.xml",
-      "size": 921,
-      "sha256": "74bff215c9df0c05cf2ca1d81da661c4e4ddf18f6812559ab90bcb10349e8a25"
     },
     {
       "tier": "P1",
@@ -3030,6 +3018,10 @@
     ],
     "stale_init_paths_pruned": [],
     "removed_path_count": 4,
-    "policy": "Retain RED hardware payload; replace source-owned Android 9 HAL wrappers with LineageOS 22.2 implementations and remove stock init fragments whose executable owner is absent or whose destination is device-owned."
+    "policy": "Retain RED hardware payload; replace source-owned Android 9 HAL wrappers with LineageOS 22.2 implementations and remove stock init fragments whose executable owner is absent or whose destination is device-owned.",
+    "source_owned_aosp_identical_copy_paths": [
+      "vendor/etc/permissions/android.hardware.nfc.hce.xml",
+      "vendor/etc/permissions/android.hardware.nfc.xml"
+    ]
   }
 }

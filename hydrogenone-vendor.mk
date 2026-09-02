@@ -34,9 +34,7 @@ PRODUCT_COPY_FILES += \
     vendor/red/hydrogenone/proprietary/vendor/etc/libnfc-qrd_default.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-qrd_default.conf \
     vendor/red/hydrogenone/proprietary/vendor/etc/libnfc-qrd_rf1.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-qrd_rf1.conf \
     vendor/red/hydrogenone/proprietary/vendor/etc/libnfc-qrd_rf2.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-qrd_rf2.conf \
-    vendor/red/hydrogenone/proprietary/vendor/etc/permissions/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
     vendor/red/hydrogenone/proprietary/vendor/etc/permissions/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
-    vendor/red/hydrogenone/proprietary/vendor/etc/permissions/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
     vendor/red/hydrogenone/proprietary/vendor/etc/permissions/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     vendor/red/hydrogenone/proprietary/vendor/etc/thermal-engine-3d.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-3d.conf \
     vendor/red/hydrogenone/proprietary/vendor/etc/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
