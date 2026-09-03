@@ -12,6 +12,7 @@ PIPELINE = (
     "generate_elf_contract.py",
     "resolve_android15_source_collisions.py",
     "prune_qti_camera_interface_duplicate.py",
+    "prune_source_owned_init_rc_duplicates.py",
 )
 
 
