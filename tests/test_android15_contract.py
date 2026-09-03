@@ -107,6 +107,14 @@ def bp_module_names() -> set[str]:
 
 
 class Android15VendorContractTest(unittest.TestCase):
+    def test_legacy_vndk_version_is_product_configuration(self) -> None:
+        board = (ROOT / "BoardConfigVendor.mk").read_text(encoding="utf-8")
+        product = (ROOT / "hydrogenone-vendor.mk").read_text(encoding="utf-8")
+        assignment = r"(?m)^PRODUCT_EXTRA_VNDK_VERSIONS\s*\+=\s*28\s*$"
+
+        self.assertNotRegex(board, r"(?m)^PRODUCT_EXTRA_VNDK_VERSIONS\s*[:+?]?=")
+        self.assertRegex(product, assignment)
+
     def test_source_owned_modules_are_not_packaged_as_stock_prebuilts(self) -> None:
         active = package_names()
         declared = bp_module_names()
