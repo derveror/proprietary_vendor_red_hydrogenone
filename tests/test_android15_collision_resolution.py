@@ -10,11 +10,15 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_OWNED_MODULES = {
     "android.hidl.base@1.0",
     "libalsautils",
+    "vendor.qti.hardware.wifi.hostapd@1.0",
+    "vendor.qti.hardware.wifi.supplicant@2.0",
 }
 SOURCE_OWNED_PATHS = {
     "vendor/lib/android.hidl.base@1.0.so",
     "vendor/lib/libalsautils.so",
     "vendor/lib64/libalsautils.so",
+    "vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so",
+    "vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so",
 }
 LEGACY_VNDK = {
     "libstagefright_foundation-v28": {
@@ -26,25 +30,12 @@ LEGACY_VNDK = {
         "src": "proprietary/vendor/lib/vndk/libstagefright_omx.so",
     },
 }
-LEGACY_QTI_INTERFACES = {
-    "vendor.qti.hardware.camera.device@1.0-v28": {
-        "stem": "vendor.qti.hardware.camera.device@1.0",
-        "srcs": {
-            "proprietary/vendor/lib/vendor.qti.hardware.camera.device@1.0.so",
-            "proprietary/vendor/lib64/vendor.qti.hardware.camera.device@1.0.so",
-        },
-    },
-    "vendor.qti.hardware.wifi.hostapd@1.0-v28": {
-        "stem": "vendor.qti.hardware.wifi.hostapd@1.0",
-        "srcs": {
-            "proprietary/vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so",
-        },
-    },
-    "vendor.qti.hardware.wifi.supplicant@2.0-v28": {
-        "stem": "vendor.qti.hardware.wifi.supplicant@2.0",
-        "srcs": {
-            "proprietary/vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so",
-        },
+LEGACY_QTI_CAMERA = {
+    "module": "vendor.qti.hardware.camera.device@1.0-v28",
+    "stem": "vendor.qti.hardware.camera.device@1.0",
+    "srcs": {
+        "proprietary/vendor/lib/vendor.qti.hardware.camera.device@1.0.so",
+        "proprietary/vendor/lib64/vendor.qti.hardware.camera.device@1.0.so",
     },
 }
 
@@ -97,29 +88,22 @@ class Android15CollisionResolutionTest(unittest.TestCase):
         self.assertIn('"libstagefright_omx-v28"', service)
         self.assertIn('"libstagefright_foundation-v28"', legacy_omx)
 
-    def test_red118_qti_hidl_interfaces_keep_vendor_abi_under_unique_names(self) -> None:
+    def test_red118_qti_camera_interface_keeps_vendor_abi_under_unique_name(self) -> None:
         blocks = module_blocks()
-        for module, expected in LEGACY_QTI_INTERFACES.items():
-            self.assertIn(module, blocks)
-            block = blocks[module]
-            self.assertIn(f'stem: "{expected["stem"]}"', block)
-            for src in expected["srcs"]:
-                self.assertIn(src, block)
-            self.assertNotIn(expected["stem"], blocks)
+        module = LEGACY_QTI_CAMERA["module"]
+        stem = LEGACY_QTI_CAMERA["stem"]
+        self.assertIn(module, blocks)
+        self.assertNotIn(stem, blocks)
+        block = blocks[module]
+        self.assertIn(f'stem: "{stem}"', block)
+        for src in LEGACY_QTI_CAMERA["srcs"]:
+            self.assertIn(src, block)
 
-    def test_qti_hidl_consumers_bind_to_red118_namespaced_modules(self) -> None:
-        text = (ROOT / "Android.bp").read_text(encoding="utf-8")
-        for module, expected in LEGACY_QTI_INTERFACES.items():
-            self.assertNotRegex(
-                text,
-                rf'(?m)^\s*"{re.escape(expected["stem"])}",\s*$',
-                f"bare dependency on {expected['stem']} remains",
-            )
-            self.assertRegex(
-                text,
-                rf'(?m)^\s*"{re.escape(module)}",\s*$',
-                f"no proprietary consumer binds to {module}",
-            )
+    def test_qti_camera_consumers_bind_to_red118_namespaced_module(self) -> None:
+        blocks = module_blocks()
+        camera = blocks["camera.device@1.0-impl"]
+        self.assertIn(f'"{LEGACY_QTI_CAMERA["module"]}"', camera)
+        self.assertNotIn(f'"{LEGACY_QTI_CAMERA["stem"]}"', camera)
 
 
 if __name__ == "__main__":
