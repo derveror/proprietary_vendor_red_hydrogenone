@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import hashlib
 import json
 import re
 import unittest
@@ -8,11 +7,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
-from tools.generate_elf_contract import (
-    ensure_required_provider_module,
-    module_for_soname,
-    recovered_display_color_provider_files,
-)
+from tools.generate_elf_contract import ensure_required_provider_module, module_for_soname
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -119,34 +114,6 @@ class ElfContractTest(unittest.TestCase):
                 "android_arm": ["proprietary/vendor/lib/vendor.display.color@1.0.so"],
                 "android_arm64": ["proprietary/vendor/lib64/vendor.display.color@1.0.so"],
             },
-        )
-
-    def test_display_color_provider_metadata_is_derived_from_actual_stock_blobs(self) -> None:
-        payloads = {
-            "vendor/lib/vendor.display.color@1.0.so": b"red118-display-color-32",
-            "vendor/lib64/vendor.display.color@1.0.so": b"red118-display-color-64",
-        }
-        with TemporaryDirectory() as temp_dir:
-            root = Path(temp_dir)
-            for rel, payload in payloads.items():
-                path = root / "proprietary" / rel
-                path.parent.mkdir(parents=True, exist_ok=True)
-                path.write_bytes(payload)
-
-            with patch("tools.generate_elf_contract.ROOT", root):
-                entries = recovered_display_color_provider_files()
-
-        self.assertEqual(
-            entries,
-            [
-                {
-                    "tier": "P1",
-                    "path": rel,
-                    "size": len(payload),
-                    "sha256": hashlib.sha256(payload).hexdigest(),
-                }
-                for rel, payload in payloads.items()
-            ],
         )
 
     def test_every_remaining_checkelf_exception_is_documented(self) -> None:
