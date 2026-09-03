@@ -28,6 +28,19 @@ REQUIRED_RED_PROVIDER_FILES = (
     },
 )
 
+SOURCE_OWNED_PROVIDER_FILES = (
+    {
+        "tier": "P0",
+        "path": "vendor/lib64/libdrm.so",
+        "module": "libdrm",
+        "size": 134152,
+        "sha256": "c31936e37b90cb763fd53f3046c287d9739d7c847eace9320fdd4bf110c601fa",
+    },
+)
+SOURCE_OWNED_PROVIDER_MODULES = {
+    entry["module"] for entry in SOURCE_OWNED_PROVIDER_FILES
+}
+
 UNVERIFIED_EXTERNAL_DEPENDENCIES = {
     "android.hardware.configstore-utils",
     "android.hardware.configstore@1.0",
@@ -54,6 +67,7 @@ UNVERIFIED_EXTERNAL_DEPENDENCIES = {
 
 SOURCE_VERIFIED_DEPENDENCIES = {
     "libclang_rt.ubsan_standalone",
+    "libdrm",
     "libgnsspps",
     "libminijail",
 }
@@ -173,6 +187,112 @@ def ensure_required_red_provider_metadata() -> None:
     note = (
         "RED .118 libsdm-disp-apis.so (32/64) is retained because the "
         "Leia display service DT_NEEDED graph requires it."
+    )
+    if note not in notes:
+        notes.append(note)
+    tree_audit["notes"] = notes
+    write_json("VENDOR_TREE_AUDIT.json", tree_audit)
+
+
+def proprietary_entry_path(raw: str) -> str | None:
+    line = raw.strip()
+    if not line or line.startswith("#"):
+        return None
+    body = line.split(";", 1)[0]
+    return body.split(":", 1)[0].lstrip("-")
+
+
+def prune_android15_source_owned_providers() -> None:
+    manifest = load_json("proprietary-manifest.json")
+    by_path = {entry["path"]: entry for entry in manifest["files"]}
+    pruned_paths = {entry["path"] for entry in SOURCE_OWNED_PROVIDER_FILES}
+
+    for source_owned in SOURCE_OWNED_PROVIDER_FILES:
+        expected = {
+            key: source_owned[key]
+            for key in ("tier", "path", "size", "sha256")
+        }
+        current = by_path.get(source_owned["path"])
+        if current is not None and current != expected:
+            raise SystemExit(
+                f"source-owned provider identity mismatch for "
+                f"{source_owned['path']}: {current}"
+            )
+
+        path = ROOT / "proprietary" / source_owned["path"]
+        if path.is_file():
+            if path.stat().st_size != source_owned["size"]:
+                raise SystemExit(
+                    f"size mismatch for source-owned provider "
+                    f"{source_owned['path']}"
+                )
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()
+            if digest != source_owned["sha256"]:
+                raise SystemExit(
+                    f"SHA-256 mismatch for source-owned provider "
+                    f"{source_owned['path']}: {digest}"
+                )
+            path.unlink()
+
+    manifest["files"] = [
+        entry for entry in manifest["files"] if entry["path"] not in pruned_paths
+    ]
+    counts = Counter(entry["tier"] for entry in manifest["files"])
+    manifest["counts"] = {
+        "P0": counts.get("P0", 0),
+        "P1": counts.get("P1", 0),
+        "P2": counts.get("P2", 0),
+        "total": len(manifest["files"]),
+    }
+    write_json("proprietary-manifest.json", manifest)
+
+    proprietary_files = ROOT / "proprietary-files.txt"
+    lines = proprietary_files.read_text(encoding="utf-8").splitlines()
+    lines = [
+        raw for raw in lines if proprietary_entry_path(raw) not in pruned_paths
+    ]
+    proprietary_files.write_text(
+        "\n".join(lines).rstrip() + "\n",
+        encoding="utf-8",
+    )
+
+    vendor_mk = ROOT / "hydrogenone-vendor.mk"
+    mk = vendor_mk.read_text(encoding="utf-8")
+    for module in SOURCE_OWNED_PROVIDER_MODULES:
+        mk = re.sub(
+            rf"(?m)^\s*{re.escape(module)}\s*\\\s*\n",
+            "",
+            mk,
+        )
+    vendor_mk.write_text(mk, encoding="utf-8")
+
+    selected_bytes = sum(int(entry["size"]) for entry in manifest["files"])
+
+    source_lock = load_json("SOURCE_LOCK.json")
+    source_lock["selected_files"] = len(manifest["files"])
+    source_lock.setdefault("android15_contract", {})[
+        "source_owned_libdrm_pruned"
+    ] = True
+    write_json("SOURCE_LOCK.json", source_lock)
+
+    generated = load_json("GENERATED_VENDOR_AUDIT.json")
+    generated.update(
+        {
+            "selected_files": len(manifest["files"]),
+            "p0": counts.get("P0", 0),
+            "p1": counts.get("P1", 0),
+            "p2": counts.get("P2", 0),
+            "selected_bytes": selected_bytes,
+        }
+    )
+    write_json("GENERATED_VENDOR_AUDIT.json", generated)
+
+    tree_audit = load_json("VENDOR_TREE_AUDIT.json")
+    tree_audit["counts"] = manifest["counts"]
+    notes = list(tree_audit.get("notes", []))
+    note = (
+        "Android 15 source libdrm is vendor_available; the duplicate RED .118 "
+        "libdrm prebuilt is pruned to avoid cross-partition prebuilt shadowing."
     )
     if note not in notes:
         notes.append(note)
@@ -300,7 +420,12 @@ def render_list(name: str, values: list[str], indent: int = 12) -> list[str]:
     return output
 
 
-def render_block(block: dict, providers: dict[str, str], exceptions: dict, audit: dict) -> str:
+def render_block(
+    block: dict,
+    providers: dict[str, str],
+    exceptions: dict,
+    audit: dict,
+) -> str:
     arch_info: dict[str, dict] = {}
     blocking: set[str] = set()
     for arch, srcs in block["arch_srcs"].items():
@@ -375,7 +500,9 @@ def render_block(block: dict, providers: dict[str, str], exceptions: dict, audit
     out.append(f'    compile_multilib: "{block["compile_multilib"]}",')
     out.append("    prefer: true,")
     if block["relative_install_path"]:
-        out.append(f'    relative_install_path: "{block["relative_install_path"]}",')
+        out.append(
+            f'    relative_install_path: "{block["relative_install_path"]}",'
+        )
     out.append("    soc_specific: true,")
     out.append("}")
     return "\n".join(out)
@@ -409,7 +536,14 @@ def update_audit_metadata(total_modules: int, exception_count: int) -> None:
 
 def main() -> int:
     ensure_required_red_provider_metadata()
+    prune_android15_source_owned_providers()
+
     blocks = parse_blocks(BP.read_text(encoding="utf-8"))
+    blocks = [
+        block
+        for block in blocks
+        if block["name"] not in SOURCE_OWNED_PROVIDER_MODULES
+    ]
     ensure_required_provider_module(blocks)
 
     providers: dict[str, str] = {}
@@ -426,13 +560,21 @@ def main() -> int:
                     existing = providers.get(key)
                     if existing and existing != block["name"]:
                         raise SystemExit(
-                            f"ambiguous ELF provider for {key}: {existing}, {block['name']}"
+                            f"ambiguous ELF provider for {key}: "
+                            f"{existing}, {block['name']}"
                         )
                     providers[key] = block["name"]
 
     exceptions: dict[str, dict] = {}
-    audit = {"schema_version": 1, "stock_archive_sha256": STOCK_SHA256, "modules": {}}
-    rendered = [render_block(block, providers, exceptions, audit) for block in blocks]
+    audit = {
+        "schema_version": 1,
+        "stock_archive_sha256": STOCK_SHA256,
+        "modules": {},
+    }
+    rendered = [
+        render_block(block, providers, exceptions, audit)
+        for block in blocks
+    ]
 
     BP.write_text(
         "// Automatically generated from verified RED .118 proprietary ELF payload.\n"
