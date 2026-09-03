@@ -10,6 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_OWNED_MODULES = {
     "android.hidl.base@1.0",
     "libalsautils",
+    "libkeystore-engine-wifi-hidl",
+    "libkeystore-wifi-hidl",
     "vendor.qti.hardware.camera.device@1.0",
     "vendor.qti.hardware.camera.device@1.0-v28",
     "vendor.qti.hardware.wifi.hostapd@1.0",
@@ -19,10 +21,16 @@ SOURCE_OWNED_PATHS = {
     "vendor/lib/android.hidl.base@1.0.so",
     "vendor/lib/libalsautils.so",
     "vendor/lib64/libalsautils.so",
+    "vendor/lib64/libkeystore-engine-wifi-hidl.so",
+    "vendor/lib64/libkeystore-wifi-hidl.so",
     "vendor/lib/vendor.qti.hardware.camera.device@1.0.so",
     "vendor/lib64/vendor.qti.hardware.camera.device@1.0.so",
     "vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so",
     "vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so",
+}
+SOURCE_PACKAGES_REQUIRED = {
+    "libkeystore-engine-wifi-hidl",
+    "libkeystore-wifi-hidl",
 }
 LEGACY_VNDK = {
     "libstagefright_foundation-v28": {
@@ -60,11 +68,37 @@ def module_blocks() -> dict[str, str]:
     return blocks
 
 
+def product_packages() -> set[str]:
+    text = (ROOT / "hydrogenone-vendor.mk").read_text(encoding="utf-8")
+    packages: set[str] = set()
+    in_packages = False
+    for raw in text.splitlines():
+        line = raw.strip()
+        if line.startswith("PRODUCT_PACKAGES +="):
+            in_packages = True
+            continue
+        if not in_packages:
+            continue
+        if not line:
+            in_packages = False
+            continue
+        package = line.rstrip("\\").strip()
+        if package:
+            packages.add(package)
+        if not line.endswith("\\"):
+            in_packages = False
+    return packages
+
+
 class Android15CollisionResolutionTest(unittest.TestCase):
     def test_platform_source_owned_modules_are_not_selected_as_prebuilts(self) -> None:
         blocks = module_blocks()
         self.assertEqual(sorted(SOURCE_OWNED_MODULES & set(blocks)), [])
         self.assertEqual(sorted(SOURCE_OWNED_PATHS & active_paths()), [])
+
+    def test_source_owned_wifi_keystore_modules_stay_packaged(self) -> None:
+        packages = product_packages()
+        self.assertEqual(sorted(SOURCE_PACKAGES_REQUIRED - packages), [])
 
     def test_api28_stagefright_vndk_is_retained_under_unique_soong_names(self) -> None:
         blocks = module_blocks()
