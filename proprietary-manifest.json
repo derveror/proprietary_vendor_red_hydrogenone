@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 105,
-    "P1": 361,
+    "P1": 359,
     "P2": 19,
-    "total": 485
+    "total": 483
   },
   "files": [
     {
@@ -2202,12 +2202,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib64/libcld80211.so",
-      "size": 68216,
-      "sha256": "5fe4c8eab9b90ead61783e97058eae0eac2047baa88fdb55f15cd8ae0652d5b6"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib64/libcneapiclient.so",
       "size": 200600,
       "sha256": "bbadeacdbbee995026a7e60eecc4d732d30642cb4136b459def6b73f7891e94f"
@@ -2559,12 +2553,6 @@
       "path": "vendor/lib64/libwebrtc_audio_preprocessing.so",
       "size": 1253728,
       "sha256": "985a9b9e154e61b3daf2713aa37eb45dbc78ec378206799032d68eeb7897204b"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/libwifi-hal.so",
-      "size": 369808,
-      "sha256": "2716e3961b030fa21e8ac2d53d5990f8d22439dd6373acb726ce2fe007088dfb"
     },
     {
       "tier": "P1",

@@ -365,7 +365,6 @@ vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libbtnv.so
-vendor/lib64/libcld80211.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/libdataitems.so
@@ -425,7 +424,6 @@ vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libtinycompress_vendor.so
 vendor/lib64/libulp2.so
 vendor/lib64/libwebrtc_audio_preprocessing.so
-vendor/lib64/libwifi-hal.so
 vendor/lib64/libxml.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/libxtwifi_ulp_adaptor.so

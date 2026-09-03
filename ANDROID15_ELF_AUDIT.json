@@ -4456,38 +4456,6 @@
         }
       }
     },
-    "libcld80211": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": true,
-      "blocking_dependencies": [],
-      "architectures": {
-        "android_arm64": {
-          "srcs": [
-            "proprietary/vendor/lib64/libcld80211.so"
-          ],
-          "shared_libs": [
-            "libc",
-            "libc++",
-            "libcutils",
-            "libdl",
-            "liblog",
-            "libm",
-            "libnl"
-          ],
-          "needed": {
-            "proprietary/vendor/lib64/libcld80211.so": [
-              "libcutils",
-              "libnl",
-              "liblog",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
     "libcneapiclient": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -12147,44 +12115,6 @@
         }
       }
     },
-    "libwifi-hal": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": true,
-      "blocking_dependencies": [],
-      "architectures": {
-        "android_arm64": {
-          "srcs": [
-            "proprietary/vendor/lib64/libwifi-hal.so"
-          ],
-          "shared_libs": [
-            "libbase",
-            "libc",
-            "libc++",
-            "libcld80211",
-            "libcutils",
-            "libdl",
-            "liblog",
-            "libm",
-            "libnl",
-            "libutils"
-          ],
-          "needed": {
-            "proprietary/vendor/lib64/libwifi-hal.so": [
-              "libbase",
-              "libcutils",
-              "liblog",
-              "libnl",
-              "libutils",
-              "libcld80211",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
     "libxml": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -15553,8 +15483,8 @@
     }
   },
   "summary": {
-    "total_modules": 329,
-    "checkelf_enabled": 318,
+    "total_modules": 327,
+    "checkelf_enabled": 316,
     "checkelf_exceptions": 11,
     "provider_sonames": 306
   }

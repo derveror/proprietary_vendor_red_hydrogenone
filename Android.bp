@@ -3234,33 +3234,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libcld80211",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libcld80211.so",
-            ],
-            shared_libs: [
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "liblog",
-                "libm",
-                "libnl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libcneapiclient",
     owner: "red",
     strip: {
@@ -9141,36 +9114,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libwifi-hal",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libwifi-hal.so",
-            ],
-            shared_libs: [
-                "libbase",
-                "libc",
-                "libc++",
-                "libcld80211",
-                "libcutils",
-                "libdl",
-                "liblog",
-                "libm",
-                "libnl",
-                "libutils",
-            ],
-        },
-    },
-    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }
