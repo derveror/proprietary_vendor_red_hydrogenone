@@ -5,6 +5,8 @@ import re
 import unittest
 from pathlib import Path
 
+from tools.generate_elf_contract import module_for_soname
+
 ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED_RED_DEPENDENCY_PATHS = {
@@ -63,6 +65,16 @@ class ElfContractTest(unittest.TestCase):
             len(disabled),
             len(blocks),
             "every proprietary ELF has check_elf_files disabled; dependency declarations have not been implemented",
+        )
+
+    def test_legacy_ubsan_sonames_are_normalized_to_android15_module(self) -> None:
+        self.assertEqual(
+            module_for_soname("libclang_rt.ubsan_standalone-aarch64-android.so", {}),
+            "libclang_rt.ubsan_standalone",
+        )
+        self.assertEqual(
+            module_for_soname("libclang_rt.ubsan_standalone-arm-android.so", {}),
+            "libclang_rt.ubsan_standalone",
         )
 
     def test_every_remaining_checkelf_exception_is_documented(self) -> None:
