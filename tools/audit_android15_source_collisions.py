@@ -182,8 +182,8 @@ def classify_source(
     if vendor_available:
         return 'high_risk_system_plus_vendor', flags
     if other_partition:
-        return 'other_partition', flags
-    return 'system_only_or_unknown', flags
+        return 'high_risk_partition_mismatch', flags
+    return 'high_risk_system_only_or_unknown', flags
 
 
 def audit(top: Path, vendor_root: Path) -> dict:
@@ -218,7 +218,7 @@ def audit(top: Path, vendor_root: Path) -> dict:
                 'defaults': source.get('defaults', []),
             }
             same_name.append(item)
-            if classification == 'high_risk_system_plus_vendor':
+            if classification.startswith('high_risk_'):
                 high_risk.append(item)
 
     high_risk.sort(
@@ -261,7 +261,7 @@ def main(argv: list[str]) -> int:
     print(f'SOURCE MODULES SCANNED: {report["source_module_count"]}')
     print(f'SAME-NAME SOURCE MODULES: {report["same_name_count"]}')
     print(
-        'HIGH-RISK SYSTEM+VENDOR COLLISIONS: '
+        'HIGH-RISK PARTITION COLLISIONS: '
         f'{report["high_risk_count"]}'
     )
     print()
