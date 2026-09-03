@@ -20,6 +20,15 @@ DEVICE_OWNED_RC = {
     "hw/init.qcom.usb.rc",
 }
 
+# These service modules are provided as RED .118 prebuilts, but their LineageOS
+# source modules already own equivalent init_rc files under the same vendor
+# destination. Keeping the stock copies as PRODUCT_COPY_FILES creates ckati
+# duplicate-install rules even when the proprietary executable remains selected.
+SOURCE_OWNED_SERVICE_RC = {
+    "android.hardware.biometrics.fingerprint@2.1-service.rc",
+    "android.hardware.media.omx@1.0-service.rc",
+}
+
 SERVICE_RE = re.compile(r"(?m)^\s*service\s+(\S+)\s+(\S+)")
 
 
@@ -49,6 +58,18 @@ class InitContractTest(unittest.TestCase):
     def test_device_owned_init_fragments_are_not_duplicated_in_vendor(self) -> None:
         duplicates = sorted(relative for relative in DEVICE_OWNED_RC if (INIT_ROOT / relative).exists())
         self.assertEqual(duplicates, [], f"device-owned init rc duplicated by vendor: {duplicates}")
+
+    def test_source_owned_service_rc_is_not_copied_from_stock(self) -> None:
+        duplicates = sorted(
+            relative
+            for relative in SOURCE_OWNED_SERVICE_RC
+            if (INIT_ROOT / relative).exists()
+        )
+        self.assertEqual(
+            duplicates,
+            [],
+            f"Lineage source-owned init rc duplicated by stock vendor: {duplicates}",
+        )
 
     def test_no_factory_init_fragment_is_retained(self) -> None:
         factory = INIT_ROOT / "hw/init.qcom.factory.rc"
