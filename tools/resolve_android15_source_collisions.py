@@ -32,6 +32,20 @@ SOURCE_OWNED = (
         "size": 68256,
         "sha256": "abd7a6c75cef012e09962ec09796344dc3d0dfe19d0e00cf6be193f8a5921166",
     },
+    {
+        "tier": "P1",
+        "path": "vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so",
+        "module": "vendor.qti.hardware.wifi.hostapd@1.0",
+        "size": 202816,
+        "sha256": "7d1bacb44869445466ebc0cf2cbf06de851e53c41ee0beff9a95a1bd28d44e61",
+    },
+    {
+        "tier": "P1",
+        "path": "vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so",
+        "module": "vendor.qti.hardware.wifi.supplicant@2.0",
+        "size": 804192,
+        "sha256": "3b239b97415a0eddb7f076de6349a1560a1fd66451a434f550eac6bf97e5031a",
+    },
 )
 SOURCE_MODULES = {entry["module"] for entry in SOURCE_OWNED}
 
@@ -46,6 +60,16 @@ LEGACY_VNDK = {
         "stem": "libstagefright_omx",
         "src": "proprietary/vendor/lib/vndk/libstagefright_omx.so",
     },
+}
+
+LEGACY_QTI_CAMERA = {
+    "original": "vendor.qti.hardware.camera.device@1.0",
+    "module": "vendor.qti.hardware.camera.device@1.0-v28",
+    "stem": "vendor.qti.hardware.camera.device@1.0",
+    "srcs": (
+        "proprietary/vendor/lib/vendor.qti.hardware.camera.device@1.0.so",
+        "proprietary/vendor/lib64/vendor.qti.hardware.camera.device@1.0.so",
+    ),
 }
 
 
@@ -135,6 +159,25 @@ def add_or_replace_stem(block: str, stem: str) -> str:
     return block[:marker.start()] + insertion + block[marker.end():]
 
 
+def rename_module_block(
+    block: str,
+    original: str,
+    module: str,
+    stem: str,
+) -> str:
+    block = re.sub(
+        r'(?m)^(\s*)name:\s*"(?:'
+        + re.escape(original)
+        + '|'
+        + re.escape(module)
+        + r')",',
+        rf'\1name: "{module}",',
+        block,
+        count=1,
+    )
+    return add_or_replace_stem(block, stem)
+
+
 def rewrite_android_bp() -> None:
     text = BP.read_text(encoding="utf-8")
     lines = text.splitlines(keepends=True)
@@ -154,14 +197,29 @@ def rewrite_android_bp() -> None:
         start, end, block = item
         if spec["src"] not in block:
             raise SystemExit(f"unexpected RED API28 VNDK source for {original}")
-        block = re.sub(
-            r'(?m)^(\s*)name:\s*"(?:' + re.escape(original) + '|' + re.escape(spec["module"]) + r')",',
-            rf'\1name: "{spec["module"]}",',
+        block = rename_module_block(
             block,
-            count=1,
+            original,
+            spec["module"],
+            spec["stem"],
         )
-        block = add_or_replace_stem(block, spec["stem"])
         replacements.append((start, end, block))
+
+    qti = LEGACY_QTI_CAMERA
+    item = by_name.get(qti["original"]) or by_name.get(qti["module"])
+    if item is None:
+        raise SystemExit(f"missing RED QTI camera ABI module {qti['original']}")
+    start, end, block = item
+    for src in qti["srcs"]:
+        if src not in block:
+            raise SystemExit(f"unexpected RED QTI camera source: missing {src}")
+    block = rename_module_block(
+        block,
+        qti["original"],
+        qti["module"],
+        qti["stem"],
+    )
+    replacements.append((start, end, block))
 
     for start, end, replacement in sorted(replacements, reverse=True):
         lines[start:end] = [replacement + ("\n" if replacement and not replacement.endswith("\n") else "")]
@@ -173,6 +231,11 @@ def rewrite_android_bp() -> None:
             rf'\1"{spec["module"]}",\2',
             out,
         )
+    out = re.sub(
+        rf'(?m)^(\s*)"{re.escape(qti["original"])}",(\s*)$',
+        rf'\1"{qti["module"]}",\2',
+        out,
+    )
     out = re.sub(r"\n{3,}", "\n\n", out).rstrip() + "\n"
     BP.write_text(out, encoding="utf-8")
 
@@ -190,6 +253,16 @@ def update_vendor_mk() -> None:
         )
         if not re.search(rf"(?m)^\s*{re.escape(spec['module'])}\s*\\?\s*$", text):
             raise SystemExit(f"missing PRODUCT_PACKAGES owner for {spec['module']}")
+
+    qti = LEGACY_QTI_CAMERA
+    text = re.sub(
+        rf"(?m)^(\s*){re.escape(qti['original'])}(\s*\\\s*)$",
+        rf"\1{qti['module']}\2",
+        text,
+    )
+    if not re.search(rf"(?m)^\s*{re.escape(qti['module'])}\s*\\?\s*$", text):
+        raise SystemExit(f"missing PRODUCT_PACKAGES owner for {qti['module']}")
+
     path.write_text(text, encoding="utf-8")
 
 
@@ -201,6 +274,12 @@ def rewrite_value(value):
                 spec["module"],
                 value,
             )
+        qti = LEGACY_QTI_CAMERA
+        value = re.sub(
+            re.escape(qti["original"]) + r"(?!-v28)",
+            qti["module"],
+            value,
+        )
         return value
     if isinstance(value, list):
         return [rewrite_value(item) for item in value]
@@ -217,6 +296,9 @@ def update_elf_metadata() -> tuple[int, int]:
     for original, spec in LEGACY_VNDK.items():
         if original in exceptions:
             exceptions[spec["module"]] = exceptions.pop(original)
+    qti = LEGACY_QTI_CAMERA
+    if qti["original"] in exceptions:
+        exceptions[qti["module"]] = exceptions.pop(qti["original"])
     exceptions_doc["exceptions"] = rewrite_value(exceptions)
     write_json("ANDROID15_ELF_EXCEPTIONS.json", exceptions_doc)
 
@@ -227,6 +309,8 @@ def update_elf_metadata() -> tuple[int, int]:
     for original, spec in LEGACY_VNDK.items():
         if original in modules:
             modules[spec["module"]] = modules.pop(original)
+    if qti["original"] in modules:
+        modules[qti["module"]] = modules.pop(qti["original"])
     audit["modules"] = rewrite_value(modules)
     total = len(audit["modules"])
     exception_count = len(exceptions_doc["exceptions"])
@@ -264,7 +348,9 @@ def update_project_metadata(manifest: dict, modules: int, exceptions: int) -> No
     android15 = lock.setdefault("android15_contract", {})
     android15["source_owned_hidl_base_pruned"] = True
     android15["source_owned_alsautils_pruned"] = True
+    android15["source_owned_unused_qti_wifi_interfaces_pruned"] = True
     android15["legacy_vndk28_stagefright_namespaced"] = True
+    android15["legacy_red_qti_camera_interface_namespaced"] = True
     android15["checkelf_enabled_modules"] = modules - exceptions
     android15["checkelf_exception_modules"] = exceptions
     write_json("SOURCE_LOCK.json", lock)
@@ -274,6 +360,8 @@ def update_project_metadata(manifest: dict, modules: int, exceptions: int) -> No
     notes = list(tree.get("notes", []))
     for note in (
         "LineageOS 22.2 supplies android.hidl.base@1.0 from hardware/lineage/compat and libalsautils as a vendor_available source module; duplicate RED .118 prebuilts are pruned.",
+        "RED .118 QTI hostapd@1.0 and supplicant@2.0 interface libraries have no retained proprietary DT_NEEDED consumers and are pruned in favor of the LineageOS system_ext interface ownership.",
+        "RED .118 vendor.qti.hardware.camera.device@1.0 is retained because camera.device@1.0-impl directly DT_NEEDEDs it; it keeps the stock SONAME but uses a unique -v28 Soong module name to avoid system_ext shadowing.",
         "RED .118 API28 libstagefright_foundation/libstagefright_omx remain in /vendor/lib/vndk with their stock SONAMEs, but use unique -v28 Soong module names to avoid Android 15 source-module shadowing.",
     ):
         if note not in notes:
