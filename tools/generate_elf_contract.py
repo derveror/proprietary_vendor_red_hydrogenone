@@ -221,20 +221,43 @@ def parse_blocks(text: str) -> list[dict]:
 
 
 def ensure_required_provider_module(blocks: list[dict]) -> None:
-    if any(block["name"] == "libsdm-disp-apis" for block in blocks):
-        return
-    blocks.append(
-        {
-            "kind": "cc_prebuilt_library_shared",
-            "name": "libsdm-disp-apis",
-            "relative_install_path": None,
-            "compile_multilib": "both",
-            "arch_srcs": {
-                "android_arm": ["proprietary/vendor/lib/libsdm-disp-apis.so"],
-                "android_arm64": ["proprietary/vendor/lib64/libsdm-disp-apis.so"],
-            },
-        }
-    )
+    names = {block["name"] for block in blocks}
+
+    if "libsdm-disp-apis" not in names:
+        blocks.append(
+            {
+                "kind": "cc_prebuilt_library_shared",
+                "name": "libsdm-disp-apis",
+                "relative_install_path": None,
+                "compile_multilib": "both",
+                "arch_srcs": {
+                    "android_arm": ["proprietary/vendor/lib/libsdm-disp-apis.so"],
+                    "android_arm64": ["proprietary/vendor/lib64/libsdm-disp-apis.so"],
+                },
+            }
+        )
+        names.add("libsdm-disp-apis")
+
+    color_srcs = {
+        "android_arm": "proprietary/vendor/lib/vendor.display.color@1.0.so",
+        "android_arm64": "proprietary/vendor/lib64/vendor.display.color@1.0.so",
+    }
+    if (
+        "vendor.display.color@1.0" not in names
+        and all((ROOT / src).is_file() for src in color_srcs.values())
+    ):
+        blocks.append(
+            {
+                "kind": "cc_prebuilt_library_shared",
+                "name": "vendor.display.color@1.0",
+                "relative_install_path": None,
+                "compile_multilib": "both",
+                "arch_srcs": {
+                    arch: [src] for arch, src in color_srcs.items()
+                },
+            }
+        )
+
     blocks.sort(key=lambda block: block["name"])
 
 
