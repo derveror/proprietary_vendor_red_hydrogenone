@@ -5798,92 +5798,6 @@
         }
       }
     },
-    "libkeystore-engine-wifi-hidl": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": false,
-      "blocking_dependencies": [
-        "android.system.wifi.keystore@1.0"
-      ],
-      "architectures": {
-        "android_arm64": {
-          "srcs": [
-            "proprietary/vendor/lib64/libkeystore-engine-wifi-hidl.so"
-          ],
-          "shared_libs": [
-            "android.system.wifi.keystore@1.0",
-            "libc",
-            "libc++",
-            "libclang_rt.ubsan_standalone",
-            "libcrypto",
-            "libcutils",
-            "libdl",
-            "libhidlbase",
-            "libhidltransport",
-            "liblog",
-            "libm",
-            "libutils"
-          ],
-          "needed": {
-            "proprietary/vendor/lib64/libkeystore-engine-wifi-hidl.so": [
-              "android.system.wifi.keystore@1.0",
-              "libcrypto",
-              "liblog",
-              "libhidlbase",
-              "libhidltransport",
-              "libcutils",
-              "libutils",
-              "libc++",
-              "libclang_rt.ubsan_standalone",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
-    "libkeystore-wifi-hidl": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": false,
-      "blocking_dependencies": [
-        "android.system.wifi.keystore@1.0"
-      ],
-      "architectures": {
-        "android_arm64": {
-          "srcs": [
-            "proprietary/vendor/lib64/libkeystore-wifi-hidl.so"
-          ],
-          "shared_libs": [
-            "android.system.wifi.keystore@1.0",
-            "libbase",
-            "libc",
-            "libc++",
-            "libclang_rt.ubsan_standalone",
-            "libdl",
-            "libhidlbase",
-            "libhidltransport",
-            "liblog",
-            "libm",
-            "libutils"
-          ],
-          "needed": {
-            "proprietary/vendor/lib64/libkeystore-wifi-hidl.so": [
-              "libclang_rt.ubsan_standalone",
-              "android.system.wifi.keystore@1.0",
-              "libbase",
-              "libhidlbase",
-              "libhidltransport",
-              "liblog",
-              "libutils",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
     "liblbs_core": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -15639,9 +15553,9 @@
     }
   },
   "summary": {
-    "total_modules": 331,
+    "total_modules": 329,
     "checkelf_enabled": 318,
-    "checkelf_exceptions": 13,
+    "checkelf_exceptions": 11,
     "provider_sonames": 306
   }
 }

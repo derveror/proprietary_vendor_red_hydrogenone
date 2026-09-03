@@ -379,8 +379,6 @@ vendor/lib64/libgps.utils.so
 vendor/lib64/libgpustats.so
 vendor/lib64/libizat_client_api.so
 vendor/lib64/libizat_core.so
-vendor/lib64/libkeystore-engine-wifi-hidl.so
-vendor/lib64/libkeystore-wifi-hidl.so
 vendor/lib64/liblbs_core.so
 vendor/lib64/libloc_api_v02.so
 vendor/lib64/libloc_core.so

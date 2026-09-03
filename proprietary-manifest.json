@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 105,
-    "P1": 363,
+    "P1": 361,
     "P2": 19,
-    "total": 487
+    "total": 485
   },
   "files": [
     {
@@ -2283,18 +2283,6 @@
       "path": "vendor/lib64/libizat_core.so",
       "size": 200872,
       "sha256": "0f0d6acf86947c8715c53a7ee0543e3aa7eace6dfe049ee37402d51a183997ea"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/libkeystore-engine-wifi-hidl.so",
-      "size": 32824,
-      "sha256": "3de8dd503ad0d8c63017075bd6a41b436b94916b20fc543926efb2cdd44137e2"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/libkeystore-wifi-hidl.so",
-      "size": 23704,
-      "sha256": "559ba6c4bb89910cde1b56b1d5d27fd319bf8d3d4e90ab73ec80e3b22b014768"
     },
     {
       "tier": "P1",

@@ -4,9 +4,9 @@
   "stock_archive_verified": true,
   "counts": {
     "P0": 105,
-    "P1": 363,
+    "P1": 361,
     "P2": 19,
-    "total": 487
+    "total": 485
   },
   "notes": [
     "No RED msm8998-common repository is used.",
@@ -30,6 +30,7 @@
     "RED .118 QTI hostapd@1.0 and supplicant@2.0 interface libraries have no retained proprietary DT_NEEDED consumers and are pruned in favor of the LineageOS system_ext interface ownership.",
     "RED .118 vendor.qti.hardware.camera.device@1.0 is retained because camera.device@1.0-impl directly DT_NEEDEDs it; it keeps the stock SONAME but uses a unique -v28 Soong module name to avoid system_ext shadowing.",
     "LineageOS 22.2 QTI camera/device@1.0 generates the vendor interface ABI consumed by RED .118 camera.device@1.0-impl; duplicate RED .118 interface libraries are pruned so only one vendor SONAME owner remains.",
-    "Fingerprint@2.1 and media OMX proprietary executables remain selected, but their RED .118 init rc copies are pruned because the corresponding LineageOS source modules already install equivalent init_rc destinations; this prevents ckati duplicate-install rules."
+    "Fingerprint@2.1 and media OMX proprietary executables remain selected, but their RED .118 init rc copies are pruned because the corresponding LineageOS source modules already install equivalent init_rc destinations; this prevents ckati duplicate-install rules.",
+    "RED .118 libkeystore-engine-wifi-hidl/libkeystore-wifi-hidl prebuilts are pruned after the Android 15 linker rejected the legacy engine ELF symbol table. Their PRODUCT_PACKAGES entries remain so LineageOS 22.2 vendor source modules provide the Wi-Fi keystore implementation used by wpa_supplicant."
   ]
 }
