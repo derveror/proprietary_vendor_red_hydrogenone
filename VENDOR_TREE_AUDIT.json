@@ -4,9 +4,9 @@
   "stock_archive_verified": true,
   "counts": {
     "P0": 105,
-    "P1": 359,
+    "P1": 349,
     "P2": 19,
-    "total": 483
+    "total": 473
   },
   "notes": [
     "No RED msm8998-common repository is used.",
@@ -32,6 +32,7 @@
     "LineageOS 22.2 QTI camera/device@1.0 generates the vendor interface ABI consumed by RED .118 camera.device@1.0-impl; duplicate RED .118 interface libraries are pruned so only one vendor SONAME owner remains.",
     "Fingerprint@2.1 and media OMX proprietary executables remain selected, but their RED .118 init rc copies are pruned because the corresponding LineageOS source modules already install equivalent init_rc destinations; this prevents ckati duplicate-install rules.",
     "RED .118 libkeystore-engine-wifi-hidl/libkeystore-wifi-hidl prebuilts are pruned after the Android 15 linker rejected the legacy engine ELF symbol table. Their PRODUCT_PACKAGES entries remain so LineageOS 22.2 vendor source modules provide the Wi-Fi keystore implementation used by wpa_supplicant.",
-    "RED .118 libwifi-hal/libcld80211 prebuilts are pruned because they shadow LineageOS 22.2 source modules that export compile-time Wi-Fi legacy headers. The package names remain selected so android.hardware.wifi-service receives wifi_legacy_headers and libwifi-hal-qcom receives cld80211_lib.h."
+    "RED .118 libwifi-hal/libcld80211 prebuilts are pruned because they shadow LineageOS 22.2 source modules that export compile-time Wi-Fi legacy headers. The package names remain selected so android.hardware.wifi-service receives wifi_legacy_headers and libwifi-hal-qcom receives cld80211_lib.h.",
+    "RED .118 camera.device@1.0/3.x generic HIDL wrapper prebuilts are pruned. LineageOS 22.2 source wrappers own those module names so camera provider gets the exported CameraDevice/convert headers required by Android 15. The actual RED 32-bit camera.msm8998 hardware HAL and lower proprietary camera stack remain."
   ]
 }

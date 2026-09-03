@@ -65,6 +65,7 @@ PRODUCT_PACKAGES += \
     camera.device@3.4-external-impl \
     camera.device@3.4-impl \
     camera.msm8998 \
+    vendor.qti.hardware.camera.device@1.0 \
     com.fingerprints.extension@1.0 \
     com.qualcomm.qti.ant@1.0 \
     com.qualcomm.qti.bluetooth_audio@1.0 \
