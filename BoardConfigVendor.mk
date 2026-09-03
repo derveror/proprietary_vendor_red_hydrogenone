@@ -1,3 +1,4 @@
 # RED Hydrogen One proprietary vendor configuration
-# Keep the legacy vendor ABI available while migrating Android 9 blobs to Android 15.
-PRODUCT_EXTRA_VNDK_VERSIONS += 28
+# Android 9 stock shipped VNDK 28, but LineageOS 22.2 does not provide a v28
+# snapshot to package. Legacy blob compatibility is handled explicitly by the
+# Android 15 device product; do not assign PRODUCT_EXTRA_VNDK_VERSIONS here.
