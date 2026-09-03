@@ -30,6 +30,8 @@ FORBIDDEN_VENDOR_MODULES = {
     "audio.r_submix.default",
     "audio.usb.default",
     "libdrm",
+    "libeffects",
+    "libeffectsconfig",
     "libgnss",
     "libgnsspps",
     "libwifi-hal-qcom",
@@ -38,6 +40,10 @@ FORBIDDEN_VENDOR_MODULES = {
 
 SOURCE_OWNED_VENDOR_PATHS = {
     "vendor/lib64/libdrm.so",
+    "vendor/lib/libeffects.so",
+    "vendor/lib64/libeffects.so",
+    "vendor/lib/libeffectsconfig.so",
+    "vendor/lib64/libeffectsconfig.so",
 }
 
 FORBIDDEN_STOCK_RC = {
