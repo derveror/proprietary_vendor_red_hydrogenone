@@ -16,6 +16,7 @@ BASELINE_PIPELINE = (
     "prune_source_owned_wifi_keystore.py",
     "prune_source_owned_wifi_hal.py",
     "prune_source_owned_camera_wrappers.py",
+    "prune_source_owned_location_core.py",
 )
 
 POST_CAMERA_PIPELINE = (
@@ -23,6 +24,7 @@ POST_CAMERA_PIPELINE = (
     "prune_source_owned_wifi_keystore.py",
     "prune_source_owned_wifi_hal.py",
     "prune_source_owned_camera_wrappers.py",
+    "prune_source_owned_location_core.py",
 )
 
 
