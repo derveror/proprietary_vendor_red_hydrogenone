@@ -14,9 +14,23 @@ CAMERA_SOURCE_WRAPPERS = {
     "camera.device@3.4-external-impl",
     "camera.device@3.4-impl",
 }
+LOCATION_SOURCE_CORE = {
+    "libgps.utils",
+    "libloc_core",
+    "liblocation_api",
+}
+PROPRIETARY_LOCATION_CONSUMERS = {
+    "libizat_core",
+    "liblbs_core",
+    "libloc_api_v02",
+    "liblocationservice",
+    "liblocationservice_glue",
+    "vendor.qti.gnss@1.0-impl",
+}
 SOURCE_OWNED_MODULES = {
     "android.hidl.base@1.0",
     *CAMERA_SOURCE_WRAPPERS,
+    *LOCATION_SOURCE_CORE,
     "libalsautils",
     "libcld80211",
     "libkeystore-engine-wifi-hidl",
@@ -35,6 +49,9 @@ SOURCE_OWNED_PATHS = {
     "vendor/lib/camera.device@3.4-external-impl.so",
     "vendor/lib/camera.device@3.4-impl.so",
     "vendor/lib/libalsautils.so",
+    "vendor/lib/libgps.utils.so",
+    "vendor/lib/libloc_core.so",
+    "vendor/lib/liblocation_api.so",
     "vendor/lib64/camera.device@1.0-impl.so",
     "vendor/lib64/camera.device@3.2-impl.so",
     "vendor/lib64/camera.device@3.3-impl.so",
@@ -42,8 +59,11 @@ SOURCE_OWNED_PATHS = {
     "vendor/lib64/camera.device@3.4-impl.so",
     "vendor/lib64/libalsautils.so",
     "vendor/lib64/libcld80211.so",
+    "vendor/lib64/libgps.utils.so",
     "vendor/lib64/libkeystore-engine-wifi-hidl.so",
     "vendor/lib64/libkeystore-wifi-hidl.so",
+    "vendor/lib64/libloc_core.so",
+    "vendor/lib64/liblocation_api.so",
     "vendor/lib64/libwifi-hal.so",
     "vendor/lib/vendor.qti.hardware.camera.device@1.0.so",
     "vendor/lib64/vendor.qti.hardware.camera.device@1.0.so",
@@ -52,6 +72,7 @@ SOURCE_OWNED_PATHS = {
 }
 SOURCE_PACKAGES_REQUIRED = {
     *CAMERA_SOURCE_WRAPPERS,
+    *LOCATION_SOURCE_CORE,
     "libcld80211",
     "libkeystore-engine-wifi-hidl",
     "libkeystore-wifi-hidl",
@@ -125,6 +146,10 @@ class Android15CollisionResolutionTest(unittest.TestCase):
     def test_source_owned_runtime_modules_stay_packaged(self) -> None:
         packages = product_packages()
         self.assertEqual(sorted(SOURCE_PACKAGES_REQUIRED - packages), [])
+
+    def test_proprietary_location_consumers_remain_selected_while_core_is_source_owned(self) -> None:
+        blocks = module_blocks()
+        self.assertEqual(sorted(PROPRIETARY_LOCATION_CONSUMERS - set(blocks)), [])
 
     def test_api28_stagefright_vndk_is_retained_under_unique_soong_names(self) -> None:
         blocks = module_blocks()
