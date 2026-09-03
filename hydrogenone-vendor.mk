@@ -1,6 +1,11 @@
 # Automatically generated from verified RED .118 stock.
 # Android 15 contract: source-owned HAL wrappers, stale stock init, and factory/debug payload are pruned.
 
+# Keep the legacy vendor ABI available while migrating Android 9 blobs to
+# Android 15. PRODUCT_EXTRA_VNDK_VERSIONS is a product variable and cannot be
+# assigned from BoardConfigVendor.mk after product configuration is readonly.
+PRODUCT_EXTRA_VNDK_VERSIONS += 28
+
 PRODUCT_SOONG_NAMESPACES += \
     vendor/red/hydrogenone
 
