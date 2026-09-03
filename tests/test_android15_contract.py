@@ -8,9 +8,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-# These components are intentionally source-owned by device/red/hydrogenone on
-# LineageOS 22.2. Keeping the Android 9 prebuilt wrapper as an active package
-# creates duplicate module/service ownership or starts the wrong legacy HAL.
+# These components are intentionally source-owned by device/red/hydrogenone or
+# by the Android 15 platform. Keeping the Android 9 prebuilt wrapper as an
+# active package creates duplicate module/service ownership or starts the wrong
+# legacy HAL.
 FORBIDDEN_VENDOR_MODULES = {
     "android.hardware.audio.effect@2.0-impl",
     "android.hardware.audio.effect@4.0-impl",
@@ -28,10 +29,15 @@ FORBIDDEN_VENDOR_MODULES = {
     "audio.primary.msm8998",
     "audio.r_submix.default",
     "audio.usb.default",
+    "libdrm",
     "libgnss",
     "libgnsspps",
     "libwifi-hal-qcom",
     "libwpa_client",
+}
+
+SOURCE_OWNED_VENDOR_PATHS = {
+    "vendor/lib64/libdrm.so",
 }
 
 FORBIDDEN_STOCK_RC = {
@@ -121,6 +127,11 @@ class Android15VendorContractTest(unittest.TestCase):
         declared = bp_module_names()
         conflicts = sorted(FORBIDDEN_VENDOR_MODULES & (active | declared))
         self.assertEqual(conflicts, [], f"source-owned vendor modules remain: {conflicts}")
+
+    def test_android15_source_owned_elf_files_are_not_selected(self) -> None:
+        selected = proprietary_paths() | manifest_paths()
+        conflicts = sorted(SOURCE_OWNED_VENDOR_PATHS & selected)
+        self.assertEqual(conflicts, [], f"Android 15 source-owned ELF files remain: {conflicts}")
 
     def test_source_owned_stock_rc_files_are_not_selected(self) -> None:
         paths = proprietary_paths() | manifest_paths()
