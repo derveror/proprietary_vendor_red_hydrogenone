@@ -7,8 +7,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
+CAMERA_SOURCE_WRAPPERS = {
+    "camera.device@1.0-impl",
+    "camera.device@3.2-impl",
+    "camera.device@3.3-impl",
+    "camera.device@3.4-external-impl",
+    "camera.device@3.4-impl",
+}
 SOURCE_OWNED_MODULES = {
     "android.hidl.base@1.0",
+    *CAMERA_SOURCE_WRAPPERS,
     "libalsautils",
     "libcld80211",
     "libkeystore-engine-wifi-hidl",
@@ -21,7 +29,17 @@ SOURCE_OWNED_MODULES = {
 }
 SOURCE_OWNED_PATHS = {
     "vendor/lib/android.hidl.base@1.0.so",
+    "vendor/lib/camera.device@1.0-impl.so",
+    "vendor/lib/camera.device@3.2-impl.so",
+    "vendor/lib/camera.device@3.3-impl.so",
+    "vendor/lib/camera.device@3.4-external-impl.so",
+    "vendor/lib/camera.device@3.4-impl.so",
     "vendor/lib/libalsautils.so",
+    "vendor/lib64/camera.device@1.0-impl.so",
+    "vendor/lib64/camera.device@3.2-impl.so",
+    "vendor/lib64/camera.device@3.3-impl.so",
+    "vendor/lib64/camera.device@3.4-external-impl.so",
+    "vendor/lib64/camera.device@3.4-impl.so",
     "vendor/lib64/libalsautils.so",
     "vendor/lib64/libcld80211.so",
     "vendor/lib64/libkeystore-engine-wifi-hidl.so",
@@ -33,10 +51,12 @@ SOURCE_OWNED_PATHS = {
     "vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so",
 }
 SOURCE_PACKAGES_REQUIRED = {
+    *CAMERA_SOURCE_WRAPPERS,
     "libcld80211",
     "libkeystore-engine-wifi-hidl",
     "libkeystore-wifi-hidl",
     "libwifi-hal",
+    "vendor.qti.hardware.camera.device@1.0",
 }
 LEGACY_VNDK = {
     "libstagefright_foundation-v28": {
@@ -102,7 +122,7 @@ class Android15CollisionResolutionTest(unittest.TestCase):
         self.assertEqual(sorted(SOURCE_OWNED_MODULES & set(blocks)), [])
         self.assertEqual(sorted(SOURCE_OWNED_PATHS & active_paths()), [])
 
-    def test_source_owned_wifi_modules_stay_packaged(self) -> None:
+    def test_source_owned_runtime_modules_stay_packaged(self) -> None:
         packages = product_packages()
         self.assertEqual(sorted(SOURCE_PACKAGES_REQUIRED - packages), [])
 
@@ -124,11 +144,11 @@ class Android15CollisionResolutionTest(unittest.TestCase):
         self.assertIn('"libstagefright_omx-v28"', service)
         self.assertIn('"libstagefright_foundation-v28"', legacy_omx)
 
-    def test_qti_camera_consumers_bind_to_lineage_source_interface(self) -> None:
+    def test_real_red_camera_hal_remains_proprietary_and_wrapper_independent(self) -> None:
         blocks = module_blocks()
-        camera = blocks["camera.device@1.0-impl"]
-        self.assertIn('"vendor.qti.hardware.camera.device@1.0"', camera)
-        self.assertNotIn('"vendor.qti.hardware.camera.device@1.0-v28"', camera)
+        camera = blocks["camera.msm8998"]
+        for wrapper in CAMERA_SOURCE_WRAPPERS:
+            self.assertNotIn(f'"{wrapper}"', camera)
 
 
 if __name__ == "__main__":
