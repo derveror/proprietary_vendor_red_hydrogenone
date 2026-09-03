@@ -4,8 +4,10 @@ import json
 import re
 import unittest
 from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
-from tools.generate_elf_contract import module_for_soname
+from tools.generate_elf_contract import ensure_required_provider_module, module_for_soname
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -75,6 +77,43 @@ class ElfContractTest(unittest.TestCase):
         self.assertEqual(
             module_for_soname("libclang_rt.ubsan_standalone-arm-android.so", {}),
             "libclang_rt.ubsan_standalone",
+        )
+
+    def test_display_color_provider_module_is_added_when_stock_blobs_exist(self) -> None:
+        blocks = [
+            {
+                "kind": "cc_prebuilt_library_shared",
+                "name": "libsdm-disp-apis",
+                "relative_install_path": None,
+                "compile_multilib": "both",
+                "arch_srcs": {
+                    "android_arm": ["proprietary/vendor/lib/libsdm-disp-apis.so"],
+                    "android_arm64": ["proprietary/vendor/lib64/libsdm-disp-apis.so"],
+                },
+            }
+        ]
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            for rel in (
+                "proprietary/vendor/lib/vendor.display.color@1.0.so",
+                "proprietary/vendor/lib64/vendor.display.color@1.0.so",
+            ):
+                path = root / rel
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b"stock-red-118-test-placeholder")
+
+            with patch("tools.generate_elf_contract.ROOT", root):
+                ensure_required_provider_module(blocks)
+
+        color = next(block for block in blocks if block["name"] == "vendor.display.color@1.0")
+        self.assertEqual(color["kind"], "cc_prebuilt_library_shared")
+        self.assertEqual(color["compile_multilib"], "both")
+        self.assertEqual(
+            color["arch_srcs"],
+            {
+                "android_arm": ["proprietary/vendor/lib/vendor.display.color@1.0.so"],
+                "android_arm64": ["proprietary/vendor/lib64/vendor.display.color@1.0.so"],
+            },
         )
 
     def test_every_remaining_checkelf_exception_is_documented(self) -> None:
