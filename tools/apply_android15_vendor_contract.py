@@ -14,11 +14,13 @@ BASELINE_PIPELINE = (
     "prune_qti_camera_interface_duplicate.py",
     "prune_source_owned_init_rc_duplicates.py",
     "prune_source_owned_wifi_keystore.py",
+    "prune_source_owned_wifi_hal.py",
 )
 
 POST_CAMERA_PIPELINE = (
     "prune_source_owned_init_rc_duplicates.py",
     "prune_source_owned_wifi_keystore.py",
+    "prune_source_owned_wifi_hal.py",
 )
 
 
