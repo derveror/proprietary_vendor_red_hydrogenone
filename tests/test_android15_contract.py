@@ -107,6 +107,15 @@ def bp_module_names() -> set[str]:
 
 
 class Android15VendorContractTest(unittest.TestCase):
+    def test_vendor_does_not_request_unavailable_vndk_28_snapshot(self) -> None:
+        for name in ("BoardConfigVendor.mk", "hydrogenone-vendor.mk"):
+            text = (ROOT / name).read_text(encoding="utf-8")
+            self.assertNotRegex(
+                text,
+                r"(?m)^\s*PRODUCT_EXTRA_VNDK_VERSIONS\s*[:+?]?=.*(?:^|\s)28(?:\s|$)",
+                f"{name} must not request the unavailable LineageOS 22.2 VNDK 28 snapshot",
+            )
+
     def test_source_owned_modules_are_not_packaged_as_stock_prebuilts(self) -> None:
         active = package_names()
         declared = bp_module_names()
