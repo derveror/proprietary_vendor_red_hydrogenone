@@ -10,6 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_OWNED_MODULES = {
     "android.hidl.base@1.0",
     "libalsautils",
+    "vendor.qti.hardware.camera.device@1.0",
+    "vendor.qti.hardware.camera.device@1.0-v28",
     "vendor.qti.hardware.wifi.hostapd@1.0",
     "vendor.qti.hardware.wifi.supplicant@2.0",
 }
@@ -17,6 +19,8 @@ SOURCE_OWNED_PATHS = {
     "vendor/lib/android.hidl.base@1.0.so",
     "vendor/lib/libalsautils.so",
     "vendor/lib64/libalsautils.so",
+    "vendor/lib/vendor.qti.hardware.camera.device@1.0.so",
+    "vendor/lib64/vendor.qti.hardware.camera.device@1.0.so",
     "vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so",
     "vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so",
 }
@@ -28,14 +32,6 @@ LEGACY_VNDK = {
     "libstagefright_omx-v28": {
         "stem": "libstagefright_omx",
         "src": "proprietary/vendor/lib/vndk/libstagefright_omx.so",
-    },
-}
-LEGACY_QTI_CAMERA = {
-    "module": "vendor.qti.hardware.camera.device@1.0-v28",
-    "stem": "vendor.qti.hardware.camera.device@1.0",
-    "srcs": {
-        "proprietary/vendor/lib/vendor.qti.hardware.camera.device@1.0.so",
-        "proprietary/vendor/lib64/vendor.qti.hardware.camera.device@1.0.so",
     },
 }
 
@@ -88,22 +84,11 @@ class Android15CollisionResolutionTest(unittest.TestCase):
         self.assertIn('"libstagefright_omx-v28"', service)
         self.assertIn('"libstagefright_foundation-v28"', legacy_omx)
 
-    def test_red118_qti_camera_interface_keeps_vendor_abi_under_unique_name(self) -> None:
-        blocks = module_blocks()
-        module = LEGACY_QTI_CAMERA["module"]
-        stem = LEGACY_QTI_CAMERA["stem"]
-        self.assertIn(module, blocks)
-        self.assertNotIn(stem, blocks)
-        block = blocks[module]
-        self.assertIn(f'stem: "{stem}"', block)
-        for src in LEGACY_QTI_CAMERA["srcs"]:
-            self.assertIn(src, block)
-
-    def test_qti_camera_consumers_bind_to_red118_namespaced_module(self) -> None:
+    def test_qti_camera_consumers_bind_to_lineage_source_interface(self) -> None:
         blocks = module_blocks()
         camera = blocks["camera.device@1.0-impl"]
-        self.assertIn(f'"{LEGACY_QTI_CAMERA["module"]}"', camera)
-        self.assertNotIn(f'"{LEGACY_QTI_CAMERA["stem"]}"', camera)
+        self.assertIn('"vendor.qti.hardware.camera.device@1.0"', camera)
+        self.assertNotIn('"vendor.qti.hardware.camera.device@1.0-v28"', camera)
 
 
 if __name__ == "__main__":
