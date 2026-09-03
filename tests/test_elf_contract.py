@@ -14,6 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_RED_DEPENDENCY_PATHS = {
     "vendor/lib/libsdm-disp-apis.so",
     "vendor/lib64/libsdm-disp-apis.so",
+    "vendor/lib/vendor.display.color@1.0.so",
+    "vendor/lib64/vendor.display.color@1.0.so",
 }
 
 
