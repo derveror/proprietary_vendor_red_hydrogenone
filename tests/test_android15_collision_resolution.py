@@ -10,8 +10,10 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_OWNED_MODULES = {
     "android.hidl.base@1.0",
     "libalsautils",
+    "libcld80211",
     "libkeystore-engine-wifi-hidl",
     "libkeystore-wifi-hidl",
+    "libwifi-hal",
     "vendor.qti.hardware.camera.device@1.0",
     "vendor.qti.hardware.camera.device@1.0-v28",
     "vendor.qti.hardware.wifi.hostapd@1.0",
@@ -21,16 +23,20 @@ SOURCE_OWNED_PATHS = {
     "vendor/lib/android.hidl.base@1.0.so",
     "vendor/lib/libalsautils.so",
     "vendor/lib64/libalsautils.so",
+    "vendor/lib64/libcld80211.so",
     "vendor/lib64/libkeystore-engine-wifi-hidl.so",
     "vendor/lib64/libkeystore-wifi-hidl.so",
+    "vendor/lib64/libwifi-hal.so",
     "vendor/lib/vendor.qti.hardware.camera.device@1.0.so",
     "vendor/lib64/vendor.qti.hardware.camera.device@1.0.so",
     "vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so",
     "vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so",
 }
 SOURCE_PACKAGES_REQUIRED = {
+    "libcld80211",
     "libkeystore-engine-wifi-hidl",
     "libkeystore-wifi-hidl",
+    "libwifi-hal",
 }
 LEGACY_VNDK = {
     "libstagefright_foundation-v28": {
@@ -96,7 +102,7 @@ class Android15CollisionResolutionTest(unittest.TestCase):
         self.assertEqual(sorted(SOURCE_OWNED_MODULES & set(blocks)), [])
         self.assertEqual(sorted(SOURCE_OWNED_PATHS & active_paths()), [])
 
-    def test_source_owned_wifi_keystore_modules_stay_packaged(self) -> None:
+    def test_source_owned_wifi_modules_stay_packaged(self) -> None:
         packages = product_packages()
         self.assertEqual(sorted(SOURCE_PACKAGES_REQUIRED - packages), [])
 
