@@ -184,7 +184,7 @@ cc_prebuilt_binary {
                 "liblog",
                 "libm",
                 "libmedia_omx",
-                "libstagefright_omx",
+                "libstagefright_omx-v28",
                 "libstagefright_xmlparser",
                 "libutils",
             ],
@@ -193,36 +193,6 @@ cc_prebuilt_binary {
     compile_multilib: "32",
     prefer: true,
     relative_install_path: "hw",
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "android.hidl.base@1.0",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/android.hidl.base@1.0.so",
-            ],
-            shared_libs: [
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libm",
-                "libutils",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
     soc_specific: true,
 }
 
@@ -1389,6 +1359,33 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
+cc_prebuilt_binary {
+    name: "energy-awareness",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/energy-awareness",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
 cc_prebuilt_library_shared {
     name: "gatekeeper.msm8998",
     owner: "red",
@@ -1426,6 +1423,32 @@ cc_prebuilt_library_shared {
     compile_multilib: "both",
     prefer: true,
     relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "hvdcp_opti",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hvdcp_opti",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
     soc_specific: true,
 }
 
@@ -2897,49 +2920,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libalsautils",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libalsautils.so",
-            ],
-            shared_libs: [
-                "libaudioutils",
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "liblog",
-                "libm",
-                "libtinyalsa",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libalsautils.so",
-            ],
-            shared_libs: [
-                "libaudioutils",
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "liblog",
-                "libm",
-                "libtinyalsa",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libarcsoft_antishaking",
     owner: "red",
     strip: {
@@ -3146,7 +3126,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libc",
                 "libc++",
-                "libclang_rt.ubsan_standalone-aarch64-android",
+                "libclang_rt.ubsan_standalone",
                 "libdl",
                 "liblog",
                 "libm",
@@ -3468,30 +3448,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libdrm",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libdrm.so",
-            ],
-            shared_libs: [
-                "libc",
-                "libc++",
-                "libdl",
-                "libm",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libdrmfs",
     owner: "red",
     strip: {
@@ -3687,90 +3643,6 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libm",
                 "libmdmdetect",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libeffects",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    check_elf_files: false,
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libeffects.so",
-            ],
-            shared_libs: [
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "libeffectsconfig",
-                "liblog",
-                "libm",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libeffects.so",
-            ],
-            shared_libs: [
-                "libc",
-                "libc++",
-                "libclang_rt.ubsan_standalone-aarch64-android",
-                "libcutils",
-                "libdl",
-                "libeffectsconfig",
-                "liblog",
-                "libm",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libeffectsconfig",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    check_elf_files: false,
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libeffectsconfig.so",
-            ],
-            shared_libs: [
-                "libc",
-                "libc++",
-                "libdl",
-                "liblog",
-                "libm",
-                "libtinyxml2",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libeffectsconfig.so",
-            ],
-            shared_libs: [
-                "libc",
-                "libc++",
-                "libclang_rt.ubsan_standalone-aarch64-android",
-                "libdl",
-                "liblog",
-                "libm",
-                "libtinyxml2",
             ],
         },
     },
@@ -4353,7 +4225,7 @@ cc_prebuilt_library_shared {
                 "android.system.wifi.keystore@1.0",
                 "libc",
                 "libc++",
-                "libclang_rt.ubsan_standalone-aarch64-android",
+                "libclang_rt.ubsan_standalone",
                 "libcrypto",
                 "libcutils",
                 "libdl",
@@ -4387,7 +4259,7 @@ cc_prebuilt_library_shared {
                 "libbase",
                 "libc",
                 "libc++",
-                "libclang_rt.ubsan_standalone-aarch64-android",
+                "libclang_rt.ubsan_standalone",
                 "libdl",
                 "libhidlbase",
                 "libhidltransport",
@@ -7186,7 +7058,6 @@ cc_prebuilt_library_shared {
     strip: {
         none: true,
     },
-    check_elf_files: false,
     target: {
         android_arm: {
             srcs: [
@@ -7210,7 +7081,7 @@ cc_prebuilt_library_shared {
                 "libaudioutils",
                 "libc",
                 "libc++",
-                "libclang_rt.ubsan_standalone-aarch64-android",
+                "libclang_rt.ubsan_standalone",
                 "libdl",
                 "liblog",
                 "libm",
@@ -8816,7 +8687,34 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libstagefright_foundation",
+    name: "libspcom",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libspcom.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libstagefright_foundation-v28",
     owner: "red",
     strip: {
         none: true,
@@ -8839,13 +8737,14 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "32",
+    stem: "libstagefright_foundation",
     prefer: true,
     relative_install_path: "vndk",
     soc_specific: true,
 }
 
 cc_prebuilt_library_shared {
-    name: "libstagefright_omx",
+    name: "libstagefright_omx-v28",
     owner: "red",
     strip: {
         none: true,
@@ -8874,7 +8773,7 @@ cc_prebuilt_library_shared {
                 "libmedia_omx",
                 "libnativewindow",
                 "libstagefright_bufferqueue_helper",
-                "libstagefright_foundation",
+                "libstagefright_foundation-v28",
                 "libstagefright_xmlparser",
                 "libui",
                 "libutils",
@@ -8883,6 +8782,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "32",
+    stem: "libstagefright_omx",
     prefer: true,
     relative_install_path: "vndk",
     soc_specific: true,
@@ -9927,6 +9827,36 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "spdaemon",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/spdaemon",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libmdmdetect",
+                "libperipheral_client",
+                "libspcom",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "thermal-engine",
     owner: "red",
     strip: {
@@ -10066,6 +9996,53 @@ cc_prebuilt_binary {
     compile_multilib: "64",
     prefer: true,
     relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.display.color@1.0",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/vendor.display.color@1.0.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "libhidlbase",
+                "libhidltransport",
+                "libhwbinder",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.display.color@1.0.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "libhidlbase",
+                "libhidltransport",
+                "libhwbinder",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
     soc_specific: true,
 }
 
@@ -10689,55 +10666,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.camera.device@1.0",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/vendor.qti.hardware.camera.device@1.0.so",
-            ],
-            shared_libs: [
-                "android.hardware.camera.device@1.0",
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libm",
-                "libutils",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.qti.hardware.camera.device@1.0.so",
-            ],
-            shared_libs: [
-                "android.hardware.camera.device@1.0",
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libm",
-                "libutils",
-            ],
-        },
-    },
-    compile_multilib: "both",
     prefer: true,
     soc_specific: true,
 }
@@ -11406,72 +11334,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.wifi.hostapd@1.0",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    check_elf_files: false,
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so",
-            ],
-            shared_libs: [
-                "android.hardware.wifi.hostapd@1.0",
-                "android.hardware.wifi.supplicant@1.0",
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libm",
-                "libutils",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.wifi.supplicant@2.0",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    check_elf_files: false,
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so",
-            ],
-            shared_libs: [
-                "android.hardware.wifi.supplicant@1.0",
-                "android.hardware.wifi.supplicant@1.1",
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libm",
-                "libutils",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.ims.callinfo@1.0",
     owner: "red",
     strip: {
@@ -11797,116 +11659,6 @@ cc_prebuilt_binary {
                 "libgps.utils",
                 "liblog",
                 "libm",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "spdaemon",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/spdaemon",
-            ],
-            shared_libs: [
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "liblog",
-                "libm",
-                "libmdmdetect",
-                "libperipheral_client",
-                "libspcom",
-                "libutils",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libspcom",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libspcom.so",
-            ],
-            shared_libs: [
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "liblog",
-                "libm",
-                "libutils",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "hvdcp_opti",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/hvdcp_opti",
-            ],
-            shared_libs: [
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "libm",
-                "libutils",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "energy-awareness",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/energy-awareness",
-            ],
-            shared_libs: [
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "liblog",
-                "libm",
-                "libutils",
             ],
         },
     },

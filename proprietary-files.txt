@@ -11,9 +11,7 @@ vendor/bin/pm-service
 vendor/bin/qseecomd
 vendor/bin/rmt_storage
 vendor/bin/thermal-engine
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
-vendor/etc/init/android.hardware.media.omx@1.0-service.rc
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
 vendor/etc/init/hw/init.msm.usb.configfs.rc
 vendor/etc/thermal-engine-3d.conf
@@ -76,7 +74,6 @@ vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
 vendor/lib64/libc2d30_bltlib.so
 vendor/lib64/libdiag.so
-vendor/lib64/libdrm.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmutils.so
 vendor/lib64/libdsutils.so
@@ -147,7 +144,6 @@ vendor/etc/libnfc-qrd_rf1.conf
 vendor/etc/libnfc-qrd_rf2.conf
 vendor/etc/permissions/android.hardware.nfc.hcef.xml
 vendor/etc/permissions/com.android.nfc_extras.xml
-vendor/lib/android.hidl.base@1.0.so
 vendor/lib/camera.device@1.0-impl.so
 vendor/lib/camera.device@3.2-impl.so
 vendor/lib/camera.device@3.3-impl.so
@@ -175,7 +171,6 @@ vendor/lib/lib-imsrcsbaseimpl.so
 vendor/lib/lib-imsxml.so
 vendor/lib/lib-siputility.so
 vendor/lib/libDRPlugin.so
-vendor/lib/libalsautils.so
 vendor/lib/libarcsoft_antishaking.so
 vendor/lib/libarcsoft_beautyshot.so
 vendor/lib/libarcsoft_dualcam_refocus.so
@@ -190,8 +185,6 @@ vendor/lib/libdiag.so
 vendor/lib/libdrplugin_client.so
 vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
-vendor/lib/libeffects.so
-vendor/lib/libeffectsconfig.so
 vendor/lib/libevent_observer.so
 vendor/lib/libflp.so
 vendor/lib/libgeofence.so
@@ -316,7 +309,6 @@ vendor/lib/nfc_nci.nqx.default.hw.so
 vendor/lib/qcrild_librilutils.so
 vendor/lib/vendor.qti.esepowermanager@1.0.so
 vendor/lib/vendor.qti.gnss@1.0.so
-vendor/lib/vendor.qti.hardware.camera.device@1.0.so
 vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0.so
 vendor/lib/vendor.qti.ims.callinfo@1.0.so
 vendor/lib/vndk/libstagefright_foundation.so
@@ -370,7 +362,6 @@ vendor/lib64/libOmxAmrwbplusDec.so
 vendor/lib64/libOmxEvrcEnc.so
 vendor/lib64/libOmxQcelp13Enc.so
 vendor/lib64/libOmxWmaDec.so
-vendor/lib64/libalsautils.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libbtnv.so
@@ -380,8 +371,6 @@ vendor/lib64/libconfigdb.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libdrplugin_client.so
 vendor/lib64/libdsi_netctrl.so
-vendor/lib64/libeffects.so
-vendor/lib64/libeffectsconfig.so
 vendor/lib64/libevent_observer.so
 vendor/lib64/libflp.so
 vendor/lib64/libgdtap.so
@@ -454,7 +443,6 @@ vendor/lib64/vendor.qti.gnss@1.1.so
 vendor/lib64/vendor.qti.gnss@1.2.so
 vendor/lib64/vendor.qti.gnss@2.0.so
 vendor/lib64/vendor.qti.gnss@2.1.so
-vendor/lib64/vendor.qti.hardware.camera.device@1.0.so
 vendor/lib64/vendor.qti.hardware.data.connection@1.0.so
 vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
 vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
@@ -476,8 +464,6 @@ vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
-vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so
-vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so
 vendor/lib64/vendor.qti.ims.callinfo@1.0.so
 vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
@@ -502,6 +488,8 @@ vendor/lib64/vendor.cm.hardware.thermal3d@1.0.so
 vendor/lib64/vendor.leia.hardware.leiadisp@1.0.so
 vendor/lib/libsdm-disp-apis.so
 vendor/lib64/libsdm-disp-apis.so
+vendor/lib/vendor.display.color@1.0.so
+vendor/lib64/vendor.display.color@1.0.so
 vendor/bin/spdaemon
 vendor/lib64/libspcom.so
 vendor/bin/hvdcp_opti

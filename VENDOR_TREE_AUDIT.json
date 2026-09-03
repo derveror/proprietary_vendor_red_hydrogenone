@@ -3,10 +3,10 @@
   "all_selected_sha256_verified": true,
   "stock_archive_verified": true,
   "counts": {
-    "P0": 108,
-    "P1": 374,
-    "P2": 17,
-    "total": 499
+    "P0": 105,
+    "P1": 363,
+    "P2": 19,
+    "total": 487
   },
   "notes": [
     "No RED msm8998-common repository is used.",
@@ -19,6 +19,17 @@
     "316 of 334 proprietary ELF modules have check_elf_files enabled; the remaining 18 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
     "RED .118 spdaemon/libspcom, hvdcp_opti, and energy-awareness are retained because the Android 15 rootdir contract and MSM8998 runtime dependency graph require them.",
     "320 of 338 proprietary ELF modules have check_elf_files enabled; the remaining 18 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
-    "AOSP-identical NFC feature declaration XMLs are source-owned by device/red/hydrogenone; vendor retains RED .118 NFC and thermal hardware configs."
+    "AOSP-identical NFC feature declaration XMLs are source-owned by device/red/hydrogenone; vendor retains RED .118 NFC and thermal hardware configs.",
+    "RED .118 vendor.display.color@1.0.so (32/64) is retained because libsdm-disp-apis.so DT_NEEDED requires that exact HIDL interface provider.",
+    "Android 15 source libdrm is vendor_available; the duplicate RED .118 libdrm prebuilt is pruned to avoid cross-partition prebuilt shadowing.",
+    "322 of 338 proprietary ELF modules have check_elf_files enabled; the remaining 16 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
+    "LineageOS 22.2 builds libeffects for vendor and libeffectsconfig as vendor_available from frameworks/av; the duplicate RED .118 platform-built copies are pruned.",
+    "321 of 336 proprietary ELF modules have check_elf_files enabled; the remaining 15 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
+    "LineageOS 22.2 supplies android.hidl.base@1.0 from hardware/lineage/compat and libalsautils as a vendor_available source module; duplicate RED .118 prebuilts are pruned.",
+    "RED .118 API28 libstagefright_foundation/libstagefright_omx remain in /vendor/lib/vndk with their stock SONAMEs, but use unique -v28 Soong module names to avoid Android 15 source-module shadowing.",
+    "RED .118 QTI hostapd@1.0 and supplicant@2.0 interface libraries have no retained proprietary DT_NEEDED consumers and are pruned in favor of the LineageOS system_ext interface ownership.",
+    "RED .118 vendor.qti.hardware.camera.device@1.0 is retained because camera.device@1.0-impl directly DT_NEEDEDs it; it keeps the stock SONAME but uses a unique -v28 Soong module name to avoid system_ext shadowing.",
+    "LineageOS 22.2 QTI camera/device@1.0 generates the vendor interface ABI consumed by RED .118 camera.device@1.0-impl; duplicate RED .118 interface libraries are pruned so only one vendor SONAME owner remains.",
+    "Fingerprint@2.1 and media OMX proprietary executables remain selected, but their RED .118 init rc copies are pruned because the corresponding LineageOS source modules already install equivalent init_rc destinations; this prevents ckati duplicate-install rules."
   ]
 }

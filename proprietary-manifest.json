@@ -10,10 +10,10 @@
     "sdk": 28
   },
   "counts": {
-    "P0": 108,
-    "P1": 374,
-    "P2": 17,
-    "total": 499
+    "P0": 105,
+    "P1": 363,
+    "P2": 19,
+    "total": 487
   },
   "files": [
     {
@@ -84,21 +84,9 @@
     },
     {
       "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc",
-      "size": 321,
-      "sha256": "c45a07fb91845794ec2889d1c63e3826ee017da573c9a845d2b0ce027b3c9594"
-    },
-    {
-      "tier": "P0",
       "path": "vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc",
       "size": 210,
       "sha256": "86b0cf7fe04b1f415773ef410d627f14482a7826945c38ecfe0450dd569edb8c"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/etc/init/android.hardware.media.omx@1.0-service.rc",
-      "size": 211,
-      "sha256": "92327bd0cbccbed25e25d68a67d3db0b06ee8763d474740a0deaaefc9e6e509f"
     },
     {
       "tier": "P0",
@@ -471,12 +459,6 @@
       "path": "vendor/lib64/libdiag.so",
       "size": 210800,
       "sha256": "2c56ec9074029c6fff0d1d9209d5e286cf95b0e7bf827b2ba66d7eca90667ab6"
-    },
-    {
-      "tier": "P0",
-      "path": "vendor/lib64/libdrm.so",
-      "size": 134152,
-      "sha256": "c31936e37b90cb763fd53f3046c287d9739d7c847eace9320fdd4bf110c601fa"
     },
     {
       "tier": "P0",
@@ -894,12 +876,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib/android.hidl.base@1.0.so",
-      "size": 62416,
-      "sha256": "215d9cebf8d33286876bbe7243e2f86f99074a99a522c9c9b74244dd351bb43a"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib/camera.device@1.0-impl.so",
       "size": 120412,
       "sha256": "19c1d6cb34da39cce3b6f5caa0bb8b93f38c119da9d35961f9bcf7ebdf87b935"
@@ -1062,12 +1038,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib/libalsautils.so",
-      "size": 19336,
-      "sha256": "e032216be21df4d9719cc6d73f8272f95e8686cd74a172bc6314642d13a2e06c"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib/libarcsoft_antishaking.so",
       "size": 472852,
       "sha256": "960e6f446d9087deac2d062d3f54f50567c8b01ba2afefd2648f0f41d8b358cc"
@@ -1149,18 +1119,6 @@
       "path": "vendor/lib/libdsutils.so",
       "size": 82120,
       "sha256": "0458068b9249a2642afd2d9eabc77ee33d986f92b19358b65c811ed79541e24a"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/libeffects.so",
-      "size": 19684,
-      "sha256": "94608d1099e71fd037c40bd9d8c4e97ad85c1fb7ef0306b6203c56be0ff4b139"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/libeffectsconfig.so",
-      "size": 19284,
-      "sha256": "fcbc5ab5d8003a40d6d2c67d498d9b264df8cb23c6b1d456ec6c7b5f4b1ff557"
     },
     {
       "tier": "P1",
@@ -1908,12 +1866,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib/vendor.qti.hardware.camera.device@1.0.so",
-      "size": 83204,
-      "sha256": "9e83e5abca9a6e94aefce7b1f427f1819e29a84bd26ad31ffd609c85e9cfff0e"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0.so",
       "size": 143216,
       "sha256": "efca808080a845a71557dee8e2c63d31123628807ba5795f776604232d4e6bc4"
@@ -2232,12 +2184,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib64/libalsautils.so",
-      "size": 68256,
-      "sha256": "abd7a6c75cef012e09962ec09796344dc3d0dfe19d0e00cf6be193f8a5921166"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib64/libaudio_log_utils.so",
       "size": 68376,
       "sha256": "a7c642f99b732e70408b037be2aeae9531a9610fe2738e0f05d75bca029fe081"
@@ -2289,18 +2235,6 @@
       "path": "vendor/lib64/libdsi_netctrl.so",
       "size": 595616,
       "sha256": "7a746344d8e777c26b50a84f5f9753eb28882cdeaa3fa4fa3bafaef5b9960632"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/libeffects.so",
-      "size": 40880,
-      "sha256": "adbb734331b71bbf9ae7469df35b36c53a615275dbd91cef2a9e2b7788b53ecc"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/libeffectsconfig.so",
-      "size": 49136,
-      "sha256": "c190df3ea67e1675981e4dd2d65bce4bfb3df4050f2eb47fbdeb0db76e390999"
     },
     {
       "tier": "P1",
@@ -2736,12 +2670,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib64/vendor.qti.hardware.camera.device@1.0.so",
-      "size": 135768,
-      "sha256": "02a5a67a8fe6433bfb07f3733fa32f3eecc2152b7ae21a1bebd7b42db296e031"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib64/vendor.qti.hardware.data.connection@1.0.so",
       "size": 268624,
       "sha256": "7fa6df534504b60f384a8a64e56904bbc370a509beda4bffa9d92ebef4eb12f8"
@@ -2868,18 +2796,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so",
-      "size": 202816,
-      "sha256": "7d1bacb44869445466ebc0cf2cbf06de851e53c41ee0beff9a95a1bd28d44e61"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so",
-      "size": 804192,
-      "sha256": "3b239b97415a0eddb7f076de6349a1560a1fd66451a434f550eac6bf97e5031a"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib64/vendor.qti.ims.callinfo@1.0.so",
       "size": 136472,
       "sha256": "9b1d32e7efee33f1a1d06e5db4155c15f3adb8f9baddee5e03f16f2de829b4b5"
@@ -2976,6 +2892,12 @@
     },
     {
       "tier": "P2",
+      "path": "vendor/lib/vendor.display.color@1.0.so",
+      "size": 172520,
+      "sha256": "4f6f8116cc4b88c7ca8b3e993052fe1fc7e774379b8d701f5b2f3a41ed412e75"
+    },
+    {
+      "tier": "P2",
       "path": "vendor/lib/vendor.leia.hardware.leiadisp@1.0.so",
       "size": 109016,
       "sha256": "4c7b40153d02fcd96ec749e5c9864766efa0328a3d5cdb9a24d2ee09ae427c3e"
@@ -3003,6 +2925,12 @@
       "path": "vendor/lib64/vendor.cm.hardware.thermal3d@1.0.so",
       "size": 135528,
       "sha256": "da20531f69a2b4c262315fd4569d2494c7afdd5e4fd42797f78fd364af20aa08"
+    },
+    {
+      "tier": "P2",
+      "path": "vendor/lib64/vendor.display.color@1.0.so",
+      "size": 269304,
+      "sha256": "b5ba1f85adc4dfe87fdaa65545c4b46b8d4229e68f922b41b1e35b48875b79fe"
     },
     {
       "tier": "P2",

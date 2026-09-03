@@ -1,14 +1,14 @@
 {
-  "selected_files": 499,
-  "p0": 108,
-  "p1": 374,
-  "p2": 17,
-  "selected_bytes": 245538934,
-  "elf_modules": 338,
+  "selected_files": 487,
+  "p0": 105,
+  "p1": 363,
+  "p2": 19,
+  "selected_bytes": 244341102,
+  "elf_modules": 331,
   "copy_files": 48,
   "sensitive_path_matches": [],
   "missing_files": [],
   "duplicate_paths": 0,
-  "checkelf_enabled": 320,
-  "checkelf_exceptions": 18
+  "checkelf_enabled": 318,
+  "checkelf_exceptions": 13
 }

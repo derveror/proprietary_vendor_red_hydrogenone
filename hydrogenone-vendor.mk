@@ -10,9 +10,7 @@ PRODUCT_COPY_FILES += \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800h.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800h.bin \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800h_8998_660.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800h_8998_660.bin \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800s_dsp.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800s_dsp.bin \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.bluetooth@1.0-service-qti.rc \
-    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.media.omx@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.media.omx@1.0-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/hw/init.msm.usb.configfs.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.msm.usb.configfs.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/qcrild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/qcrild.rc \
@@ -60,7 +58,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl-qti \
     android.hardware.bluetooth@1.0-service-qti \
     android.hardware.media.omx@1.0-service \
-    android.hidl.base@1.0 \
     audio.primary.default \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
@@ -128,7 +125,6 @@ PRODUCT_PACKAGES += \
     libadreno_utils \
     libadsp_default_listener \
     libadsprpc \
-    libalsautils \
     libarcsoft_antishaking \
     libarcsoft_beautyshot \
     libarcsoft_dualcam_refocus \
@@ -146,14 +142,11 @@ PRODUCT_PACKAGES += \
     libdataitems \
     libdepthmapwrapper \
     libdiag \
-    libdrm \
     libdrmfs \
     libdrmutils \
     libdrplugin_client \
     libdsi_netctrl \
     libdsutils \
-    libeffects \
-    libeffectsconfig \
     libevent_observer \
     libfastcvopt \
     libflp \
@@ -299,13 +292,14 @@ PRODUCT_PACKAGES += \
     libsdm-color \
     libsdm-diag \
     libsdm-disp-apis \
+    vendor.display.color@1.0 \
     libsdm-disp-vndapis \
     libsdmextension \
     libsdmutils \
     libsensor1 \
     libsettings \
-    libstagefright_foundation \
-    libstagefright_omx \
+    libstagefright_foundation-v28 \
+    libstagefright_omx-v28 \
     libsystem_health_mon \
     libthermalclient \
     libthermalioctl \
@@ -355,7 +349,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.gnss@1.2 \
     vendor.qti.gnss@2.0 \
     vendor.qti.gnss@2.1 \
-    vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.data.connection@1.0 \
     vendor.qti.hardware.data.dynamicdds@1.0 \
     vendor.qti.hardware.data.qmi@1.0 \
@@ -377,8 +370,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.radio.uim@1.1 \
     vendor.qti.hardware.radio.uim_remote_client@1.0 \
     vendor.qti.hardware.radio.uim_remote_server@1.0 \
-    vendor.qti.hardware.wifi.hostapd@1.0 \
-    vendor.qti.hardware.wifi.supplicant@2.0 \
     vendor.qti.ims.callinfo@1.0 \
     vendor.qti.ims.rcsconfig@1.0 \
     vendor.qti.imsrtpservice@1.0 \

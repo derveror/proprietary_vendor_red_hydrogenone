@@ -3,7 +3,7 @@
   "stock_archive_sha256": "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e",
   "stock_build": "H1A1000.082ho.01.00.10r.118",
   "stock_fingerprint": "RED/HydrogenONE/HydrogenONE:9/PKQ1.190118.001/118:userdebug/release-keys",
-  "selected_files": 499,
+  "selected_files": 487,
   "target_lineage": "lineage-22.2",
   "target_android_api": 35,
   "android15_contract": {
@@ -13,9 +13,29 @@
     "stale_init_pruned": true,
     "red_leia_display_dependency_recovered": true,
     "elf_dependency_graph_generated_from_dt_needed": true,
-    "checkelf_enabled_modules": 320,
-    "checkelf_exception_modules": 18,
+    "checkelf_enabled_modules": 318,
+    "checkelf_exception_modules": 13,
     "p0_rootdir_daemon_payload_completed_from_red_118": true,
-    "source_owned_aosp_identical_copy_pruned": true
+    "source_owned_aosp_identical_copy_pruned": true,
+    "red_display_color_dependency_recovered": true,
+    "source_owned_libdrm_pruned": true,
+    "source_owned_audio_effects_pruned": true,
+    "source_owned_hidl_base_pruned": true,
+    "source_owned_alsautils_pruned": true,
+    "legacy_vndk28_stagefright_namespaced": true,
+    "source_owned_unused_qti_wifi_interfaces_pruned": true,
+    "legacy_red_qti_camera_interface_namespaced": false,
+    "source_owned_qti_camera_interface_pruned": true,
+    "source_owned_init_rc_duplicates_pruned": true,
+    "source_owned_init_rc": [
+      {
+        "path": "vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc",
+        "owner": "hardware/interfaces biometrics fingerprint@2.1 init_rc"
+      },
+      {
+        "path": "vendor/etc/init/android.hardware.media.omx@1.0-service.rc",
+        "owner": "frameworks/av mediacodec android.hardware.media.omx@1.0-service init_rc"
+      }
+    ]
   }
 }
