@@ -43,7 +43,6 @@ UNVERIFIED_EXTERNAL_DEPENDENCIES = {
     "android.hardware.wifi.supplicant@1.1",
     "android.hidl.token@1.0-utils",
     "android.system.wifi.keystore@1.0",
-    "libclang_rt.ubsan_standalone-aarch64-android",
     "libexif",
     "libjpeg",
     "libspeexresampler",
@@ -54,6 +53,7 @@ UNVERIFIED_EXTERNAL_DEPENDENCIES = {
 }
 
 SOURCE_VERIFIED_DEPENDENCIES = {
+    "libclang_rt.ubsan_standalone",
     "libgnsspps",
     "libminijail",
 }
@@ -258,7 +258,15 @@ def elf_dynamic(path: Path) -> tuple[list[str], str | None]:
 def module_for_soname(soname: str, providers: dict[str, str]) -> str:
     if soname in providers:
         return providers[soname]
-    return soname[:-3] if soname.endswith(".so") else soname
+
+    module = soname[:-3] if soname.endswith(".so") else soname
+    # Match LineageOS 22.2 extract-utils: legacy stock ELF DT_NEEDED entries
+    # name the UBSan runtime by architecture, while Soong exposes one generic
+    # module whose per-arch outputs retain those SONAMEs.
+    for suffix in ("-arm-android", "-aarch64-android"):
+        if module == f"libclang_rt.ubsan_standalone{suffix}":
+            return "libclang_rt.ubsan_standalone"
+    return module
 
 
 def render_list(name: str, values: list[str], indent: int = 12) -> list[str]:
