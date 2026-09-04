@@ -308,7 +308,6 @@ PRODUCT_PACKAGES += \
     libtinycompress_vendor \
     libtinyxml2_1 \
     libulp2 \
-    libwebrtc_audio_preprocessing \
     libwfdcommonutils_proprietary \
     libwfdhaldsmanager \
     libwfdhdcpcp \

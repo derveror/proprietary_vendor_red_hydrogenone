@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 105,
-    "P1": 343,
+    "P1": 341,
     "P2": 19,
-    "total": 467
+    "total": 465
   },
   "files": [
     {
@@ -2454,12 +2454,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib64/libwebrtc_audio_preprocessing.so",
-      "size": 1253728,
-      "sha256": "985a9b9e154e61b3daf2713aa37eb45dbc78ec378206799032d68eeb7897204b"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib64/libxml.so",
       "size": 68416,
       "sha256": "784705b38d6a651e7649763696bc557fae2068fc08366fe7d84eb5aa70616b4f"
@@ -2487,12 +2481,6 @@
       "path": "vendor/lib64/qcrild_librilutils.so",
       "size": 68008,
       "sha256": "5dbe16f41d2561681a5f8132c229f57d84c5596979de48f023582e74d87d8835"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/soundfx/libaudiopreprocessing.so",
-      "size": 47112,
-      "sha256": "eb1027c469f5a8ea1867956e9b19c07c77ebd180de1d1aa81fba64a58a016b04"
     },
     {
       "tier": "P1",

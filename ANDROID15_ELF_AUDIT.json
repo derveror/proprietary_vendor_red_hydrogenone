@@ -3798,44 +3798,6 @@
         }
       }
     },
-    "libaudiopreprocessing": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": false,
-      "blocking_dependencies": [
-        "libspeexresampler"
-      ],
-      "architectures": {
-        "android_arm64": {
-          "srcs": [
-            "proprietary/vendor/lib64/soundfx/libaudiopreprocessing.so"
-          ],
-          "shared_libs": [
-            "libc",
-            "libc++",
-            "libclang_rt.ubsan_standalone",
-            "libdl",
-            "liblog",
-            "libm",
-            "libspeexresampler",
-            "libutils",
-            "libwebrtc_audio_preprocessing"
-          ],
-          "needed": {
-            "proprietary/vendor/lib64/soundfx/libaudiopreprocessing.so": [
-              "libwebrtc_audio_preprocessing",
-              "libspeexresampler",
-              "libutils",
-              "liblog",
-              "libc++",
-              "libclang_rt.ubsan_standalone",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
     "libavservices_minijail_vendor": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -11311,38 +11273,6 @@
         }
       }
     },
-    "libwebrtc_audio_preprocessing": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": true,
-      "blocking_dependencies": [],
-      "architectures": {
-        "android_arm64": {
-          "srcs": [
-            "proprietary/vendor/lib64/libwebrtc_audio_preprocessing.so"
-          ],
-          "shared_libs": [
-            "libc",
-            "libc++",
-            "libcutils",
-            "libdl",
-            "liblog",
-            "libm",
-            "libprotobuf-cpp-lite"
-          ],
-          "needed": {
-            "proprietary/vendor/lib64/libwebrtc_audio_preprocessing.so": [
-              "liblog",
-              "libcutils",
-              "libprotobuf-cpp-lite",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
     "libwfdcommonutils_proprietary": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -14885,9 +14815,9 @@
     }
   },
   "summary": {
-    "total_modules": 319,
-    "checkelf_enabled": 313,
-    "checkelf_exceptions": 6,
-    "provider_sonames": 289
+    "total_modules": 317,
+    "checkelf_enabled": 312,
+    "checkelf_exceptions": 5,
+    "provider_sonames": 287
   }
 }

@@ -2799,37 +2799,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libaudiopreprocessing",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    check_elf_files: false,
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/soundfx/libaudiopreprocessing.so",
-            ],
-            shared_libs: [
-                "libc",
-                "libc++",
-                "libclang_rt.ubsan_standalone",
-                "libdl",
-                "liblog",
-                "libm",
-                "libspeexresampler",
-                "libutils",
-                "libwebrtc_audio_preprocessing",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    relative_install_path: "soundfx",
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libavservices_minijail_vendor",
     owner: "red",
     strip: {
@@ -8499,33 +8468,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libwebrtc_audio_preprocessing",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libwebrtc_audio_preprocessing.so",
-            ],
-            shared_libs: [
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "liblog",
-                "libm",
-                "libprotobuf-cpp-lite",
-            ],
-        },
-    },
-    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }

@@ -1,16 +1,16 @@
 {
-  "selected_files": 467,
+  "selected_files": 465,
   "p0": 105,
-  "p1": 343,
+  "p1": 341,
   "p2": 19,
-  "selected_bytes": 241157194,
-  "elf_modules": 319,
+  "selected_bytes": 239856354,
+  "elf_modules": 317,
   "copy_files": 48,
   "sensitive_path_matches": [],
   "missing_files": [],
   "duplicate_paths": 0,
-  "checkelf_enabled": 313,
-  "checkelf_exceptions": 6,
+  "checkelf_enabled": 312,
+  "checkelf_exceptions": 5,
   "android15_blob_fixups": 63,
-  "actual_selected_bytes_after_fixups": 248288721
+  "actual_selected_bytes_after_fixups": 246987881
 }

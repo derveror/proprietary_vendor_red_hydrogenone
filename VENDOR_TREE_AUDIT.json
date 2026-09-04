@@ -4,9 +4,9 @@
   "stock_archive_verified": true,
   "counts": {
     "P0": 105,
-    "P1": 343,
+    "P1": 341,
     "P2": 19,
-    "total": 467
+    "total": 465
   },
   "notes": [
     "No RED msm8998-common repository is used.",
@@ -37,6 +37,8 @@
     "RED .118 libgps.utils/libloc_core/liblocation_api prebuilts are pruned because they override the LineageOS 22.2 source Qualcomm location stack and cause libgnss undefined symbols. Proprietary Qualcomm location consumers remain and bind to the source core, matching the LineageOS 22.2 mata/cheryl msm8998 pattern.",
     "RED .118 libgps.utils/libloc_core/liblocation_api prebuilts are pruned because they override the LineageOS 22.2 source Qualcomm location stack and cause libgnss undefined symbols. Proprietary Qualcomm location consumers remain and bind to the source core; Hydrogen One uses the cheryl LineageOS 22.2 legacy Qualcomm GNSS ABI because it matches RED .118 Pie-era location consumers.",
     "63 retained RED .118 Android 9 HIDL interface blobs require the removed android::hardware::details::gBnConstructorMap ABI. They are patched with DT_NEEDED libhidlbase_shim.so, the LineageOS 22.2 compatibility provider; canonical stock hashes remain in proprietary-manifest.json and patched identities are recorded separately in ANDROID15_BLOB_FIXUPS.json.",
-    "313 of 319 proprietary ELF modules have check_elf_files enabled; the remaining 6 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json."
+    "313 of 319 proprietary ELF modules have check_elf_files enabled; the remaining 6 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
+    "RED .118 libaudiopreprocessing/libwebrtc_audio_preprocessing are pruned: the legacy pair is self-contained, the active RED effect configuration uses Qualcomm voice preprocessing, and LineageOS 22.2 provides the generic vendor libaudiopreprocessing package from current source.",
+    "312 of 317 proprietary ELF modules have check_elf_files enabled; the remaining 5 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json."
   ]
 }
