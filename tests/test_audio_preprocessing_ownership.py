@@ -15,6 +15,8 @@ OBSOLETE_MODULES = {
     "libaudiopreprocessing",
     "libwebrtc_audio_preprocessing",
 }
+SOURCE_PACKAGE = "libaudiopreprocessing"
+OBSOLETE_PACKAGE = "libwebrtc_audio_preprocessing"
 
 
 def selected_paths() -> set[str]:
@@ -33,6 +35,10 @@ def proprietary_file_paths() -> set[str]:
     return result
 
 
+def package_selected(text: str, module: str) -> bool:
+    return bool(re.search(rf"(?m)^\s*{re.escape(module)}\s*\\?\s*$", text))
+
+
 class AudioPreprocessingOwnershipTest(unittest.TestCase):
     def test_obsolete_red_preprocessing_payload_is_not_selected(self) -> None:
         self.assertTrue(OBSOLETE_PATHS.isdisjoint(selected_paths()))
@@ -49,8 +55,14 @@ class AudioPreprocessingOwnershipTest(unittest.TestCase):
 
         for module in OBSOLETE_MODULES:
             self.assertNotRegex(bp, rf'(?m)^\s*name:\s*"{re.escape(module)}"\s*,')
-            self.assertNotRegex(vendor_mk, rf'(?m)^\s*{re.escape(module)}\s*\\?\s*$')
             self.assertNotIn(module, exceptions)
+
+        # Keep the generic package name so LineageOS 22.2 source provides the
+        # current vendor libaudiopreprocessing implementation.  The old RED
+        # private libwebrtc companion has no modern shared-library owner and
+        # must not remain selected.
+        self.assertTrue(package_selected(vendor_mk, SOURCE_PACKAGE))
+        self.assertFalse(package_selected(vendor_mk, OBSOLETE_PACKAGE))
 
     def test_contract_pipeline_reproduces_pruning_decision(self) -> None:
         pipeline = (ROOT / "tools/apply_android15_vendor_contract.py").read_text(
@@ -62,6 +74,10 @@ class AudioPreprocessingOwnershipTest(unittest.TestCase):
         self.assertTrue(
             lock["android15_contract"].get("obsolete_audio_preprocessing_pruned"),
             lock["android15_contract"],
+        )
+        self.assertEqual(
+            lock["android15_contract"].get("source_owned_audio_preprocessing_package"),
+            SOURCE_PACKAGE,
         )
 
 
