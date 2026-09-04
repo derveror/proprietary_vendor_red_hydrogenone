@@ -1,4 +1,4 @@
-name: Scan legacy HIDL constructor-map consumers
+name: Scan legacy HIDL compatibility consumers
 
 on:
   push:
@@ -23,10 +23,15 @@ jobs:
           import subprocess
           from pathlib import Path
 
-          symbol = '_ZN7android8hardware7details17gBnConstructorMapE'
+          symbols = {
+              'GBN': '_ZN7android8hardware7details17gBnConstructorMapE',
+              'GBS': '_ZN7android8hardware7details17gBsConstructorMapE',
+              'PARCEL_SETDATA': '_ZN7android8hardware6Parcel7setDataEPKhm',
+          }
           root = Path('.')
           manifest = json.loads((root / 'proprietary-manifest.json').read_text())
-          hits = []
+          hits = {name: [] for name in symbols}
+          union = set()
 
           for entry in manifest['files']:
               rel = entry['path']
@@ -36,23 +41,35 @@ jobs:
               with path.open('rb') as fh:
                   if fh.read(4) != b'\x7fELF':
                       continue
-              proc = subprocess.run(
+              dynsyms = subprocess.run(
                   ['readelf', '--dyn-syms', '--wide', str(path)],
                   check=True,
                   capture_output=True,
                   text=True,
-              )
-              if symbol not in proc.stdout:
-                  continue
-              needed = subprocess.run(
-                  ['readelf', '-d', str(path)],
-                  check=True,
-                  capture_output=True,
-                  text=True,
               ).stdout
-              hits.append((rel, 'libhidlbase_shim.so' in needed))
+              needed = None
+              for name, symbol in symbols.items():
+                  matching = [
+                      line for line in dynsyms.splitlines()
+                      if ' UND ' in line and symbol in line
+                  ]
+                  if not matching:
+                      continue
+                  if needed is None:
+                      needed = subprocess.run(
+                          ['readelf', '-d', str(path)],
+                          check=True,
+                          capture_output=True,
+                          text=True,
+                      ).stdout
+                  hits[name].append((rel, 'libhidlbase_shim.so' in needed))
+                  union.add(rel)
 
-          print(f'GBN_CONSTRUCTOR_MAP_CONSUMERS={len(hits)}')
-          for rel, already in hits:
-              print(f'GBN_CONSUMER {rel} shim={str(already).lower()}')
+          for name in symbols:
+              print(f'{name}_CONSUMERS={len(hits[name])}')
+              for rel, already in hits[name]:
+                  print(f'{name}_CONSUMER {rel} shim={str(already).lower()}')
+          print(f'HIDL_SHIM_UNION={len(union)}')
+          for rel in sorted(union):
+              print(f'HIDL_SHIM_CONSUMER {rel}')
           PY
