@@ -83,52 +83,6 @@ def selected_path(raw: str) -> str | None:
     return body.split(":", 1)[0].lstrip("-")
 
 
-def prune_payload() -> dict:
-    manifest = load_json("proprietary-manifest.json")
-    by_path = {entry["path"]: entry for entry in manifest["files"]}
-
-    for expected in SOURCE_OWNED:
-        current = by_path.get(expected["path"])
-        metadata = {
-            key: expected[key]
-            for key in ("tier", "path", "size", "sha256")
-        }
-        if current is not None and current != metadata:
-            raise SystemExit(
-                f"manifest identity mismatch for {expected['path']}: {current}"
-            )
-
-        payload = ROOT / "proprietary" / expected["path"]
-        if payload.is_file():
-            if payload.stat().st_size != expected["size"]:
-                raise SystemExit(f"size mismatch for {expected['path']}")
-            digest = hashlib.sha256(payload.read_bytes()).hexdigest()
-            if digest != expected["sha256"]:
-                raise SystemExit(
-                    f"SHA-256 mismatch for {expected['path']}: {digest}"
-                )
-            payload.unlink()
-
-    manifest["files"] = [
-        entry for entry in manifest["files"] if entry["path"] not in SOURCE_PATHS
-    ]
-    manifest["files"].sort(key=lambda entry: (entry["tier"], entry["path"]))
-    counts = Counter(entry["tier"] for entry in manifest["files"])
-    manifest["counts"] = {
-        "P0": counts.get("P0", 0),
-        "P1": counts.get("P1", 0),
-        "P2": counts.get("P2", 0),
-        "total": len(manifest["files"]),
-    }
-    write_json("proprietary-manifest.json", manifest)
-
-    path = ROOT / "proprietary-files.txt"
-    lines = path.read_text(encoding="utf-8").splitlines()
-    lines = [raw for raw in lines if selected_path(raw) not in SOURCE_PATHS]
-    path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
-    return manifest
-
-
 def prebuilt_blocks(text: str) -> list[tuple[int, int, str]]:
     lines = text.splitlines(keepends=True)
     blocks: list[tuple[int, int, str]] = []
@@ -148,22 +102,6 @@ def prebuilt_blocks(text: str) -> list[tuple[int, int, str]]:
         if match:
             blocks.append((start, i, match.group(1)))
     return blocks
-
-
-def prune_prebuilt_modules() -> None:
-    text = BP.read_text(encoding="utf-8")
-    lines = text.splitlines(keepends=True)
-    removals = [
-        (start, end)
-        for start, end, name in prebuilt_blocks(text)
-        if name in SOURCE_MODULES
-    ]
-    for start, end in sorted(removals, reverse=True):
-        lines[start:end] = []
-    BP.write_text(
-        re.sub(r"\n{3,}", "\n\n", "".join(lines)).rstrip() + "\n",
-        encoding="utf-8",
-    )
 
 
 def product_packages() -> set[str]:
@@ -208,6 +146,91 @@ def ensure_proprietary_consumers_retained() -> None:
             "required proprietary Qualcomm location consumers disappeared: "
             + ", ".join(missing)
         )
+
+
+def validate_source_owned_payload() -> dict:
+    """Validate the complete prune set before mutating any vendor state."""
+    manifest = load_json("proprietary-manifest.json")
+    by_path = {entry["path"]: entry for entry in manifest["files"]}
+
+    for expected in SOURCE_OWNED:
+        current = by_path.get(expected["path"])
+        payload = ROOT / "proprietary" / expected["path"]
+
+        if current is None:
+            if payload.exists():
+                raise SystemExit(
+                    f"payload exists but manifest entry is absent: {expected['path']}"
+                )
+            continue
+
+        metadata = {
+            key: expected[key]
+            for key in ("tier", "path", "size", "sha256")
+        }
+        if current != metadata:
+            raise SystemExit(
+                f"manifest identity mismatch for {expected['path']}: {current}"
+            )
+
+        if not payload.is_file():
+            raise SystemExit(
+                f"manifest selects payload but file is missing: {expected['path']}"
+            )
+        if payload.stat().st_size != expected["size"]:
+            raise SystemExit(f"size mismatch for {expected['path']}")
+        digest = hashlib.sha256(payload.read_bytes()).hexdigest()
+        if digest != expected["sha256"]:
+            raise SystemExit(
+                f"SHA-256 mismatch for {expected['path']}: {digest}"
+            )
+
+    return manifest
+
+
+def prune_payload(manifest: dict) -> dict:
+    selected = {entry["path"] for entry in manifest["files"]}
+
+    for expected in SOURCE_OWNED:
+        if expected["path"] not in selected:
+            continue
+        payload = ROOT / "proprietary" / expected["path"]
+        payload.unlink()
+
+    manifest["files"] = [
+        entry for entry in manifest["files"] if entry["path"] not in SOURCE_PATHS
+    ]
+    manifest["files"].sort(key=lambda entry: (entry["tier"], entry["path"]))
+    counts = Counter(entry["tier"] for entry in manifest["files"])
+    manifest["counts"] = {
+        "P0": counts.get("P0", 0),
+        "P1": counts.get("P1", 0),
+        "P2": counts.get("P2", 0),
+        "total": len(manifest["files"]),
+    }
+    write_json("proprietary-manifest.json", manifest)
+
+    path = ROOT / "proprietary-files.txt"
+    lines = path.read_text(encoding="utf-8").splitlines()
+    lines = [raw for raw in lines if selected_path(raw) not in SOURCE_PATHS]
+    path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+    return manifest
+
+
+def prune_prebuilt_modules() -> None:
+    text = BP.read_text(encoding="utf-8")
+    lines = text.splitlines(keepends=True)
+    removals = [
+        (start, end)
+        for start, end, name in prebuilt_blocks(text)
+        if name in SOURCE_MODULES
+    ]
+    for start, end in sorted(removals, reverse=True):
+        lines[start:end] = []
+    BP.write_text(
+        re.sub(r"\n{3,}", "\n\n", "".join(lines)).rstrip() + "\n",
+        encoding="utf-8",
+    )
 
 
 def update_elf_metadata() -> tuple[int, int]:
@@ -282,10 +305,13 @@ def update_project_metadata(manifest: dict, modules: int, exceptions: int) -> No
 
 
 def main() -> int:
-    manifest = prune_payload()
-    prune_prebuilt_modules()
+    # Preflight every invariant before the first destructive operation.
     ensure_source_packages_retained()
     ensure_proprietary_consumers_retained()
+    manifest = validate_source_owned_payload()
+
+    manifest = prune_payload(manifest)
+    prune_prebuilt_modules()
     modules, exceptions = update_elf_metadata()
     update_project_metadata(manifest, modules, exceptions)
     print(
