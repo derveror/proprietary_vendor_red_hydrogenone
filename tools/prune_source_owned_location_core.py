@@ -57,13 +57,32 @@ SOURCE_OWNED = (
 )
 SOURCE_MODULES = {entry["module"] for entry in SOURCE_OWNED}
 SOURCE_PATHS = {entry["path"] for entry in SOURCE_OWNED}
+
+# Complete direct RED .118 proprietary consumer set for the three source-owned
+# Qualcomm location providers above. This list was derived from the generated
+# Android.bp DT_NEEDED/shared_libs graph, not from package-name guesses. Keep
+# the whole closure intact when replacing the old core providers with source.
 PROPRIETARY_LOCATION_CONSUMERS = {
+    "libDRPlugin",
+    "libdataitems",
+    "libdrplugin_client",
+    "libevent_observer",
+    "libflp",
+    "libgdtap",
+    "libgeofence",
+    "libizat_client_api",
     "libizat_core",
     "liblbs_core",
     "libloc_api_v02",
     "liblocationservice",
     "liblocationservice_glue",
+    "liblowi_wifihal",
+    "libulp2",
+    "libxtadapter",
+    "libxtwifi_ulp_adaptor",
     "vendor.qti.gnss@1.0-impl",
+    "xtwifi-client",
+    "xtwifi-inet-agent",
 }
 
 
@@ -296,7 +315,8 @@ def update_project_metadata(manifest: dict, modules: int, exceptions: int) -> No
         "RED .118 libgps.utils/libloc_core/liblocation_api prebuilts are pruned because "
         "they override the LineageOS 22.2 source Qualcomm location stack and cause "
         "libgnss undefined symbols. Proprietary Qualcomm location consumers remain and "
-        "bind to the source core, matching the LineageOS 22.2 mata/cheryl msm8998 pattern."
+        "bind to the source core; Hydrogen One uses the cheryl LineageOS 22.2 legacy "
+        "Qualcomm GNSS ABI because it matches RED .118 Pie-era location consumers."
     )
     if note not in notes:
         notes.append(note)
