@@ -4,9 +4,9 @@
   "stock_archive_verified": true,
   "counts": {
     "P0": 105,
-    "P1": 349,
+    "P1": 343,
     "P2": 19,
-    "total": 473
+    "total": 467
   },
   "notes": [
     "No RED msm8998-common repository is used.",
@@ -33,6 +33,10 @@
     "Fingerprint@2.1 and media OMX proprietary executables remain selected, but their RED .118 init rc copies are pruned because the corresponding LineageOS source modules already install equivalent init_rc destinations; this prevents ckati duplicate-install rules.",
     "RED .118 libkeystore-engine-wifi-hidl/libkeystore-wifi-hidl prebuilts are pruned after the Android 15 linker rejected the legacy engine ELF symbol table. Their PRODUCT_PACKAGES entries remain so LineageOS 22.2 vendor source modules provide the Wi-Fi keystore implementation used by wpa_supplicant.",
     "RED .118 libwifi-hal/libcld80211 prebuilts are pruned because they shadow LineageOS 22.2 source modules that export compile-time Wi-Fi legacy headers. The package names remain selected so android.hardware.wifi-service receives wifi_legacy_headers and libwifi-hal-qcom receives cld80211_lib.h.",
-    "RED .118 camera.device@1.0/3.x generic HIDL wrapper prebuilts are pruned. LineageOS 22.2 source wrappers own those module names so camera provider gets the exported CameraDevice/convert headers required by Android 15. The actual RED 32-bit camera.msm8998 hardware HAL and lower proprietary camera stack remain."
+    "RED .118 camera.device@1.0/3.x generic HIDL wrapper prebuilts are pruned. LineageOS 22.2 source wrappers own those module names so camera provider gets the exported CameraDevice/convert headers required by Android 15. The actual RED 32-bit camera.msm8998 hardware HAL and lower proprietary camera stack remain.",
+    "RED .118 libgps.utils/libloc_core/liblocation_api prebuilts are pruned because they override the LineageOS 22.2 source Qualcomm location stack and cause libgnss undefined symbols. Proprietary Qualcomm location consumers remain and bind to the source core, matching the LineageOS 22.2 mata/cheryl msm8998 pattern.",
+    "RED .118 libgps.utils/libloc_core/liblocation_api prebuilts are pruned because they override the LineageOS 22.2 source Qualcomm location stack and cause libgnss undefined symbols. Proprietary Qualcomm location consumers remain and bind to the source core; Hydrogen One uses the cheryl LineageOS 22.2 legacy Qualcomm GNSS ABI because it matches RED .118 Pie-era location consumers.",
+    "63 retained RED .118 Android 9 HIDL interface blobs require the removed android::hardware::details::gBnConstructorMap ABI. They are patched with DT_NEEDED libhidlbase_shim.so, the LineageOS 22.2 compatibility provider; canonical stock hashes remain in proprietary-manifest.json and patched identities are recorded separately in ANDROID15_BLOB_FIXUPS.json.",
+    "313 of 319 proprietary ELF modules have check_elf_files enabled; the remaining 6 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json."
   ]
 }

@@ -387,6 +387,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -395,6 +396,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/com.fingerprints.extension@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -425,6 +427,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -433,6 +436,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/com.qualcomm.qti.ant@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -463,6 +467,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -471,6 +476,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -494,6 +500,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -502,6 +509,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -613,6 +621,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -621,6 +630,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib/com.qualcomm.qti.imscmservice@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -644,6 +654,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -652,6 +663,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -682,6 +694,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -690,6 +703,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib/com.qualcomm.qti.imscmservice@2.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -713,6 +727,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -721,6 +736,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -752,6 +768,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -760,6 +777,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib/com.qualcomm.qti.imscmservice@2.1.so": [
+              "libhidlbase_shim",
               "com.qualcomm.qti.imscmservice@2.0",
               "libhidlbase",
               "libhidltransport",
@@ -785,6 +803,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -793,6 +812,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so": [
+              "libhidlbase_shim",
               "com.qualcomm.qti.imscmservice@2.0",
               "libhidlbase",
               "libhidltransport",
@@ -824,6 +844,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -832,6 +853,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib/com.qualcomm.qti.uceservice@2.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -855,6 +877,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -863,6 +886,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/com.qualcomm.qti.uceservice@2.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -893,6 +917,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -901,6 +926,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -974,6 +1000,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -982,6 +1009,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/com.quicinc.cne.api@1.0.so": [
+              "libhidlbase_shim",
               "com.quicinc.cne.constants@1.0",
               "libhidlbase",
               "libhidltransport",
@@ -1015,6 +1043,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -1023,6 +1052,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/com.quicinc.cne.api@1.1.so": [
+              "libhidlbase_shim",
               "com.quicinc.cne.api@1.0",
               "com.quicinc.cne.constants@2.1",
               "libhidlbase",
@@ -1170,6 +1200,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -1178,6 +1209,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/com.quicinc.cne.server@2.0.so": [
+              "libhidlbase_shim",
               "com.quicinc.cne.constants@2.0",
               "libhidlbase",
               "libhidltransport",
@@ -1211,6 +1243,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -1219,6 +1252,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/com.quicinc.cne.server@2.1.so": [
+              "libhidlbase_shim",
               "com.quicinc.cne.constants@2.1",
               "com.quicinc.cne.server@2.0",
               "libhidlbase",
@@ -1255,6 +1289,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -1263,6 +1298,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/com.quicinc.cne.server@2.2.so": [
+              "libhidlbase_shim",
               "com.quicinc.cne.constants@2.0",
               "com.quicinc.cne.constants@2.1",
               "com.quicinc.cne.server@2.0",
@@ -1302,6 +1338,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -1310,6 +1347,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/com.quicinc.cne.server@2.3.so": [
+              "libhidlbase_shim",
               "com.quicinc.cne.constants@2.0",
               "com.quicinc.cne.constants@2.1",
               "com.quicinc.cne.server@2.0",
@@ -4734,63 +4772,6 @@
         }
       }
     },
-    "libgps.utils": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": true,
-      "blocking_dependencies": [],
-      "architectures": {
-        "android_arm": {
-          "srcs": [
-            "proprietary/vendor/lib/libgps.utils.so"
-          ],
-          "shared_libs": [
-            "libc",
-            "libc++",
-            "libcutils",
-            "libdl",
-            "liblog",
-            "libm",
-            "libutils"
-          ],
-          "needed": {
-            "proprietary/vendor/lib/libgps.utils.so": [
-              "libutils",
-              "libcutils",
-              "liblog",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        },
-        "android_arm64": {
-          "srcs": [
-            "proprietary/vendor/lib64/libgps.utils.so"
-          ],
-          "shared_libs": [
-            "libc",
-            "libc++",
-            "libcutils",
-            "libdl",
-            "liblog",
-            "libm",
-            "libutils"
-          ],
-          "needed": {
-            "proprietary/vendor/lib64/libgps.utils.so": [
-              "libutils",
-              "libcutils",
-              "liblog",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
     "libgpustats": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -5466,128 +5447,6 @@
               "libqmi_cci",
               "libqmi_common_so",
               "libloc_core",
-              "libgps.utils",
-              "liblog",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
-    "libloc_core": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": true,
-      "blocking_dependencies": [],
-      "architectures": {
-        "android_arm": {
-          "srcs": [
-            "proprietary/vendor/lib/libloc_core.so"
-          ],
-          "shared_libs": [
-            "libc",
-            "libc++",
-            "libcutils",
-            "libdl",
-            "libgps.utils",
-            "liblog",
-            "libm",
-            "libutils"
-          ],
-          "needed": {
-            "proprietary/vendor/lib/libloc_core.so": [
-              "liblog",
-              "libutils",
-              "libcutils",
-              "libgps.utils",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        },
-        "android_arm64": {
-          "srcs": [
-            "proprietary/vendor/lib64/libloc_core.so"
-          ],
-          "shared_libs": [
-            "libc",
-            "libc++",
-            "libcutils",
-            "libdl",
-            "libgps.utils",
-            "liblog",
-            "libm",
-            "libutils"
-          ],
-          "needed": {
-            "proprietary/vendor/lib64/libloc_core.so": [
-              "liblog",
-              "libutils",
-              "libcutils",
-              "libgps.utils",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
-    "liblocation_api": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": true,
-      "blocking_dependencies": [],
-      "architectures": {
-        "android_arm": {
-          "srcs": [
-            "proprietary/vendor/lib/liblocation_api.so"
-          ],
-          "shared_libs": [
-            "libc",
-            "libc++",
-            "libcutils",
-            "libdl",
-            "libgps.utils",
-            "liblog",
-            "libm",
-            "libutils"
-          ],
-          "needed": {
-            "proprietary/vendor/lib/liblocation_api.so": [
-              "libutils",
-              "libcutils",
-              "libgps.utils",
-              "liblog",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        },
-        "android_arm64": {
-          "srcs": [
-            "proprietary/vendor/lib64/liblocation_api.so"
-          ],
-          "shared_libs": [
-            "libc",
-            "libc++",
-            "libcutils",
-            "libdl",
-            "libgps.utils",
-            "liblog",
-            "libm",
-            "libutils"
-          ],
-          "needed": {
-            "proprietary/vendor/lib64/liblocation_api.so": [
-              "libutils",
-              "libcutils",
               "libgps.utils",
               "liblog",
               "libc++",
@@ -11024,6 +10883,106 @@
         }
       }
     },
+    "libstagefright_foundation-v28": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/vndk/libstagefright_foundation.so"
+          ],
+          "shared_libs": [
+            "libbinder",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/vndk/libstagefright_foundation.so": [
+              "libbinder",
+              "libutils",
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libstagefright_omx-v28": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": false,
+      "blocking_dependencies": [
+        "android.hardware.graphics.bufferqueue@1.0",
+        "libstagefright_bufferqueue_helper",
+        "libstagefright_xmlparser"
+      ],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/vndk/libstagefright_omx.so"
+          ],
+          "shared_libs": [
+            "android.hardware.graphics.bufferqueue@1.0",
+            "android.hardware.media.omx@1.0",
+            "libbase",
+            "libbinder",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "libgui_vendor",
+            "libhidlbase",
+            "libhidlmemory",
+            "libhidltransport",
+            "liblog",
+            "libm",
+            "libmedia_omx",
+            "libnativewindow",
+            "libstagefright_bufferqueue_helper",
+            "libstagefright_foundation-v28",
+            "libstagefright_xmlparser",
+            "libui",
+            "libutils",
+            "libvndksupport"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/vndk/libstagefright_omx.so": [
+              "libbase",
+              "libbinder",
+              "libmedia_omx",
+              "libutils",
+              "liblog",
+              "libui",
+              "libgui_vendor",
+              "libcutils",
+              "libstagefright_foundation-v28",
+              "libstagefright_bufferqueue_helper",
+              "libstagefright_xmlparser",
+              "libhidlbase",
+              "libhidlmemory",
+              "libhidltransport",
+              "libnativewindow",
+              "libvndksupport",
+              "android.hardware.media.omx@1.0",
+              "android.hardware.graphics.bufferqueue@1.0",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
     "libsystem_health_mon": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -12454,6 +12413,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -12462,6 +12422,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib/vendor.cm.hardware.thermal3d@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -12485,6 +12446,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -12493,6 +12455,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.cm.hardware.thermal3d@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -12603,6 +12566,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -12611,6 +12575,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib/vendor.display.color@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -12634,6 +12599,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -12642,6 +12608,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.display.color@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -12672,6 +12639,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -12680,6 +12648,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib/vendor.leia.hardware.leiadisp@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -12703,6 +12672,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -12711,6 +12681,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.leia.hardware.leiadisp@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -12829,6 +12800,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -12837,6 +12809,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.nxp.hardware.nfc@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -12873,6 +12846,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -12885,6 +12859,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.data.factory@1.0.so": [
+              "libhidlbase_shim",
               "com.quicinc.cne.api@1.0",
               "com.quicinc.cne.api@1.1",
               "com.quicinc.cne.constants@2.1",
@@ -12933,6 +12908,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -12946,6 +12922,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.data.factory@1.1.so": [
+              "libhidlbase_shim",
               "com.quicinc.cne.api@1.0",
               "com.quicinc.cne.api@1.1",
               "com.quicinc.cne.constants@2.0",
@@ -12989,6 +12966,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -12997,6 +12975,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib/vendor.qti.esepowermanager@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -13020,6 +12999,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13028,6 +13008,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.esepowermanager@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -13184,6 +13165,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13192,6 +13174,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib/vendor.qti.gnss@1.0.so": [
+              "libhidlbase_shim",
               "android.hardware.gnss@1.0",
               "libhidlbase",
               "libhidltransport",
@@ -13217,6 +13200,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13225,6 +13209,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.gnss@1.0.so": [
+              "libhidlbase_shim",
               "android.hardware.gnss@1.0",
               "libhidlbase",
               "libhidltransport",
@@ -13374,6 +13359,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13383,6 +13369,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.gnss@1.1.so": [
+              "libhidlbase_shim",
               "android.hardware.gnss@1.0",
               "vendor.qti.gnss@1.0",
               "libhidlbase",
@@ -13416,6 +13403,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13426,6 +13414,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.gnss@1.2.so": [
+              "libhidlbase_shim",
               "android.hardware.gnss@1.0",
               "vendor.qti.gnss@1.0",
               "vendor.qti.gnss@1.1",
@@ -13460,6 +13449,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13471,6 +13461,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.gnss@2.0.so": [
+              "libhidlbase_shim",
               "android.hardware.gnss@1.0",
               "vendor.qti.gnss@1.0",
               "vendor.qti.gnss@1.1",
@@ -13506,6 +13497,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13518,6 +13510,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.gnss@2.1.so": [
+              "libhidlbase_shim",
               "android.hardware.gnss@1.0",
               "vendor.qti.gnss@1.0",
               "vendor.qti.gnss@1.1",
@@ -13553,6 +13546,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13561,6 +13555,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.data.connection@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -13591,6 +13586,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13599,6 +13595,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -13629,6 +13626,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13637,6 +13635,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -13667,6 +13666,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13675,6 +13675,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -13705,6 +13706,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13713,6 +13715,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.fm@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -13743,6 +13746,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13751,6 +13755,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.am@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -13781,6 +13786,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13789,6 +13795,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -13819,6 +13826,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13827,6 +13835,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -13857,6 +13866,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13866,6 +13876,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.ims@1.1.so": [
+              "libhidlbase_shim",
               "vendor.qti.hardware.radio.ims@1.0",
               "libhidlbase",
               "libhidltransport",
@@ -13897,6 +13908,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13907,6 +13919,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.ims@1.2.so": [
+              "libhidlbase_shim",
               "vendor.qti.hardware.radio.ims@1.0",
               "vendor.qti.hardware.radio.ims@1.1",
               "libhidlbase",
@@ -13939,6 +13952,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13950,6 +13964,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.ims@1.3.so": [
+              "libhidlbase_shim",
               "vendor.qti.hardware.radio.ims@1.0",
               "vendor.qti.hardware.radio.ims@1.1",
               "vendor.qti.hardware.radio.ims@1.2",
@@ -13983,6 +13998,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -13995,6 +14011,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.ims@1.4.so": [
+              "libhidlbase_shim",
               "vendor.qti.hardware.radio.ims@1.0",
               "vendor.qti.hardware.radio.ims@1.1",
               "vendor.qti.hardware.radio.ims@1.2",
@@ -14029,6 +14046,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -14037,6 +14055,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -14067,6 +14086,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -14075,6 +14095,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -14098,6 +14119,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -14106,6 +14128,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -14136,6 +14159,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -14144,6 +14168,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -14175,6 +14200,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -14184,6 +14210,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.0.so": [
+              "libhidlbase_shim",
               "android.hardware.radio@1.0",
               "vendor.qti.hardware.radio.qtiradio@1.0",
               "libhidlbase",
@@ -14217,6 +14244,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -14227,6 +14255,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.1.so": [
+              "libhidlbase_shim",
               "android.hardware.radio@1.0",
               "vendor.qti.hardware.radio.qtiradio@1.0",
               "vendor.qti.hardware.radio.qtiradio@2.0",
@@ -14260,6 +14289,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -14268,6 +14298,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -14298,6 +14329,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -14307,6 +14339,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so": [
+              "libhidlbase_shim",
               "vendor.qti.hardware.radio.uim@1.0",
               "libhidlbase",
               "libhidltransport",
@@ -14338,6 +14371,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -14346,6 +14380,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -14376,6 +14411,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -14384,6 +14420,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -14414,6 +14451,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -14422,6 +14460,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib/vendor.qti.ims.callinfo@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -14445,6 +14484,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -14453,6 +14493,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.ims.callinfo@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -14483,6 +14524,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -14491,6 +14533,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -14521,6 +14564,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -14529,6 +14573,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.imsrtpservice@1.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -14607,6 +14652,7 @@
             "libcutils",
             "libdl",
             "libhidlbase",
+            "libhidlbase_shim",
             "libhidltransport",
             "libhwbinder",
             "liblog",
@@ -14615,6 +14661,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/vendor.qti.latency@2.0.so": [
+              "libhidlbase_shim",
               "libhidlbase",
               "libhidltransport",
               "libhwbinder",
@@ -14835,112 +14882,12 @@
           }
         }
       }
-    },
-    "libstagefright_foundation-v28": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": true,
-      "blocking_dependencies": [],
-      "architectures": {
-        "android_arm": {
-          "srcs": [
-            "proprietary/vendor/lib/vndk/libstagefright_foundation-v28.so"
-          ],
-          "shared_libs": [
-            "libbinder",
-            "libc",
-            "libc++",
-            "libcutils",
-            "libdl",
-            "liblog",
-            "libm",
-            "libutils"
-          ],
-          "needed": {
-            "proprietary/vendor/lib/vndk/libstagefright_foundation.so": [
-              "libbinder",
-              "libutils",
-              "libcutils",
-              "liblog",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
-    "libstagefright_omx-v28": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": false,
-      "blocking_dependencies": [
-        "android.hardware.graphics.bufferqueue@1.0",
-        "libstagefright_bufferqueue_helper",
-        "libstagefright_xmlparser"
-      ],
-      "architectures": {
-        "android_arm": {
-          "srcs": [
-            "proprietary/vendor/lib/vndk/libstagefright_omx-v28.so"
-          ],
-          "shared_libs": [
-            "android.hardware.graphics.bufferqueue@1.0",
-            "android.hardware.media.omx@1.0",
-            "libbase",
-            "libbinder",
-            "libc",
-            "libc++",
-            "libcutils",
-            "libdl",
-            "libgui_vendor",
-            "libhidlbase",
-            "libhidlmemory",
-            "libhidltransport",
-            "liblog",
-            "libm",
-            "libmedia_omx",
-            "libnativewindow",
-            "libstagefright_bufferqueue_helper",
-            "libstagefright_foundation-v28",
-            "libstagefright_xmlparser",
-            "libui",
-            "libutils",
-            "libvndksupport"
-          ],
-          "needed": {
-            "proprietary/vendor/lib/vndk/libstagefright_omx.so": [
-              "libbase",
-              "libbinder",
-              "libmedia_omx",
-              "libutils",
-              "liblog",
-              "libui",
-              "libgui_vendor",
-              "libcutils",
-              "libstagefright_foundation-v28",
-              "libstagefright_bufferqueue_helper",
-              "libstagefright_xmlparser",
-              "libhidlbase",
-              "libhidlmemory",
-              "libhidltransport",
-              "libnativewindow",
-              "libvndksupport",
-              "android.hardware.media.omx@1.0",
-              "android.hardware.graphics.bufferqueue@1.0",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
     }
   },
   "summary": {
-    "total_modules": 322,
-    "checkelf_enabled": 316,
+    "total_modules": 319,
+    "checkelf_enabled": 313,
     "checkelf_exceptions": 6,
-    "provider_sonames": 306
+    "provider_sonames": 289
   }
 }

@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 105,
-    "P1": 349,
+    "P1": 343,
     "P2": 19,
-    "total": 473
+    "total": 467
   },
   "files": [
     {
@@ -1110,12 +1110,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib/libgps.utils.so",
-      "size": 74448,
-      "sha256": "ed2bbc9a7d48a221d8224d53919689c47ce534f4adbda86e3e60144d724a8662"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib/libgui_vendor.so",
       "size": 493060,
       "sha256": "c97538573ab128f6301dc83827d2b2e898aa416649201b56323648fcd32f6efe"
@@ -1155,18 +1149,6 @@
       "path": "vendor/lib/libloc_api_v02.so",
       "size": 119556,
       "sha256": "90903f7c334c80a70982eb6f861e9aa7211ba9f9062f8effd1f509cac07c3928"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/libloc_core.so",
-      "size": 243124,
-      "sha256": "6b6b76aa0a16d49caa9ae6703fdb5a0ff3f3babf388dd29f8b85576c6214898c"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/liblocation_api.so",
-      "size": 75712,
-      "sha256": "57d8f4160e212ed32e58a25b8e7ec13e6422b26e370ab889c1f401a1abce2395"
     },
     {
       "tier": "P1",
@@ -2196,12 +2178,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib64/libgps.utils.so",
-      "size": 134464,
-      "sha256": "dc61233f6157b0ea63a002b4a6e8c1e63693735338211a4bb0efc2b511d7d9e1"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib64/libgpustats.so",
       "size": 201808,
       "sha256": "3923af61c74c90bf955df2308937d5a679bb60d17641d2918376082d172befa2"
@@ -2229,18 +2205,6 @@
       "path": "vendor/lib64/libloc_api_v02.so",
       "size": 200008,
       "sha256": "dd77478d9713932a5660609e47b0f3ecbb71ec4f42f0878d18562e3bd7d06f06"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/libloc_core.so",
-      "size": 268296,
-      "sha256": "00f042d2284a63ee359bcc975c16296f7b944946d9c2e28cb21a19d80eda8af5"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/liblocation_api.so",
-      "size": 135464,
-      "sha256": "5528d33c29fd78b185a16430c23d276f22150a45cff779bb1efcbb9c87392573"
     },
     {
       "tier": "P1",

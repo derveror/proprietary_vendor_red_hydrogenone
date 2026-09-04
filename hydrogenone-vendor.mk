@@ -388,3 +388,7 @@ PRODUCT_PACKAGES += \
     hvdcp_opti \
     libspcom \
     spdaemon
+
+# Android 15 compatibility for RED Android 9 HIDL prebuilts
+PRODUCT_PACKAGES += \
+    libhidlbase_shim
