@@ -7,15 +7,73 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   test:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply Android 15 vendor contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/apply_android15_vendor_contract.py
+
       - name: Run audio preprocessing ownership regression
         shell: bash
         run: |
           set -euo pipefail
           PYTHONPATH="$PWD" python3 -m unittest -v tests.test_audio_preprocessing_ownership
+
+      - name: Run all vendor contract tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD" python3 -m unittest discover -s tests -p 'test_*.py' -v
+
+      - name: Verify expected generated state
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          manifest = json.loads(Path('proprietary-manifest.json').read_text())
+          generated = json.loads(Path('GENERATED_VENDOR_AUDIT.json').read_text())
+          audit = json.loads(Path('ANDROID15_ELF_AUDIT.json').read_text())
+          exceptions = json.loads(Path('ANDROID15_ELF_EXCEPTIONS.json').read_text())['exceptions']
+
+          assert manifest['counts'] == {'P0': 105, 'P1': 341, 'P2': 19, 'total': 465}, manifest['counts']
+          assert generated['selected_files'] == 465, generated
+          assert generated['selected_bytes'] == 239856354, generated
+          assert generated['elf_modules'] == 317, generated
+          assert generated['checkelf_enabled'] == 312, generated
+          assert generated['checkelf_exceptions'] == 5, generated
+          assert audit['summary']['total_modules'] == 317, audit['summary']
+          assert audit['summary']['checkelf_enabled'] == 312, audit['summary']
+          assert audit['summary']['checkelf_exceptions'] == 5, audit['summary']
+          assert len(exceptions) == 5, exceptions
+          assert 'libaudiopreprocessing' not in exceptions
+          assert 'libwebrtc_audio_preprocessing' not in audit['modules']
+          print('AUDIO_PREPROC_GENERATED_STATE=PASS')
+          PY
+          git diff --check
+
+      - name: Commit generated GREEN state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "AUDIO_PREPROC_PIPELINE_IDEMPOTENT=PASS"
+            exit 0
+          fi
+          git commit -m "vendor: use Lineage audio preprocessing source stack"
+          git push origin HEAD:${GITHUB_REF_NAME}
