@@ -1,0 +1,576 @@
+{
+  "schema_version": 1,
+  "stock_archive_sha256": "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e",
+  "fixup": "add_needed:libhidlbase_shim.so",
+  "source_module": "libhidlbase_shim",
+  "consumer_count": 63,
+  "consumers": {
+    "vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so": {
+      "stock_size": 168532,
+      "stock_sha256": "5bfabbbc19181e481b8ef957c6af9cfb174a0885feff73fc23e3678a1351ef69",
+      "patched_size": 213685,
+      "patched_sha256": "cae83dbe59ed61d1da3d87194cba689b3063427c3039e376dab3c5e36196f6b7",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib/com.qualcomm.qti.imscmservice@1.0.so": {
+      "stock_size": 240104,
+      "stock_sha256": "5ccd36356c614aef8b2ff1fc81785f9e27d1bd86bde9217f9d8f105e441599e2",
+      "patched_size": 303457,
+      "patched_sha256": "6d88d3a52b14388b9a039b4a10ab1463a723897f92d846a4ced79bfa93c3e03e",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib/com.qualcomm.qti.imscmservice@2.0.so": {
+      "stock_size": 245144,
+      "stock_sha256": "15552fd5accc8bf8b641be3a1667ba49a348c4f2955035fddea7f8e8787b0f93",
+      "patched_size": 308001,
+      "patched_sha256": "f62ecb4248a97d9c8d80e142cdde3574d7acac6d462910b47c241bb628b7e0eb",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib/com.qualcomm.qti.imscmservice@2.1.so": {
+      "stock_size": 233172,
+      "stock_sha256": "fdcd6674c64be3977021698d8d3e8042705e48ac598dfd5a8af591be7c82ab30",
+      "patched_size": 304241,
+      "patched_sha256": "203669a626b3a8bed38c8dd79cc9bd6448d2fe7d6eab8b1d3f2bd132dd7ec938",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib/com.qualcomm.qti.uceservice@2.0.so": {
+      "stock_size": 373488,
+      "stock_sha256": "267b79e668132ada56d3b0fe731a0b4c0f0b0f61c10f808248155eaa6b6dfbee",
+      "patched_size": 462457,
+      "patched_sha256": "db29622d349ded04e0db26f3cbe462793887c5e6f8cd72d7b44dffeb4ff0cd55",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so": {
+      "stock_size": 198332,
+      "stock_sha256": "8c18ee233d161f2b68110bff6824b8f8443ec4b9d56367e428808b87dddc77ba",
+      "patched_size": 256013,
+      "patched_sha256": "65b6ba4adccac61fa1ca4c18b6dc1d6deb5a9a6b195862c16ef8a62598b75d32",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib/vendor.cm.hardware.thermal3d@1.0.so": {
+      "stock_size": 70596,
+      "stock_sha256": "a4bb060274f4a9209ada85034770ef8c84ec2b7dcf756aec017a00dc31b28bf8",
+      "patched_size": 96189,
+      "patched_sha256": "f5cb0db11dee7e019435d417dfbda1e63352f1b750d9a8baf022340c7aa0a470",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib/vendor.display.color@1.0.so": {
+      "stock_size": 172520,
+      "stock_sha256": "4f6f8116cc4b88c7ca8b3e993052fe1fc7e774379b8d701f5b2f3a41ed412e75",
+      "patched_size": 211317,
+      "patched_sha256": "0a78920f796c9166d32a5307f9e272a2ac0d6ed6779f3015b0f7ba617fdc8241",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib/vendor.leia.hardware.leiadisp@1.0.so": {
+      "stock_size": 109016,
+      "stock_sha256": "4c7b40153d02fcd96ec749e5c9864766efa0328a3d5cdb9a24d2ee09ae427c3e",
+      "patched_size": 143249,
+      "patched_sha256": "9b25d2f88be10fc1c9fc906d769680cec329846d4a59f943ab6da1ce8a2b84ae",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib/vendor.qti.esepowermanager@1.0.so": {
+      "stock_size": 78892,
+      "stock_sha256": "31cade5866c0673d5bce5fe942d3aa5cdb7665aa727eb5804c5e12ae20e505fc",
+      "patched_size": 106337,
+      "patched_sha256": "fcaf366cdc177898a7cb874f73246b60807a43d553416ce5896562a8165a5675",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib/vendor.qti.gnss@1.0.so": {
+      "stock_size": 922224,
+      "stock_sha256": "519ac25f0c5aa1e4c351882fd4d02e01f09b1693d7599f97bcf96e4a81461e0f",
+      "patched_size": 1152829,
+      "patched_sha256": "9deffb7806f551b3bc9fa25688ddaa27e77599b35dff18243fb33f9662e3c198",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0.so": {
+      "stock_size": 143216,
+      "stock_sha256": "efca808080a845a71557dee8e2c63d31123628807ba5795f776604232d4e6bc4",
+      "patched_size": 185461,
+      "patched_sha256": "f3745b58a3e1101b46f8561b9078b08c176506833a86444a38b0fe2de934aa1a",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib/vendor.qti.ims.callinfo@1.0.so": {
+      "stock_size": 100788,
+      "stock_sha256": "e97a0280ac72122c747eab5dfd96f1abd4a52080d1ce5be12ef89b6baf05e148",
+      "patched_size": 133105,
+      "patched_sha256": "cc7f5ad114f0d8562a96f977d82900d5c16e050266bc89703fbcf30a7bff1a87",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/com.fingerprints.extension@1.0.so": {
+      "stock_size": 868280,
+      "stock_sha256": "7286119253f38d8cdd15a37b1deb1a1285aa9d7f3445597b8b4ce5bf62491aa8",
+      "patched_size": 1079705,
+      "patched_sha256": "f7c2186a90c9e3d1b4d6a29c06e9cdc0cd40fa9659b6c18009154ab15adc986e",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/com.qualcomm.qti.ant@1.0.so": {
+      "stock_size": 201928,
+      "stock_sha256": "bf3f119e6f04e43670e346d9169b718722d33920521008b9a9d8d3d1a4873dec",
+      "patched_size": 296433,
+      "patched_sha256": "68c7f23882afb15403c4e5cef8189c74a2fb8d10e269fcf4b73e75213afc9ecf",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so": {
+      "stock_size": 269176,
+      "stock_sha256": "f1926e0bc0df57aeee8f7e1d9cbe89804c27a4df67c6293a97f1c1897c428cfe",
+      "patched_size": 372321,
+      "patched_sha256": "b9a0a855d906c75800636da7867513bf71e7fb3fe552489c14f20fa290c3c181",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so": {
+      "stock_size": 335616,
+      "stock_sha256": "bf436ce8b675ae4e406ee3a7ca0c313102958ac462b1026ea3880e26f867bcda",
+      "patched_size": 459281,
+      "patched_sha256": "4aa9a0b8b4640864ed009f200ce2def03e86abca57fd79d4508644897aa6acc4",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so": {
+      "stock_size": 336400,
+      "stock_sha256": "b929ab3bc5b7e6d1570155649f5ce0731b3ec7e3df00cd78a75e24efd4e44b94",
+      "patched_size": 459769,
+      "patched_sha256": "28af5cecc68a3bd593169dfdad4b57a95bdd52ee7e4f79131249be569e387264",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so": {
+      "stock_size": 336800,
+      "stock_sha256": "b98153ebb211f387be4b52a9baae8c69d7d03ea233a4b9c0ded3f5e24330e7c1",
+      "patched_size": 468753,
+      "patched_sha256": "e5447d3e857c01f99de40b5205398bd1af3384a3236df47f381d551977df45d5",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/com.qualcomm.qti.uceservice@2.0.so": {
+      "stock_size": 536760,
+      "stock_sha256": "ae9ed74f82618eff88a0a38f7fbd735908eed7a611fcaccf80ea9776decf63a9",
+      "patched_size": 681257,
+      "patched_sha256": "66b0f249f907e7f2a1a036218c2b189e49cfef5bbca63e1cb1c1c0d8bf011838",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/com.quicinc.cne.api@1.0.so": {
+      "stock_size": 335672,
+      "stock_sha256": "8ca82c725cca5a408d326b8b6b2abd7a22272738d84e84ab97aad68a13462a8c",
+      "patched_size": 449305,
+      "patched_sha256": "8742da67d360321ee45fcd26065d02cb98e18a467ce7b213699e942d49ec018b",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/com.quicinc.cne.api@1.1.so": {
+      "stock_size": 203112,
+      "stock_sha256": "7573bcfbcc225e7da17d50b9a0dfc5a60be046960947e043adf2f3d58a66d342",
+      "patched_size": 302121,
+      "patched_sha256": "944f83ab82ecaae9c9d0a3b509bad860290fa15c315f7cdf181e94317a7148de",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/com.quicinc.cne.server@2.0.so": {
+      "stock_size": 336776,
+      "stock_sha256": "ed8dcfaa435b761ab71c069fcadd99a2577952b901ffdf2ac6837242ddac82b3",
+      "patched_size": 446481,
+      "patched_sha256": "3da87fd534eb639608acc0b9574b2cb3245cf9defe8c7d0ef08f85fb653f956d",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/com.quicinc.cne.server@2.1.so": {
+      "stock_size": 337152,
+      "stock_sha256": "c3b9500ecf1d1c1f8a63c179e8dc28c3dcab4c0dda98ef5a67b6b299d5631a47",
+      "patched_size": 449233,
+      "patched_sha256": "77bc704bacd703d302a5ba6e85c8b02c877fcb0768935689144ca0bcf52e37b7",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/com.quicinc.cne.server@2.2.so": {
+      "stock_size": 337648,
+      "stock_sha256": "6712255f4179611019d05533225873e57b38c4b37b062acb1995c7d07459926d",
+      "patched_size": 455793,
+      "patched_sha256": "2c31ecc90fc4797ef2502afa7fd9a6e3c443cc42f402a699b21f393347c8c8db",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/com.quicinc.cne.server@2.3.so": {
+      "stock_size": 337720,
+      "stock_sha256": "0ee085c897ae83a184f5dbebf9411874f2dbd2981fc6bf2ccf151176bd8ed55d",
+      "patched_size": 459441,
+      "patched_sha256": "2d275225339166b22713c0ab2072fb8bf5461e3741f56fed1e43b576cdf37eef",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.cm.hardware.thermal3d@1.0.so": {
+      "stock_size": 135528,
+      "stock_sha256": "da20531f69a2b4c262315fd4569d2494c7afdd5e4fd42797f78fd364af20aa08",
+      "patched_size": 221049,
+      "patched_sha256": "15361fe53fe57466e7f558d30534fc7be37dfebc4e224075bdf1864f4ef5ee60",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.display.color@1.0.so": {
+      "stock_size": 269304,
+      "stock_sha256": "b5ba1f85adc4dfe87fdaa65545c4b46b8d4229e68f922b41b1e35b48875b79fe",
+      "patched_size": 365561,
+      "patched_sha256": "920377c48c133f0455c6e9739fa57bb3f115f1ec3f0142bf167cbbf27335f73c",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.leia.hardware.leiadisp@1.0.so": {
+      "stock_size": 201992,
+      "stock_sha256": "78ba035ec0d797e587dcda58c49fa0078565a8bb286cd8411537f1d74056b27a",
+      "patched_size": 297457,
+      "patched_sha256": "e33862ed1e7fb46dad247978be6f5e95ca93bb41c60f6dce5954210c449da02b",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.nxp.hardware.nfc@1.0.so": {
+      "stock_size": 135688,
+      "stock_sha256": "f0dfa498c2073a5535a8bbf1b55eeaf5ecb002fedc214e26283a7832486051f0",
+      "patched_size": 219929,
+      "patched_sha256": "e26176943f1f8970afe80276252434ec03adb29fdeb7314b7b36592dd1d8522b",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.data.factory@1.0.so": {
+      "stock_size": 202304,
+      "stock_sha256": "71977a9793b6ce1d4a187664d05fa83119a9d172468a5832371ddfa384807bc0",
+      "patched_size": 297121,
+      "patched_sha256": "52b251eee6c9a667460f8b54c2a0ff646b5b807b4bf5bab2c553c128b98e1614",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.data.factory@1.1.so": {
+      "stock_size": 136712,
+      "stock_sha256": "dbbefb5e5787d7f7059348f0a6967aa684c697ea914a6069afde030f3084543f",
+      "patched_size": 229785,
+      "patched_sha256": "c0bbf0de140caefe8a56c713ae9c7d1d115123ab6f12d3f9971167068b4c7f6d",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.esepowermanager@1.0.so": {
+      "stock_size": 135576,
+      "stock_sha256": "fe8856f3630c54540ad7aca1d1b5441c0a844ce44683fbc4eb871132d3ce4631",
+      "patched_size": 223105,
+      "patched_sha256": "759dd68a6da4e54b08ebc56e5d27da1cf544e90b589afeaed980764991fa8471",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.gnss@1.0.so": {
+      "stock_size": 1264592,
+      "stock_sha256": "ef6cf69a6049248b7920a56b44b6179ec9781c5b4febf4ebfa13581bcba5819f",
+      "patched_size": 1553081,
+      "patched_sha256": "45273b9a3c7ef50a0b987cdbd6b907bd0931f3d9e326e4a0396683b58a8cd879",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.gnss@1.1.so": {
+      "stock_size": 1199784,
+      "stock_sha256": "914e722fb2bd72679066b379033a9f6aa13c442a353e4dccd8e6e328dd07a105",
+      "patched_size": 1529209,
+      "patched_sha256": "b059dd04dc90152690916c8558996b141d0c1c1926e36894c5e053598de9c2f2",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.gnss@1.2.so": {
+      "stock_size": 334512,
+      "stock_sha256": "b783e6d028eca9daada9e4d6de1a0574be08bdfaa8c207d1ec4df7ff60839e21",
+      "patched_size": 463465,
+      "patched_sha256": "6f3512a831697972b4479e1f9695a1fee44f10bd71762eefaf0096ad377d06fa",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.gnss@2.0.so": {
+      "stock_size": 201792,
+      "stock_sha256": "cd6b4c31e5e47b432cb77e4f43d49d8128c9b280a2690fcce62161bdaae49b0c",
+      "patched_size": 311169,
+      "patched_sha256": "63b001050e4461ba0b7b8df3f0bff9489c0012bfd38694b410a58c3f802a49e2",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.gnss@2.1.so": {
+      "stock_size": 998392,
+      "stock_sha256": "d8a50f72c91342a20ed707ae721ecb0cf720d8fc343e1554da68931291bf5615",
+      "patched_size": 1274097,
+      "patched_sha256": "e8eca5504cdc6190c97181d7c82ed837ed8d809bdc2620ed0927b994d8f1ff77",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.data.connection@1.0.so": {
+      "stock_size": 268624,
+      "stock_sha256": "7fa6df534504b60f384a8a64e56904bbc370a509beda4bffa9d92ebef4eb12f8",
+      "patched_size": 376193,
+      "patched_sha256": "0719db0f965f25b1bc5d2fa36dc30cef53bbf7ab4d4a04b72bf57eb51d3b8989",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so": {
+      "stock_size": 335672,
+      "stock_sha256": "c87eb21f7b59b3fd59606cba46546bfaa9f0407ba54a4c95e16ad75854086f6d",
+      "patched_size": 461409,
+      "patched_sha256": "bff3fa0c84a4ccf14078b063c8244e317d1ed301b037d6171f12ebbcff212119",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so": {
+      "stock_size": 203240,
+      "stock_sha256": "6bcd58e1786c65ef0cf75019b09ee22da50763e59530f4ed920c8b458a55e35d",
+      "patched_size": 305777,
+      "patched_sha256": "b4bd9219c1964800d7359e1157585bf6c5784d8cb1aa2a6155663d16da4bc585",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so": {
+      "stock_size": 534920,
+      "stock_sha256": "69e9a33c27306883b9f3499acdf48c22c12fc67f5fa77b8d0806e93f543e258d",
+      "patched_size": 676369,
+      "patched_sha256": "82c62097e61667159296cccf3e64ebcb86956f3fd2c5eef1787ea974537305ab",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.fm@1.0.so": {
+      "stock_size": 201880,
+      "stock_sha256": "bef6828683f353fe570f81a6b78a0885666093550158a29ae1f2138b4a321cb3",
+      "patched_size": 295553,
+      "patched_sha256": "a4ddc83ce87ed6dfc5e89bb00f0f3278f76bab227087954cdebb21fcddb939fe",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.am@1.0.so": {
+      "stock_size": 202288,
+      "stock_sha256": "f3847c5600c94a757d15907f0ceb86f8b7aa2c47646b4bec96706cc1d2d1f3c4",
+      "patched_size": 296921,
+      "patched_sha256": "d018efc23eb8198b74f4258e0f088eb3b72ba558ebf56a9bd0e61051ea3b8418",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so": {
+      "stock_size": 135736,
+      "stock_sha256": "dbef80e8bbc81eaee1904f7d862d6fcbcba8784463148ee09668b083fc1ada3a",
+      "patched_size": 221705,
+      "patched_sha256": "52d51ed83610ee730d8d8793518c029327b011392504123d92fbdaac78301ce0",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so": {
+      "stock_size": 802080,
+      "stock_sha256": "f2102eee84dd39e7e1536c2c58b66916c7928caca22872ac93e05ca2a8c3f9a5",
+      "patched_size": 953193,
+      "patched_sha256": "330013c91958470d0f24a3c0eada02b0a63b727bfd8c36f7bf916d0739d17962",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.ims@1.1.so": {
+      "stock_size": 405168,
+      "stock_sha256": "3034376255295abe8dbe521d9222beabd780116b78f1b8912070b9547c56e630",
+      "patched_size": 529153,
+      "patched_sha256": "db174a4657b2b050b409f15a04eaa39a5ecc9c6c595d99207962a92b9c903c34",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.ims@1.2.so": {
+      "stock_size": 672776,
+      "stock_sha256": "8f1670b7047006f57ba02906d88e49194f2ce8055d90b50f05a4011be533c409",
+      "patched_size": 832449,
+      "patched_sha256": "4a40c13e2761a438b6b2193353c693c3fda1a4ad78bc6ec78fed66f9adb5a60f",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.ims@1.3.so": {
+      "stock_size": 738944,
+      "stock_sha256": "64fdbbd0fa43be13beb1e4ef3dd1bdfefffd08a60a2baad49615b5fbc7dfb2d0",
+      "patched_size": 908049,
+      "patched_sha256": "40cde6483c74d0dee090053040f1aed8d13c8e2adf65f1be90807958c3cb1114",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.ims@1.4.so": {
+      "stock_size": 740048,
+      "stock_sha256": "364ea28d945f34739d27ec55af1460b895adfb3ece3bdfdd268e84873965bd56",
+      "patched_size": 918657,
+      "patched_sha256": "7ca45d38f13859a656e14bc3283b8d64519b1b6e42f8481f308b71d4aef02ef2",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so": {
+      "stock_size": 269040,
+      "stock_sha256": "a5804b9c99928427a025706b66f5f31735392e18a259d26f3f7337b76cbf586e",
+      "patched_size": 374865,
+      "patched_sha256": "b59b5cc1006973eaf664d9b119657f54db6ea1bfd78307a285be037dfe054f00",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so": {
+      "stock_size": 202928,
+      "stock_sha256": "f69d708cb0d2b25b40b7a7ee0277cfe31b79838217fa0cd884aa3fa53250e8a6",
+      "patched_size": 307369,
+      "patched_sha256": "898ffd8d0e0c202b3fb9db99b9cc4ecf6079cf2b6413d4e0cf9da140a987664a",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so": {
+      "stock_size": 202912,
+      "stock_sha256": "5aeacd222dc3b2c45ff7c31bf551619f0077bc8b005e9463f3d691f5856e391c",
+      "patched_size": 306673,
+      "patched_sha256": "18cbff37dd500b7380e755eaedd490a644cdd91eefb7399f9cb729da54f1ea98",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.0.so": {
+      "stock_size": 336064,
+      "stock_sha256": "7aa461c287030b28e058af92e2591587c1cd7a9d657fe02b5478b781680cbc79",
+      "patched_size": 454689,
+      "patched_sha256": "5acfd6d331a31def9e6774a45df421e53d70d8db39bcb4c8846bd7d8abaf515f",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.1.so": {
+      "stock_size": 336864,
+      "stock_sha256": "ab68f1d54dee966307188765d891542ca45ffe7b8075a95a2efab3c3d3e49b7d",
+      "patched_size": 465449,
+      "patched_sha256": "f257a2ea7f5b417c5626eeaedcaf877cf91ee8b391f49bcddaebe89058709b18",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so": {
+      "stock_size": 202880,
+      "stock_sha256": "1d7c334a10e9a8daf4fb346b50e671e0d9f5dbc65634a7e1f1213d6969808cb3",
+      "patched_size": 305081,
+      "patched_sha256": "7aacd901680fd701824f129f27ebf9ea317e17e9a46ebf060a4303e50b413fa5",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so": {
+      "stock_size": 202552,
+      "stock_sha256": "160cc9e8a2a1386bd3634ddb227a9572bbbc5a2ba0ae834239ff1f8612732790",
+      "patched_size": 301577,
+      "patched_sha256": "70b1cf21fe4788b8d970a4d043c39a3770d571929b066225929e7c80f7ffa495",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so": {
+      "stock_size": 269312,
+      "stock_sha256": "0102df82b39921ed91a631fe799c2a75b713f9f05c92ed541b456916c9ecab0a",
+      "patched_size": 382953,
+      "patched_sha256": "7bf2c61b34ca3aad80c305dc011e05ab5a8ad05c7f221849b0f36a1317e6b570",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so": {
+      "stock_size": 335672,
+      "stock_sha256": "5003b9f29aeb8a38541705563b75314833844e3185ccf6507f57f3d3d475c103",
+      "patched_size": 454441,
+      "patched_sha256": "65f79cae06860440d956863481b899d1b3821b9cbaf58f7922748f78262bbf18",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.ims.callinfo@1.0.so": {
+      "stock_size": 136472,
+      "stock_sha256": "9b1d32e7efee33f1a1d06e5db4155c15f3adb8f9baddee5e03f16f2de829b4b5",
+      "patched_size": 229881,
+      "patched_sha256": "bde00a054619f0c7c0f3b31a4e57a74a730e29a48033c9ade3b2ff5989ebe87e",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so": {
+      "stock_size": 202856,
+      "stock_sha256": "3e62140a31d8bf72c7f7f895d0213a9709dd9c4b7a9b71f26b526025aeffc782",
+      "patched_size": 303217,
+      "patched_sha256": "dee26d9e915288a0308fe7f2deabc64070d6dfce60866f1d58d45d0e85404e5b",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.imsrtpservice@1.0.so": {
+      "stock_size": 333936,
+      "stock_sha256": "756c73d9391f591fb91188e69f6c4208ee3b0f52a85f943b1f20c113a2a17f5a",
+      "patched_size": 454361,
+      "patched_sha256": "424034814de69c59b6151825b812c6924988bf871b7c29730a703ef34fd0f833",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    },
+    "vendor/lib64/vendor.qti.latency@2.0.so": {
+      "stock_size": 136600,
+      "stock_sha256": "395933ecf187f447a73f122c500868e16f303db3e7653b35e81a45b1ae86cdb0",
+      "patched_size": 228985,
+      "patched_sha256": "8948b9296e26379a7859e76c3d8eb05b5aa59bb760ca7007e15cba9709d86cb1",
+      "symbols": [
+        "gBnConstructorMap"
+      ]
+    }
+  }
+}
