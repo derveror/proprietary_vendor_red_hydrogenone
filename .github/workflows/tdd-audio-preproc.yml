@@ -1,0 +1,21 @@
+name: TDD audio preprocessing ownership
+
+on:
+  push:
+    branches:
+      - codex/audio-preproc-tdd
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run audio preprocessing ownership regression
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD" python3 -m unittest -v tests.test_audio_preprocessing_ownership
