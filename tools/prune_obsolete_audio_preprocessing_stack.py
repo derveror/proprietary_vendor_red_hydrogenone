@@ -51,6 +51,13 @@ def selected_path(raw: str) -> str | None:
     return body.split(":", 1)[0].lstrip("-")
 
 
+def module_shared_libs(record: dict) -> set[str]:
+    result: set[str] = set()
+    for arch in record.get("architectures", {}).values():
+        result.update(arch.get("shared_libs", []))
+    return result
+
+
 def assert_dependency_is_self_contained() -> None:
     audit = load_json("ANDROID15_ELF_AUDIT.json")
     modules = audit.get("modules", {})
@@ -58,8 +65,7 @@ def assert_dependency_is_self_contained() -> None:
     for name, record in modules.items():
         if name in OBSOLETE_MODULES:
             continue
-        needed = set(record.get("shared_libs", []))
-        overlap = needed & OBSOLETE_MODULES
+        overlap = module_shared_libs(record) & OBSOLETE_MODULES
         if overlap:
             violations.append(f"{name} -> {', '.join(sorted(overlap))}")
     if violations:
@@ -70,7 +76,7 @@ def assert_dependency_is_self_contained() -> None:
 
     legacy = modules.get(SOURCE_PACKAGE)
     if legacy is not None:
-        needed = set(legacy.get("shared_libs", []))
+        needed = module_shared_libs(legacy)
         if PRIVATE_COMPANION not in needed:
             raise SystemExit(
                 "unexpected RED libaudiopreprocessing dependency graph: "
@@ -172,16 +178,12 @@ def update_vendor_packages() -> None:
     path = ROOT / "hydrogenone-vendor.mk"
     text = path.read_text(encoding="utf-8")
 
-    # The private Android 9 WebRTC shared library has no modern owner and is
-    # intentionally removed from PRODUCT_PACKAGES.
     text = re.sub(
         rf"(?m)^\s*{re.escape(PRIVATE_COMPANION)}\s*\\?\s*\n",
         "",
         text,
     )
 
-    # Keep the generic module name selected after removing the RED prebuilt so
-    # LineageOS 22.2's vendor source libaudiopreprocessing owns the package.
     if not package_selected(text, SOURCE_PACKAGE):
         anchor = "    libaudioalsa \\\n"
         if anchor not in text:
