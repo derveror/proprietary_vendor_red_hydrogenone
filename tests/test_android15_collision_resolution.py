@@ -19,13 +19,30 @@ LOCATION_SOURCE_CORE = {
     "libloc_core",
     "liblocation_api",
 }
+# Complete direct RED .118 proprietary consumer set for the source-owned
+# Qualcomm location providers above. This is derived from the generated
+# Android.bp DT_NEEDED/shared_libs graph.
 PROPRIETARY_LOCATION_CONSUMERS = {
+    "libDRPlugin",
+    "libdataitems",
+    "libdrplugin_client",
+    "libevent_observer",
+    "libflp",
+    "libgdtap",
+    "libgeofence",
+    "libizat_client_api",
     "libizat_core",
     "liblbs_core",
     "libloc_api_v02",
     "liblocationservice",
     "liblocationservice_glue",
+    "liblowi_wifihal",
+    "libulp2",
+    "libxtadapter",
+    "libxtwifi_ulp_adaptor",
     "vendor.qti.gnss@1.0-impl",
+    "xtwifi-client",
+    "xtwifi-inet-agent",
 }
 SOURCE_OWNED_MODULES = {
     "android.hidl.base@1.0",
@@ -147,7 +164,7 @@ class Android15CollisionResolutionTest(unittest.TestCase):
         packages = product_packages()
         self.assertEqual(sorted(SOURCE_PACKAGES_REQUIRED - packages), [])
 
-    def test_proprietary_location_consumers_remain_selected_while_core_is_source_owned(self) -> None:
+    def test_complete_proprietary_location_consumer_closure_remains_selected(self) -> None:
         blocks = module_blocks()
         self.assertEqual(sorted(PROPRIETARY_LOCATION_CONSUMERS - set(blocks)), [])
 
