@@ -13,7 +13,7 @@ PROPRIETARY = ROOT / "proprietary"
 SOURCE_OWNED_SERVICE_REGISTRATIONS = {
     "vendor/bin/hw/vendor.qti.gnss@1.0-service": (
         "IGnss17registerAsService",
-        "android.hardware.gnss@2.1-service-qti owns IGnss/default",
+        "android.hardware.gnss@1.0-service-qti owns IGnss/default",
     ),
     "vendor/bin/hw/vendor.nxp.hardware.nfc@1.1-service": (
         "INfc17registerAsService",
