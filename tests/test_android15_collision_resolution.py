@@ -19,6 +19,18 @@ LOCATION_SOURCE_CORE = {
     "libloc_core",
     "liblocation_api",
 }
+MEDIA_SOURCE_FRONTEND_PREBUILTS = {
+    "android.hardware.media.omx@1.0-service",
+    "libgui_vendor",
+    "libstagefright_foundation-v28",
+    "libstagefright_omx-v28",
+}
+MEDIA_SOURCE_FRONTEND_PATHS = {
+    "vendor/bin/hw/android.hardware.media.omx@1.0-service",
+    "vendor/lib/libgui_vendor.so",
+    "vendor/lib/vndk/libstagefright_foundation.so",
+    "vendor/lib/vndk/libstagefright_omx.so",
+}
 # Complete direct RED .118 proprietary consumer set for the source-owned
 # Qualcomm location providers above. This is derived from the generated
 # Android.bp DT_NEEDED/shared_libs graph.
@@ -48,6 +60,7 @@ SOURCE_OWNED_MODULES = {
     "android.hidl.base@1.0",
     *CAMERA_SOURCE_WRAPPERS,
     *LOCATION_SOURCE_CORE,
+    *MEDIA_SOURCE_FRONTEND_PREBUILTS,
     "libalsautils",
     "libcld80211",
     "libkeystore-engine-wifi-hidl",
@@ -86,6 +99,7 @@ SOURCE_OWNED_PATHS = {
     "vendor/lib64/vendor.qti.hardware.camera.device@1.0.so",
     "vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so",
     "vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so",
+    *MEDIA_SOURCE_FRONTEND_PATHS,
 }
 SOURCE_PACKAGES_REQUIRED = {
     *CAMERA_SOURCE_WRAPPERS,
@@ -95,16 +109,6 @@ SOURCE_PACKAGES_REQUIRED = {
     "libkeystore-wifi-hidl",
     "libwifi-hal",
     "vendor.qti.hardware.camera.device@1.0",
-}
-LEGACY_VNDK = {
-    "libstagefright_foundation-v28": {
-        "stem": "libstagefright_foundation",
-        "src": "proprietary/vendor/lib/vndk/libstagefright_foundation.so",
-    },
-    "libstagefright_omx-v28": {
-        "stem": "libstagefright_omx",
-        "src": "proprietary/vendor/lib/vndk/libstagefright_omx.so",
-    },
 }
 
 
@@ -168,23 +172,16 @@ class Android15CollisionResolutionTest(unittest.TestCase):
         blocks = module_blocks()
         self.assertEqual(sorted(PROPRIETARY_LOCATION_CONSUMERS - set(blocks)), [])
 
-    def test_api28_stagefright_vndk_is_retained_under_unique_soong_names(self) -> None:
+    def test_pie_media_wrapper_closure_is_not_retained(self) -> None:
         blocks = module_blocks()
-        for module, expected in LEGACY_VNDK.items():
-            self.assertIn(module, blocks)
-            block = blocks[module]
-            self.assertIn(f'stem: "{expected["stem"]}"', block)
-            self.assertIn('relative_install_path: "vndk"', block)
-            self.assertIn(expected["src"], block)
-        self.assertNotIn("libstagefright_foundation", blocks)
-        self.assertNotIn("libstagefright_omx", blocks)
+        self.assertEqual(sorted(MEDIA_SOURCE_FRONTEND_PREBUILTS & set(blocks)), [])
+        self.assertEqual(sorted(MEDIA_SOURCE_FRONTEND_PATHS & active_paths()), [])
 
-    def test_api28_stagefright_consumers_bind_to_legacy_modules(self) -> None:
-        blocks = module_blocks()
-        service = blocks["android.hardware.media.omx@1.0-service"]
-        legacy_omx = blocks["libstagefright_omx-v28"]
-        self.assertIn('"libstagefright_omx-v28"', service)
-        self.assertIn('"libstagefright_foundation-v28"', legacy_omx)
+    def test_media_omx_source_ownership_is_recorded(self) -> None:
+        lock = json.loads((ROOT / "SOURCE_LOCK.json").read_text(encoding="utf-8"))
+        android15 = lock["android15_contract"]
+        self.assertTrue(android15.get("source_owned_media_omx_stack_pruned"))
+        self.assertFalse(android15.get("legacy_vndk28_stagefright_namespaced", True))
 
     def test_real_red_camera_hal_remains_proprietary_and_wrapper_independent(self) -> None:
         blocks = module_blocks()
