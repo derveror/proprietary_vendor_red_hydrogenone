@@ -34,7 +34,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python3 tools/apply_android15_vendor_contract.py
+          PYTHONDONTWRITEBYTECODE=1 python3 tools/apply_android15_vendor_contract.py
 
       - name: Verify generated Android 15 ownership and HIDL contract
         shell: bash
@@ -50,29 +50,37 @@ jobs:
           fixups = json.loads(Path('ANDROID15_BLOB_FIXUPS.json').read_text())
           elf_audit = json.loads(Path('ANDROID15_ELF_AUDIT.json').read_text())
           exceptions = json.loads(Path('ANDROID15_ELF_EXCEPTIONS.json').read_text())['exceptions']
+          vintf = json.loads(Path('VINTF_PROPRIETARY_CONTRACT.json').read_text())
 
-          expected_counts = {'P0': 105, 'P1': 341, 'P2': 19, 'total': 465}
+          expected_counts = {'P0': 105, 'P1': 337, 'P2': 19, 'total': 461}
           assert manifest['counts'] == expected_counts, manifest['counts']
           assert lock['stock_build'] == 'H1A1000.082ho.01.00.10r.118', lock
           assert lock['stock_archive_sha256'] == '7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e', lock
-          assert lock['selected_files'] == 465, lock['selected_files']
-          assert audit['selected_files'] == 465, audit
-          assert audit['p0'] == 105 and audit['p1'] == 341 and audit['p2'] == 19, audit
-          assert audit['selected_bytes'] == 239856354, audit['selected_bytes']
+          assert lock['selected_files'] == 461, lock['selected_files']
+          assert audit['selected_files'] == 461, audit
+          assert audit['p0'] == 105 and audit['p1'] == 337 and audit['p2'] == 19, audit
+          assert audit['selected_bytes'] == 238895582, audit['selected_bytes']
           assert audit['missing_files'] == [], audit['missing_files']
           assert audit['duplicate_paths'] == 0, audit['duplicate_paths']
           assert audit['sensitive_path_matches'] == [], audit['sensitive_path_matches']
-          assert audit['elf_modules'] == 317, audit['elf_modules']
-          assert audit['checkelf_enabled'] == 312, audit['checkelf_enabled']
-          assert audit['checkelf_exceptions'] == 5, audit['checkelf_exceptions']
-          assert elf_audit['summary']['total_modules'] == 317, elf_audit['summary']
-          assert elf_audit['summary']['checkelf_enabled'] == 312, elf_audit['summary']
-          assert elf_audit['summary']['checkelf_exceptions'] == 5, elf_audit['summary']
-          assert len(exceptions) == 5, exceptions
+          assert audit['elf_modules'] == 313, audit['elf_modules']
+          assert audit['checkelf_enabled'] == 313, audit['checkelf_enabled']
+          assert audit['checkelf_exceptions'] == 0, audit['checkelf_exceptions']
+          assert elf_audit['summary']['total_modules'] == 313, elf_audit['summary']
+          assert elf_audit['summary']['checkelf_enabled'] == 313, elf_audit['summary']
+          assert elf_audit['summary']['checkelf_exceptions'] == 0, elf_audit['summary']
+          assert exceptions == {}, exceptions
           assert 'libaudiopreprocessing' not in exceptions
           assert 'libwebrtc_audio_preprocessing' not in elf_audit['modules']
           assert lock['android15_contract']['obsolete_audio_preprocessing_pruned'] is True
           assert lock['android15_contract']['source_owned_audio_preprocessing_package'] == 'libaudiopreprocessing'
+          assert lock['android15_contract']['source_owned_media_omx_stack_pruned'] is True
+          assert lock['android15_contract']['nfc_legacy_hal_checkelf_verified'] is True
+          assert lock['android15_contract']['legacy_vndk28_stagefright_namespaced'] is False
+          assert 'android.hardware.media.omx' in vintf['source_owned_exclusions'], vintf
+          assert 'android.hardware.media.omx@1.0-service' not in vintf['modules'], vintf
+          assert vintf['proprietary_fqname_count'] == 33, vintf
+          assert not Path('vintf/media-omx.xml').exists()
           assert fixups['consumer_count'] == 63, fixups['consumer_count']
           assert fixups['fixup'] == 'add_needed:libhidlbase_shim.so', fixups['fixup']
           assert lock['android15_contract']['legacy_hidlbase_shim_fixup']['consumer_count'] == 63
@@ -85,7 +93,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          PYTHONPATH="$PWD" python3 -m unittest discover -s tests -p 'test_*.py' -v
+          PYTHONDONTWRITEBYTECODE=1 PYTHONPATH="$PWD" python3 -m unittest discover -s tests -p 'test_*.py' -v
           git diff --check
 
       - name: Verify contract pipeline idempotency
@@ -93,7 +101,7 @@ jobs:
         run: |
           set -euo pipefail
           git diff --binary > "$RUNNER_TEMP/first.patch"
-          python3 tools/apply_android15_vendor_contract.py
+          PYTHONDONTWRITEBYTECODE=1 python3 tools/apply_android15_vendor_contract.py
           git diff --binary > "$RUNNER_TEMP/second.patch"
           cmp "$RUNNER_TEMP/first.patch" "$RUNNER_TEMP/second.patch"
           echo 'ANDROID15 PIPELINE IDEMPOTENCY: PASS'

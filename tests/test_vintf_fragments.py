@@ -17,10 +17,6 @@ EXPECTED = {
         "@1.0::IAntHci/default",
         "@1.0::IFmHci/default",
     },
-    "android.hardware.media.omx@1.0-service": {
-        "@1.0::IOmx/default",
-        "@1.0::IOmxStore/default",
-    },
     "wifidisplayhalservice": {
         "@1.0::IDSManager/wifidisplaydshal",
         "@1.0::IHDCPSession/wifidisplayhdcphal",
@@ -63,6 +59,7 @@ EXPECTED = {
 
 SOURCE_OWNED_NAMES = {
     "android.hardware.gnss",
+    "android.hardware.media.omx",
     "android.hardware.nfc",
 }
 
@@ -103,10 +100,13 @@ class ProprietaryVintfContractTest(unittest.TestCase):
     def test_every_retained_proprietary_hal_has_exact_stock_fragment(self) -> None:
         for module, expected in EXPECTED.items():
             fragment = fragment_for_module(module)
-            self.assertTrue(fragment.is_file(), f"missing VINTF fragment for {module}: {fragment}")
+            self.assertTrue(
+                fragment.is_file(),
+                f"missing VINTF fragment for {module}: {fragment}",
+            )
             self.assertEqual(fragment_fqnames(fragment), expected, module)
 
-    def test_vendor_fragments_do_not_redeclare_source_owned_gnss_or_nfc(self) -> None:
+    def test_vendor_fragments_do_not_redeclare_source_owned_standard_hals(self) -> None:
         conflicts: list[str] = []
         for fragment in sorted((ROOT / "vintf").glob("*.xml")):
             root = ET.parse(fragment).getroot()
@@ -114,7 +114,11 @@ class ProprietaryVintfContractTest(unittest.TestCase):
                 name = hal.findtext("name")
                 if name in SOURCE_OWNED_NAMES:
                     conflicts.append(f"{fragment.name}: {name}")
-        self.assertEqual(conflicts, [], f"source-owned HALs leaked into vendor VINTF: {conflicts}")
+        self.assertEqual(
+            conflicts,
+            [],
+            f"source-owned HALs leaked into vendor VINTF: {conflicts}",
+        )
 
     def test_fragments_are_device_manifests_with_hwbinder_transport(self) -> None:
         for module in EXPECTED:

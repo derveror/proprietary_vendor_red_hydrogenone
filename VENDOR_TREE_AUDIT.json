@@ -4,9 +4,9 @@
   "stock_archive_verified": true,
   "counts": {
     "P0": 105,
-    "P1": 341,
+    "P1": 337,
     "P2": 19,
-    "total": 465
+    "total": 461
   },
   "notes": [
     "No RED msm8998-common repository is used.",
@@ -39,6 +39,8 @@
     "63 retained RED .118 Android 9 HIDL interface blobs require the removed android::hardware::details::gBnConstructorMap ABI. They are patched with DT_NEEDED libhidlbase_shim.so, the LineageOS 22.2 compatibility provider; canonical stock hashes remain in proprietary-manifest.json and patched identities are recorded separately in ANDROID15_BLOB_FIXUPS.json.",
     "313 of 319 proprietary ELF modules have check_elf_files enabled; the remaining 6 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
     "RED .118 libaudiopreprocessing/libwebrtc_audio_preprocessing are pruned: the legacy pair is self-contained, the active RED effect configuration uses Qualcomm voice preprocessing, and LineageOS 22.2 provides the generic vendor libaudiopreprocessing package from current source.",
-    "312 of 317 proprietary ELF modules have check_elf_files enabled; the remaining 5 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json."
+    "312 of 317 proprietary ELF modules have check_elf_files enabled; the remaining 5 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
+    "RED .118 media OMX wrapper closure (android.hardware.media.omx@1.0-service, libgui_vendor, libstagefright_omx VNDK28, libstagefright_foundation VNDK28) is pruned after the Android 15 ABI gate proved the legacy GUI/media interfaces incompatible and the reverse dependency graph proved the closure self-contained. LineageOS 22.2 source owns the OMX frontend; Qualcomm codec payload remains proprietary.",
+    "311 of 313 proprietary ELF modules have check_elf_files enabled; the remaining 2 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json."
   ]
 }

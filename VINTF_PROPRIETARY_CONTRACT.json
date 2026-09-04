@@ -4,9 +4,10 @@
   "target": "LineageOS 22.2 / Android 15 API 35",
   "source_owned_exclusions": [
     "android.hardware.gnss",
+    "android.hardware.media.omx",
     "android.hardware.nfc"
   ],
-  "proprietary_fqname_count": 35,
+  "proprietary_fqname_count": 33,
   "modules": {
     "android.hardware.biometrics.fingerprint@2.1-service": {
       "file": "vintf/fingerprint.xml",
@@ -30,15 +31,6 @@
         ],
         "vendor.qti.hardware.fm": [
           "@1.0::IFmHci/default"
-        ]
-      }
-    },
-    "android.hardware.media.omx@1.0-service": {
-      "file": "vintf/media-omx.xml",
-      "hals": {
-        "android.hardware.media.omx": [
-          "@1.0::IOmx/default",
-          "@1.0::IOmxStore/default"
         ]
       }
     },

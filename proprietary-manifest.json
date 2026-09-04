@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 105,
-    "P1": 341,
+    "P1": 337,
     "P2": 19,
-    "total": 465
+    "total": 461
   },
   "files": [
     {
@@ -660,12 +660,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/bin/hw/android.hardware.media.omx@1.0-service",
-      "size": 10948,
-      "sha256": "9c130527c59717f0e1fa37083a3ced9fa68a333c2a11b198b9411c9536e4de49"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/bin/hw/qcrild",
       "size": 68496,
       "sha256": "278c231aaa5a38735a8161643bd7f4ab9e9023eb141ef3e2cf6e810db67875e7"
@@ -1107,12 +1101,6 @@
       "path": "vendor/lib/libgeofence.so",
       "size": 53596,
       "sha256": "50ec2512704349957d38e421b101beb269685989e5d86b8fe64bb408d711067a"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/libgui_vendor.so",
-      "size": 493060,
-      "sha256": "c97538573ab128f6301dc83827d2b2e898aa416649201b56323648fcd32f6efe"
     },
     {
       "tier": "P1",
@@ -1827,18 +1815,6 @@
       "path": "vendor/lib/vendor.qti.ims.callinfo@1.0.so",
       "size": 100788,
       "sha256": "e97a0280ac72122c747eab5dfd96f1abd4a52080d1ce5be12ef89b6baf05e148"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/vndk/libstagefright_foundation.so",
-      "size": 150348,
-      "sha256": "aa0926cc75878d82ead74bcfbdbcb3e681d1ffb2abb77aa9f958e2523a8edc2b"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib/vndk/libstagefright_omx.so",
-      "size": 306416,
-      "sha256": "23bbc5282e5cdaeb014dd2c837c1fd29a0f9aba6facfcc207024530c8c208165"
     },
     {
       "tier": "P1",

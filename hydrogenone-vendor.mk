@@ -57,7 +57,6 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service \
     android.hardware.bluetooth@1.0-impl-qti \
     android.hardware.bluetooth@1.0-service-qti \
-    android.hardware.media.omx@1.0-service \
     audio.primary.default \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
@@ -156,7 +155,6 @@ PRODUCT_PACKAGES += \
     libgps.utils \
     libgpustats \
     libgsl \
-    libgui_vendor \
     libhal_dbg \
     libhdr_tm \
     libidl \
@@ -299,8 +297,6 @@ PRODUCT_PACKAGES += \
     libsdmutils \
     libsensor1 \
     libsettings \
-    libstagefright_foundation-v28 \
-    libstagefright_omx-v28 \
     libsystem_health_mon \
     libthermalclient \
     libthermalioctl \
