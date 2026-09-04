@@ -154,48 +154,6 @@ cc_prebuilt_binary {
     soc_specific: true,
 }
 
-cc_prebuilt_binary {
-    name: "android.hardware.media.omx@1.0-service",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    check_elf_files: false,
-    vintf_fragments: [
-        "vintf/media-omx.xml",
-    ],
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/bin/hw/android.hardware.media.omx@1.0-service",
-            ],
-            shared_libs: [
-                "android.hardware.media.omx@1.0",
-                "android.hidl.memory@1.0",
-                "libavservices_minijail_vendor",
-                "libbase",
-                "libbinder",
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libm",
-                "libmedia_omx",
-                "libstagefright_omx-v28",
-                "libstagefright_xmlparser",
-                "libutils",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    relative_install_path: "hw",
-    soc_specific: true,
-}
-
 cc_prebuilt_library_shared {
     name: "audio.primary.default",
     owner: "red",
@@ -3547,47 +3505,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libgui_vendor",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    check_elf_files: false,
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libgui_vendor.so",
-            ],
-            shared_libs: [
-                "android.hardware.configstore-utils",
-                "android.hardware.configstore@1.0",
-                "android.hardware.graphics.bufferqueue@1.0",
-                "android.hardware.graphics.common@1.1",
-                "android.hidl.token@1.0-utils",
-                "libEGL",
-                "libGLESv2",
-                "libbinder",
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "libhidlbase",
-                "libhidltransport",
-                "liblog",
-                "libm",
-                "libnativewindow",
-                "libsync",
-                "libui",
-                "libutils",
-            ],
-        },
-    },
-    compile_multilib: "32",
     prefer: true,
     soc_specific: true,
 }
@@ -8151,81 +8068,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libstagefright_foundation-v28",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    stem: "libstagefright_foundation",
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/vndk/libstagefright_foundation.so",
-            ],
-            shared_libs: [
-                "libbinder",
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "liblog",
-                "libm",
-                "libutils",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    relative_install_path: "vndk",
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libstagefright_omx-v28",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    stem: "libstagefright_omx",
-    check_elf_files: false,
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/vndk/libstagefright_omx.so",
-            ],
-            shared_libs: [
-                "android.hardware.graphics.bufferqueue@1.0",
-                "android.hardware.media.omx@1.0",
-                "libbase",
-                "libbinder",
-                "libc",
-                "libc++",
-                "libcutils",
-                "libdl",
-                "libgui_vendor",
-                "libhidlbase",
-                "libhidlmemory",
-                "libhidltransport",
-                "liblog",
-                "libm",
-                "libmedia_omx",
-                "libnativewindow",
-                "libstagefright_bufferqueue_helper",
-                "libstagefright_foundation-v28",
-                "libstagefright_xmlparser",
-                "libui",
-                "libutils",
-                "libvndksupport",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    relative_install_path: "vndk",
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libsystem_health_mon",
     owner: "red",
     strip: {
@@ -8785,7 +8627,6 @@ cc_prebuilt_library_shared {
     strip: {
         none: true,
     },
-    check_elf_files: false,
     target: {
         android_arm: {
             srcs: [
@@ -8846,7 +8687,6 @@ cc_prebuilt_library_shared {
     strip: {
         none: true,
     },
-    check_elf_files: false,
     target: {
         android_arm: {
             srcs: [

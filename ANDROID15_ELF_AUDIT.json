@@ -199,60 +199,6 @@
         }
       }
     },
-    "android.hardware.media.omx@1.0-service": {
-      "kind": "cc_prebuilt_binary",
-      "check_elf_files": false,
-      "blocking_dependencies": [
-        "libstagefright_xmlparser"
-      ],
-      "architectures": {
-        "android_arm": {
-          "srcs": [
-            "proprietary/vendor/bin/hw/android.hardware.media.omx@1.0-service"
-          ],
-          "shared_libs": [
-            "android.hardware.media.omx@1.0",
-            "android.hidl.memory@1.0",
-            "libavservices_minijail_vendor",
-            "libbase",
-            "libbinder",
-            "libc",
-            "libc++",
-            "libcutils",
-            "libdl",
-            "libhidltransport",
-            "libhwbinder",
-            "liblog",
-            "libm",
-            "libmedia_omx",
-            "libstagefright_omx-v28",
-            "libstagefright_xmlparser",
-            "libutils"
-          ],
-          "needed": {
-            "proprietary/vendor/bin/hw/android.hardware.media.omx@1.0-service": [
-              "libmedia_omx",
-              "libbinder",
-              "libutils",
-              "liblog",
-              "libbase",
-              "libavservices_minijail_vendor",
-              "libcutils",
-              "libhwbinder",
-              "libhidltransport",
-              "libstagefright_omx-v28",
-              "libstagefright_xmlparser",
-              "android.hardware.media.omx@1.0",
-              "android.hidl.memory@1.0",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
     "audio.primary.default": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -4822,70 +4768,6 @@
               "liblog",
               "libz",
               "libsync",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
-    "libgui_vendor": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": false,
-      "blocking_dependencies": [
-        "android.hardware.configstore-utils",
-        "android.hardware.configstore@1.0",
-        "android.hardware.graphics.bufferqueue@1.0",
-        "android.hardware.graphics.common@1.1",
-        "android.hidl.token@1.0-utils"
-      ],
-      "architectures": {
-        "android_arm": {
-          "srcs": [
-            "proprietary/vendor/lib/libgui_vendor.so"
-          ],
-          "shared_libs": [
-            "android.hardware.configstore-utils",
-            "android.hardware.configstore@1.0",
-            "android.hardware.graphics.bufferqueue@1.0",
-            "android.hardware.graphics.common@1.1",
-            "android.hidl.token@1.0-utils",
-            "libEGL",
-            "libGLESv2",
-            "libbinder",
-            "libc",
-            "libc++",
-            "libcutils",
-            "libdl",
-            "libhidlbase",
-            "libhidltransport",
-            "liblog",
-            "libm",
-            "libnativewindow",
-            "libsync",
-            "libui",
-            "libutils"
-          ],
-          "needed": {
-            "proprietary/vendor/lib/libgui_vendor.so": [
-              "android.hardware.graphics.common@1.1",
-              "libsync",
-              "libbinder",
-              "libcutils",
-              "libEGL",
-              "libGLESv2",
-              "libui",
-              "libutils",
-              "libnativewindow",
-              "liblog",
-              "libhidlbase",
-              "libhidltransport",
-              "android.hidl.token@1.0-utils",
-              "android.hardware.graphics.bufferqueue@1.0",
-              "android.hardware.configstore@1.0",
-              "android.hardware.configstore-utils",
               "libc++",
               "libc",
               "libm",
@@ -10845,106 +10727,6 @@
         }
       }
     },
-    "libstagefright_foundation-v28": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": true,
-      "blocking_dependencies": [],
-      "architectures": {
-        "android_arm": {
-          "srcs": [
-            "proprietary/vendor/lib/vndk/libstagefright_foundation.so"
-          ],
-          "shared_libs": [
-            "libbinder",
-            "libc",
-            "libc++",
-            "libcutils",
-            "libdl",
-            "liblog",
-            "libm",
-            "libutils"
-          ],
-          "needed": {
-            "proprietary/vendor/lib/vndk/libstagefright_foundation.so": [
-              "libbinder",
-              "libutils",
-              "libcutils",
-              "liblog",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
-    "libstagefright_omx-v28": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": false,
-      "blocking_dependencies": [
-        "android.hardware.graphics.bufferqueue@1.0",
-        "libstagefright_bufferqueue_helper",
-        "libstagefright_xmlparser"
-      ],
-      "architectures": {
-        "android_arm": {
-          "srcs": [
-            "proprietary/vendor/lib/vndk/libstagefright_omx.so"
-          ],
-          "shared_libs": [
-            "android.hardware.graphics.bufferqueue@1.0",
-            "android.hardware.media.omx@1.0",
-            "libbase",
-            "libbinder",
-            "libc",
-            "libc++",
-            "libcutils",
-            "libdl",
-            "libgui_vendor",
-            "libhidlbase",
-            "libhidlmemory",
-            "libhidltransport",
-            "liblog",
-            "libm",
-            "libmedia_omx",
-            "libnativewindow",
-            "libstagefright_bufferqueue_helper",
-            "libstagefright_foundation-v28",
-            "libstagefright_xmlparser",
-            "libui",
-            "libutils",
-            "libvndksupport"
-          ],
-          "needed": {
-            "proprietary/vendor/lib/vndk/libstagefright_omx.so": [
-              "libbase",
-              "libbinder",
-              "libmedia_omx",
-              "libutils",
-              "liblog",
-              "libui",
-              "libgui_vendor",
-              "libcutils",
-              "libstagefright_foundation-v28",
-              "libstagefright_bufferqueue_helper",
-              "libstagefright_xmlparser",
-              "libhidlbase",
-              "libhidlmemory",
-              "libhidltransport",
-              "libnativewindow",
-              "libvndksupport",
-              "android.hardware.media.omx@1.0",
-              "android.hardware.graphics.bufferqueue@1.0",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
     "libsystem_health_mon": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -11685,11 +11467,8 @@
     },
     "nfc_nci.nqx.default": {
       "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": false,
-      "blocking_dependencies": [
-        "android.hardware.nfc@1.0",
-        "android.hardware.nfc@1.1"
-      ],
+      "check_elf_files": true,
+      "blocking_dependencies": [],
       "architectures": {
         "android_arm": {
           "srcs": [
@@ -11781,11 +11560,8 @@
     },
     "nfc_nci.nqx.default.hw": {
       "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": false,
-      "blocking_dependencies": [
-        "android.hardware.nfc@1.0",
-        "android.hardware.nfc@1.1"
-      ],
+      "check_elf_files": true,
+      "blocking_dependencies": [],
       "architectures": {
         "android_arm": {
           "srcs": [
@@ -14815,9 +14591,9 @@
     }
   },
   "summary": {
-    "total_modules": 317,
-    "checkelf_enabled": 312,
-    "checkelf_exceptions": 5,
-    "provider_sonames": 287
+    "total_modules": 313,
+    "checkelf_enabled": 313,
+    "checkelf_exceptions": 0,
+    "provider_sonames": 284
   }
 }

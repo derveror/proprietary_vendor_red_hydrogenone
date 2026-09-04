@@ -108,7 +108,6 @@ vendor/lib64/libtinyxml2_1.so
 # P1 standard phone stack
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
-vendor/bin/hw/android.hardware.media.omx@1.0-service
 vendor/bin/hw/qcrild
 vendor/bin/hw/rild
 vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
@@ -183,7 +182,6 @@ vendor/lib/libdsutils.so
 vendor/lib/libevent_observer.so
 vendor/lib/libflp.so
 vendor/lib/libgeofence.so
-vendor/lib/libgui_vendor.so
 vendor/lib/libhal_dbg.so
 vendor/lib/libidl.so
 vendor/lib/libizat_client_api.so
@@ -303,8 +301,6 @@ vendor/lib/vendor.qti.esepowermanager@1.0.so
 vendor/lib/vendor.qti.gnss@1.0.so
 vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0.so
 vendor/lib/vendor.qti.ims.callinfo@1.0.so
-vendor/lib/vndk/libstagefright_foundation.so
-vendor/lib/vndk/libstagefright_omx.so
 vendor/lib64/com.fingerprints.extension@1.0.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
