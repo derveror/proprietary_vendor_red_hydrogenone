@@ -1,0 +1,22 @@
+name: TDD media OMX source ownership
+
+on:
+  push:
+    branches:
+      - codex/media-omx-source-tdd
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  vendor:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run media OMX ownership regression
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONDONTWRITEBYTECODE=1 PYTHONPATH="$PWD" python3 -m unittest -v tests.test_media_omx_ownership
