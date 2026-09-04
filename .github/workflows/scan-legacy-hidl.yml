@@ -1,4 +1,4 @@
-name: Apply legacy HIDL compatibility fixups
+name: Verify Android 15 vendor compatibility pipeline
 
 on:
   push:
@@ -6,62 +6,58 @@ on:
       - codex/lineage-22.2-bringup-audit
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  patch:
+  verify:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout RED vendor tree
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Checkout LineageOS 22.2 extract tools
-        uses: actions/checkout@v4
-        with:
-          repository: LineageOS/android_prebuilts_extract-tools
-          ref: lineage-22.2
-          path: .extract-tools
-          fetch-depth: 1
-
-      - name: Record pre-fixup regression state
+      - name: Apply complete Android 15 contract
         shell: bash
         run: |
           set -euo pipefail
-          if PYTHONPATH="$PWD" python3 -m unittest -v tests.test_legacy_hidl_shim_contract; then
-              echo "Legacy HIDL shim contract already green"
-          else
-              echo "Expected pre-fixup RED state observed"
-          fi
+          python3 tools/apply_android15_vendor_contract.py
 
-      - name: Apply exact RED .118 HIDL shim fixups
+      - name: Verify generated counts and HIDL fixups
         shell: bash
         run: |
           set -euo pipefail
-          python3 tools/patch_legacy_hidl_shim.py \
-              --payload-only \
-              --patchelf "$PWD/.extract-tools/linux-x86/bin/patchelf-0_18"
-          rm -rf .extract-tools
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
 
-      - name: Verify payload fixup registry and DT_NEEDED
+          manifest = json.loads(Path('proprietary-manifest.json').read_text())
+          audit = json.loads(Path('GENERATED_VENDOR_AUDIT.json').read_text())
+          fixups = json.loads(Path('ANDROID15_BLOB_FIXUPS.json').read_text())
+          lock = json.loads(Path('SOURCE_LOCK.json').read_text())
+
+          assert manifest['counts'] == {'P0': 105, 'P1': 343, 'P2': 19, 'total': 467}, manifest['counts']
+          assert audit['elf_modules'] == 319, audit
+          assert audit['checkelf_enabled'] == 313, audit
+          assert audit['checkelf_exceptions'] == 6, audit
+          assert fixups['consumer_count'] == 63, fixups['consumer_count']
+          assert lock['android15_contract']['legacy_hidlbase_shim_fixup']['consumer_count'] == 63
+          assert audit['android15_blob_fixups'] == 63
+          assert audit['actual_selected_bytes_after_fixups'] >= audit['selected_bytes']
+          print('ANDROID15 GENERATED CONTRACT: PASS')
+          PY
+
+      - name: Run all vendor regression tests
         shell: bash
         run: |
           set -euo pipefail
-          PYTHONPATH="$PWD" python3 -m unittest -v tests.test_legacy_hidl_shim_contract
-          python3 -m json.tool ANDROID15_BLOB_FIXUPS.json >/dev/null
+          PYTHONPATH="$PWD" python3 -m unittest discover -s tests -p 'test_*.py' -v
           git diff --check
 
-      - name: Commit patched payload when needed
+      - name: Verify pipeline idempotency
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ANDROID15_BLOB_FIXUPS.json proprietary/
-          if git diff --cached --quiet; then
-              echo "HIDL shim payload already canonical"
-              exit 0
-          fi
-          git commit -m "vendor: add Lineage HIDL compatibility shim dependencies"
-          git push origin HEAD:${GITHUB_REF_NAME}
+          git diff --binary > "$RUNNER_TEMP/first.patch"
+          python3 tools/apply_android15_vendor_contract.py
+          git diff --binary > "$RUNNER_TEMP/second.patch"
+          cmp "$RUNNER_TEMP/first.patch" "$RUNNER_TEMP/second.patch"
+          echo 'ANDROID15 PIPELINE IDEMPOTENCY: PASS'
