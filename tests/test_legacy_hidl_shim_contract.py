@@ -9,6 +9,7 @@ from pathlib import Path
 from tools.legacy_hidl_shim_consumers import (
     EXPECTED_HIDLBASE_SHIM_CONSUMER_COUNT,
     HIDLBASE_SHIM_CONSUMERS,
+    HIDLBASE_SHIM_MODULE,
     HIDLBASE_SHIM_SONAME,
     HIDLBASE_SHIM_SYMBOLS,
 )
@@ -52,6 +53,27 @@ def undefined_compat_symbols(path: Path) -> set[str]:
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def product_packages() -> set[str]:
+    packages: set[str] = set()
+    in_packages = False
+    for raw in (ROOT / "hydrogenone-vendor.mk").read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if line.startswith("PRODUCT_PACKAGES +="):
+            in_packages = True
+            continue
+        if not in_packages:
+            continue
+        if not line:
+            in_packages = False
+            continue
+        package = line.rstrip("\\").strip()
+        if package:
+            packages.add(package)
+        if not line.endswith("\\"):
+            in_packages = False
+    return packages
 
 
 class LegacyHidlShimContractTest(unittest.TestCase):
@@ -98,6 +120,13 @@ class LegacyHidlShimContractTest(unittest.TestCase):
             [],
             "RED Android 9 HIDL blobs still lack libhidlbase_shim DT_NEEDED: "
             + ", ".join(missing),
+        )
+
+    def test_lineage_hidl_shim_is_packaged_for_runtime(self) -> None:
+        self.assertIn(
+            HIDLBASE_SHIM_MODULE,
+            product_packages(),
+            "patched RED HIDL blobs need libhidlbase_shim installed in vendor",
         )
 
     def test_fixup_registry_preserves_stock_and_patched_identity(self) -> None:
