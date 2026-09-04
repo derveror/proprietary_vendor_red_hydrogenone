@@ -1,4 +1,4 @@
-name: Scan legacy HIDL compatibility consumers
+name: Apply legacy HIDL compatibility fixups
 
 on:
   push:
@@ -6,80 +6,62 @@ on:
       - codex/lineage-22.2-bringup-audit
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  scan:
+  patch:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout RED vendor tree
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Scan selected RED ELF payload
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          import json
-          import subprocess
-          from pathlib import Path
+      - name: Checkout LineageOS 22.2 extract tools
+        uses: actions/checkout@v4
+        with:
+          repository: LineageOS/android_prebuilts_extract-tools
+          ref: lineage-22.2
+          path: .extract-tools
+          fetch-depth: 1
 
-          symbols = {
-              'GBN': '_ZN7android8hardware7details17gBnConstructorMapE',
-              'GBS': '_ZN7android8hardware7details17gBsConstructorMapE',
-              'PARCEL_SETDATA': '_ZN7android8hardware6Parcel7setDataEPKhm',
-          }
-          root = Path('.')
-          manifest = json.loads((root / 'proprietary-manifest.json').read_text())
-          hits = {name: [] for name in symbols}
-          union = set()
-
-          for entry in manifest['files']:
-              rel = entry['path']
-              path = root / 'proprietary' / rel
-              if not path.is_file():
-                  continue
-              with path.open('rb') as fh:
-                  if fh.read(4) != b'\x7fELF':
-                      continue
-              dynsyms = subprocess.run(
-                  ['readelf', '--dyn-syms', '--wide', str(path)],
-                  check=True,
-                  capture_output=True,
-                  text=True,
-              ).stdout
-              needed = None
-              for name, symbol in symbols.items():
-                  matching = [
-                      line for line in dynsyms.splitlines()
-                      if ' UND ' in line and symbol in line
-                  ]
-                  if not matching:
-                      continue
-                  if needed is None:
-                      needed = subprocess.run(
-                          ['readelf', '-d', str(path)],
-                          check=True,
-                          capture_output=True,
-                          text=True,
-                      ).stdout
-                  hits[name].append((rel, 'libhidlbase_shim.so' in needed))
-                  union.add(rel)
-
-          for name in symbols:
-              print(f'{name}_CONSUMERS={len(hits[name])}')
-              for rel, already in hits[name]:
-                  print(f'{name}_CONSUMER {rel} shim={str(already).lower()}')
-          print(f'HIDL_SHIM_UNION={len(union)}')
-          for rel in sorted(union):
-              print(f'HIDL_SHIM_CONSUMER {rel}')
-          PY
-
-      - name: Verify new HIDL shim regression test is red before implementation
+      - name: Record pre-fixup regression state
         shell: bash
         run: |
           set -euo pipefail
           if PYTHONPATH="$PWD" python3 -m unittest -v tests.test_legacy_hidl_shim_contract; then
-              echo "ERROR: HIDL shim regression test unexpectedly passed before implementation" >&2
-              exit 1
+              echo "Legacy HIDL shim contract already green"
+          else
+              echo "Expected pre-fixup RED state observed"
           fi
-          echo "RED gate confirmed: test fails on unpatched RED .118 blobs"
+
+      - name: Apply exact RED .118 HIDL shim fixups
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/patch_legacy_hidl_shim.py \
+              --payload-only \
+              --patchelf "$PWD/.extract-tools/linux-x86/bin/patchelf-0_18"
+          rm -rf .extract-tools
+
+      - name: Verify payload fixup registry and DT_NEEDED
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD" python3 -m unittest -v tests.test_legacy_hidl_shim_contract
+          python3 -m json.tool ANDROID15_BLOB_FIXUPS.json >/dev/null
+          git diff --check
+
+      - name: Commit patched payload when needed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ANDROID15_BLOB_FIXUPS.json proprietary/
+          if git diff --cached --quiet; then
+              echo "HIDL shim payload already canonical"
+              exit 0
+          fi
+          git commit -m "vendor: add Lineage HIDL compatibility shim dependencies"
+          git push origin HEAD:${GITHUB_REF_NAME}
