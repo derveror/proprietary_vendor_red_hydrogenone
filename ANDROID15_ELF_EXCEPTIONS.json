@@ -11,15 +11,6 @@
         "proprietary/vendor/bin/hw/android.hardware.media.omx@1.0-service: DT_NEEDED -> libmedia_omx, libbinder, libutils, liblog, libbase, libavservices_minijail_vendor, libcutils, libhwbinder, libhidltransport, libstagefright_omx-v28, libstagefright_xmlparser, android.hardware.media.omx@1.0, android.hidl.memory@1.0, libc++, libc, libm, libdl"
       ]
     },
-    "libaudiopreprocessing": {
-      "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
-      "blocking_dependencies": [
-        "libspeexresampler"
-      ],
-      "evidence": [
-        "proprietary/vendor/lib64/soundfx/libaudiopreprocessing.so: DT_NEEDED -> libwebrtc_audio_preprocessing, libspeexresampler, libutils, liblog, libc++, libclang_rt.ubsan_standalone, libc, libm, libdl"
-      ]
-    },
     "libgui_vendor": {
       "reason": "DT_NEEDED includes provider modules not yet proven vendor-compatible in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate.",
       "blocking_dependencies": [

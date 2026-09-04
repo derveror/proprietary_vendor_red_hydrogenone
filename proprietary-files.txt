@@ -407,13 +407,11 @@ vendor/lib64/libsettings.so
 vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libtinycompress_vendor.so
 vendor/lib64/libulp2.so
-vendor/lib64/libwebrtc_audio_preprocessing.so
 vendor/lib64/libxml.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/libxtwifi_ulp_adaptor.so
 vendor/lib64/nfc_nci.nqx.default.hw.so
 vendor/lib64/qcrild_librilutils.so
-vendor/lib64/soundfx/libaudiopreprocessing.so
 vendor/lib64/vendor.nxp.hardware.nfc@1.0.so
 vendor/lib64/vendor.qti.data.factory@1.0.so
 vendor/lib64/vendor.qti.data.factory@1.1.so
