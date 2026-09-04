@@ -319,6 +319,7 @@ def parse_blocks(text: str) -> list[dict]:
             i += 1
         block_text = "".join(lines[start:i])
         name = re.search(r'(?m)^\s*name:\s*"([^"]+)"', block_text)
+        stem = re.search(r'(?m)^\s*stem:\s*"([^"]+)"', block_text)
         rel = re.search(r'(?m)^\s*relative_install_path:\s*"([^"]+)"', block_text)
         multilib = re.search(r'(?m)^\s*compile_multilib:\s*"([^"]+)"', block_text)
         arch_srcs: dict[str, list[str]] = {}
@@ -332,6 +333,7 @@ def parse_blocks(text: str) -> list[dict]:
             {
                 "kind": match.group(1),
                 "name": name.group(1) if name else None,
+                "stem": stem.group(1) if stem else None,
                 "relative_install_path": rel.group(1) if rel else None,
                 "compile_multilib": multilib.group(1) if multilib else None,
                 "arch_srcs": arch_srcs,
@@ -348,6 +350,7 @@ def ensure_required_provider_module(blocks: list[dict]) -> None:
             {
                 "kind": "cc_prebuilt_library_shared",
                 "name": "libsdm-disp-apis",
+                "stem": None,
                 "relative_install_path": None,
                 "compile_multilib": "both",
                 "arch_srcs": {
@@ -370,6 +373,7 @@ def ensure_required_provider_module(blocks: list[dict]) -> None:
             {
                 "kind": "cc_prebuilt_library_shared",
                 "name": "vendor.display.color@1.0",
+                "stem": None,
                 "relative_install_path": None,
                 "compile_multilib": "both",
                 "arch_srcs": {
@@ -480,6 +484,8 @@ def render_block(
         "        none: true,",
         "    },",
     ]
+    if block.get("stem"):
+        out.append(f'    stem: "{block["stem"]}",')
     if is_exception:
         out.append("    check_elf_files: false,")
     fragment = VINTF_FRAGMENT_BY_MODULE.get(block["name"])
