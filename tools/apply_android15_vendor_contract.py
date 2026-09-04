@@ -18,15 +18,18 @@ BASELINE_PIPELINE = (
     "prune_source_owned_camera_wrappers.py",
     "prune_source_owned_location_core.py",
     "prune_obsolete_audio_preprocessing_stack.py",
+    "prune_source_owned_media_omx_stack.py",
     "patch_legacy_hidl_shim.py",
     # Re-read DT_NEEDED after binary fixups so Android.bp/checkelf metadata
     # names libhidlbase_shim for the exact affected architectures.
     "generate_elf_contract.py",
-    # The generator rebuilds proprietary module/package ownership. Re-run the
-    # idempotent audio ownership step so the generic libaudiopreprocessing
-    # package remains selected from Lineage source while its RED prebuilt and
-    # private Android 9 WebRTC companion stay pruned.
+    # Post-generation ownership guards restore source-owned package decisions
+    # after proprietary metadata is rebuilt from the remaining payload.
     "prune_obsolete_audio_preprocessing_stack.py",
+    "prune_source_owned_media_omx_stack.py",
+    # The exception5 Android 15 build matrix proved both retained RED NXP NFC
+    # HAL libraries against the current NFC 1.0/1.1 source providers.
+    "promote_verified_nfc_checkelf.py",
     # generate_elf_contract owns proprietary-module metadata; runtime-only
     # Lineage compatibility packages are appended afterwards and kept by this
     # idempotent post-generation step.
@@ -40,9 +43,12 @@ POST_CAMERA_PIPELINE = (
     "prune_source_owned_camera_wrappers.py",
     "prune_source_owned_location_core.py",
     "prune_obsolete_audio_preprocessing_stack.py",
+    "prune_source_owned_media_omx_stack.py",
     "patch_legacy_hidl_shim.py",
     "generate_elf_contract.py",
     "prune_obsolete_audio_preprocessing_stack.py",
+    "prune_source_owned_media_omx_stack.py",
+    "promote_verified_nfc_checkelf.py",
     "ensure_hidlbase_shim_package.py",
 )
 

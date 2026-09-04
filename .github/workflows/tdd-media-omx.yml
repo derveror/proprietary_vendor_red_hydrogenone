@@ -7,16 +7,88 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   vendor:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply complete Android 15 contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONDONTWRITEBYTECODE=1 python3 tools/apply_android15_vendor_contract.py
 
       - name: Run media OMX ownership regression
         shell: bash
         run: |
           set -euo pipefail
           PYTHONDONTWRITEBYTECODE=1 PYTHONPATH="$PWD" python3 -m unittest -v tests.test_media_omx_ownership
+
+      - name: Run all vendor contract tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONDONTWRITEBYTECODE=1 PYTHONPATH="$PWD" python3 -m unittest discover -s tests -p 'test_*.py' -v
+
+      - name: Verify generated post-media state
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          manifest = json.loads(Path('proprietary-manifest.json').read_text())
+          generated = json.loads(Path('GENERATED_VENDOR_AUDIT.json').read_text())
+          audit = json.loads(Path('ANDROID15_ELF_AUDIT.json').read_text())
+          exceptions = json.loads(Path('ANDROID15_ELF_EXCEPTIONS.json').read_text())['exceptions']
+          vintf = json.loads(Path('VINTF_PROPRIETARY_CONTRACT.json').read_text())
+          fixups = json.loads(Path('ANDROID15_BLOB_FIXUPS.json').read_text())
+
+          assert manifest['counts'] == {'P0': 105, 'P1': 337, 'P2': 19, 'total': 461}, manifest['counts']
+          assert generated['selected_files'] == 461, generated
+          assert generated['selected_bytes'] == 238895582, generated['selected_bytes']
+          assert generated['elf_modules'] == 313, generated
+          assert generated['checkelf_enabled'] == 313, generated
+          assert generated['checkelf_exceptions'] == 0, generated
+          assert audit['summary']['total_modules'] == 313, audit['summary']
+          assert audit['summary']['checkelf_enabled'] == 313, audit['summary']
+          assert audit['summary']['checkelf_exceptions'] == 0, audit['summary']
+          assert exceptions == {}, exceptions
+          assert fixups['consumer_count'] == 63, fixups['consumer_count']
+          assert vintf['proprietary_fqname_count'] == 33, vintf
+          assert 'android.hardware.media.omx' in vintf['source_owned_exclusions'], vintf
+          assert 'android.hardware.media.omx@1.0-service' not in vintf['modules'], vintf
+          assert not Path('vintf/media-omx.xml').exists()
+          print('MEDIA_OMX_GENERATED_STATE=PASS')
+          PY
+          git diff --check
+
+      - name: Verify pipeline idempotency
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --binary > "$RUNNER_TEMP/first.patch"
+          PYTHONDONTWRITEBYTECODE=1 python3 tools/apply_android15_vendor_contract.py
+          git diff --binary > "$RUNNER_TEMP/second.patch"
+          cmp "$RUNNER_TEMP/first.patch" "$RUNNER_TEMP/second.patch"
+          echo 'MEDIA_OMX_PIPELINE_IDEMPOTENT=PASS'
+
+      - name: Commit generated GREEN state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "no generated changes to commit"
+            exit 0
+          fi
+          git commit -m "vendor: use Lineage media OMX frontend"
+          git push origin HEAD:${GITHUB_REF_NAME}
