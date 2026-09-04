@@ -16,6 +16,7 @@ from tools.legacy_hidl_shim_consumers import (
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "ANDROID15_BLOB_FIXUPS.json"
+ELF_AUDIT = ROOT / "ANDROID15_ELF_AUDIT.json"
 
 
 def elf_dynsyms(path: Path) -> str:
@@ -76,6 +77,19 @@ def product_packages() -> set[str]:
     return packages
 
 
+def audit_paths_with_shim_dependency() -> set[str]:
+    audit = json.loads(ELF_AUDIT.read_text(encoding="utf-8"))
+    paths: set[str] = set()
+    for module in audit.get("modules", {}).values():
+        for arch in module.get("architectures", {}).values():
+            shared_libs = set(arch.get("shared_libs", []))
+            for src in arch.get("srcs", []):
+                relative = src.removeprefix("proprietary/")
+                if HIDLBASE_SHIM_MODULE in shared_libs:
+                    paths.add(relative)
+    return paths
+
+
 class LegacyHidlShimContractTest(unittest.TestCase):
     def setUp(self) -> None:
         self.manifest = json.loads(
@@ -120,6 +134,13 @@ class LegacyHidlShimContractTest(unittest.TestCase):
             [],
             "RED Android 9 HIDL blobs still lack libhidlbase_shim DT_NEEDED: "
             + ", ".join(missing),
+        )
+
+    def test_generated_checkelf_graph_tracks_every_shim_dependency(self) -> None:
+        self.assertEqual(
+            audit_paths_with_shim_dependency(),
+            set(HIDLBASE_SHIM_CONSUMERS),
+            "ANDROID15_ELF_AUDIT must mirror patched DT_NEEDED for all 63 blobs",
         )
 
     def test_lineage_hidl_shim_is_packaged_for_runtime(self) -> None:
