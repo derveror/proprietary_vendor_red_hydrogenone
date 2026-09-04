@@ -1,0 +1,58 @@
+name: Scan legacy HIDL constructor-map consumers
+
+on:
+  push:
+    branches:
+      - codex/lineage-22.2-bringup-audit
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scan selected RED ELF payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          symbol = '_ZN7android8hardware7details17gBnConstructorMapE'
+          root = Path('.')
+          manifest = json.loads((root / 'proprietary-manifest.json').read_text())
+          hits = []
+
+          for entry in manifest['files']:
+              rel = entry['path']
+              path = root / 'proprietary' / rel
+              if not path.is_file():
+                  continue
+              with path.open('rb') as fh:
+                  if fh.read(4) != b'\x7fELF':
+                      continue
+              proc = subprocess.run(
+                  ['readelf', '--dyn-syms', '--wide', str(path)],
+                  check=True,
+                  capture_output=True,
+                  text=True,
+              )
+              if symbol not in proc.stdout:
+                  continue
+              needed = subprocess.run(
+                  ['readelf', '-d', str(path)],
+                  check=True,
+                  capture_output=True,
+                  text=True,
+              ).stdout
+              hits.append((rel, 'libhidlbase_shim.so' in needed))
+
+          print(f'GBN_CONSTRUCTOR_MAP_CONSUMERS={len(hits)}')
+          for rel, already in hits:
+              print(f'GBN_CONSUMER {rel} shim={str(already).lower()}')
+          PY
