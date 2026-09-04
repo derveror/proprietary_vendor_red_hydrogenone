@@ -17,6 +17,10 @@ BASELINE_PIPELINE = (
     "prune_source_owned_wifi_hal.py",
     "prune_source_owned_camera_wrappers.py",
     "prune_source_owned_location_core.py",
+    "patch_legacy_hidl_shim.py",
+    # Re-read DT_NEEDED after binary fixups so Android.bp/checkelf metadata
+    # names libhidlbase_shim for the exact affected architectures.
+    "generate_elf_contract.py",
 )
 
 POST_CAMERA_PIPELINE = (
@@ -25,6 +29,8 @@ POST_CAMERA_PIPELINE = (
     "prune_source_owned_wifi_hal.py",
     "prune_source_owned_camera_wrappers.py",
     "prune_source_owned_location_core.py",
+    "patch_legacy_hidl_shim.py",
+    "generate_elf_contract.py",
 )
 
 
