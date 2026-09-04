@@ -10,6 +10,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BP = ROOT / "Android.bp"
 
+# Hashes below are the exact committed RED .118 payload identities, independently
+# re-hashed on a clean GitHub runner before this pruning decision is applied.
 OBSOLETE = (
     {
         "tier": "P1",
