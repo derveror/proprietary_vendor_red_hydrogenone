@@ -73,3 +73,13 @@ jobs:
           for rel in sorted(union):
               print(f'HIDL_SHIM_CONSUMER {rel}')
           PY
+
+      - name: Verify new HIDL shim regression test is red before implementation
+        shell: bash
+        run: |
+          set -euo pipefail
+          if PYTHONPATH="$PWD" python3 -m unittest -v tests.test_legacy_hidl_shim_contract; then
+              echo "ERROR: HIDL shim regression test unexpectedly passed before implementation" >&2
+              exit 1
+          fi
+          echo "RED gate confirmed: test fails on unpatched RED .118 blobs"
