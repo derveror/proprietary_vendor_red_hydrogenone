@@ -9,7 +9,7 @@ import shutil
 import subprocess
 from pathlib import Path
 
-from tools.legacy_hidl_shim_consumers import (
+from legacy_hidl_shim_consumers import (
     EXPECTED_HIDLBASE_SHIM_CONSUMER_COUNT,
     HIDLBASE_SHIM_CONSUMERS,
     HIDLBASE_SHIM_MODULE,
