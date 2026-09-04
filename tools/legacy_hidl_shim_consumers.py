@@ -1,0 +1,81 @@
+from __future__ import annotations
+
+# Exact selected RED .118 ELF set proven by readelf --dyn-syms on 2026-09-04.
+# Every path below has an undefined Android 8/9 libhidlbase
+# android::hardware::details::gBnConstructorMap reference. LineageOS 22.2
+# provides that removed ABI through libhidlbase_shim.
+HIDLBASE_SHIM_SONAME = "libhidlbase_shim.so"
+HIDLBASE_SHIM_MODULE = "libhidlbase_shim"
+HIDLBASE_SHIM_SYMBOLS = {
+    "gBnConstructorMap": "_ZN7android8hardware7details17gBnConstructorMapE",
+    "gBsConstructorMap": "_ZN7android8hardware7details17gBsConstructorMapE",
+    "Parcel::setData": "_ZN7android8hardware6Parcel7setDataEPKhm",
+}
+
+HIDLBASE_SHIM_CONSUMERS = (
+    "vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so",
+    "vendor/lib/com.qualcomm.qti.imscmservice@1.0.so",
+    "vendor/lib/com.qualcomm.qti.imscmservice@2.0.so",
+    "vendor/lib/com.qualcomm.qti.imscmservice@2.1.so",
+    "vendor/lib/com.qualcomm.qti.uceservice@2.0.so",
+    "vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so",
+    "vendor/lib/vendor.cm.hardware.thermal3d@1.0.so",
+    "vendor/lib/vendor.display.color@1.0.so",
+    "vendor/lib/vendor.leia.hardware.leiadisp@1.0.so",
+    "vendor/lib/vendor.qti.esepowermanager@1.0.so",
+    "vendor/lib/vendor.qti.gnss@1.0.so",
+    "vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0.so",
+    "vendor/lib/vendor.qti.ims.callinfo@1.0.so",
+    "vendor/lib64/com.fingerprints.extension@1.0.so",
+    "vendor/lib64/com.qualcomm.qti.ant@1.0.so",
+    "vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so",
+    "vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so",
+    "vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so",
+    "vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so",
+    "vendor/lib64/com.qualcomm.qti.uceservice@2.0.so",
+    "vendor/lib64/com.quicinc.cne.api@1.0.so",
+    "vendor/lib64/com.quicinc.cne.api@1.1.so",
+    "vendor/lib64/com.quicinc.cne.server@2.0.so",
+    "vendor/lib64/com.quicinc.cne.server@2.1.so",
+    "vendor/lib64/com.quicinc.cne.server@2.2.so",
+    "vendor/lib64/com.quicinc.cne.server@2.3.so",
+    "vendor/lib64/vendor.cm.hardware.thermal3d@1.0.so",
+    "vendor/lib64/vendor.display.color@1.0.so",
+    "vendor/lib64/vendor.leia.hardware.leiadisp@1.0.so",
+    "vendor/lib64/vendor.nxp.hardware.nfc@1.0.so",
+    "vendor/lib64/vendor.qti.data.factory@1.0.so",
+    "vendor/lib64/vendor.qti.data.factory@1.1.so",
+    "vendor/lib64/vendor.qti.esepowermanager@1.0.so",
+    "vendor/lib64/vendor.qti.gnss@1.0.so",
+    "vendor/lib64/vendor.qti.gnss@1.1.so",
+    "vendor/lib64/vendor.qti.gnss@1.2.so",
+    "vendor/lib64/vendor.qti.gnss@2.0.so",
+    "vendor/lib64/vendor.qti.gnss@2.1.so",
+    "vendor/lib64/vendor.qti.hardware.data.connection@1.0.so",
+    "vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so",
+    "vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so",
+    "vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so",
+    "vendor/lib64/vendor.qti.hardware.fm@1.0.so",
+    "vendor/lib64/vendor.qti.hardware.radio.am@1.0.so",
+    "vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so",
+    "vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so",
+    "vendor/lib64/vendor.qti.hardware.radio.ims@1.1.so",
+    "vendor/lib64/vendor.qti.hardware.radio.ims@1.2.so",
+    "vendor/lib64/vendor.qti.hardware.radio.ims@1.3.so",
+    "vendor/lib64/vendor.qti.hardware.radio.ims@1.4.so",
+    "vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so",
+    "vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so",
+    "vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so",
+    "vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.0.so",
+    "vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.1.so",
+    "vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so",
+    "vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so",
+    "vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so",
+    "vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so",
+    "vendor/lib64/vendor.qti.ims.callinfo@1.0.so",
+    "vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so",
+    "vendor/lib64/vendor.qti.imsrtpservice@1.0.so",
+    "vendor/lib64/vendor.qti.latency@2.0.so",
+)
+
+EXPECTED_HIDLBASE_SHIM_CONSUMER_COUNT = 63
