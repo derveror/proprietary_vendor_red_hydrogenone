@@ -161,7 +161,7 @@ def existing_registry() -> dict:
 def verify_or_patch_payloads(
     by_path: dict[str, dict],
     discovered: dict[str, list[str]],
-    patchelf: Path,
+    patchelf: Path | None,
 ) -> dict:
     old_registry = existing_registry()
     old_records = old_registry.get("consumers", {})
@@ -201,6 +201,8 @@ def verify_or_patch_payloads(
         stock = by_path[relative]
         path = ROOT / "proprietary" / relative
         if HIDLBASE_SHIM_SONAME not in elf_needed(path):
+            if patchelf is None:
+                raise SystemExit("patchelf is required for an unpatched HIDL payload")
             subprocess.run(
                 [str(patchelf), "--add-needed", HIDLBASE_SHIM_SONAME, str(path)],
                 check=True,
@@ -280,7 +282,12 @@ def main() -> int:
 
     _, by_path = selected_manifest()
     discovered = preflight(by_path)
-    patchelf = resolve_patchelf(args.patchelf)
+    needs_patch = any(
+        HIDLBASE_SHIM_SONAME
+        not in elf_needed(ROOT / "proprietary" / relative)
+        for relative in HIDLBASE_SHIM_CONSUMERS
+    )
+    patchelf = resolve_patchelf(args.patchelf) if needs_patch else None
     registry = verify_or_patch_payloads(by_path, discovered, patchelf)
 
     if not args.payload_only:
