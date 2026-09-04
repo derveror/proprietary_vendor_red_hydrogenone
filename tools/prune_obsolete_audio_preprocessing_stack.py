@@ -16,14 +16,14 @@ OBSOLETE = (
         "path": "vendor/lib64/soundfx/libaudiopreprocessing.so",
         "module": "libaudiopreprocessing",
         "size": 47112,
-        "sha256": "810488604119153ba1afc3b018ce44365595d1436188704214a417889637dd52",
+        "sha256": "eb1027c469f5a8ea1867956e9b19c07c77ebd180de1d1aa81fba64a58a016b04",
     },
     {
         "tier": "P1",
         "path": "vendor/lib64/libwebrtc_audio_preprocessing.so",
         "module": "libwebrtc_audio_preprocessing",
         "size": 1253728,
-        "sha256": "4a0af25730ddf62a812d674fc89e095e1197c4d43f620b651961041b32a8ba9d",
+        "sha256": "985a9b9e154e61b3daf2713aa37eb45dbc78ec378206799032d68eeb7897204b",
     },
 )
 OBSOLETE_PATHS = {entry["path"] for entry in OBSOLETE}
