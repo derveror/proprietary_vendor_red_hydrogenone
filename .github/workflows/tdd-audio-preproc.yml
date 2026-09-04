@@ -17,6 +17,30 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Verify exact RED audio payload identities
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          wanted = {
+              'vendor/lib64/soundfx/libaudiopreprocessing.so',
+              'vendor/lib64/libwebrtc_audio_preprocessing.so',
+          }
+          manifest = json.loads(Path('proprietary-manifest.json').read_text())
+          by_path = {entry['path']: entry for entry in manifest['files']}
+          for rel in sorted(wanted):
+              record = by_path[rel]
+              payload = Path('proprietary') / rel
+              digest = hashlib.sha256(payload.read_bytes()).hexdigest()
+              print(f"IDENTITY {rel} size={payload.stat().st_size} manifest_sha256={record['sha256']} payload_sha256={digest}")
+              assert payload.stat().st_size == record['size']
+              assert digest == record['sha256']
+          PY
+
       - name: Apply Android 15 vendor contract
         shell: bash
         run: |
