@@ -22,9 +22,9 @@ SOURCE_OWNED_SERVICE_REGISTRATIONS = {
 }
 
 MUST_RETAIN_AFTER_SERVICE_PRUNE = {
-    # GNSS source service still consumes RED/Qualcomm location payload.
-    "vendor/lib64/libloc_core.so",
-    "vendor/lib64/liblocation_api.so",
+    # GNSS source service still consumes retained RED/Qualcomm proprietary
+    # location payload. libloc_core/liblocation_api themselves are source-owned
+    # and are covered by test_android15_collision_resolution.py.
     "vendor/lib64/libizat_core.so",
     # The source NFC service loads the RED NXP legacy nfc_nci implementation.
     "vendor/lib/hw/nfc_nci.nqx.default.so",
