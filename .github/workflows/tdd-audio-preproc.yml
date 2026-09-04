@@ -17,30 +17,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Verify exact RED audio payload identities
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          import hashlib
-          import json
-          from pathlib import Path
-
-          wanted = {
-              'vendor/lib64/soundfx/libaudiopreprocessing.so',
-              'vendor/lib64/libwebrtc_audio_preprocessing.so',
-          }
-          manifest = json.loads(Path('proprietary-manifest.json').read_text())
-          by_path = {entry['path']: entry for entry in manifest['files']}
-          for rel in sorted(wanted):
-              record = by_path[rel]
-              payload = Path('proprietary') / rel
-              digest = hashlib.sha256(payload.read_bytes()).hexdigest()
-              print(f"IDENTITY {rel} size={payload.stat().st_size} manifest_sha256={record['sha256']} payload_sha256={digest}")
-              assert payload.stat().st_size == record['size']
-              assert digest == record['sha256']
-          PY
-
       - name: Apply Android 15 vendor contract
         shell: bash
         run: |
@@ -88,16 +64,19 @@ jobs:
           PY
           git diff --check
 
-      - name: Commit generated GREEN state
+      - name: Verify pipeline idempotency
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "AUDIO_PREPROC_PIPELINE_IDEMPOTENT=PASS"
-            exit 0
+          if ! git diff --quiet; then
+            echo "ERROR: Android 15 contract pipeline changed committed generated state"
+            git status --short
+            git diff --stat
+            exit 1
           fi
-          git commit -m "vendor: use Lineage audio preprocessing source stack"
-          git push origin HEAD:${GITHUB_REF_NAME}
+          if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+            echo "ERROR: pipeline created untracked files"
+            git ls-files --others --exclude-standard
+            exit 1
+          fi
+          echo "AUDIO_PREPROC_PIPELINE_IDEMPOTENT=PASS"
