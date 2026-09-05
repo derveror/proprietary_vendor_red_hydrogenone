@@ -1,0 +1,162 @@
+name: Apply RED libgsl legacy ARM contract
+
+on:
+  push:
+    branches:
+      - codex/libgsl-legacy-arm-staging
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout staging branch
+        uses: actions/checkout@v4
+        with:
+          ref: codex/libgsl-legacy-arm-staging
+          fetch-depth: 0
+
+      - name: Apply precise RED libgsl ARM compatibility contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+
+          root = Path('.')
+
+          bp = root / 'Android.bp'
+          text = bp.read_text(encoding='utf-8')
+          start = text.index('cc_prebuilt_library_shared {\n    name: "libgsl",')
+          end = text.index('\n}\n', start) + 3
+          block = text[start:end]
+          if 'allow_undefined_symbols: true' not in block:
+              needle = '    },\n    compile_multilib: "both",\n'
+              replacement = (
+                  '    },\n'
+                  '    arch: {\n'
+                  '        arm: {\n'
+                  '            allow_undefined_symbols: true,\n'
+                  '        },\n'
+                  '    },\n'
+                  '    compile_multilib: "both",\n'
+              )
+              if needle not in block:
+                  raise SystemExit('libgsl Android.bp insertion anchor missing')
+              block = block.replace(needle, replacement, 1)
+              text = text[:start] + block + text[end:]
+              bp.write_text(text, encoding='utf-8')
+
+          gen = root / 'tools/generate_elf_contract.py'
+          s = gen.read_text(encoding='utf-8')
+          if 'LEGACY_RUNTIME_UNDEFINED_SYMBOLS = {' not in s:
+              stock = 'STOCK_SHA256 = "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e"\n\n'
+              insert = '''STOCK_SHA256 = "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e"\n\nLEGACY_RUNTIME_UNDEFINED_SYMBOLS = {\n    "libgsl": {\n        "arch": "android_arm",\n        "path": "proprietary/vendor/lib/libgsl.so",\n        "sha256": "dc22e2b816dcb16a49797b9c758a2872ffa65a3bb4871a2b50b5866dcc4573cb",\n        "symbols": ["__aeabi_uldivmod"],\n        "runtime_provider": "libc.so",\n    },\n}\n\n'''
+              if stock not in s:
+                  raise SystemExit('generator stock anchor missing')
+              s = s.replace(stock, insert, 1)
+
+              old = '''        arch_info[arch] = {\n            "srcs": srcs,\n            "shared_libs": sorted(shared),\n            "needed": needed_evidence,\n        }\n\n    is_exception = bool(blocking)\n'''
+              new = '''        arch_info[arch] = {\n            "srcs": srcs,\n            "shared_libs": sorted(shared),\n            "needed": needed_evidence,\n        }\n\n    allowed_undefined_symbols: dict[str, list[str]] = {}\n    undefined_symbol_runtime_providers: dict[str, dict[str, str]] = {}\n    legacy = LEGACY_RUNTIME_UNDEFINED_SYMBOLS.get(block["name"])\n    if legacy:\n        arch = legacy["arch"]\n        expected_path = legacy["path"]\n        info = arch_info.get(arch)\n        if info is None or info["srcs"] != [expected_path]:\n            raise SystemExit(\n                f"legacy undefined-symbol contract source mismatch for {block['name']}: "\n                f"{info['srcs'] if info else None} != {[expected_path]}"\n            )\n        payload = ROOT / expected_path\n        digest = hashlib.sha256(payload.read_bytes()).hexdigest()\n        if digest != legacy["sha256"]:\n            raise SystemExit(\n                f"legacy undefined-symbol contract SHA-256 mismatch for {expected_path}: "\n                f"{digest} != {legacy['sha256']}"\n            )\n        allowed_undefined_symbols[arch] = list(legacy["symbols"])\n        undefined_symbol_runtime_providers[arch] = {\n            symbol: legacy["runtime_provider"] for symbol in legacy["symbols"]\n        }\n\n    is_exception = bool(blocking)\n'''
+              if old not in s:
+                  raise SystemExit('generator arch-info anchor missing')
+              s = s.replace(old, new, 1)
+
+              old = '''    audit["modules"][block["name"]] = {\n        "kind": block["kind"],\n        "check_elf_files": not is_exception,\n        "blocking_dependencies": sorted(blocking),\n        "architectures": arch_info,\n    }\n'''
+              new = '''    module_audit = {\n        "kind": block["kind"],\n        "check_elf_files": not is_exception,\n        "blocking_dependencies": sorted(blocking),\n        "architectures": arch_info,\n    }\n    if allowed_undefined_symbols:\n        module_audit["allowed_undefined_symbols"] = allowed_undefined_symbols\n        module_audit["undefined_symbol_runtime_providers"] = (\n            undefined_symbol_runtime_providers\n        )\n    audit["modules"][block["name"]] = module_audit\n'''
+              if old not in s:
+                  raise SystemExit('generator audit anchor missing')
+              s = s.replace(old, new, 1)
+
+              old = '''    out.append("    },")\n    out.append(f'    compile_multilib: "{block["compile_multilib"]}",')\n'''
+              new = '''    out.append("    },")\n    if allowed_undefined_symbols:\n        out.append("    arch: {")\n        for android_arch, soong_arch in (("android_arm", "arm"), ("android_arm64", "arm64")):\n            if android_arch not in allowed_undefined_symbols:\n                continue\n            out.append(f"        {soong_arch}: {{")\n            out.append("            allow_undefined_symbols: true,")\n            out.append("        },")\n        out.append("    },")\n    out.append(f'    compile_multilib: "{block["compile_multilib"]}",')\n'''
+              if old not in s:
+                  raise SystemExit('generator render anchor missing')
+              s = s.replace(old, new, 1)
+
+              old = '''    audit["summary"] = {\n        "total_modules": len(blocks),\n        "checkelf_enabled": len(blocks) - len(exceptions),\n        "checkelf_exceptions": len(exceptions),\n        "provider_sonames": len(providers),\n    }\n'''
+              new = '''    audit["summary"] = {\n        "total_modules": len(blocks),\n        "checkelf_enabled": len(blocks) - len(exceptions),\n        "checkelf_exceptions": len(exceptions),\n        "provider_sonames": len(providers),\n        "allow_undefined_symbol_modules": sum(\n            1\n            for module in audit["modules"].values()\n            if module.get("allowed_undefined_symbols")\n        ),\n    }\n'''
+              if old not in s:
+                  raise SystemExit('generator summary anchor missing')
+              s = s.replace(old, new, 1)
+              gen.write_text(s, encoding='utf-8')
+
+          audit_path = root / 'ANDROID15_ELF_AUDIT.json'
+          audit = json.loads(audit_path.read_text(encoding='utf-8'))
+          libgsl = audit['modules']['libgsl']
+          libgsl['allowed_undefined_symbols'] = {'android_arm': ['__aeabi_uldivmod']}
+          libgsl['undefined_symbol_runtime_providers'] = {
+              'android_arm': {'__aeabi_uldivmod': 'libc.so'}
+          }
+          audit['summary']['allow_undefined_symbol_modules'] = 1
+          audit_path.write_text(json.dumps(audit, indent=2) + '\n', encoding='utf-8')
+          PY
+
+          cat > tests/test_libgsl_legacy_aeabi_contract.py <<'PY'
+          from __future__ import annotations
+
+          import hashlib
+          import json
+          import re
+          import unittest
+          from pathlib import Path
+
+          ROOT = Path(__file__).resolve().parents[1]
+          RED_LIBGSL_ARM = ROOT / "proprietary/vendor/lib/libgsl.so"
+          EXPECTED_SHA256 = "dc22e2b816dcb16a49797b9c758a2872ffa65a3bb4871a2b50b5866dcc4573cb"
+
+          def prebuilt_block(name: str) -> str:
+              text = (ROOT / "Android.bp").read_text(encoding="utf-8")
+              lines = text.splitlines(keepends=True)
+              for i, line in enumerate(lines):
+                  if not re.match(r"^cc_prebuilt_(?:binary|library_shared)\s*\{\s*$", line):
+                      continue
+                  depth = line.count("{") - line.count("}")
+                  j = i + 1
+                  while j < len(lines) and depth > 0:
+                      depth += lines[j].count("{") - lines[j].count("}")
+                      j += 1
+                  block = "".join(lines[i:j])
+                  if re.search(rf'(?m)^\s*name:\s*"{re.escape(name)}"\s*,?$', block):
+                      return block
+              raise AssertionError(f"missing prebuilt block: {name}")
+
+          class LibgslLegacyAeabiContractTest(unittest.TestCase):
+              def test_red_arm_libgsl_has_precise_legacy_undefined_symbol_allowance(self) -> None:
+                  self.assertTrue(RED_LIBGSL_ARM.is_file())
+                  self.assertEqual(hashlib.sha256(RED_LIBGSL_ARM.read_bytes()).hexdigest(), EXPECTED_SHA256)
+                  block = prebuilt_block("libgsl")
+                  self.assertNotIn("check_elf_files: false", block)
+                  self.assertRegex(block, r"(?s)arch:\s*\{.*?arm:\s*\{.*?allow_undefined_symbols:\s*true,.*?\}.*?\}")
+                  arch_block = re.search(r"(?s)\n    arch:\s*\{\n(.*?)\n    \},\n    compile_multilib", block)
+                  self.assertIsNotNone(arch_block)
+                  self.assertNotIn("arm64:", arch_block.group(1))
+
+              def test_audit_records_only_the_legacy_arm_runtime_symbol_allowance(self) -> None:
+                  audit = json.loads((ROOT / "ANDROID15_ELF_AUDIT.json").read_text(encoding="utf-8"))
+                  libgsl = audit["modules"]["libgsl"]
+                  self.assertEqual(libgsl.get("allowed_undefined_symbols"), {"android_arm": ["__aeabi_uldivmod"]})
+                  self.assertEqual(libgsl.get("undefined_symbol_runtime_providers"), {"android_arm": {"__aeabi_uldivmod": "libc.so"}})
+                  self.assertTrue(libgsl["check_elf_files"])
+
+          if __name__ == "__main__":
+              unittest.main()
+          PY
+
+          python3 -m json.tool ANDROID15_ELF_AUDIT.json >/dev/null
+          python3 -m unittest tests.test_libgsl_legacy_aeabi_contract -v
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
+
+      - name: Commit verified libgsl contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Android.bp ANDROID15_ELF_AUDIT.json tools/generate_elf_contract.py tests/test_libgsl_legacy_aeabi_contract.py
+          git diff --cached --quiet && { echo "Expected libgsl changes but found none"; exit 1; }
+          git commit -m "vendor: allow RED libgsl legacy ARM runtime helper"
+          git push origin HEAD:codex/libgsl-legacy-arm-staging
