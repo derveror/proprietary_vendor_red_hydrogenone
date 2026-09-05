@@ -3504,6 +3504,11 @@ cc_prebuilt_library_shared {
             ],
         },
     },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
+        },
+    },
     compile_multilib: "both",
     prefer: true,
     soc_specific: true,

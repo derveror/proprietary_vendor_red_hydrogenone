@@ -4775,6 +4775,16 @@
             ]
           }
         }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_uldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_uldivmod": "libc.so"
+        }
       }
     },
     "libhal_dbg": {
@@ -14535,6 +14545,7 @@
     "total_modules": 312,
     "checkelf_enabled": 312,
     "checkelf_exceptions": 0,
-    "provider_sonames": 283
+    "provider_sonames": 283,
+    "allow_undefined_symbol_modules": 1
   }
 }

@@ -13,6 +13,16 @@ BP = ROOT / "Android.bp"
 
 STOCK_SHA256 = "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e"
 
+LEGACY_RUNTIME_UNDEFINED_SYMBOLS = {
+    "libgsl": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/libgsl.so",
+        "sha256": "dc22e2b816dcb16a49797b9c758a2872ffa65a3bb4871a2b50b5866dcc4573cb",
+        "symbols": ["__aeabi_uldivmod"],
+        "runtime_provider": "libc.so",
+    },
+}
+
 REQUIRED_RED_PROVIDER_FILES = (
     {
         "tier": "P2",
@@ -454,6 +464,30 @@ def render_block(
             "needed": needed_evidence,
         }
 
+    allowed_undefined_symbols: dict[str, list[str]] = {}
+    undefined_symbol_runtime_providers: dict[str, dict[str, str]] = {}
+    legacy = LEGACY_RUNTIME_UNDEFINED_SYMBOLS.get(block["name"])
+    if legacy:
+        arch = legacy["arch"]
+        expected_path = legacy["path"]
+        info = arch_info.get(arch)
+        if info is None or info["srcs"] != [expected_path]:
+            raise SystemExit(
+                f"legacy undefined-symbol contract source mismatch for {block['name']}: "
+                f"{info['srcs'] if info else None} != {[expected_path]}"
+            )
+        payload = ROOT / expected_path
+        digest = hashlib.sha256(payload.read_bytes()).hexdigest()
+        if digest != legacy["sha256"]:
+            raise SystemExit(
+                f"legacy undefined-symbol contract SHA-256 mismatch for {expected_path}: "
+                f"{digest} != {legacy['sha256']}"
+            )
+        allowed_undefined_symbols[arch] = list(legacy["symbols"])
+        undefined_symbol_runtime_providers[arch] = {
+            symbol: legacy["runtime_provider"] for symbol in legacy["symbols"]
+        }
+
     is_exception = bool(blocking)
     if is_exception:
         exceptions[block["name"]] = {
@@ -469,12 +503,18 @@ def render_block(
             ],
         }
 
-    audit["modules"][block["name"]] = {
+    module_audit = {
         "kind": block["kind"],
         "check_elf_files": not is_exception,
         "blocking_dependencies": sorted(blocking),
         "architectures": arch_info,
     }
+    if allowed_undefined_symbols:
+        module_audit["allowed_undefined_symbols"] = allowed_undefined_symbols
+        module_audit["undefined_symbol_runtime_providers"] = (
+            undefined_symbol_runtime_providers
+        )
+    audit["modules"][block["name"]] = module_audit
 
     out = [
         f'{block["kind"]} {{',
@@ -503,6 +543,15 @@ def render_block(
             out.extend(render_list("shared_libs", arch_info[arch]["shared_libs"], 12))
         out.append("        },")
     out.append("    },")
+    if allowed_undefined_symbols:
+        out.append("    arch: {")
+        for android_arch, soong_arch in (("android_arm", "arm"), ("android_arm64", "arm64")):
+            if android_arch not in allowed_undefined_symbols:
+                continue
+            out.append(f"        {soong_arch}: {{")
+            out.append("            allow_undefined_symbols: true,")
+            out.append("        },")
+        out.append("    },")
     out.append(f'    compile_multilib: "{block["compile_multilib"]}",')
     out.append("    prefer: true,")
     if block["relative_install_path"]:
@@ -606,6 +655,11 @@ def main() -> int:
         "checkelf_enabled": len(blocks) - len(exceptions),
         "checkelf_exceptions": len(exceptions),
         "provider_sonames": len(providers),
+        "allow_undefined_symbol_modules": sum(
+            1
+            for module in audit["modules"].values()
+            if module.get("allowed_undefined_symbols")
+        ),
     }
     write_json("ANDROID15_ELF_AUDIT.json", audit)
     update_audit_metadata(len(blocks), len(exceptions))
