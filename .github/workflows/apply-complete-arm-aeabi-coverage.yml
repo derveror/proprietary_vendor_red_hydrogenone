@@ -1,0 +1,232 @@
+name: Apply complete ARM AEABI coverage
+
+on:
+  push:
+    branches:
+      - codex/complete-arm-aeabi-coverage-staging
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/complete-arm-aeabi-coverage-staging
+          fetch-depth: 0
+
+      - name: RED then GREEN complete retained ARM32 intrinsic coverage
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          cat > tests/test_complete_arm_aeabi_coverage.py <<'PY'
+          from __future__ import annotations
+          import ast
+          import hashlib
+          import re
+          import subprocess
+          import unittest
+          from pathlib import Path
+
+          ROOT = Path(__file__).resolve().parents[1]
+          GENERATOR = ROOT / "tools/generate_elf_contract.py"
+          BP = ROOT / "Android.bp"
+          HELPERS = {"__aeabi_ldivmod", "__aeabi_uldivmod"}
+
+          def registry() -> dict:
+              tree = ast.parse(GENERATOR.read_text(encoding="utf-8"))
+              for node in tree.body:
+                  if isinstance(node, ast.Assign):
+                      for target in node.targets:
+                          if isinstance(target, ast.Name) and target.id == "LEGACY_RUNTIME_UNDEFINED_SYMBOLS":
+                              return ast.literal_eval(node.value)
+              raise AssertionError("registry missing")
+
+          def arm_modules() -> dict[str, str]:
+              text = BP.read_text(encoding="utf-8")
+              lines = text.splitlines(keepends=True)
+              result: dict[str, str] = {}
+              i = 0
+              while i < len(lines):
+                  if not re.match(r"^cc_prebuilt_library_shared\s*\{\s*$", lines[i]):
+                      i += 1
+                      continue
+                  start = i
+                  depth = lines[i].count("{") - lines[i].count("}")
+                  i += 1
+                  while i < len(lines) and depth > 0:
+                      depth += lines[i].count("{") - lines[i].count("}")
+                      i += 1
+                  block = "".join(lines[start:i])
+                  name = re.search(r'(?m)^\s*name:\s*"([^"]+)"', block)
+                  arm = re.search(r"android_arm:\s*\{(.*?)\n\s*\},", block, re.S)
+                  if not name or not arm:
+                      continue
+                  srcs = re.findall(r'"(proprietary/vendor/lib(?:/[^\"]*)?\.so)"', arm.group(1))
+                  if len(srcs) == 1:
+                      result[name.group(1)] = srcs[0]
+              return result
+
+          def helper_imports(path: Path) -> list[str]:
+              out = subprocess.check_output(["readelf", "-Ws", str(path)], text=True)
+              found = set()
+              for line in out.splitlines():
+                  if " UND " not in f" {line} ":
+                      continue
+                  name = line.split()[-1].split("@", 1)[0]
+                  if name in HELPERS:
+                      found.add(name)
+              return sorted(found)
+
+          class CompleteArmAeabiCoverageTest(unittest.TestCase):
+              def test_registry_exactly_covers_every_retained_arm32_divmod_import(self):
+                  observed = {}
+                  for module, rel in arm_modules().items():
+                      symbols = helper_imports(ROOT / rel)
+                      if symbols:
+                          observed[module] = {"path": rel, "symbols": symbols}
+
+                  declared = registry()
+                  declared_projection = {
+                      module: {"path": data["path"], "symbols": sorted(data["symbols"])}
+                      for module, data in declared.items()
+                      if set(data["symbols"]) <= HELPERS
+                  }
+                  self.assertEqual(declared_projection, observed)
+
+              def test_every_registry_entry_pins_exact_blob_and_arm_libc_provider(self):
+                  for module, data in registry().items():
+                      if not set(data["symbols"]) <= HELPERS:
+                          continue
+                      self.assertEqual(data["arch"], "android_arm", module)
+                      self.assertEqual(data["runtime_provider"], "libc.so", module)
+                      path = ROOT / data["path"]
+                      self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), data["sha256"], module)
+
+              def test_no_arm64_aeabi_allowance_is_generated(self):
+                  text = BP.read_text(encoding="utf-8")
+                  self.assertNotRegex(text, r"(?s)arch:\s*\{\s*arm64:\s*\{\s*allow_undefined_symbols:\s*true")
+          PY
+
+          set +e
+          python3 -m unittest tests.test_complete_arm_aeabi_coverage -v > /tmp/red.log 2>&1
+          red_rc=$?
+          set -e
+          cat /tmp/red.log
+          if [ "$red_rc" -eq 0 ]; then
+              echo "ERROR: RED coverage test unexpectedly passed"
+              exit 1
+          fi
+          grep -q 'FAILED' /tmp/red.log
+
+          python3 - <<'PY'
+          from __future__ import annotations
+          import ast
+          import hashlib
+          import re
+          import subprocess
+          from pathlib import Path
+
+          root = Path('.')
+          bp = (root / 'Android.bp').read_text(encoding='utf-8')
+          gen_path = root / 'tools/generate_elf_contract.py'
+          gen = gen_path.read_text(encoding='utf-8')
+          helpers = {'__aeabi_ldivmod', '__aeabi_uldivmod'}
+
+          lines = bp.splitlines(keepends=True)
+          observed = {}
+          i = 0
+          while i < len(lines):
+              if not re.match(r'^cc_prebuilt_library_shared\s*\{\s*$', lines[i]):
+                  i += 1
+                  continue
+              start = i
+              depth = lines[i].count('{') - lines[i].count('}')
+              i += 1
+              while i < len(lines) and depth > 0:
+                  depth += lines[i].count('{') - lines[i].count('}')
+                  i += 1
+              block = ''.join(lines[start:i])
+              name = re.search(r'(?m)^\s*name:\s*"([^"]+)"', block)
+              arm = re.search(r'android_arm:\s*\{(.*?)\n\s*\},', block, re.S)
+              if not name or not arm:
+                  continue
+              srcs = re.findall(r'"(proprietary/vendor/lib(?:/[^\"]*)?\.so)"', arm.group(1))
+              if len(srcs) != 1:
+                  continue
+              rel = srcs[0]
+              out = subprocess.check_output(['readelf', '-Ws', rel], text=True)
+              syms = sorted({
+                  line.split()[-1].split('@', 1)[0]
+                  for line in out.splitlines()
+                  if ' UND ' in f' {line} ' and line.split()[-1].split('@', 1)[0] in helpers
+              })
+              if syms:
+                  observed[name.group(1)] = {
+                      'arch': 'android_arm',
+                      'path': rel,
+                      'sha256': hashlib.sha256(Path(rel).read_bytes()).hexdigest(),
+                      'symbols': syms,
+                      'runtime_provider': 'libc.so',
+                  }
+
+          print('OBSERVED_COMPLETE_ARM_AEABI_SET=')
+          for name in sorted(observed):
+              print(name, observed[name])
+
+          tree = ast.parse(gen)
+          target = None
+          for node in tree.body:
+              if isinstance(node, ast.Assign):
+                  if any(isinstance(t, ast.Name) and t.id == 'LEGACY_RUNTIME_UNDEFINED_SYMBOLS' for t in node.targets):
+                      target = node
+                      break
+          if target is None:
+              raise SystemExit('LEGACY_RUNTIME_UNDEFINED_SYMBOLS assignment missing')
+
+          start = target.lineno - 1
+          end = target.end_lineno
+          glines = gen.splitlines()
+          rendered = ['LEGACY_RUNTIME_UNDEFINED_SYMBOLS = {']
+          for name in sorted(observed):
+              d = observed[name]
+              rendered += [
+                  f'    "{name}": {{',
+                  '        "arch": "android_arm",',
+                  f'        "path": "{d["path"]}",',
+                  f'        "sha256": "{d["sha256"]}",',
+                  '        "symbols": [' + ', '.join(f'"{s}"' for s in d['symbols']) + '],',
+                  '        "runtime_provider": "libc.so",',
+                  '    },',
+              ]
+          rendered.append('}')
+          glines[start:end] = rendered
+          gen_path.write_text('\n'.join(glines) + '\n', encoding='utf-8')
+          PY
+
+          git clone --depth=1 --branch=lineage-22.2 https://github.com/LineageOS/android_bionic.git /tmp/android_bionic
+          grep -Eq '^[[:space:]]*__aeabi_ldivmod;[[:space:]]*# arm' /tmp/android_bionic/libc/libc.map.txt
+          grep -Eq '^[[:space:]]*__aeabi_uldivmod;[[:space:]]*# arm' /tmp/android_bionic/libc/libc.map.txt
+
+          python3 tools/apply_android15_vendor_contract.py
+          sha256sum Android.bp ANDROID15_ELF_AUDIT.json ANDROID15_ELF_EXCEPTIONS.json > /tmp/one
+          python3 tools/apply_android15_vendor_contract.py
+          sha256sum Android.bp ANDROID15_ELF_AUDIT.json ANDROID15_ELF_EXCEPTIONS.json > /tmp/two
+          diff -u /tmp/one /tmp/two
+
+          python3 -m unittest tests.test_complete_arm_aeabi_coverage -v
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
+
+      - name: Commit verified production files only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Android.bp ANDROID15_ELF_AUDIT.json tools/generate_elf_contract.py tests/test_complete_arm_aeabi_coverage.py
+          git diff --cached --quiet && { echo "Expected changes but found none"; exit 1; }
+          git commit -m "vendor: cover complete RED ARM AEABI runtime set"
+          git push origin HEAD:codex/complete-arm-aeabi-coverage-staging
