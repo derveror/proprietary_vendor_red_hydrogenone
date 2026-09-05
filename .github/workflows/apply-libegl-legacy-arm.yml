@@ -106,14 +106,15 @@ jobs:
               unittest.main()
           PY
 
-          python3 tools/generate_elf_contract.py
-          sha256sum Android.bp ANDROID15_ELF_AUDIT.json > /tmp/before-second.txt
-          python3 tools/generate_elf_contract.py
-          sha256sum Android.bp ANDROID15_ELF_AUDIT.json > /tmp/after-second.txt
+          python3 tools/apply_android15_vendor_contract.py
+          sha256sum Android.bp ANDROID15_ELF_AUDIT.json ANDROID15_ELF_EXCEPTIONS.json > /tmp/before-second.txt
+          python3 tools/apply_android15_vendor_contract.py
+          sha256sum Android.bp ANDROID15_ELF_AUDIT.json ANDROID15_ELF_EXCEPTIONS.json > /tmp/after-second.txt
           diff -u /tmp/before-second.txt /tmp/after-second.txt
 
           python3 -m unittest tests.test_libegl_legacy_aeabi_contract -v
           python3 -m unittest discover -s tests -p 'test_*.py' -v
+          git status --short
 
       - name: Commit verified libEGL contract
         shell: bash
