@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "stock_archive_sha256": "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e",
+  "path": "vendor/bin/imsdatadaemon",
+  "operation": "replace_needed",
+  "old_needed": "libhwbinder.so",
+  "new_needed": "libhidlbase.so",
+  "symbol": "_ZN7android8hardware12ProcessState16initWithMmapSizeEm",
+  "stock_size": 201744,
+  "stock_sha256": "30d2e071021fe7d46de594024879e806bc17e5b23770e78d269e2b37362dd06a",
+  "patched_size": 267465,
+  "patched_sha256": "5aa471f8c078095c3c8d325475f8ec8be7675778a2919c09aa92e32e74261715"
+}

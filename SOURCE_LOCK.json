@@ -181,6 +181,15 @@
     "source_owned_nbaio_mono_paths": [
       "vendor/lib/libnbaio_mono.so",
       "vendor/lib64/libnbaio_mono.so"
-    ]
+    ],
+    "imsdatadaemon_hwbinder_fixup": {
+      "path": "vendor/bin/imsdatadaemon",
+      "operation": "replace_needed",
+      "from": "libhwbinder.so",
+      "to": "libhidlbase.so",
+      "symbol": "_ZN7android8hardware12ProcessState16initWithMmapSizeEm",
+      "stock_sha256": "30d2e071021fe7d46de594024879e806bc17e5b23770e78d269e2b37362dd06a",
+      "patched_sha256": "5aa471f8c078095c3c8d325475f8ec8be7675778a2919c09aa92e32e74261715"
+    }
   }
 }
