@@ -1,0 +1,99 @@
+name: Scan RED legacy ARM AEABI imports
+
+on:
+  push:
+    branches:
+      - codex/legacy-aeabi-scan-staging
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout vendor staging branch
+        uses: actions/checkout@v4
+        with:
+          ref: codex/legacy-aeabi-scan-staging
+          fetch-depth: 0
+
+      - name: Scan selected RED 32-bit ELF payload
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git clone --depth=1 --branch=lineage-22.2 https://github.com/LineageOS/android_bionic.git /tmp/android_bionic
+
+          python3 - <<'PY'
+          from __future__ import annotations
+
+          import hashlib
+          import json
+          import re
+          import subprocess
+          from collections import defaultdict
+          from pathlib import Path
+
+          root = Path('.')
+          manifest = json.loads((root / 'proprietary-manifest.json').read_text())
+          selected = {entry['path']: entry for entry in manifest['files']}
+
+          bp = (root / 'Android.bp').read_text()
+          path_to_modules = defaultdict(list)
+          lines = bp.splitlines(keepends=True)
+          i = 0
+          while i < len(lines):
+              if not re.match(r'^cc_prebuilt_(?:binary|library_shared)\s*\{\s*$', lines[i]):
+                  i += 1
+                  continue
+              start = i
+              depth = lines[i].count('{') - lines[i].count('}')
+              i += 1
+              while i < len(lines) and depth > 0:
+                  depth += lines[i].count('{') - lines[i].count('}')
+                  i += 1
+              block = ''.join(lines[start:i])
+              name_m = re.search(r'(?m)^\s*name:\s*"([^"]+)"', block)
+              if not name_m:
+                  continue
+              name = name_m.group(1)
+              for src in re.findall(r'"(proprietary/vendor/lib(?:/|64/)[^"]+)"', block):
+                  path_to_modules[src].append(name)
+
+          libc_map = Path('/tmp/android_bionic/libc/libc.map.txt').read_text()
+          libc_exports = set(re.findall(r'\b(__aeabi_[A-Za-z0-9_]+)\s*;', libc_map))
+
+          rows = []
+          for rel, entry in sorted(selected.items()):
+              if not rel.startswith('vendor/lib/'):
+                  continue
+              p = root / 'proprietary' / rel
+              if not p.is_file():
+                  continue
+              try:
+                  hdr = subprocess.check_output(['readelf', '-h', str(p)], text=True, stderr=subprocess.DEVNULL)
+              except subprocess.CalledProcessError:
+                  continue
+              if 'ELF32' not in hdr or 'ARM' not in hdr:
+                  continue
+              syms = subprocess.check_output(['readelf', '-Ws', str(p)], text=True, errors='replace')
+              und = sorted(set(re.findall(r'\bUND\s+(__aeabi_[A-Za-z0-9_]+)\b', syms)))
+              if not und:
+                  continue
+              source_path = f'proprietary/{rel}'
+              rows.append({
+                  'path': rel,
+                  'module': path_to_modules.get(source_path, []),
+                  'sha256': hashlib.sha256(p.read_bytes()).hexdigest(),
+                  'undefined_aeabi': und,
+                  'android15_libc_exports_all': all(s in libc_exports for s in und),
+                  'not_exported_by_android15_libc': [s for s in und if s not in libc_exports],
+              })
+
+          print('===== RED ARM AEABI SCAN =====')
+          print(json.dumps(rows, indent=2))
+          print(f'AEABI_ELF_COUNT={len(rows)}')
+          print(f'ALL_SYMBOLS={sorted({s for row in rows for s in row["undefined_aeabi"]})}')
+          print(f'ALL_PROVIDED_BY_ANDROID15_LIBC={all(row["android15_libc_exports_all"] for row in rows)}')
+          PY
