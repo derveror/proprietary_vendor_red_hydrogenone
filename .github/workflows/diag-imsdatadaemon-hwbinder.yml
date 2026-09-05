@@ -1,0 +1,43 @@
+name: Diagnose RED imsdatadaemon hwbinder ABI
+
+on:
+  push:
+    branches:
+      - codex/imsdatadaemon-hwbinder-diag
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Inspect exact RED .118 imsdatadaemon
+        shell: bash
+        run: |
+          set -euo pipefail
+          F=proprietary/vendor/bin/imsdatadaemon
+          echo '=== file ==='
+          file "$F"
+          echo '=== sha256 ==='
+          sha256sum "$F"
+          echo '=== dynamic ==='
+          readelf -d "$F"
+          echo '=== undefined ProcessState/hwbinder symbols ==='
+          readelf -Ws "$F" | grep -E 'UND.*(_ZN7android8hardware12ProcessState|_ZN7android8hardware14IPCThreadState|_ZN7android8hardware6Parcel|_ZN7android8hardware7IBinder)' || true
+          echo '=== all undefined android::hardware symbols demangled ==='
+          readelf -Ws "$F" | awk '$7 == "UND" {print $8}' | c++filt | grep '^android::hardware::' | sort -u || true
+          echo '=== generator references ==='
+          grep -R -n -- 'imsdatadaemon\|libhwbinder.so\|libhidlbase.so' tools tests *.json *.bp 2>/dev/null | head -n 300 || true
+
+      - name: Inspect Lineage 22.2 compat surface
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth=1 --branch=lineage-22.2 https://github.com/LineageOS/android_hardware_lineage_compat.git /tmp/compat
+          echo '=== compat hwbinder/hidl entries ==='
+          grep -R -n -- 'libhwbinder\|libhidlbase' /tmp/compat/Android.bp /tmp/compat 2>/dev/null | head -n 300 || true
