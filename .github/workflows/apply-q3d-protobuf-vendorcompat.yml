@@ -1,0 +1,156 @@
+name: Apply q3d and protobuf vendorcompat
+
+on:
+  push:
+    branches:
+      - codex/q3d-protobuf-vendorcompat-staging
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/q3d-protobuf-vendorcompat-staging
+          fetch-depth: 0
+
+      - name: RED then GREEN exact compatibility contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          cat > tests/test_q3d_protobuf_vendorcompat.py <<'PY'
+          from __future__ import annotations
+          import hashlib, json, re, unittest
+          from pathlib import Path
+
+          ROOT = Path(__file__).resolve().parents[1]
+
+          def block(name: str) -> str:
+              text = (ROOT / "Android.bp").read_text(encoding="utf-8")
+              lines = text.splitlines(keepends=True)
+              for i, line in enumerate(lines):
+                  if not re.match(r"^cc_prebuilt_(?:binary|library_shared)\s*\{\s*$", line):
+                      continue
+                  depth = line.count("{") - line.count("}")
+                  j = i + 1
+                  while j < len(lines) and depth > 0:
+                      depth += lines[j].count("{") - lines[j].count("}")
+                      j += 1
+                  item = "".join(lines[i:j])
+                  if re.search(rf'(?m)^\s*name:\s*"{re.escape(name)}"\s*,?$', item):
+                      return item
+              raise AssertionError(name)
+
+          class Q3dProtobufVendorcompatTest(unittest.TestCase):
+              def test_q3d_exact_red118_blob_has_arm_only_uldivmod_allowance(self):
+                  path = ROOT / "proprietary/vendor/lib/egl/libq3dtools_adreno.so"
+                  self.assertEqual(
+                      hashlib.sha256(path.read_bytes()).hexdigest(),
+                      "45e1b1cbc2e916f530e7e82a5b472ee4473fc67fea3be6805134217986537af0",
+                  )
+                  item = block("libq3dtools_adreno")
+                  self.assertNotIn("check_elf_files: false", item)
+                  self.assertRegex(item, r"(?s)arch:\s*\{.*?arm:\s*\{.*?allow_undefined_symbols:\s*true")
+                  audit = json.loads((ROOT / "ANDROID15_ELF_AUDIT.json").read_text())
+                  record = audit["modules"]["libq3dtools_adreno"]
+                  self.assertEqual(record.get("allowed_undefined_symbols"), {"android_arm": ["__aeabi_uldivmod"]})
+                  self.assertEqual(record.get("undefined_symbol_runtime_providers"), {"android_arm": {"__aeabi_uldivmod": "libc.so"}})
+                  self.assertTrue(record["check_elf_files"])
+
+              def test_libsettings_uses_lineage_vendorcompat_provider(self):
+                  expected = {
+                      ROOT / "proprietary/vendor/lib/libsettings.so": "f0c4e6b163e24f913baea635b1893fff0cb656baa7d163da60ba3d3eea0e67ae",
+                      ROOT / "proprietary/vendor/lib64/libsettings.so": "52e804e9878844810e7381e011588500e78e648917c0ce251a2b2bb97dfca123",
+                  }
+                  for path, digest in expected.items():
+                      self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), digest)
+                  item = block("libsettings")
+                  self.assertNotIn("check_elf_files: false", item)
+                  self.assertIn('"libprotobuf-cpp-full-vendorcompat"', item)
+                  self.assertNotRegex(item, r'(?m)^\s*"libprotobuf-cpp-full",\s*$')
+                  audit = json.loads((ROOT / "ANDROID15_ELF_AUDIT.json").read_text())
+                  record = audit["modules"]["libsettings"]
+                  self.assertTrue(record["check_elf_files"])
+                  for arch in ("android_arm", "android_arm64"):
+                      self.assertIn("libprotobuf-cpp-full-vendorcompat", record["architectures"][arch]["shared_libs"])
+                      self.assertIn("libprotobuf-cpp-full-vendorcompat", record["architectures"][arch]["needed"][next(iter(record["architectures"][arch]["needed"]))])
+
+              def test_generator_records_vendorcompat_as_source_verified(self):
+                  text = (ROOT / "tools/generate_elf_contract.py").read_text()
+                  self.assertIn('"libprotobuf-cpp-full-vendorcompat"', text)
+                  self.assertIn('soname == "libprotobuf-cpp-full.so"', text)
+          PY
+
+          set +e
+          python3 -m unittest tests.test_q3d_protobuf_vendorcompat -v > /tmp/red.log 2>&1
+          red_rc=$?
+          set -e
+          cat /tmp/red.log
+          if [ "$red_rc" -eq 0 ]; then
+              echo "ERROR: RED test unexpectedly passed"
+              exit 1
+          fi
+          grep -q 'FAILED' /tmp/red.log
+
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('tools/generate_elf_contract.py')
+          text = path.read_text(encoding='utf-8')
+
+          q3d = '''    "libq3dtools_adreno": {\n        "arch": "android_arm",\n        "path": "proprietary/vendor/lib/egl/libq3dtools_adreno.so",\n        "sha256": "45e1b1cbc2e916f530e7e82a5b472ee4473fc67fea3be6805134217986537af0",\n        "symbols": ["__aeabi_uldivmod"],\n        "runtime_provider": "libc.so",\n    },\n'''
+          marker = '}\n\nREQUIRED_RED_PROVIDER_FILES = ('
+          if '"libq3dtools_adreno": {' not in text:
+              if marker not in text:
+                  raise SystemExit('legacy runtime registry terminator missing')
+              text = text.replace(marker, q3d + marker, 1)
+
+          source_anchor = '    "libminijail",\n}'
+          if '"libprotobuf-cpp-full-vendorcompat"' not in text:
+              if source_anchor not in text:
+                  raise SystemExit('source verified dependency anchor missing')
+              text = text.replace(source_anchor, '    "libminijail",\n    "libprotobuf-cpp-full-vendorcompat",\n}', 1)
+
+          map_anchor = '''def module_for_soname(soname: str, providers: dict[str, str]) -> str:\n    if soname in providers:\n        return providers[soname]\n\n'''
+          map_add = '''def module_for_soname(soname: str, providers: dict[str, str]) -> str:\n    if soname in providers:\n        return providers[soname]\n\n    # Android 15 renames the ordinary vendor protobuf output to .vendor.so.\n    # Legacy Qualcomm blobs still DT_NEEDED libprotobuf-cpp-full.so; Lineage\n    # provides a dedicated vendorcompat module with that exact runtime stem.\n    if soname == "libprotobuf-cpp-full.so":\n        return "libprotobuf-cpp-full-vendorcompat"\n\n'''
+          if 'soname == "libprotobuf-cpp-full.so"' not in text:
+              if map_anchor not in text:
+                  raise SystemExit('module_for_soname anchor missing')
+              text = text.replace(map_anchor, map_add, 1)
+
+          path.write_text(text, encoding='utf-8')
+          PY
+
+          git clone --depth=1 --branch=lineage-22.2 https://github.com/LineageOS/android_bionic.git /tmp/android_bionic
+          grep -Eq '^[[:space:]]*__aeabi_uldivmod;[[:space:]]*# arm' /tmp/android_bionic/libc/libc.map.txt
+
+          git clone --depth=1 --branch=lineage-22.2 https://github.com/LineageOS/android_hardware_lineage_compat.git /tmp/lineage_compat
+          grep -Fq 'name: "libprotobuf-cpp-full-vendorcompat"' /tmp/lineage_compat/Android.bp
+          grep -Fq 'stem: "libprotobuf-cpp-full"' /tmp/lineage_compat/Android.bp
+
+          git clone --depth=1 --branch=lineage-22.2 https://github.com/LineageOS/android_device_oneplus_msm8998-common.git /tmp/op5_common
+          grep -Fq 'libprotobuf-cpp-full-vendorcompat' /tmp/op5_common/common.mk
+
+          python3 tools/apply_android15_vendor_contract.py
+          sha256sum Android.bp ANDROID15_ELF_AUDIT.json ANDROID15_ELF_EXCEPTIONS.json > /tmp/one
+          python3 tools/apply_android15_vendor_contract.py
+          sha256sum Android.bp ANDROID15_ELF_AUDIT.json ANDROID15_ELF_EXCEPTIONS.json > /tmp/two
+          diff -u /tmp/one /tmp/two
+
+          python3 -m unittest tests.test_q3d_protobuf_vendorcompat -v
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
+
+      - name: Commit verified production files only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Android.bp ANDROID15_ELF_AUDIT.json tools/generate_elf_contract.py tests/test_q3d_protobuf_vendorcompat.py
+          git diff --cached --quiet && { echo "Expected changes but found none"; exit 1; }
+          git commit -m "vendor: fix q3d ARM helper and protobuf provider"
+          git push origin HEAD:codex/q3d-protobuf-vendorcompat-staging
