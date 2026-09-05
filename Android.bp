@@ -2461,6 +2461,11 @@ cc_prebuilt_library_shared {
             ],
         },
     },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
+        },
+    },
     compile_multilib: "both",
     prefer: true,
     relative_install_path: "egl",
@@ -5910,6 +5915,11 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libm",
             ],
+        },
+    },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
         },
     },
     compile_multilib: "32",

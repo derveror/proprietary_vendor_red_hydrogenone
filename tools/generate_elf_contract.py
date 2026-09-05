@@ -35,6 +35,20 @@ LEGACY_RUNTIME_UNDEFINED_SYMBOLS = {
         "symbols": ["__aeabi_ldivmod"],
         "runtime_provider": "libc.so",
     },
+    "libQTapGLES": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/egl/libQTapGLES.so",
+        "sha256": "6e1f3d61559115d144fcd53214e42a426a76dea3e173eebb1b9bafbce17fa2fe",
+        "symbols": ["__aeabi_ldivmod"],
+        "runtime_provider": "libc.so",
+    },
+    "libmmcamera_interface": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/libmmcamera_interface.so",
+        "sha256": "1027f4b5bb00fa050088ccdd484ec23ae48a601bb4c8549df3dc1fcb9c832531",
+        "symbols": ["__aeabi_ldivmod"],
+        "runtime_provider": "libc.so",
+    },
 }
 
 REQUIRED_RED_PROVIDER_FILES = (
