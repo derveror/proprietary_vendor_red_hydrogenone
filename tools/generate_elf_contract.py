@@ -49,6 +49,13 @@ LEGACY_RUNTIME_UNDEFINED_SYMBOLS = {
         "symbols": ["__aeabi_ldivmod"],
         "runtime_provider": "libc.so",
     },
+    "libq3dtools_adreno": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/egl/libq3dtools_adreno.so",
+        "sha256": "45e1b1cbc2e916f530e7e82a5b472ee4473fc67fea3be6805134217986537af0",
+        "symbols": ["__aeabi_uldivmod"],
+        "runtime_provider": "libc.so",
+    },
 }
 
 REQUIRED_RED_PROVIDER_FILES = (
@@ -108,6 +115,7 @@ SOURCE_VERIFIED_DEPENDENCIES = {
     "libdrm",
     "libgnsspps",
     "libminijail",
+    "libprotobuf-cpp-full-vendorcompat",
 }
 
 VINTF_FRAGMENT_BY_MODULE = {
@@ -443,6 +451,12 @@ def elf_dynamic(path: Path) -> tuple[list[str], str | None]:
 def module_for_soname(soname: str, providers: dict[str, str]) -> str:
     if soname in providers:
         return providers[soname]
+
+    # Android 15 renames the ordinary vendor protobuf output to .vendor.so.
+    # Legacy Qualcomm blobs still DT_NEEDED libprotobuf-cpp-full.so; Lineage
+    # provides a dedicated vendorcompat module with that exact runtime stem.
+    if soname == "libprotobuf-cpp-full.so":
+        return "libprotobuf-cpp-full-vendorcompat"
 
     module = soname[:-3] if soname.endswith(".so") else soname
     # Match LineageOS 22.2 extract-utils: legacy stock ELF DT_NEEDED entries
