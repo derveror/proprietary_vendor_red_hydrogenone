@@ -43,6 +43,7 @@
     "RED .118 media OMX wrapper closure (android.hardware.media.omx@1.0-service, libgui_vendor, libstagefright_omx VNDK28, libstagefright_foundation VNDK28) is pruned after the Android 15 ABI gate proved the legacy GUI/media interfaces incompatible and the reverse dependency graph proved the closure self-contained. LineageOS 22.2 source owns the OMX frontend; Qualcomm codec payload remains proprietary.",
     "311 of 313 proprietary ELF modules have check_elf_files enabled; the remaining 2 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
     "RED .118 libnbaio_mono is pruned in favor of the LineageOS 22.2 source vendor library: the stock Android 9 blob has no retained proprietary DT_NEEDED consumers and shadows the source module needed by audio.r_submix.default.",
-    "310 of 312 proprietary ELF modules have check_elf_files enabled; the remaining 2 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json."
+    "310 of 312 proprietary ELF modules have check_elf_files enabled; the remaining 2 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
+    "RED .118 imsdatadaemon is Android 9 and directly DT_NEEDED libhwbinder.so for android::hardware::ProcessState::initWithMmapSize. Android 15 folds the hwbinder implementation into libhidlbase, so the exact stock daemon is patched to DT_NEEDED libhidlbase.so; original and patched identities are pinned in ANDROID15_IMSDATA_HWBINDER_FIXUP.json."
   ]
 }

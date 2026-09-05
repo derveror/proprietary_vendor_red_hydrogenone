@@ -1158,7 +1158,7 @@ cc_prebuilt_binary {
                 "libdiag",
                 "libdl",
                 "libdsi_netctrl",
-                "libhwbinder",
+                "libhidlbase",
                 "liblog",
                 "libm",
                 "libqmi_cci",
