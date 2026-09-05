@@ -28,6 +28,13 @@ LEGACY_RUNTIME_UNDEFINED_SYMBOLS = {
         "symbols": ["__aeabi_ldivmod"],
         "runtime_provider": "libc.so",
     },
+    "libmmcamera2_mct": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/libmmcamera2_mct.so",
+        "sha256": "e78927faa3ace5dd9f7b2c6d78636d9737495c4f3ab44e77dde14842aa64d40a",
+        "symbols": ["__aeabi_ldivmod"],
+        "runtime_provider": "libc.so",
+    },
 }
 
 REQUIRED_RED_PROVIDER_FILES = (
