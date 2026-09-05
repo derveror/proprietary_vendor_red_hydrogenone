@@ -2676,6 +2676,16 @@
             ]
           }
         }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_uldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_uldivmod": "libc.so"
+        }
       }
     },
     "libDRPlugin": {
@@ -2917,6 +2927,16 @@
             ]
           }
         }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_ldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_ldivmod": "libc.so"
+        }
       }
     },
     "libGLESv2_adreno": {
@@ -2987,6 +3007,18 @@
               "libdl"
             ]
           }
+        }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_ldivmod",
+          "__aeabi_uldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_ldivmod": "libc.so",
+          "__aeabi_uldivmod": "libc.so"
         }
       }
     },
@@ -5804,6 +5836,18 @@
             ]
           }
         }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_ldivmod",
+          "__aeabi_uldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_ldivmod": "libc.so",
+          "__aeabi_uldivmod": "libc.so"
+        }
       }
     },
     "libmmcamera2_frame_algorithm": {
@@ -5893,6 +5937,16 @@
             ]
           }
         }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_uldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_uldivmod": "libc.so"
+        }
       }
     },
     "libmmcamera2_imglib_modules": {
@@ -5930,6 +5984,16 @@
               "libdl"
             ]
           }
+        }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_uldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_uldivmod": "libc.so"
         }
       }
     },
@@ -5984,6 +6048,18 @@
             ]
           }
         }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_ldivmod",
+          "__aeabi_uldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_ldivmod": "libc.so",
+          "__aeabi_uldivmod": "libc.so"
+        }
       }
     },
     "libmmcamera2_isp_modules": {
@@ -6017,6 +6093,16 @@
               "libdl"
             ]
           }
+        }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_uldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_uldivmod": "libc.so"
         }
       }
     },
@@ -6245,6 +6331,18 @@
             ]
           }
         }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_ldivmod",
+          "__aeabi_uldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_ldivmod": "libc.so",
+          "__aeabi_uldivmod": "libc.so"
+        }
       }
     },
     "libmmcamera2_sensor_modules": {
@@ -6286,6 +6384,18 @@
               "libdl"
             ]
           }
+        }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_ldivmod",
+          "__aeabi_uldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_ldivmod": "libc.so",
+          "__aeabi_uldivmod": "libc.so"
         }
       }
     },
@@ -6339,6 +6449,16 @@
               "libdl"
             ]
           }
+        }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_uldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_uldivmod": "libc.so"
         }
       }
     },
@@ -6397,6 +6517,16 @@
             ]
           }
         }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_uldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_uldivmod": "libc.so"
+        }
       }
     },
     "libmmcamera2_stats_modules": {
@@ -6446,6 +6576,18 @@
               "libdl"
             ]
           }
+        }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_ldivmod",
+          "__aeabi_uldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_ldivmod": "libc.so",
+          "__aeabi_uldivmod": "libc.so"
         }
       }
     },
@@ -8910,6 +9052,18 @@
               "libdl"
             ]
           }
+        }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_ldivmod",
+          "__aeabi_uldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_ldivmod": "libc.so",
+          "__aeabi_uldivmod": "libc.so"
         }
       }
     },
@@ -14596,6 +14750,6 @@
     "checkelf_enabled": 312,
     "checkelf_exceptions": 0,
     "provider_sonames": 283,
-    "allow_undefined_symbol_modules": 6
+    "allow_undefined_symbol_modules": 20
   }
 }

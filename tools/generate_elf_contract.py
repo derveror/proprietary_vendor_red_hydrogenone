@@ -14,10 +14,10 @@ BP = ROOT / "Android.bp"
 STOCK_SHA256 = "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e"
 
 LEGACY_RUNTIME_UNDEFINED_SYMBOLS = {
-    "libgsl": {
+    "libCB": {
         "arch": "android_arm",
-        "path": "proprietary/vendor/lib/libgsl.so",
-        "sha256": "dc22e2b816dcb16a49797b9c758a2872ffa65a3bb4871a2b50b5866dcc4573cb",
+        "path": "proprietary/vendor/lib/libCB.so",
+        "sha256": "f405428865f20650f357d7fc3b0f96d41b7d9609637deb1d8cb4997be4d28a5d",
         "symbols": ["__aeabi_uldivmod"],
         "runtime_provider": "libc.so",
     },
@@ -28,11 +28,18 @@ LEGACY_RUNTIME_UNDEFINED_SYMBOLS = {
         "symbols": ["__aeabi_ldivmod"],
         "runtime_provider": "libc.so",
     },
-    "libmmcamera2_mct": {
+    "libGLESv1_CM_adreno": {
         "arch": "android_arm",
-        "path": "proprietary/vendor/lib/libmmcamera2_mct.so",
-        "sha256": "e78927faa3ace5dd9f7b2c6d78636d9737495c4f3ab44e77dde14842aa64d40a",
+        "path": "proprietary/vendor/lib/egl/libGLESv1_CM_adreno.so",
+        "sha256": "fc247c578b0a621a6cad2d66f830e5ceb17e9d3398839c1d0c94573962cedba3",
         "symbols": ["__aeabi_ldivmod"],
+        "runtime_provider": "libc.so",
+    },
+    "libGLESv2_adreno": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/egl/libGLESv2_adreno.so",
+        "sha256": "b5122ad2e4edf9c0e65eee99efa6aaf094e33be0d60beba184a9f0b536be3ef3",
+        "symbols": ["__aeabi_ldivmod", "__aeabi_uldivmod"],
         "runtime_provider": "libc.so",
     },
     "libQTapGLES": {
@@ -40,6 +47,90 @@ LEGACY_RUNTIME_UNDEFINED_SYMBOLS = {
         "path": "proprietary/vendor/lib/egl/libQTapGLES.so",
         "sha256": "6e1f3d61559115d144fcd53214e42a426a76dea3e173eebb1b9bafbce17fa2fe",
         "symbols": ["__aeabi_ldivmod"],
+        "runtime_provider": "libc.so",
+    },
+    "libgsl": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/libgsl.so",
+        "sha256": "dc22e2b816dcb16a49797b9c758a2872ffa65a3bb4871a2b50b5866dcc4573cb",
+        "symbols": ["__aeabi_uldivmod"],
+        "runtime_provider": "libc.so",
+    },
+    "libmmcamera2_cpp_module": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/libmmcamera2_cpp_module.so",
+        "sha256": "d175f0b3c1e068270a73fde9ceaf80570aeafed28f1eecdaba12a05ad5c19e00",
+        "symbols": ["__aeabi_ldivmod", "__aeabi_uldivmod"],
+        "runtime_provider": "libc.so",
+    },
+    "libmmcamera2_iface_modules": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/libmmcamera2_iface_modules.so",
+        "sha256": "3fbd9bcbe82193f20ea904f9dad4a727789f97264a6250cbe7ce98ef42f6b32f",
+        "symbols": ["__aeabi_uldivmod"],
+        "runtime_provider": "libc.so",
+    },
+    "libmmcamera2_imglib_modules": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/libmmcamera2_imglib_modules.so",
+        "sha256": "1c2750fb522bb7f51c151a72faa5a6e3b3b24596e54fa71b05ce2c8eeef37ec5",
+        "symbols": ["__aeabi_uldivmod"],
+        "runtime_provider": "libc.so",
+    },
+    "libmmcamera2_is": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/libmmcamera2_is.so",
+        "sha256": "e0d9ded92b1957f78a592d724f27ce1e7ec0b7ad099eec4530f498051d182598",
+        "symbols": ["__aeabi_ldivmod", "__aeabi_uldivmod"],
+        "runtime_provider": "libc.so",
+    },
+    "libmmcamera2_isp_modules": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/libmmcamera2_isp_modules.so",
+        "sha256": "ec16889a2efba47e3b1193ed9e0b96d2b38aeb03d560b62936f4ed19c60d5096",
+        "symbols": ["__aeabi_uldivmod"],
+        "runtime_provider": "libc.so",
+    },
+    "libmmcamera2_mct": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/libmmcamera2_mct.so",
+        "sha256": "e78927faa3ace5dd9f7b2c6d78636d9737495c4f3ab44e77dde14842aa64d40a",
+        "symbols": ["__aeabi_ldivmod"],
+        "runtime_provider": "libc.so",
+    },
+    "libmmcamera2_q3a_core": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/libmmcamera2_q3a_core.so",
+        "sha256": "307ebbfcb0ecf387c37769a9975d2cfd2c322374059e5d61da12af056b0cd67d",
+        "symbols": ["__aeabi_ldivmod", "__aeabi_uldivmod"],
+        "runtime_provider": "libc.so",
+    },
+    "libmmcamera2_sensor_modules": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/libmmcamera2_sensor_modules.so",
+        "sha256": "0d423fc281373b47136c4eac48b3da4bafc27024505c9ae5a6c3a196361db234",
+        "symbols": ["__aeabi_ldivmod", "__aeabi_uldivmod"],
+        "runtime_provider": "libc.so",
+    },
+    "libmmcamera2_stats_algorithm": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/libmmcamera2_stats_algorithm.so",
+        "sha256": "efc1b958f789af84ca29f350c58e17ab2d3e5191614c99174cd363db1173b53a",
+        "symbols": ["__aeabi_uldivmod"],
+        "runtime_provider": "libc.so",
+    },
+    "libmmcamera2_stats_lib": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/libmmcamera2_stats_lib.so",
+        "sha256": "f76bfdaa719c3163419567e8d540928decd8e6327ecec990cdbc6a3214d2561c",
+        "symbols": ["__aeabi_uldivmod"],
+        "runtime_provider": "libc.so",
+    },
+    "libmmcamera2_stats_modules": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/libmmcamera2_stats_modules.so",
+        "sha256": "0301fa336033cc338bf59b3b8d35b84cbdba281087b2d21ade8542eafb04c7cf",
+        "symbols": ["__aeabi_ldivmod", "__aeabi_uldivmod"],
         "runtime_provider": "libc.so",
     },
     "libmmcamera_interface": {
@@ -54,6 +145,13 @@ LEGACY_RUNTIME_UNDEFINED_SYMBOLS = {
         "path": "proprietary/vendor/lib/egl/libq3dtools_adreno.so",
         "sha256": "45e1b1cbc2e916f530e7e82a5b472ee4473fc67fea3be6805134217986537af0",
         "symbols": ["__aeabi_uldivmod"],
+        "runtime_provider": "libc.so",
+    },
+    "libq3dtools_esx": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/egl/libq3dtools_esx.so",
+        "sha256": "db309fbe9d5b966efa6291e648f08a79661741f4a9899bfcf025bbbb0390c9f5",
+        "symbols": ["__aeabi_ldivmod", "__aeabi_uldivmod"],
         "runtime_provider": "libc.so",
     },
 }

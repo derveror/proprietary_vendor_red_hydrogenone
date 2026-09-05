@@ -1917,6 +1917,11 @@ cc_prebuilt_library_shared {
             ],
         },
     },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
+        },
+    },
     compile_multilib: "both",
     prefer: true,
     soc_specific: true,
@@ -2085,6 +2090,11 @@ cc_prebuilt_library_shared {
             ],
         },
     },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
+        },
+    },
     compile_multilib: "both",
     prefer: true,
     relative_install_path: "egl",
@@ -2131,6 +2141,11 @@ cc_prebuilt_library_shared {
                 "libm",
                 "libz",
             ],
+        },
+    },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
         },
     },
     compile_multilib: "both",
@@ -4244,6 +4259,11 @@ cc_prebuilt_library_shared {
             ],
         },
     },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
+        },
+    },
     compile_multilib: "32",
     prefer: true,
     soc_specific: true,
@@ -4312,6 +4332,11 @@ cc_prebuilt_library_shared {
             ],
         },
     },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
+        },
+    },
     compile_multilib: "32",
     prefer: true,
     soc_specific: true,
@@ -4340,6 +4365,11 @@ cc_prebuilt_library_shared {
                 "libmmcamera_dbg",
                 "libmmcamera_imglib",
             ],
+        },
+    },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
         },
     },
     compile_multilib: "32",
@@ -4381,6 +4411,11 @@ cc_prebuilt_library_shared {
             ],
         },
     },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
+        },
+    },
     compile_multilib: "both",
     prefer: true,
     soc_specific: true,
@@ -4407,6 +4442,11 @@ cc_prebuilt_library_shared {
                 "libmmcamera2_mct",
                 "libmmcamera_dbg",
             ],
+        },
+    },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
         },
     },
     compile_multilib: "32",
@@ -4579,6 +4619,11 @@ cc_prebuilt_library_shared {
             ],
         },
     },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
+        },
+    },
     compile_multilib: "both",
     prefer: true,
     soc_specific: true,
@@ -4609,6 +4654,11 @@ cc_prebuilt_library_shared {
                 "libxml2",
                 "libz",
             ],
+        },
+    },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
         },
     },
     compile_multilib: "32",
@@ -4648,6 +4698,11 @@ cc_prebuilt_library_shared {
                 "libm",
                 "libmmcamera_dbg",
             ],
+        },
+    },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
         },
     },
     compile_multilib: "both",
@@ -4691,6 +4746,11 @@ cc_prebuilt_library_shared {
             ],
         },
     },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
+        },
+    },
     compile_multilib: "both",
     prefer: true,
     soc_specific: true,
@@ -4725,6 +4785,11 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "libxml2",
             ],
+        },
+    },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
         },
     },
     compile_multilib: "32",
@@ -6726,6 +6791,11 @@ cc_prebuilt_library_shared {
                 "libm",
                 "libz",
             ],
+        },
+    },
+    arch: {
+        arm: {
+            allow_undefined_symbols: true,
         },
     },
     compile_multilib: "both",
