@@ -1,0 +1,141 @@
+name: Apply RED camera MCT legacy ARM contract
+
+on:
+  push:
+    branches:
+      - codex/camera-mct-aeabi-staging
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout staging branch
+        uses: actions/checkout@v4
+        with:
+          ref: codex/camera-mct-aeabi-staging
+          fetch-depth: 0
+
+      - name: Add precise RED camera MCT ARM compatibility contract
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('tools/generate_elf_contract.py')
+          text = path.read_text(encoding='utf-8')
+
+          if '"libmmcamera2_mct": {' not in text:
+              anchor = '''    "libEGL_adreno": {
+                  "arch": "android_arm",
+                  "path": "proprietary/vendor/lib/egl/libEGL_adreno.so",
+                  "sha256": "dcac93072d761bbbe5f36c72d7823901be4f47ddf23d3c32a6d103416cb50fa0",
+                  "symbols": ["__aeabi_ldivmod"],
+                  "runtime_provider": "libc.so",
+              },
+          '''
+              replacement = anchor + '''    "libmmcamera2_mct": {
+                  "arch": "android_arm",
+                  "path": "proprietary/vendor/lib/libmmcamera2_mct.so",
+                  "sha256": "e78927faa3ace5dd9f7b2c6d78636d9737495c4f3ab44e77dde14842aa64d40a",
+                  "symbols": ["__aeabi_ldivmod"],
+                  "runtime_provider": "libc.so",
+              },
+          '''
+              if anchor not in text:
+                  raise SystemExit('legacy runtime contract anchor missing')
+              text = text.replace(anchor, replacement, 1)
+              path.write_text(text, encoding='utf-8')
+          PY
+
+          cat > tests/test_camera_mct_legacy_aeabi_contract.py <<'PY'
+          from __future__ import annotations
+
+          import hashlib
+          import json
+          import re
+          import unittest
+          from pathlib import Path
+
+          ROOT = Path(__file__).resolve().parents[1]
+          RED_MCT_ARM = ROOT / "proprietary/vendor/lib/libmmcamera2_mct.so"
+          EXPECTED_SHA256 = "e78927faa3ace5dd9f7b2c6d78636d9737495c4f3ab44e77dde14842aa64d40a"
+
+
+          def prebuilt_block(name: str) -> str:
+              text = (ROOT / "Android.bp").read_text(encoding="utf-8")
+              lines = text.splitlines(keepends=True)
+              for i, line in enumerate(lines):
+                  if not re.match(r"^cc_prebuilt_(?:binary|library_shared)\s*\{\s*$", line):
+                      continue
+                  depth = line.count("{") - line.count("}")
+                  j = i + 1
+                  while j < len(lines) and depth > 0:
+                      depth += lines[j].count("{") - lines[j].count("}")
+                      j += 1
+                  block = "".join(lines[i:j])
+                  if re.search(rf'(?m)^\s*name:\s*"{re.escape(name)}"\s*,?$', block):
+                      return block
+              raise AssertionError(f"missing prebuilt block: {name}")
+
+
+          class CameraMctLegacyAeabiContractTest(unittest.TestCase):
+              def test_exact_red118_mct_blob_has_arm_only_allowance(self) -> None:
+                  self.assertTrue(RED_MCT_ARM.is_file())
+                  self.assertEqual(
+                      hashlib.sha256(RED_MCT_ARM.read_bytes()).hexdigest(),
+                      EXPECTED_SHA256,
+                  )
+                  block = prebuilt_block("libmmcamera2_mct")
+                  self.assertNotIn("check_elf_files: false", block)
+                  self.assertRegex(
+                      block,
+                      r"(?s)arch:\s*\{.*?arm:\s*\{.*?allow_undefined_symbols:\s*true,.*?\}.*?\}",
+                  )
+                  self.assertNotIn("arm64:", block)
+
+              def test_audit_records_only_ldivmod_from_libc(self) -> None:
+                  audit = json.loads(
+                      (ROOT / "ANDROID15_ELF_AUDIT.json").read_text(encoding="utf-8")
+                  )
+                  module = audit["modules"]["libmmcamera2_mct"]
+                  self.assertEqual(
+                      module.get("allowed_undefined_symbols"),
+                      {"android_arm": ["__aeabi_ldivmod"]},
+                  )
+                  self.assertEqual(
+                      module.get("undefined_symbol_runtime_providers"),
+                      {"android_arm": {"__aeabi_ldivmod": "libc.so"}},
+                  )
+                  self.assertTrue(module["check_elf_files"])
+
+
+          if __name__ == "__main__":
+              unittest.main()
+          PY
+
+          python3 tools/apply_android15_vendor_contract.py
+          sha256sum Android.bp ANDROID15_ELF_AUDIT.json ANDROID15_ELF_EXCEPTIONS.json > /tmp/before-second.txt
+          python3 tools/apply_android15_vendor_contract.py
+          sha256sum Android.bp ANDROID15_ELF_AUDIT.json ANDROID15_ELF_EXCEPTIONS.json > /tmp/after-second.txt
+          diff -u /tmp/before-second.txt /tmp/after-second.txt
+
+          python3 -m unittest tests.test_camera_mct_legacy_aeabi_contract -v
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
+          git status --short
+
+      - name: Commit verified camera MCT contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Android.bp ANDROID15_ELF_AUDIT.json tools/generate_elf_contract.py tests/test_camera_mct_legacy_aeabi_contract.py
+          git diff --cached --quiet && { echo "Expected camera MCT changes but found none"; exit 1; }
+          git commit -m "vendor: allow RED camera MCT legacy ARM runtime helper"
+          git push origin HEAD:codex/camera-mct-aeabi-staging
