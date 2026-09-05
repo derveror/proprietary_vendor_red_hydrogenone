@@ -2816,6 +2816,16 @@
             ]
           }
         }
+      },
+      "allowed_undefined_symbols": {
+        "android_arm": [
+          "__aeabi_ldivmod"
+        ]
+      },
+      "undefined_symbol_runtime_providers": {
+        "android_arm": {
+          "__aeabi_ldivmod": "libc.so"
+        }
       }
     },
     "libFlacSwDec": {
@@ -14546,6 +14556,6 @@
     "checkelf_enabled": 312,
     "checkelf_exceptions": 0,
     "provider_sonames": 283,
-    "allow_undefined_symbol_modules": 1
+    "allow_undefined_symbol_modules": 2
   }
 }

@@ -21,6 +21,13 @@ LEGACY_RUNTIME_UNDEFINED_SYMBOLS = {
         "symbols": ["__aeabi_uldivmod"],
         "runtime_provider": "libc.so",
     },
+    "libEGL_adreno": {
+        "arch": "android_arm",
+        "path": "proprietary/vendor/lib/egl/libEGL_adreno.so",
+        "sha256": "dcac93072d761bbbe5f36c72d7823901be4f47ddf23d3c32a6d103416cb50fa0",
+        "symbols": ["__aeabi_ldivmod"],
+        "runtime_provider": "libc.so",
+    },
 }
 
 REQUIRED_RED_PROVIDER_FILES = (
