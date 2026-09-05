@@ -10,44 +10,38 @@ permissions:
 
 jobs:
   patch:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-24.04
     steps:
-      - name: Checkout staging branch
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: codex/qtap-camera-interface-aeabi-staging
           fetch-depth: 0
 
-      - name: RED - add regression tests and prove current tree fails them
+      - name: RED then GREEN exact observed pair
         shell: bash
         run: |
           set -euo pipefail
 
           cat > tests/test_observed_arm_aeabi_pair.py <<'PY'
           from __future__ import annotations
-
-          import hashlib
-          import json
-          import re
-          import unittest
+          import hashlib, json, re, unittest
           from pathlib import Path
 
           ROOT = Path(__file__).resolve().parents[1]
-
           EXPECTED = {
-              "libQTapGLES": {
-                  "path": ROOT / "proprietary/vendor/lib/egl/libQTapGLES.so",
-                  "sha256": "6e1f3d61559115d144fcd53214e42a426a76dea3e173eebb1b9bafbce17fa2fe",
-              },
-              "libmmcamera_interface": {
-                  "path": ROOT / "proprietary/vendor/lib/libmmcamera_interface.so",
-                  "sha256": "1027f4b5bb00fa050088ccdd484ec23ae48a601bb4c8549df3dc1fcb9c832531",
-              },
+              "libQTapGLES": (
+                  ROOT / "proprietary/vendor/lib/egl/libQTapGLES.so",
+                  "6e1f3d61559115d144fcd53214e42a426a76dea3e173eebb1b9bafbce17fa2fe",
+              ),
+              "libmmcamera_interface": (
+                  ROOT / "proprietary/vendor/lib/libmmcamera_interface.so",
+                  "1027f4b5bb00fa050088ccdd484ec23ae48a601bb4c8549df3dc1fcb9c832531",
+              ),
           }
 
-
-          def prebuilt_block(name: str) -> str:
-              text = (ROOT / "Android.bp").read_text(encoding="utf-8")
+          def block(name: str) -> str:
+              text = (ROOT / "Android.bp").read_text()
               lines = text.splitlines(keepends=True)
               for i, line in enumerate(lines):
                   if not re.match(r"^cc_prebuilt_(?:binary|library_shared)\s*\{\s*$", line):
@@ -57,119 +51,84 @@ jobs:
                   while j < len(lines) and depth > 0:
                       depth += lines[j].count("{") - lines[j].count("}")
                       j += 1
-                  block = "".join(lines[i:j])
-                  if re.search(rf'(?m)^\s*name:\s*"{re.escape(name)}"\s*,?$', block):
-                      return block
-              raise AssertionError(f"missing prebuilt block: {name}")
+                  item = "".join(lines[i:j])
+                  if re.search(rf'(?m)^\s*name:\s*"{re.escape(name)}"\s*,?$', item):
+                      return item
+              raise AssertionError(name)
 
-
-          class ObservedArmAeabiPairTest(unittest.TestCase):
-              def test_exact_red118_blobs_have_arm_only_allowance(self) -> None:
-                  for module, expected in EXPECTED.items():
+          class ObservedPair(unittest.TestCase):
+              def test_exact_blobs_and_arm_allowance(self):
+                  for module, (path, digest) in EXPECTED.items():
                       with self.subTest(module=module):
-                          path = expected["path"]
-                          self.assertTrue(path.is_file())
-                          self.assertEqual(
-                              hashlib.sha256(path.read_bytes()).hexdigest(),
-                              expected["sha256"],
-                          )
-                          block = prebuilt_block(module)
-                          self.assertNotIn("check_elf_files: false", block)
-                          self.assertRegex(
-                              block,
-                              r"(?s)arch:\s*\{.*?arm:\s*\{.*?allow_undefined_symbols:\s*true,.*?\}.*?\}",
-                          )
+                          self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), digest)
+                          item = block(module)
+                          self.assertNotIn("check_elf_files: false", item)
+                          self.assertRegex(item, r"(?s)arch:\s*\{.*?arm:\s*\{.*?allow_undefined_symbols:\s*true")
 
-              def test_audit_records_only_observed_ldivmod_runtime_allowance(self) -> None:
-                  audit = json.loads(
-                      (ROOT / "ANDROID15_ELF_AUDIT.json").read_text(encoding="utf-8")
-                  )
+              def test_audit_is_only_ldivmod_from_libc(self):
+                  audit = json.loads((ROOT / "ANDROID15_ELF_AUDIT.json").read_text())
                   for module in EXPECTED:
                       with self.subTest(module=module):
-                          record = audit["modules"][module]
-                          self.assertEqual(
-                              record.get("allowed_undefined_symbols"),
-                              {"android_arm": ["__aeabi_ldivmod"]},
-                          )
-                          self.assertEqual(
-                              record.get("undefined_symbol_runtime_providers"),
-                              {"android_arm": {"__aeabi_ldivmod": "libc.so"}},
-                          )
-                          self.assertTrue(record["check_elf_files"])
-
-
-          if __name__ == "__main__":
-              unittest.main()
+                          item = audit["modules"][module]
+                          self.assertEqual(item.get("allowed_undefined_symbols"), {"android_arm": ["__aeabi_ldivmod"]})
+                          self.assertEqual(item.get("undefined_symbol_runtime_providers"), {"android_arm": {"__aeabi_ldivmod": "libc.so"}})
+                          self.assertTrue(item["check_elf_files"])
           PY
 
           set +e
-          python3 -m unittest tests.test_observed_arm_aeabi_pair -v > /tmp/red-test.log 2>&1
-          rc=$?
+          python3 -m unittest tests.test_observed_arm_aeabi_pair -v >/tmp/red.log 2>&1
+          red_rc=$?
           set -e
-          cat /tmp/red-test.log
-          if [ "$rc" -eq 0 ]; then
-              echo "ERROR: regression test unexpectedly passed before production change"
+          cat /tmp/red.log
+          if [ "$red_rc" -eq 0 ]; then
+              echo "ERROR: RED test unexpectedly passed"
               exit 1
           fi
-          grep -Eq 'FAILED|FAIL:' /tmp/red-test.log
-          echo "RED phase confirmed: current tree lacks the two observed ARM allowances."
-
-      - name: GREEN - add exact SHA-pinned compatibility registry entries
-        shell: bash
-        run: |
-          set -euo pipefail
+          grep -q 'FAILED' /tmp/red.log
 
           python3 - <<'PY'
           from pathlib import Path
-
           path = Path('tools/generate_elf_contract.py')
-          text = path.read_text(encoding='utf-8')
-
-          anchor = '''    "libmmcamera2_mct": {
-              "arch": "android_arm",
-              "path": "proprietary/vendor/lib/libmmcamera2_mct.so",
-              "sha256": "e78927faa3ace5dd9f7b2c6d78636d9737495c4f3ab44e77dde14842aa64d40a",
-              "symbols": ["__aeabi_ldivmod"],
-              "runtime_provider": "libc.so",
-          },
-          '''
-          additions = '''    "libQTapGLES": {
-              "arch": "android_arm",
-              "path": "proprietary/vendor/lib/egl/libQTapGLES.so",
-              "sha256": "6e1f3d61559115d144fcd53214e42a426a76dea3e173eebb1b9bafbce17fa2fe",
-              "symbols": ["__aeabi_ldivmod"],
-              "runtime_provider": "libc.so",
-          },
-              "libmmcamera_interface": {
-              "arch": "android_arm",
-              "path": "proprietary/vendor/lib/libmmcamera_interface.so",
-              "sha256": "1027f4b5bb00fa050088ccdd484ec23ae48a601bb4c8549df3dc1fcb9c832531",
-              "symbols": ["__aeabi_ldivmod"],
-              "runtime_provider": "libc.so",
-          },
-          '''
-
-          if '"libQTapGLES": {' not in text or '"libmmcamera_interface": {' not in text:
-              if anchor not in text:
-                  raise SystemExit('camera MCT registry anchor missing')
-              text = text.replace(anchor, anchor + additions, 1)
-              path.write_text(text, encoding='utf-8')
+          text = path.read_text()
+          marker = "}\n\nREQUIRED_RED_PROVIDER_FILES = ("
+          additions = (
+              '    "libQTapGLES": {\n'
+              '        "arch": "android_arm",\n'
+              '        "path": "proprietary/vendor/lib/egl/libQTapGLES.so",\n'
+              '        "sha256": "6e1f3d61559115d144fcd53214e42a426a76dea3e173eebb1b9bafbce17fa2fe",\n'
+              '        "symbols": ["__aeabi_ldivmod"],\n'
+              '        "runtime_provider": "libc.so",\n'
+              '    },\n'
+              '    "libmmcamera_interface": {\n'
+              '        "arch": "android_arm",\n'
+              '        "path": "proprietary/vendor/lib/libmmcamera_interface.so",\n'
+              '        "sha256": "1027f4b5bb00fa050088ccdd484ec23ae48a601bb4c8549df3dc1fcb9c832531",\n'
+              '        "symbols": ["__aeabi_ldivmod"],\n'
+              '        "runtime_provider": "libc.so",\n'
+              '    },\n'
+          )
+          if '"libQTapGLES": {' not in text and '"libmmcamera_interface": {' not in text:
+              if marker not in text:
+                  raise SystemExit('registry terminator missing')
+              text = text.replace(marker, additions + marker, 1)
+              path.write_text(text)
+          elif not ('"libQTapGLES": {' in text and '"libmmcamera_interface": {' in text):
+              raise SystemExit('partial observed-pair registry state')
           PY
 
           git clone --depth=1 --branch=lineage-22.2 https://github.com/LineageOS/android_bionic.git /tmp/android_bionic
           grep -Eq '^[[:space:]]*__aeabi_ldivmod;[[:space:]]*# arm' /tmp/android_bionic/libc/libc.map.txt
 
           python3 tools/apply_android15_vendor_contract.py
-          sha256sum Android.bp ANDROID15_ELF_AUDIT.json ANDROID15_ELF_EXCEPTIONS.json > /tmp/before-second.txt
+          sha256sum Android.bp ANDROID15_ELF_AUDIT.json ANDROID15_ELF_EXCEPTIONS.json >/tmp/one
           python3 tools/apply_android15_vendor_contract.py
-          sha256sum Android.bp ANDROID15_ELF_AUDIT.json ANDROID15_ELF_EXCEPTIONS.json > /tmp/after-second.txt
-          diff -u /tmp/before-second.txt /tmp/after-second.txt
+          sha256sum Android.bp ANDROID15_ELF_AUDIT.json ANDROID15_ELF_EXCEPTIONS.json >/tmp/two
+          diff -u /tmp/one /tmp/two
 
           python3 -m unittest tests.test_observed_arm_aeabi_pair -v
           python3 -m unittest discover -s tests -p 'test_*.py' -v
-          git status --short
 
-      - name: Commit verified pair contract
+      - name: Commit verified production files only
         shell: bash
         run: |
           set -euo pipefail
