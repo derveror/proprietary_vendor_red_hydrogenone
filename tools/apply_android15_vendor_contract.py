@@ -11,6 +11,7 @@ TOOLS = ROOT / "tools"
 BASELINE_PIPELINE = (
     "generate_elf_contract.py",
     "resolve_android15_source_collisions.py",
+    "prune_source_owned_nbaio_mono.py",
     "prune_qti_camera_interface_duplicate.py",
     "prune_source_owned_init_rc_duplicates.py",
     "prune_source_owned_wifi_keystore.py",
@@ -37,6 +38,7 @@ BASELINE_PIPELINE = (
 )
 
 POST_CAMERA_PIPELINE = (
+    "prune_source_owned_nbaio_mono.py",
     "prune_source_owned_init_rc_duplicates.py",
     "prune_source_owned_wifi_keystore.py",
     "prune_source_owned_wifi_hal.py",

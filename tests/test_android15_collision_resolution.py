@@ -62,6 +62,7 @@ SOURCE_OWNED_MODULES = {
     *LOCATION_SOURCE_CORE,
     *MEDIA_SOURCE_FRONTEND_PREBUILTS,
     "libalsautils",
+    "libnbaio_mono",
     "libcld80211",
     "libkeystore-engine-wifi-hidl",
     "libkeystore-wifi-hidl",
@@ -82,6 +83,7 @@ SOURCE_OWNED_PATHS = {
     "vendor/lib/libgps.utils.so",
     "vendor/lib/libloc_core.so",
     "vendor/lib/liblocation_api.so",
+    "vendor/lib/libnbaio_mono.so",
     "vendor/lib64/camera.device@1.0-impl.so",
     "vendor/lib64/camera.device@3.2-impl.so",
     "vendor/lib64/camera.device@3.3-impl.so",
@@ -94,6 +96,7 @@ SOURCE_OWNED_PATHS = {
     "vendor/lib64/libkeystore-wifi-hidl.so",
     "vendor/lib64/libloc_core.so",
     "vendor/lib64/liblocation_api.so",
+    "vendor/lib64/libnbaio_mono.so",
     "vendor/lib64/libwifi-hal.so",
     "vendor/lib/vendor.qti.hardware.camera.device@1.0.so",
     "vendor/lib64/vendor.qti.hardware.camera.device@1.0.so",
@@ -176,6 +179,13 @@ class Android15CollisionResolutionTest(unittest.TestCase):
         blocks = module_blocks()
         self.assertEqual(sorted(MEDIA_SOURCE_FRONTEND_PREBUILTS & set(blocks)), [])
         self.assertEqual(sorted(MEDIA_SOURCE_FRONTEND_PATHS & active_paths()), [])
+
+    def test_source_owned_nbaio_mono_is_recorded(self) -> None:
+        lock = json.loads((ROOT / "SOURCE_LOCK.json").read_text(encoding="utf-8"))
+        android15 = lock["android15_contract"]
+        self.assertTrue(android15.get("source_owned_nbaio_mono_pruned"))
+        pipeline = (ROOT / "tools/apply_android15_vendor_contract.py").read_text()
+        self.assertIn("prune_source_owned_nbaio_mono.py", pipeline)
 
     def test_media_omx_source_ownership_is_recorded(self) -> None:
         lock = json.loads((ROOT / "SOURCE_LOCK.json").read_text(encoding="utf-8"))

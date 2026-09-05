@@ -6407,48 +6407,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libnbaio_mono",
-    owner: "red",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libnbaio_mono.so",
-            ],
-            shared_libs: [
-                "libaudioutils",
-                "libc",
-                "libc++",
-                "libdl",
-                "liblog",
-                "libm",
-                "libutils",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libnbaio_mono.so",
-            ],
-            shared_libs: [
-                "libaudioutils",
-                "libc",
-                "libc++",
-                "libclang_rt.ubsan_standalone",
-                "libdl",
-                "liblog",
-                "libm",
-                "libutils",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libnetmgr",
     owner: "red",
     strip: {

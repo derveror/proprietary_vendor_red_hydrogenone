@@ -3,7 +3,7 @@
   "stock_archive_sha256": "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e",
   "stock_build": "H1A1000.082ho.01.00.10r.118",
   "stock_fingerprint": "RED/HydrogenONE/HydrogenONE:9/PKQ1.190118.001/118:userdebug/release-keys",
-  "selected_files": 461,
+  "selected_files": 459,
   "target_lineage": "lineage-22.2",
   "target_android_api": 35,
   "android15_contract": {
@@ -13,7 +13,7 @@
     "stale_init_pruned": true,
     "red_leia_display_dependency_recovered": true,
     "elf_dependency_graph_generated_from_dt_needed": true,
-    "checkelf_enabled_modules": 313,
+    "checkelf_enabled_modules": 312,
     "checkelf_exception_modules": 0,
     "p0_rootdir_daemon_payload_completed_from_red_118": true,
     "source_owned_aosp_identical_copy_pruned": true,
@@ -176,6 +176,11 @@
     "nfc_legacy_hal_source_dependencies_verified": [
       "android.hardware.nfc@1.0",
       "android.hardware.nfc@1.1"
+    ],
+    "source_owned_nbaio_mono_pruned": true,
+    "source_owned_nbaio_mono_paths": [
+      "vendor/lib/libnbaio_mono.so",
+      "vendor/lib64/libnbaio_mono.so"
     ]
   }
 }

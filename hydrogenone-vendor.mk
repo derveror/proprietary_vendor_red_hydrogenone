@@ -253,7 +253,6 @@ PRODUCT_PACKAGES += \
     libmmlib2d_interface \
     libmmosal_proprietary \
     libmpbase \
-    libnbaio_mono \
     libnetmgr \
     libnetmgr_common \
     libnlnetmgr \

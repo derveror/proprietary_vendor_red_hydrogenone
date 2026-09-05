@@ -8447,65 +8447,6 @@
         }
       }
     },
-    "libnbaio_mono": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": true,
-      "blocking_dependencies": [],
-      "architectures": {
-        "android_arm": {
-          "srcs": [
-            "proprietary/vendor/lib/libnbaio_mono.so"
-          ],
-          "shared_libs": [
-            "libaudioutils",
-            "libc",
-            "libc++",
-            "libdl",
-            "liblog",
-            "libm",
-            "libutils"
-          ],
-          "needed": {
-            "proprietary/vendor/lib/libnbaio_mono.so": [
-              "libaudioutils",
-              "liblog",
-              "libutils",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        },
-        "android_arm64": {
-          "srcs": [
-            "proprietary/vendor/lib64/libnbaio_mono.so"
-          ],
-          "shared_libs": [
-            "libaudioutils",
-            "libc",
-            "libc++",
-            "libclang_rt.ubsan_standalone",
-            "libdl",
-            "liblog",
-            "libm",
-            "libutils"
-          ],
-          "needed": {
-            "proprietary/vendor/lib64/libnbaio_mono.so": [
-              "libclang_rt.ubsan_standalone",
-              "libaudioutils",
-              "liblog",
-              "libutils",
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          }
-        }
-      }
-    },
     "libnetmgr": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -14591,9 +14532,9 @@
     }
   },
   "summary": {
-    "total_modules": 313,
-    "checkelf_enabled": 313,
+    "total_modules": 312,
+    "checkelf_enabled": 312,
     "checkelf_exceptions": 0,
-    "provider_sonames": 284
+    "provider_sonames": 283
   }
 }

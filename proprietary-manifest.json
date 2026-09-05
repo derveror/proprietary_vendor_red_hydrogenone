@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 105,
-    "P1": 337,
+    "P1": 335,
     "P2": 19,
-    "total": 461
+    "total": 459
   },
   "files": [
     {
@@ -1614,12 +1614,6 @@
     },
     {
       "tier": "P1",
-      "path": "vendor/lib/libnbaio_mono.so",
-      "size": 15256,
-      "sha256": "077f22cf0d830196186a3549fe3108f8a4f5c9b8954e69a5993ce302b1943c49"
-    },
-    {
-      "tier": "P1",
       "path": "vendor/lib/libnetmgr.so",
       "size": 126692,
       "sha256": "567c2a325fe23fcb923032772e032410484fe50d6ed1cbeb1094d4f58b645ccb"
@@ -2277,12 +2271,6 @@
       "path": "vendor/lib64/libmmcamera_tintless_bg_pca_algo.so",
       "size": 174744,
       "sha256": "c604eef46a778c73937bb00f72d3d65edac6a6a1a2b94e7b237796357fdff53c"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/libnbaio_mono.so",
-      "size": 37424,
-      "sha256": "4e95ffa4f61239ebe3ff67615072265c360258d35f72a203b18765ef85f38d9c"
     },
     {
       "tier": "P1",
