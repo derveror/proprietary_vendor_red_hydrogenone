@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "stock_archive_sha256": "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e",
+  "path": "vendor/lib/libmmcamera_faceproc.so",
+  "operation": "clear_symbol_versions",
+  "symbols": [
+    "__aeabi_memcpy",
+    "__aeabi_memset",
+    "__gnu_Unwind_Find_exidx"
+  ],
+  "stock_size": 1246820,
+  "stock_sha256": "388cd36dcd54f7c3842c8178ad0888fabbed045f791de0d6d3c3c29876c3a056",
+  "patched_size": 1246820,
+  "patched_sha256": "9783f269c76a8342d38c5418b6643aa720ad6d7175facfa13fc2001441750bf6"
+}
