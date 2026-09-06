@@ -13,5 +13,6 @@
   "checkelf_exceptions": 0,
   "android15_blob_fixups": 63,
   "actual_selected_bytes_after_fixups": 246040150,
-  "imsdatadaemon_hwbinder_fixups": 1
+  "imsdatadaemon_hwbinder_fixups": 1,
+  "faceproc_libc_private_fixups": 1
 }

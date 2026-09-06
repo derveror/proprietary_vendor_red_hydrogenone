@@ -44,6 +44,7 @@
     "311 of 313 proprietary ELF modules have check_elf_files enabled; the remaining 2 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
     "RED .118 libnbaio_mono is pruned in favor of the LineageOS 22.2 source vendor library: the stock Android 9 blob has no retained proprietary DT_NEEDED consumers and shadows the source module needed by audio.r_submix.default.",
     "310 of 312 proprietary ELF modules have check_elf_files enabled; the remaining 2 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
-    "RED .118 imsdatadaemon is Android 9 and directly DT_NEEDED libhwbinder.so for android::hardware::ProcessState::initWithMmapSize. Android 15 folds the hwbinder implementation into libhidlbase, so the exact stock daemon is patched to DT_NEEDED libhidlbase.so; original and patched identities are pinned in ANDROID15_IMSDATA_HWBINDER_FIXUP.json."
+    "RED .118 imsdatadaemon is Android 9 and directly DT_NEEDED libhwbinder.so for android::hardware::ProcessState::initWithMmapSize. Android 15 folds the hwbinder implementation into libhidlbase, so the exact stock daemon is patched to DT_NEEDED libhidlbase.so; original and patched identities are pinned in ANDROID15_IMSDATA_HWBINDER_FIXUP.json.",
+    "RED .118 ARM32 libmmcamera_faceproc.so imports __aeabi_memcpy, __aeabi_memset and __gnu_Unwind_Find_exidx with the obsolete LIBC_PRIVATE symbol version. LineageOS 22.2 cheryl, mata and OnePlus msm8998-common clear those exact symbol versions; the Hydrogen One keeps its stock camera blob and applies the same ARM32-only compatibility fixup with original/patched identities pinned."
   ]
 }

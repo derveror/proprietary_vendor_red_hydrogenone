@@ -190,6 +190,17 @@
       "symbol": "_ZN7android8hardware12ProcessState16initWithMmapSizeEm",
       "stock_sha256": "30d2e071021fe7d46de594024879e806bc17e5b23770e78d269e2b37362dd06a",
       "patched_sha256": "5aa471f8c078095c3c8d325475f8ec8be7675778a2919c09aa92e32e74261715"
+    },
+    "faceproc_libc_private_fixup": {
+      "path": "vendor/lib/libmmcamera_faceproc.so",
+      "operation": "clear_symbol_versions",
+      "symbols": [
+        "__aeabi_memcpy",
+        "__aeabi_memset",
+        "__gnu_Unwind_Find_exidx"
+      ],
+      "stock_sha256": "388cd36dcd54f7c3842c8178ad0888fabbed045f791de0d6d3c3c29876c3a056",
+      "patched_sha256": "9783f269c76a8342d38c5418b6643aa720ad6d7175facfa13fc2001441750bf6"
     }
   }
 }
