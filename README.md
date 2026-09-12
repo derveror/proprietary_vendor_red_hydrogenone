@@ -9,3 +9,9 @@ Current Android 15 contract selection: 499 stock-derived files (`P0=108`, `P1=37
 Android 9 stock shipped VNDK 28, but LineageOS 22.2 does not provide a v28 snapshot to package. The vendor tree therefore must not request `PRODUCT_EXTRA_VNDK_VERSIONS += 28`; legacy compatibility required by the device product is handled explicitly on the device side.
 
 The vendor tree is a bring-up candidate: legacy Android 9 prebuilts must still pass LineageOS 22.2 build, VINTF, linker, SELinux, and runtime validation before being considered stable.
+
+## Kernel source contract
+
+The matching source-built kernel is documented in [KERNEL_SOURCE.md](KERNEL_SOURCE.md).
+It is checked out at `kernel/red/msm8998` and built from
+`derveror/android_kernel_red_msm8998` with the Hydrogen One defconfig.
