@@ -44,7 +44,6 @@ FORBIDDEN_RC = {
     "vendor/etc/init/android.hardware.graphics.allocator@2.0-service.rc",
     "vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc",
     "vendor/etc/init/android.hardware.health@2.0-service.rc",
-    "vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc",
     "vendor/etc/init/android.hardware.light@2.0-service.rc",
     "vendor/etc/init/android.hardware.sensors@1.0-service.rc",
     "vendor/etc/init/android.hardware.usb@1.0-service.rc",

@@ -155,6 +155,75 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_library_shared {
+    name: "android.hardware.keymaster@3.0-impl-qti",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so",
+            ],
+            shared_libs: [
+                "android.hardware.keymaster@3.0",
+                "libc",
+                "libc++",
+                "libcrypto",
+                "libcutils",
+                "libdl",
+                "libhidlbase",
+                "libhidltransport",
+                "libhwbinder",
+                "libkeymasterdeviceutils",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.keymaster@3.0-service-qti",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hw/android.hardware.keymaster@3.0-service-qti",
+            ],
+            shared_libs: [
+                "android.hardware.keymaster@3.0",
+                "libbase",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "libhardware",
+                "libhardware_legacy",
+                "libhidlbase",
+                "libhidltransport",
+                "libhwbinder",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "audio.primary.default",
     owner: "red",
     strip: {
@@ -3736,6 +3805,35 @@ cc_prebuilt_library_shared {
                 "libdl",
                 "libm",
                 "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libkeymasterdeviceutils",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libkeymasterdeviceutils.so",
+            ],
+            shared_libs: [
+                "libQSEEComAPI",
+                "libc",
+                "libc++",
+                "libcrypto",
+                "libcutils",
+                "libdl",
+                "libion",
+                "liblog",
+                "libm",
             ],
         },
     },

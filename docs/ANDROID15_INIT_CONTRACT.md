@@ -55,7 +55,7 @@ vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 ```
 
-The earlier source-ownership pruning additionally removed stock rc for source-owned boot/audio/camera/configstore/gatekeeper/graphics/health/keymaster/light/sensors/USB/vibrator/Wi-Fi wrappers.
+The earlier source-ownership pruning removed stock rc for source-owned boot/audio/camera/configstore/gatekeeper/graphics/health/light/sensors/USB/vibrator/Wi-Fi wrappers. Keymaster is the deliberate exception: physical tracing proved that the generic MSM8998 implementation looks for absent file-based `keymaster.mdt` firmware, while the RED `.118` QTI service uses Hydrogen One's dedicated `keymaster`/`keymaster64` partitions and successfully registers `IKeymasterDevice/default`.
 
 ## Retained proprietary service families
 

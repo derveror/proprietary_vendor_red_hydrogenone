@@ -199,6 +199,96 @@
         }
       }
     },
+    "android.hardware.keymaster@3.0-impl-qti": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so"
+          ],
+          "shared_libs": [
+            "android.hardware.keymaster@3.0",
+            "libc",
+            "libc++",
+            "libcrypto",
+            "libcutils",
+            "libdl",
+            "libhidlbase",
+            "libhidltransport",
+            "libhwbinder",
+            "libkeymasterdeviceutils",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so": [
+              "liblog",
+              "libcrypto",
+              "libhidlbase",
+              "libhidltransport",
+              "libhwbinder",
+              "libutils",
+              "libcutils",
+              "libkeymasterdeviceutils",
+              "android.hardware.keymaster@3.0",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "android.hardware.keymaster@3.0-service-qti": {
+      "kind": "cc_prebuilt_binary",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/bin/hw/android.hardware.keymaster@3.0-service-qti"
+          ],
+          "shared_libs": [
+            "android.hardware.keymaster@3.0",
+            "libbase",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "libhardware",
+            "libhardware_legacy",
+            "libhidlbase",
+            "libhidltransport",
+            "libhwbinder",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/bin/hw/android.hardware.keymaster@3.0-service-qti": [
+              "liblog",
+              "libcutils",
+              "libbase",
+              "libutils",
+              "libhardware_legacy",
+              "libhardware",
+              "libhwbinder",
+              "libhidlbase",
+              "libhidltransport",
+              "android.hardware.keymaster@3.0",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
     "audio.primary.default": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -5099,6 +5189,42 @@
             "proprietary/vendor/lib64/libjson.so": [
               "libcutils",
               "libutils",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libkeymasterdeviceutils": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libkeymasterdeviceutils.so"
+          ],
+          "shared_libs": [
+            "libQSEEComAPI",
+            "libc",
+            "libc++",
+            "libcrypto",
+            "libcutils",
+            "libdl",
+            "libion",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libkeymasterdeviceutils.so": [
+              "libcutils",
+              "libQSEEComAPI",
+              "liblog",
+              "libcrypto",
+              "libion",
               "libc++",
               "libc",
               "libm",
@@ -14782,10 +14908,10 @@
     }
   },
   "summary": {
-    "total_modules": 313,
-    "checkelf_enabled": 313,
+    "total_modules": 316,
+    "checkelf_enabled": 316,
     "checkelf_exceptions": 0,
-    "provider_sonames": 284,
+    "provider_sonames": 286,
     "allow_undefined_symbol_modules": 20
   }
 }

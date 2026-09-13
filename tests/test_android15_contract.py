@@ -55,7 +55,6 @@ FORBIDDEN_STOCK_RC = {
     "vendor/etc/init/android.hardware.graphics.allocator@2.0-service.rc",
     "vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc",
     "vendor/etc/init/android.hardware.health@2.0-service.rc",
-    "vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc",
     "vendor/etc/init/android.hardware.light@2.0-service.rc",
     "vendor/etc/init/android.hardware.sensors@1.0-service.rc",
     "vendor/etc/init/android.hardware.usb@1.0-service.rc",
@@ -74,10 +73,14 @@ DEBUG_TEST_GLOBS = (
 )
 
 MUST_RETAIN = {
+    "vendor/bin/hw/android.hardware.keymaster@3.0-service-qti",
     "vendor/bin/thermal-engine",
     "vendor/bin/hw/qcrild",
     "vendor/bin/hw/rild",
+    "vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc",
     "vendor/lib/hw/camera.msm8998.so",
+    "vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so",
+    "vendor/lib64/libkeymasterdeviceutils.so",
     "vendor/lib/libmmcamera2_mct.so",
     "vendor/firmware/leia_pfp_470.fw",
     "vendor/firmware/leia_pm4_470.fw",

@@ -11,6 +11,7 @@ PRODUCT_COPY_FILES += \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800h_8998_660.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800h_8998_660.bin \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800s_dsp.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800s_dsp.bin \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.bluetooth@1.0-service-qti.rc \
+    vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.keymaster@3.0-service-qti.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/hw/init.msm.usb.configfs.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.msm.usb.configfs.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/qcrild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/qcrild.rc \
@@ -57,6 +58,8 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service \
     android.hardware.bluetooth@1.0-impl-qti \
     android.hardware.bluetooth@1.0-service-qti \
+    android.hardware.keymaster@3.0-impl-qti \
+    android.hardware.keymaster@3.0-service-qti \
     audio.primary.default \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
@@ -161,6 +164,7 @@ PRODUCT_PACKAGES += \
     libizat_client_api \
     libizat_core \
     libjson \
+    libkeymasterdeviceutils \
     libkeystore-engine-wifi-hidl \
     libkeystore-wifi-hidl \
     liblbs_core \

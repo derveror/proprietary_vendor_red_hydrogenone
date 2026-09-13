@@ -11,7 +11,9 @@ vendor/bin/pm-service
 vendor/bin/qseecomd
 vendor/bin/rmt_storage
 vendor/bin/thermal-engine
+vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
+vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
 vendor/etc/init/hw/init.msm.usb.configfs.rc
 vendor/etc/thermal-engine-3d.conf
@@ -63,6 +65,7 @@ vendor/lib64/egl/libQTapGLES.so
 vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
 vendor/lib64/hw/gatekeeper.msm8998.so
+vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
 vendor/lib64/hw/keystore.msm8998.so
 vendor/lib64/hw/vulkan.msm8998.so
 vendor/lib64/libC2D2.so
@@ -81,6 +84,7 @@ vendor/lib64/libgsl.so
 vendor/lib64/libhdr_tm.so
 vendor/lib64/libidl.so
 vendor/lib64/libjson.so
+vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libmdmdetect.so

@@ -10,10 +10,10 @@
     "sdk": 28
   },
   "counts": {
-    "P0": 106,
+    "P0": 110,
     "P1": 335,
     "P2": 19,
-    "total": 460
+    "total": 464
   },
   "files": [
     {
@@ -33,6 +33,12 @@
       "path": "vendor/bin/hvdcp_opti",
       "size": 202720,
       "sha256": "4d1d5a97f2da8840912ffdb8351a20b278905ebd4f471cfdee81c4052cc80a03"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/bin/hw/android.hardware.keymaster@3.0-service-qti",
+      "size": 68336,
+      "sha256": "0c3718edce7060377f7f999ba05081b9c66defc84471a704ae605c8cd020aee3"
     },
     {
       "tier": "P0",
@@ -87,6 +93,12 @@
       "path": "vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc",
       "size": 210,
       "sha256": "86b0cf7fe04b1f415773ef410d627f14482a7826945c38ecfe0450dd569edb8c"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc",
+      "size": 140,
+      "sha256": "69d8d0cc9afc4665deba3f578f0719094bba8a5b8c3ff59a90eaff98d6981717"
     },
     {
       "tier": "P0",
@@ -390,6 +402,12 @@
     },
     {
       "tier": "P0",
+      "path": "vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so",
+      "size": 138656,
+      "sha256": "ac0de6004c875f8104361ee945875cfd5879bbd3dc67e4a4b29c790ba41984b0"
+    },
+    {
+      "tier": "P0",
       "path": "vendor/lib64/hw/gatekeeper.msm8998.so",
       "size": 68560,
       "sha256": "f2bd7167a894cb1711bc30eabb84fa55a8d0801784af42e5038a189a3fc95fc2"
@@ -501,6 +519,12 @@
       "path": "vendor/lib64/libjson.so",
       "size": 68536,
       "sha256": "78c1a4cc03ecabcde83f83fcd994bf0fff193e3020b3841cf0e368af57e94e24"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libkeymasterdeviceutils.so",
+      "size": 68216,
+      "sha256": "e423dc1bff0ec0a9bfdcf65d753582b2ab1ff81afa64c13c893fbe216620e738"
     },
     {
       "tier": "P0",
