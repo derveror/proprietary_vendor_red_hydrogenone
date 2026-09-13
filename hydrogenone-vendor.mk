@@ -286,6 +286,7 @@ PRODUCT_PACKAGES += \
     librilutils \
     librmnetctl \
     librpmb \
+    libssd \
     libsdedrm \
     libsdm-color \
     libsdm-diag \

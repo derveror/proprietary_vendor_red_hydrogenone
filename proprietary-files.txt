@@ -94,6 +94,7 @@ vendor/lib64/libqmiservices.so
 vendor/lib64/libqseed3.so
 vendor/lib64/libqservice.so
 vendor/lib64/librpmb.so
+vendor/lib64/libssd.so
 vendor/lib64/libsdedrm.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so

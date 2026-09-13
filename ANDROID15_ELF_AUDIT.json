@@ -10882,6 +10882,42 @@
         }
       }
     },
+    "libssd": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libssd.so"
+          ],
+          "shared_libs": [
+            "libQSEEComAPI",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdiag",
+            "libdl",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libssd.so": [
+              "libutils",
+              "libcutils",
+              "libdiag",
+              "liblog",
+              "libQSEEComAPI",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
     "libsystem_health_mon": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -14746,10 +14782,10 @@
     }
   },
   "summary": {
-    "total_modules": 312,
-    "checkelf_enabled": 312,
+    "total_modules": 313,
+    "checkelf_enabled": 313,
     "checkelf_exceptions": 0,
-    "provider_sonames": 283,
+    "provider_sonames": 284,
     "allow_undefined_symbol_modules": 20
   }
 }
