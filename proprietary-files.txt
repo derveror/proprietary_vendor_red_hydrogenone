@@ -125,6 +125,8 @@ vendor/bin/init.qti.ims.sh
 vendor/bin/netmgrd
 vendor/bin/nqnfcinfo
 vendor/bin/sensors.qti
+vendor/etc/sensors/hals.conf
+vendor/etc/sensors/sensor_def_qcomdev.conf
 vendor/bin/wcnss_filter
 vendor/bin/wifidisplayhalservice
 vendor/bin/xtwifi-client
@@ -213,6 +215,10 @@ vendor/lib/libmmcamera2_sensor_modules.so
 vendor/lib/libmmcamera2_stats_algorithm.so
 vendor/lib/libmmcamera2_stats_lib.so
 vendor/lib/libmmcamera2_stats_modules.so
+vendor/lib/libsdsprpc.so
+vendor/lib/libsensor_reg.so
+vendor/lib/libsns_low_lat_stream_stub.so
+vendor/lib/sensors.ssc.so
 vendor/lib/libmmcamera_arcsoftbokeh_lib.so
 vendor/lib/libmmcamera_arcsoftlls.so
 vendor/lib/libmmcamera_atmel_at24c32e_eeprom.so
@@ -401,7 +407,10 @@ vendor/lib64/libril.so
 vendor/lib64/librilqmiservices.so
 vendor/lib64/librilutils.so
 vendor/lib64/librmnetctl.so
+vendor/lib64/libsdsprpc.so
 vendor/lib64/libsensor1.so
+vendor/lib64/libsensor_reg.so
+vendor/lib64/libsns_low_lat_stream_stub.so
 vendor/lib64/libsettings.so
 vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libtinycompress_vendor.so
@@ -410,6 +419,7 @@ vendor/lib64/libxml.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/libxtwifi_ulp_adaptor.so
 vendor/lib64/nfc_nci.nqx.default.hw.so
+vendor/lib64/sensors.ssc.so
 vendor/lib64/qcrild_librilutils.so
 vendor/lib64/vendor.nxp.hardware.nfc@1.0.so
 vendor/lib64/vendor.qti.data.factory@1.0.so

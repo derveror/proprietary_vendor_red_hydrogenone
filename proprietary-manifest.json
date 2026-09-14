@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 110,
-    "P1": 335,
+    "P1": 345,
     "P2": 19,
-    "total": 464
+    "total": 474
   },
   "files": [
     {
@@ -900,6 +900,18 @@
     },
     {
       "tier": "P1",
+      "path": "vendor/etc/sensors/hals.conf",
+      "size": 15,
+      "sha256": "79c1febf7ce0c06a9e2612a4137bbdaffb5ed6cd18c89415216e482a287a591b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/sensors/sensor_def_qcomdev.conf",
+      "size": 235073,
+      "sha256": "4d7598e256ef1fc635e0fb0fe3b3f8744da971aedebcf07aa51c4eeb47d3e660"
+    },
+    {
+      "tier": "P1",
       "path": "vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so",
       "size": 168532,
       "sha256": "5bfabbbc19181e481b8ef957c6af9cfb174a0885feff73fc23e3678a1351ef69"
@@ -1740,15 +1752,33 @@
     },
     {
       "tier": "P1",
+      "path": "vendor/lib/libsdsprpc.so",
+      "size": 117784,
+      "sha256": "3dc24df9741587dfae6ab055192eb2d7fafdcf3b615ce6399175a0b4e7bccd9f"
+    },
+    {
+      "tier": "P1",
       "path": "vendor/lib/libsensor1.so",
       "size": 76516,
       "sha256": "b6d3e15ef3706ac1832c1cc5883947aea99b57df4c0922b04228824a39e5bb83"
     },
     {
       "tier": "P1",
+      "path": "vendor/lib/libsensor_reg.so",
+      "size": 23956,
+      "sha256": "894a892a379ae3b8ff37106e8f043fad75faf2143f19f6ed474ba8274a442142"
+    },
+    {
+      "tier": "P1",
       "path": "vendor/lib/libsettings.so",
       "size": 211248,
       "sha256": "f0c4e6b163e24f913baea635b1893fff0cb656baa7d163da60ba3d3eea0e67ae"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libsns_low_lat_stream_stub.so",
+      "size": 19728,
+      "sha256": "16237eb78b33a2ba639ddf65a3185d829fac648e37b5e9e6cd90c7a6de0a9dfe"
     },
     {
       "tier": "P1",
@@ -1815,6 +1845,12 @@
       "path": "vendor/lib/qcrild_librilutils.so",
       "size": 19688,
       "sha256": "b969af9b2ab3a1b4c93b5f564a0ba1c7440fa72aec5ddbd83813f94843615254"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/sensors.ssc.so",
+      "size": 269580,
+      "sha256": "4577d967e891716170f07ff238f8c3df325d25194a7e4bfa3d349550cb0dbfa0"
     },
     {
       "tier": "P1",
@@ -2418,15 +2454,33 @@
     },
     {
       "tier": "P1",
+      "path": "vendor/lib64/libsdsprpc.so",
+      "size": 201904,
+      "sha256": "ff9b89a1b3ab288947be650539b592de126593defa8ac04e86e088c335ee039c"
+    },
+    {
+      "tier": "P1",
       "path": "vendor/lib64/libsensor1.so",
       "size": 138304,
       "sha256": "bb2de603ff9a2a76ad10255c92df96a38333f5abac1b98c76d3ff24942ed04b0"
     },
     {
       "tier": "P1",
+      "path": "vendor/lib64/libsensor_reg.so",
+      "size": 68336,
+      "sha256": "46b774e23ac9e7658e8eed1662cce4a53dd5f7cb64b19c589053dd65843df67a"
+    },
+    {
+      "tier": "P1",
       "path": "vendor/lib64/libsettings.so",
       "size": 268032,
       "sha256": "52e804e9878844810e7381e011588500e78e648917c0ce251a2b2bb97dfca123"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libsns_low_lat_stream_stub.so",
+      "size": 68208,
+      "sha256": "4703c95487b8331138b768b01f720e37ef735a84e58166068ca574a2a941a5fd"
     },
     {
       "tier": "P1",
@@ -2475,6 +2529,12 @@
       "path": "vendor/lib64/qcrild_librilutils.so",
       "size": 68008,
       "sha256": "5dbe16f41d2561681a5f8132c229f57d84c5596979de48f023582e74d87d8835"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/sensors.ssc.so",
+      "size": 331288,
+      "sha256": "b37eb0b7034f5f170167d10a3009fa9f56a3962a98208028c2a1209621e50519"
     },
     {
       "tier": "P1",

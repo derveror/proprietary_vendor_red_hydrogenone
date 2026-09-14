@@ -35,6 +35,8 @@ PRODUCT_COPY_FILES += \
     vendor/red/hydrogenone/proprietary/vendor/etc/libnfc-qrd_rf2.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-qrd_rf2.conf \
     vendor/red/hydrogenone/proprietary/vendor/etc/permissions/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
     vendor/red/hydrogenone/proprietary/vendor/etc/permissions/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
+    vendor/red/hydrogenone/proprietary/vendor/etc/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
+    vendor/red/hydrogenone/proprietary/vendor/etc/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
     vendor/red/hydrogenone/proprietary/vendor/etc/thermal-engine-3d.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-3d.conf \
     vendor/red/hydrogenone/proprietary/vendor/etc/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
     vendor/red/hydrogenone/proprietary/vendor/firmware/a530_pfp.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/a530_pfp.fw \
@@ -299,8 +301,11 @@ PRODUCT_PACKAGES += \
     libsdm-disp-vndapis \
     libsdmextension \
     libsdmutils \
+    libsdsprpc \
     libsensor1 \
+    libsensor_reg \
     libsettings \
+    libsns_low_lat_stream_stub \
     libsystem_health_mon \
     libthermalclient \
     libthermalioctl \
@@ -329,6 +334,7 @@ PRODUCT_PACKAGES += \
     qseecomd \
     rild \
     rmt_storage \
+    sensors.ssc \
     sensors.qti \
     thermal-engine \
     vendor.cm.hardware.thermal3d@1.0 \

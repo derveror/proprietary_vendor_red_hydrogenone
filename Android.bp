@@ -8105,6 +8105,45 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libsdsprpc",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libsdsprpc.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsdsprpc.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libsensor1",
     owner: "red",
     strip: {
@@ -8144,6 +8183,141 @@ cc_prebuilt_library_shared {
                 "libqmi_cci",
                 "libqmi_common_so",
                 "libqmi_encdec",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsensor_reg",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libsensor_reg.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libsensor1",
+                "libutils",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsensor_reg.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libsensor1",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsns_low_lat_stream_stub",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libsns_low_lat_stream_stub.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libdl",
+                "liblog",
+                "libm",
+                "libsdsprpc",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsns_low_lat_stream_stub.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libdl",
+                "liblog",
+                "libm",
+                "libsdsprpc",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "sensors.ssc",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/sensors.ssc.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdiag",
+                "libdl",
+                "libhardware",
+                "liblog",
+                "libm",
+                "libpower",
+                "libsensor1",
+                "libsensor_reg",
+                "libsns_low_lat_stream_stub",
+                "libutils",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/sensors.ssc.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdiag",
+                "libdl",
+                "libhardware",
+                "liblog",
+                "libm",
+                "libpower",
+                "libsensor1",
+                "libsensor_reg",
+                "libsns_low_lat_stream_stub",
                 "libutils",
             ],
         },

@@ -4,9 +4,9 @@
   "stock_archive_verified": true,
   "counts": {
     "P0": 110,
-    "P1": 335,
+    "P1": 345,
     "P2": 19,
-    "total": 464
+    "total": 474
   },
   "notes": [
     "No RED msm8998-common repository is used.",
@@ -49,6 +49,8 @@
     "RED .118 qseecomd loads libssd.so through dlopen rather than DT_NEEDED. The exact 64-bit stock listener is retained as P0 because qseecomd exits before publishing vendor.sys.listeners.registered when it is absent.",
     "All 313 selected proprietary ELF modules now pass with check_elf_files enabled; no dependency-mapping exceptions remain.",
     "Physical chroot tracing on Hydrogen One proved that RED .118 QTI Keymaster registers IKeymasterDevice/default through the dedicated keymaster partitions. The generic MSM8998 file-firmware implementation is not selected because it fails looking for absent keymaster.mdt.",
-    "314 of 316 proprietary ELF modules have check_elf_files enabled; the remaining 2 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json."
+    "314 of 316 proprietary ELF modules have check_elf_files enabled; the remaining 2 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
+    "RED .118 SSC sensor payload, multihal configuration, registry defaults, and FastRPC dependency closure are retained because runtime Watchdog traces proved SystemServer blocked in SystemSensorManager.nativeCreate while the source-owned HIDL wrapper had no loadable sensor module.",
+    "All 320 selected proprietary ELF modules have check_elf_files enabled; no dependency-mapping exceptions remain."
   ]
 }
