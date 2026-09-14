@@ -4,9 +4,9 @@
   "stock_archive_verified": true,
   "counts": {
     "P0": 110,
-    "P1": 345,
+    "P1": 530,
     "P2": 19,
-    "total": 474
+    "total": 659
   },
   "notes": [
     "No RED msm8998-common repository is used.",
@@ -15,16 +15,11 @@
     "Stock init fragments are retained only when their service executable has an owner; device-owned init.qcom.rc/init.qcom.usb.rc are not duplicated by vendor.",
     "RED .118 libsdm-disp-apis.so (32/64) is retained because the Leia display service DT_NEEDED graph requires it.",
     "Android.bp shared_libs are generated from the retained .118 ELF DT_NEEDED graph.",
-    "317 of 336 proprietary ELF modules have check_elf_files enabled; the remaining 19 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
-    "316 of 334 proprietary ELF modules have check_elf_files enabled; the remaining 18 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
     "RED .118 spdaemon/libspcom, hvdcp_opti, and energy-awareness are retained because the Android 15 rootdir contract and MSM8998 runtime dependency graph require them.",
-    "320 of 338 proprietary ELF modules have check_elf_files enabled; the remaining 18 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
     "AOSP-identical NFC feature declaration XMLs are source-owned by device/red/hydrogenone; vendor retains RED .118 NFC and thermal hardware configs.",
     "RED .118 vendor.display.color@1.0.so (32/64) is retained because libsdm-disp-apis.so DT_NEEDED requires that exact HIDL interface provider.",
     "Android 15 source libdrm is vendor_available; the duplicate RED .118 libdrm prebuilt is pruned to avoid cross-partition prebuilt shadowing.",
-    "322 of 338 proprietary ELF modules have check_elf_files enabled; the remaining 16 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
     "LineageOS 22.2 builds libeffects for vendor and libeffectsconfig as vendor_available from frameworks/av; the duplicate RED .118 platform-built copies are pruned.",
-    "321 of 336 proprietary ELF modules have check_elf_files enabled; the remaining 15 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
     "LineageOS 22.2 supplies android.hidl.base@1.0 from hardware/lineage/compat and libalsautils as a vendor_available source module; duplicate RED .118 prebuilts are pruned.",
     "RED .118 API28 libstagefright_foundation/libstagefright_omx remain in /vendor/lib/vndk with their stock SONAMEs, but use unique -v28 Soong module names to avoid Android 15 source-module shadowing.",
     "RED .118 QTI hostapd@1.0 and supplicant@2.0 interface libraries have no retained proprietary DT_NEEDED consumers and are pruned in favor of the LineageOS system_ext interface ownership.",
@@ -37,20 +32,16 @@
     "RED .118 libgps.utils/libloc_core/liblocation_api prebuilts are pruned because they override the LineageOS 22.2 source Qualcomm location stack and cause libgnss undefined symbols. Proprietary Qualcomm location consumers remain and bind to the source core, matching the LineageOS 22.2 mata/cheryl msm8998 pattern.",
     "RED .118 libgps.utils/libloc_core/liblocation_api prebuilts are pruned because they override the LineageOS 22.2 source Qualcomm location stack and cause libgnss undefined symbols. Proprietary Qualcomm location consumers remain and bind to the source core; Hydrogen One uses the cheryl LineageOS 22.2 legacy Qualcomm GNSS ABI because it matches RED .118 Pie-era location consumers.",
     "63 retained RED .118 Android 9 HIDL interface blobs require the removed android::hardware::details::gBnConstructorMap ABI. They are patched with DT_NEEDED libhidlbase_shim.so, the LineageOS 22.2 compatibility provider; canonical stock hashes remain in proprietary-manifest.json and patched identities are recorded separately in ANDROID15_BLOB_FIXUPS.json.",
-    "313 of 319 proprietary ELF modules have check_elf_files enabled; the remaining 6 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
     "RED .118 libaudiopreprocessing/libwebrtc_audio_preprocessing are pruned: the legacy pair is self-contained, the active RED effect configuration uses Qualcomm voice preprocessing, and LineageOS 22.2 provides the generic vendor libaudiopreprocessing package from current source.",
-    "312 of 317 proprietary ELF modules have check_elf_files enabled; the remaining 5 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
     "RED .118 media OMX wrapper closure (android.hardware.media.omx@1.0-service, libgui_vendor, libstagefright_omx VNDK28, libstagefright_foundation VNDK28) is pruned after the Android 15 ABI gate proved the legacy GUI/media interfaces incompatible and the reverse dependency graph proved the closure self-contained. LineageOS 22.2 source owns the OMX frontend; Qualcomm codec payload remains proprietary.",
-    "311 of 313 proprietary ELF modules have check_elf_files enabled; the remaining 2 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
     "RED .118 libnbaio_mono is pruned in favor of the LineageOS 22.2 source vendor library: the stock Android 9 blob has no retained proprietary DT_NEEDED consumers and shadows the source module needed by audio.r_submix.default.",
-    "310 of 312 proprietary ELF modules have check_elf_files enabled; the remaining 2 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
     "RED .118 imsdatadaemon is Android 9 and directly DT_NEEDED libhwbinder.so for android::hardware::ProcessState::initWithMmapSize. Android 15 folds the hwbinder implementation into libhidlbase, so the exact stock daemon is patched to DT_NEEDED libhidlbase.so; original and patched identities are pinned in ANDROID15_IMSDATA_HWBINDER_FIXUP.json.",
     "RED .118 ARM32 libmmcamera_faceproc.so imports __aeabi_memcpy, __aeabi_memset and __gnu_Unwind_Find_exidx with the obsolete LIBC_PRIVATE symbol version. LineageOS 22.2 cheryl, mata and OnePlus msm8998-common clear those exact symbol versions; the Hydrogen One keeps its stock camera blob and applies the same ARM32-only compatibility fixup with original/patched identities pinned.",
     "RED .118 qseecomd loads libssd.so through dlopen rather than DT_NEEDED. The exact 64-bit stock listener is retained as P0 because qseecomd exits before publishing vendor.sys.listeners.registered when it is absent.",
-    "All 313 selected proprietary ELF modules now pass with check_elf_files enabled; no dependency-mapping exceptions remain.",
     "Physical chroot tracing on Hydrogen One proved that RED .118 QTI Keymaster registers IKeymasterDevice/default through the dedicated keymaster partitions. The generic MSM8998 file-firmware implementation is not selected because it fails looking for absent keymaster.mdt.",
-    "314 of 316 proprietary ELF modules have check_elf_files enabled; the remaining 2 are explicit dependency-mapping exceptions tracked in ANDROID15_ELF_EXCEPTIONS.json.",
     "RED .118 SSC sensor payload, multihal configuration, registry defaults, and FastRPC dependency closure are retained because runtime Watchdog traces proved SystemServer blocked in SystemSensorManager.nativeCreate while the source-owned HIDL wrapper had no loadable sensor module.",
-    "All 320 selected proprietary ELF modules have check_elf_files enabled; no dependency-mapping exceptions remain."
+    "All 320 selected proprietary ELF modules have check_elf_files enabled; no dependency-mapping exceptions remain.",
+    "RED .118 production camera runtime closure retains 138 tuning libraries and 47 sensor, ISP, image-processing, flash, and firmware files selected from the four production XMLs and captured HAL load failures; device runtime validation remains required.",
+    "Current ELF contract: 504 of 504 proprietary ELF modules have check_elf_files enabled; 0 exceptions remain."
   ]
 }

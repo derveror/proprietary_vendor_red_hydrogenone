@@ -113,6 +113,22 @@ def update_metadata() -> None:
     generated["checkelf_exceptions"] = exception_count
     write_json("GENERATED_VENDOR_AUDIT.json", generated)
 
+    tree = load_json("VENDOR_TREE_AUDIT.json")
+    stale_summary = re.compile(
+        r"^(?:\d+ of \d+ proprietary ELF modules have check_elf_files enabled;|"
+        r"All \d+ selected proprietary ELF modules now pass with check_elf_files enabled;|"
+        r"Current ELF contract:)"
+    )
+    notes = [
+        note for note in tree.get("notes", []) if not stale_summary.match(note)
+    ]
+    notes.append(
+        f"Current ELF contract: {total - exception_count} of {total} proprietary "
+        f"ELF modules have check_elf_files enabled; {exception_count} exceptions remain."
+    )
+    tree["notes"] = notes
+    write_json("VENDOR_TREE_AUDIT.json", tree)
+
 
 def main() -> int:
     enable_bp_checkelf()

@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TOOLS = ROOT / "tools"
 
 BASELINE_PIPELINE = (
+    "record_red118_camera_runtime.py",
     "generate_elf_contract.py",
     "resolve_android15_source_collisions.py",
     "prune_source_owned_nbaio_mono.py",
@@ -40,6 +41,7 @@ BASELINE_PIPELINE = (
 )
 
 POST_CAMERA_PIPELINE = (
+    "record_red118_camera_runtime.py",
     "prune_source_owned_nbaio_mono.py",
     "prune_source_owned_init_rc_duplicates.py",
     "prune_source_owned_wifi_keystore.py",

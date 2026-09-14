@@ -3527,6 +3527,96 @@
         }
       }
     },
+    "libSonyIMX380PdafLibrary": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libSonyIMX380PdafLibrary.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libSonyIMX380PdafLibrary.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libactuator_lc898219xl_main": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libactuator_lc898219xl_main.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libactuator_lc898219xl_main.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libactuator_lc898219xl_sub": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libactuator_lc898219xl_sub.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libactuator_lc898219xl_sub.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
     "libadreno_utils": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -3990,6 +4080,4146 @@
               "libgsl",
               "libcutils",
               "libutils",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_1080p_3d_video_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_1080p_3d_video_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_1080p_3d_video_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_1080p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_1080p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_1080p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_1080p_hfr_60_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_1080p_hfr_60_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_1080p_hfr_60_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_360p_3d_video_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_360p_3d_video_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_360p_3d_video_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_480p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_480p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_480p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_480p_hfr_60_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_480p_hfr_60_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_480p_hfr_60_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_720p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_720p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_720p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_720p_hfr_60_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_720p_hfr_60_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_720p_hfr_60_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_common": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_common.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_common.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_cpp_1080p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_1080p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_1080p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_cpp_480p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_480p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_480p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_cpp_720p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_720p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_720p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_cpp_liveshot": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_liveshot.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_liveshot.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_cpp_preview": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_preview.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_preview.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_cpp_snapshot": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_snapshot.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_snapshot.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_cpp_snapshot_arc_hdr": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_snapshot_arc_hdr.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_snapshot_arc_hdr.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_cpp_snapshot_bokeh": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_snapshot_bokeh.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_snapshot_bokeh.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_cpp_snapshot_eis": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_snapshot_eis.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_snapshot_eis.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_cpp_snapshot_lls": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_snapshot_lls.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_snapshot_lls.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_cpp_video": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_video.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_cpp_video.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_default_video": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_default_video.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_default_video.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_postproc": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_postproc.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_postproc.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_preview": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_preview.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_preview.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_snapshot": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_snapshot.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_snapshot.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_snapshot_bokeh": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_snapshot_bokeh.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_snapshot_bokeh.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_zsl_preview_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_zsl_preview_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_zsl_preview_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_zsl_preview_lc898122_3dmode": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_zsl_preview_lc898122_3dmode.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_zsl_preview_lc898122_3dmode.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_zsl_preview_lc898122_bokeh": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_zsl_preview_lc898122_bokeh.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_zsl_preview_lc898122_bokeh.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_main_zsl_video_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_main_zsl_video_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_main_zsl_video_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_1080p_3d_video_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_1080p_3d_video_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_1080p_3d_video_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_1080p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_1080p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_1080p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_1080p_hfr_60_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_1080p_hfr_60_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_1080p_hfr_60_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_360p_3d_video_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_360p_3d_video_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_360p_3d_video_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_480p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_480p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_480p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_480p_hfr_60_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_480p_hfr_60_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_480p_hfr_60_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_720p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_720p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_720p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_720p_hfr_60_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_720p_hfr_60_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_720p_hfr_60_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_common": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_common.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_common.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_cpp_1080p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_1080p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_1080p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_cpp_480p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_480p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_480p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_cpp_720p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_720p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_720p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_cpp_liveshot": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_liveshot.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_liveshot.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_cpp_preview": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_preview.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_preview.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_cpp_snapshot": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_snapshot.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_snapshot.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_cpp_snapshot_arc_hdr": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_snapshot_arc_hdr.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_snapshot_arc_hdr.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_cpp_snapshot_bokeh": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_snapshot_bokeh.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_snapshot_bokeh.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_cpp_snapshot_eis": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_snapshot_eis.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_snapshot_eis.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_cpp_snapshot_lls": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_snapshot_lls.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_snapshot_lls.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_cpp_video": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_video.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_cpp_video.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_default_video": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_default_video.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_default_video.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_postproc": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_postproc.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_postproc.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_preview": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_preview.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_preview.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_snapshot": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_snapshot.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_snapshot.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_snapshot_bokeh": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_snapshot_bokeh.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_snapshot_bokeh.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_zsl_preview_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_zsl_preview_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_zsl_preview_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_zsl_preview_lc898122_3dmode": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_zsl_preview_lc898122_3dmode.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_zsl_preview_lc898122_3dmode.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_zsl_preview_lc898122_bokeh": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_zsl_preview_lc898122_bokeh.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_zsl_preview_lc898122_bokeh.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx268_sub_zsl_video_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx268_sub_zsl_video_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx268_sub_zsl_video_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_1080p_3d_video_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_1080p_3d_video_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_1080p_3d_video_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_1080p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_1080p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_1080p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_1080p_hfr_60_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_1080p_hfr_60_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_1080p_hfr_60_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_360p_3d_video_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_360p_3d_video_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_360p_3d_video_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_480p_hfr_240": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_480p_hfr_240.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_480p_hfr_240.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_480p_hfr_240_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_480p_hfr_240_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_480p_hfr_240_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_4k_3d_snapshot_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_4k_3d_snapshot_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_4k_3d_snapshot_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_4k_panorama_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_4k_panorama_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_4k_panorama_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_4k_preview_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_4k_preview_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_4k_preview_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_4k_video_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_4k_video_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_4k_video_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_720p_hfr_120": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_720p_hfr_120.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_720p_hfr_120.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_720p_hfr_120_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_720p_hfr_120_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_720p_hfr_120_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_common": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_common.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_common.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_1080p_3d_video": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_1080p_3d_video.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_1080p_3d_video.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_1080p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_1080p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_1080p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_480p_hfr_240": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_480p_hfr_240.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_480p_hfr_240.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_4k_3d_snapshot": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_4k_3d_snapshot.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_4k_3d_snapshot.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_720p_hfr_120": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_720p_hfr_120.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_720p_hfr_120.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_liveshot": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_liveshot.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_liveshot.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_preview": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_preview.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_preview.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_qhd_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_qhd_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_qhd_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_snapshot": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_snapshot.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_snapshot.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_snapshot_arc_hdr": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_snapshot_arc_hdr.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_snapshot_arc_hdr.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_snapshot_bokeh": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_snapshot_bokeh.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_snapshot_bokeh.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_snapshot_eis": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_snapshot_eis.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_snapshot_eis.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_snapshot_flash": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_snapshot_flash.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_snapshot_flash.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_snapshot_hdr": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_snapshot_hdr.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_snapshot_hdr.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_snapshot_lls": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_snapshot_lls.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_snapshot_lls.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_cpp_video": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_video.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_cpp_video.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_default_video": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_default_video.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_default_video.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_postproc": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_postproc.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_postproc.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_preview": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_preview.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_preview.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_qhd_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_qhd_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_qhd_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_qhd_hfr_60_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_qhd_hfr_60_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_qhd_hfr_60_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_snapshot": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_snapshot.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_snapshot.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_snapshot_bokeh": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_snapshot_bokeh.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_snapshot_bokeh.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_zsl_preview_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_zsl_preview_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_zsl_preview_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_zsl_preview_lc898122_3dmode": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_zsl_preview_lc898122_3dmode.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_zsl_preview_lc898122_3dmode.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_zsl_preview_lc898122_bokeh": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_zsl_preview_lc898122_bokeh.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_zsl_preview_lc898122_bokeh.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_main_zsl_video_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_main_zsl_video_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_main_zsl_video_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_1080p_3d_video_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_1080p_3d_video_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_1080p_3d_video_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_1080p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_1080p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_1080p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_1080p_hfr_60_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_1080p_hfr_60_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_1080p_hfr_60_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_360p_3d_video_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_360p_3d_video_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_360p_3d_video_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_480p_hfr_240": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_480p_hfr_240.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_480p_hfr_240.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_480p_hfr_240_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_480p_hfr_240_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_480p_hfr_240_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_4k_3d_snapshot_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_4k_3d_snapshot_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_4k_3d_snapshot_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_4k_panorama_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_4k_panorama_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_4k_panorama_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_4k_preview_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_4k_preview_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_4k_preview_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_4k_video_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_4k_video_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_4k_video_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_720p_hfr_120": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_720p_hfr_120.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_720p_hfr_120.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_720p_hfr_120_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_720p_hfr_120_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_720p_hfr_120_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_common": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_common.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_common.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_1080p_3d_video": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_1080p_3d_video.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_1080p_3d_video.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_1080p_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_1080p_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_1080p_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_480p_hfr_240": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_480p_hfr_240.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_480p_hfr_240.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_4k_3d_snapshot": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_4k_3d_snapshot.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_4k_3d_snapshot.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_720p_hfr_120": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_720p_hfr_120.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_720p_hfr_120.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_liveshot": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_liveshot.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_liveshot.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_preview": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_preview.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_preview.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_qhd_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_qhd_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_qhd_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_snapshot": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_snapshot.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_snapshot.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_snapshot_arc_hdr": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_snapshot_arc_hdr.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_snapshot_arc_hdr.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_snapshot_bokeh": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_snapshot_bokeh.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_snapshot_bokeh.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_snapshot_eis": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_snapshot_eis.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_snapshot_eis.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_snapshot_flash": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_snapshot_flash.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_snapshot_flash.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_snapshot_hdr": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_snapshot_hdr.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_snapshot_hdr.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_snapshot_lls": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_snapshot_lls.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_snapshot_lls.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_cpp_video": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_video.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_cpp_video.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_default_video": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_default_video.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_default_video.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_postproc": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_postproc.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_postproc.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_preview": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_preview.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_preview.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_qhd_hfr_60": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_qhd_hfr_60.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_qhd_hfr_60.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_qhd_hfr_60_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_qhd_hfr_60_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_qhd_hfr_60_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_snapshot": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_snapshot.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_snapshot.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_snapshot_bokeh": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_snapshot_bokeh.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_snapshot_bokeh.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_zsl_preview_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_zsl_preview_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_zsl_preview_lc898122.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_zsl_preview_lc898122_3dmode": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_zsl_preview_lc898122_3dmode.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_zsl_preview_lc898122_3dmode.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_zsl_preview_lc898122_bokeh": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_zsl_preview_lc898122_bokeh.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_zsl_preview_lc898122_bokeh.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libchromatix_imx380_sub_zsl_video_lc898122": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libchromatix_imx380_sub_zsl_video_lc898122.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libchromatix_imx380_sub_zsl_video_lc898122.so": [
+              "libcutils",
+              "liblog",
               "libc++",
               "libc",
               "libm",
@@ -4627,6 +8857,36 @@
               "liblog",
               "libion",
               "libOpenCL",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libflash_pmic": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libflash_pmic.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libflash_pmic.so": [
+              "libcutils",
+              "liblog",
               "libc++",
               "libc",
               "libm",
@@ -8411,6 +12671,1374 @@
         }
       }
     },
+    "libmmcamera_isp_bpc48": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_bpc48.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_bpc48.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_cac47": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_cac47.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_cac47.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_chroma_enhan40": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_chroma_enhan40.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_chroma_enhan40.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_chroma_suppress40": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_chroma_suppress40.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_chroma_suppress40.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_clamp_encoder40": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_clamp_encoder40.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_clamp_encoder40.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_clamp_video40": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_clamp_video40.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_clamp_video40.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_clamp_viewfinder40": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_clamp_viewfinder40.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_clamp_viewfinder40.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_color_correct46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_color_correct46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_color_correct46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_color_xform_encoder46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_color_xform_encoder46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_color_xform_encoder46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_color_xform_video46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_color_xform_video46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_color_xform_video46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_color_xform_viewfinder46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_color_xform_viewfinder46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_color_xform_viewfinder46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_cs_stats46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_cs_stats46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_cs_stats46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_demosaic48": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_demosaic48.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_demosaic48.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_demux48": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_demux48.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_demux48.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_fovcrop_encoder46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_fovcrop_encoder46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_fovcrop_encoder46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_fovcrop_video46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_fovcrop_video46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_fovcrop_video46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_fovcrop_viewfinder46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_fovcrop_viewfinder46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_fovcrop_viewfinder46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_gamma44": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_gamma44.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_gamma44.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_gic48": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_gic48.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_gic48.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_gtm46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_gtm46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_gtm46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_hdr48": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_hdr48.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_hdr48.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_hdr_be_stats46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_hdr_be_stats46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_hdr_be_stats46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_hdr_bhist_stats44": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_hdr_bhist_stats44.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_hdr_bhist_stats44.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_ihist_stats46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_ihist_stats46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_ihist_stats46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_linearization40": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_linearization40.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_linearization40.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_ltm47": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_ltm47.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_ltm47.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_mce40": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_mce40.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_mce40.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_mesh_rolloff44": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_mesh_rolloff44.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_mesh_rolloff44.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_pdaf48": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_pdaf48.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_pdaf48.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_pedestal_correct46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_pedestal_correct46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_pedestal_correct46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_rs_stats46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_rs_stats46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_rs_stats46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_scaler_encoder46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_scaler_encoder46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_scaler_encoder46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_scaler_video46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_scaler_video46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_scaler_video46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_scaler_viewfinder46": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_scaler_viewfinder46.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_scaler_viewfinder46.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_sce40": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_sce40.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_sce40.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_isp_snr47": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_isp_snr47.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_isp_modules",
+            "libmmcamera2_mct",
+            "libmmcamera_dbg",
+            "libmmcamera_isp_sub_module"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_isp_snr47.so": [
+              "libcutils",
+              "libmmcamera2_mct",
+              "libmmcamera_isp_sub_module",
+              "libmmcamera_dbg",
+              "libmmcamera2_isp_modules",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
     "libmmcamera_isp_sub_module": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -8438,6 +14066,104 @@
               "libmmcamera_dbg",
               "libmmcamera2_isp_modules",
               "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_m24c64s_main_eeprom": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_m24c64s_main_eeprom.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera_eeprom_util"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_m24c64s_main_eeprom.so": [
+              "liblog",
+              "libcutils",
+              "libmmcamera_eeprom_util",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_m24c64s_sub_eeprom": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_m24c64s_sub_eeprom.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera_eeprom_util"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_m24c64s_sub_eeprom.so": [
+              "liblog",
+              "libcutils",
+              "libmmcamera_eeprom_util",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_paaf_lib": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_paaf_lib.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera2_frame_algorithm",
+            "libmmcamera_dbg"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_paaf_lib.so": [
+              "libcutils",
+              "liblog",
+              "libmmcamera_dbg",
+              "libmmcamera2_frame_algorithm",
               "libc++",
               "libc",
               "libm",
@@ -8540,6 +14266,84 @@
               "libmmcamera2_mct",
               "libmmcamera_dbg",
               "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_ppeiscore": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_ppeiscore.so"
+          ],
+          "shared_libs": [
+            "libEGL",
+            "libGLESv2",
+            "libGLESv2_adreno",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "libhardware",
+            "liblog",
+            "libm",
+            "libmmcamera_dbg",
+            "libmmcamera_imglib",
+            "libqdMetaData",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_ppeiscore.so": [
+              "libcutils",
+              "liblog",
+              "libGLESv2_adreno",
+              "libEGL",
+              "libGLESv2",
+              "libhardware",
+              "libqdMetaData",
+              "libutils",
+              "libmmcamera_dbg",
+              "libmmcamera_imglib",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmcamera_quadracfa": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_quadracfa.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libremosaic_daemon"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_quadracfa.so": [
+              "libcutils",
+              "liblog",
+              "libremosaic_daemon",
               "libc++",
               "libc",
               "libm",
@@ -10035,6 +15839,36 @@
         }
       }
     },
+    "libremosaic_daemon": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libremosaic_daemon.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libremosaic_daemon.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
     "libril": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -10842,6 +16676,59 @@
         }
       }
     },
+    "libsdsprpc": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libsdsprpc.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libsdsprpc.so": [
+              "liblog",
+              "libcutils",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        },
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libsdsprpc.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libsdsprpc.so": [
+              "liblog",
+              "libcutils",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
     "libsensor1": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -10915,6 +16802,67 @@
         }
       }
     },
+    "libsensor_reg": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libsensor_reg.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libsensor1",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libsensor_reg.so": [
+              "libutils",
+              "libcutils",
+              "liblog",
+              "libsensor1",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        },
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libsensor_reg.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libsensor1",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libsensor_reg.so": [
+              "libutils",
+              "libcutils",
+              "liblog",
+              "libsensor1",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
     "libsettings": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -10968,6 +16916,59 @@
               "libc++",
               "libdiag",
               "libprotobuf-cpp-full-vendorcompat",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libsns_low_lat_stream_stub": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libsns_low_lat_stream_stub.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libdl",
+            "liblog",
+            "libm",
+            "libsdsprpc"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libsns_low_lat_stream_stub.so": [
+              "liblog",
+              "libsdsprpc",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        },
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libsns_low_lat_stream_stub.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libdl",
+            "liblog",
+            "libm",
+            "libsdsprpc"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libsns_low_lat_stream_stub.so": [
+              "liblog",
+              "libsdsprpc",
+              "libc++",
               "libc",
               "libm",
               "libdl"
@@ -12338,6 +18339,87 @@
               "libqmi_encdec",
               "libqmi_csi",
               "libsensor1",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "sensors.ssc": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/sensors.ssc.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdiag",
+            "libdl",
+            "libhardware",
+            "liblog",
+            "libm",
+            "libpower",
+            "libsensor1",
+            "libsensor_reg",
+            "libsns_low_lat_stream_stub",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/sensors.ssc.so": [
+              "libutils",
+              "libcutils",
+              "liblog",
+              "libhardware",
+              "libsensor1",
+              "libsensor_reg",
+              "libdiag",
+              "libpower",
+              "libsns_low_lat_stream_stub",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        },
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/sensors.ssc.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdiag",
+            "libdl",
+            "libhardware",
+            "liblog",
+            "libm",
+            "libpower",
+            "libsensor1",
+            "libsensor_reg",
+            "libsns_low_lat_stream_stub",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/sensors.ssc.so": [
+              "libutils",
+              "libcutils",
+              "liblog",
+              "libhardware",
+              "libsensor1",
+              "libsensor_reg",
+              "libdiag",
+              "libpower",
+              "libsns_low_lat_stream_stub",
               "libc++",
               "libc",
               "libm",
@@ -14908,10 +20990,10 @@
     }
   },
   "summary": {
-    "total_modules": 316,
-    "checkelf_enabled": 316,
+    "total_modules": 504,
+    "checkelf_enabled": 504,
     "checkelf_exceptions": 0,
-    "provider_sonames": 286,
+    "provider_sonames": 474,
     "allow_undefined_symbol_modules": 20
   }
 }

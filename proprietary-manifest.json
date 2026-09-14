@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 110,
-    "P1": 345,
+    "P1": 530,
     "P2": 19,
-    "total": 474
+    "total": 659
   },
   "files": [
     {
@@ -912,6 +912,12 @@
     },
     {
       "tier": "P1",
+      "path": "vendor/firmware/cpp_firmware_v1_12_0.fw",
+      "size": 16384,
+      "sha256": "9e1618c277f0f686b29a9c85e59911d0a83b81861612892eed1d9a1ba145051d"
+    },
+    {
+      "tier": "P1",
       "path": "vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so",
       "size": 168532,
       "sha256": "5bfabbbc19181e481b8ef957c6af9cfb174a0885feff73fc23e3678a1351ef69"
@@ -1044,6 +1050,24 @@
     },
     {
       "tier": "P1",
+      "path": "vendor/lib/libSonyIMX380PdafLibrary.so",
+      "size": 19804,
+      "sha256": "dd57dd3cceb9f7a23ba1cd94c3737ed50ab37ae3cf2b57f8a770a7b567b2feaa"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libactuator_lc898219xl_main.so",
+      "size": 26840,
+      "sha256": "305bb3ffc8dc7a05e84272f0951f70086a1c15ba3767909c42327c4a006f6414"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libactuator_lc898219xl_sub.so",
+      "size": 26836,
+      "sha256": "395a848e1269296c2f30f86ae6c7adde4ec155337e51a51e682786fd9ff02817"
+    },
+    {
+      "tier": "P1",
       "path": "vendor/lib/libarcsoft_antishaking.so",
       "size": 472852,
       "sha256": "960e6f446d9087deac2d062d3f54f50567c8b01ba2afefd2648f0f41d8b358cc"
@@ -1083,6 +1107,834 @@
       "path": "vendor/lib/libavservices_minijail_vendor.so",
       "size": 10756,
       "sha256": "5e980ff7720692b25445058194e554113e99a01519e09ddbcb401bbd53808670"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_1080p_3d_video_lc898122.so",
+      "size": 115808,
+      "sha256": "d33d8ec1277a193e3aec607f8e08c6690c2c7fd90c8c4baa180c86dd324ce422"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_1080p_hfr_60.so",
+      "size": 90124,
+      "sha256": "77703ed59caca7b79be75f9e0669a3ce447c0187758946201ba804bbd02c2827"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_1080p_hfr_60_lc898122.so",
+      "size": 115808,
+      "sha256": "4babc4227c774b1eea04244ded548c6395b2ff3617dffde97dee3941d08ea32d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_360p_3d_video_lc898122.so",
+      "size": 115808,
+      "sha256": "7d6bbf33c1cdfc9210591deb3b3869ed02b0f725d3b05ab636044fc853913846"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_480p_hfr_60.so",
+      "size": 90124,
+      "sha256": "423f9b0433b9723f28c8518f805872d3fefc7d643a5ddc10562cab2a6670929b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_480p_hfr_60_lc898122.so",
+      "size": 115808,
+      "sha256": "dffd20a8d79342a193a98dc6f1f637317c97c900ee956657613e1b6eec6228e4"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_720p_hfr_60.so",
+      "size": 90120,
+      "sha256": "964a1dc76d5bde2283b3aea54150a15b3c98468e4740819efd77cf856c03bbbb"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_720p_hfr_60_lc898122.so",
+      "size": 115808,
+      "sha256": "adad9e4ee1c809dd9793cc23c0974f7f6f1f838e78d6fff6a21f3622571dd773"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_common.so",
+      "size": 76180,
+      "sha256": "c70ebf181bebd4783abad355a88763a180c91b845aefbfb9fc16e1b3e5130b2b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_cpp_1080p_hfr_60.so",
+      "size": 64008,
+      "sha256": "d670f0bf77fee2f1fb546caf600af230d63cfff176d3f936e64616cb9216760f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_cpp_480p_hfr_60.so",
+      "size": 64004,
+      "sha256": "707aae6aff7c18c6d23414727e3021aa402764eb58b9f0b1987fdcb7ce502304"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_cpp_720p_hfr_60.so",
+      "size": 64004,
+      "sha256": "26d47e2967140a81c9736ebb25122e2dcb4a142b20c070c8e53b9c5512be96cf"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_cpp_liveshot.so",
+      "size": 64004,
+      "sha256": "7bc003bafdaa8f12fbd690ee32792c3c8c94fa1e447f812e7f70cfca2384e37f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_cpp_preview.so",
+      "size": 64004,
+      "sha256": "21b85047a8f7c11bd7db7fe230c72ff927b4926492e5fd1c9bc1aecfbd091f28"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_cpp_snapshot.so",
+      "size": 64004,
+      "sha256": "e06227ac5725e257c4621f9725de84000823ce92ad121ca8b1eb9e8de17cba58"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_cpp_snapshot_arc_hdr.so",
+      "size": 64008,
+      "sha256": "94ea1dc0e2d226e6084c49ccf715c0fdef61c81aa240b4fbea1fc8145f3c80a6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_cpp_snapshot_bokeh.so",
+      "size": 64008,
+      "sha256": "5b4bb6a17e5603fc3a520e52446eb10d93a31082217a6fa9f504f26a55648f58"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_cpp_snapshot_eis.so",
+      "size": 64008,
+      "sha256": "ced454060805e03e115f2ff6affb1022ca473ea982f9425889e6d61cc016d9a9"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_cpp_snapshot_lls.so",
+      "size": 64008,
+      "sha256": "df6882abe207321999e12ba48b8e6542f1840024dba74bd78b70f848cd59c4de"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_cpp_video.so",
+      "size": 64004,
+      "sha256": "853dc53bfff281520d53e9c3065de04d426b12213212e5e7f2a2c9c315a7bdf0"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_default_video.so",
+      "size": 90124,
+      "sha256": "db23930886f5947729923c97f9901218828d69b9d1ecffbb1dc19f1965104307"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_postproc.so",
+      "size": 35000,
+      "sha256": "43b1cab81e6bfd8225fd7334da870aad6a7d7b37c8ee0f0b67d8e8de6b32cc22"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_preview.so",
+      "size": 90128,
+      "sha256": "4fff7a33556e293d39bd161f51d685d13609c7be60afd82b6caaf42dff1e3321"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_snapshot.so",
+      "size": 90120,
+      "sha256": "7abf741c0d23e574fcdfdc2e397c576c62170726fec0652ee982bf12633f9070"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_snapshot_bokeh.so",
+      "size": 90124,
+      "sha256": "ef254c83b1520a0fb9cb00be358eb9b6b15b1f393fe987158afecafd096debfc"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_zsl_preview_lc898122.so",
+      "size": 115808,
+      "sha256": "39dadd81ec36111c78d70dd086cb1f0b9d264aeb8d229d0601f0f39afdfaaf09"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_zsl_preview_lc898122_3dmode.so",
+      "size": 115808,
+      "sha256": "c87789cd7d29282745e5eea36566ddcfbd8aa36edbb040aefe49196da2e7af05"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_zsl_preview_lc898122_bokeh.so",
+      "size": 115804,
+      "sha256": "7fc82ccbffe6f50e76deec0e63d4666601e00a62f536983e6026bb209e80408a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_main_zsl_video_lc898122.so",
+      "size": 115808,
+      "sha256": "eebc17c7bb0684bea0b7920c572d4884f25d5e1e385dfed5f1b73f1e1b16db9f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_1080p_3d_video_lc898122.so",
+      "size": 115808,
+      "sha256": "ab3c45a0bcdd95e7b369ff074421d2194ff8012be1ec9a3da17dba104b02229a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_1080p_hfr_60.so",
+      "size": 90124,
+      "sha256": "e2740e91bb59925b4b1454c8eebcc98f0d74b1630e9db9b119d419a308ca2e45"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_1080p_hfr_60_lc898122.so",
+      "size": 115808,
+      "sha256": "3687d54c586e3e4b952405e0ce6bba1ab398e886a74b44a01f80f460a3a12ca7"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_360p_3d_video_lc898122.so",
+      "size": 115808,
+      "sha256": "b8826d7ea8403128e9eada197ed724de214ea8aa28cf1dd65f9ac963beb42dab"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_480p_hfr_60.so",
+      "size": 90120,
+      "sha256": "6879aa8068a733cbffadf1495f52d7240f3df8e2282d659b8b6baf38ce9d976d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_480p_hfr_60_lc898122.so",
+      "size": 115808,
+      "sha256": "3d13f624542655aea126fb26607ae92a6df53e1875bc69c035c7fe95cf2e61f7"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_720p_hfr_60.so",
+      "size": 90124,
+      "sha256": "997b72a816e7eeaef3e8d918c00c0c3878eb81025dfce167321d779d68fe85d6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_720p_hfr_60_lc898122.so",
+      "size": 115808,
+      "sha256": "62bb4b91357427ba77d793d96414e03dc0f988b838c4cb87a9be21f3dc59f770"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_common.so",
+      "size": 76184,
+      "sha256": "2ff8f8b68ac010aa40004f2adb39aa0f9a704abb72080387c0eb566017f234ec"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_cpp_1080p_hfr_60.so",
+      "size": 64004,
+      "sha256": "4dd4410055a9d9c6847c09a153e6f538e81966fcd723f39bc73707db64602901"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_cpp_480p_hfr_60.so",
+      "size": 64004,
+      "sha256": "8c782c47514d831afda4e514562971bd76339fa6e9b7a3d7c69fcf925c1cd8a1"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_cpp_720p_hfr_60.so",
+      "size": 64008,
+      "sha256": "5649a4fe672790158634ecc62239b5f3feeb70cd44248e7228e70520f7eb4de2"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_cpp_liveshot.so",
+      "size": 64004,
+      "sha256": "878c6e645faa75a7f84ffcf822714a90db4afea7215a2fb19f2ae0637bf10e3c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_cpp_preview.so",
+      "size": 64008,
+      "sha256": "2f19260ceccbeed252da13db52829ac1bdcf29282bc012dc19065cc24d8144d6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_cpp_snapshot.so",
+      "size": 64004,
+      "sha256": "0afbaf3169710543d7d5e5be320571ec6861c78e36128d2fdac646838e418ec5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_cpp_snapshot_arc_hdr.so",
+      "size": 64008,
+      "sha256": "e9218621d17d8464af97a082598e743d8752d5a8c7083532d7c28e8169a697f9"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_cpp_snapshot_bokeh.so",
+      "size": 64004,
+      "sha256": "4a2701a83fd1ff2b8d66d4fdac5aec3701866d83f2049d86a1a4f21ebadd9f16"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_cpp_snapshot_eis.so",
+      "size": 64008,
+      "sha256": "b2876786dfc1d1d221bf3b8fe9b275886cd11ded9edfaf07b52393c0facf2183"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_cpp_snapshot_lls.so",
+      "size": 64004,
+      "sha256": "7391ccef6dcff60d80cf91f3fdd4b1eb4cb270eb614d24d2baff38eb121e0d82"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_cpp_video.so",
+      "size": 64000,
+      "sha256": "635dc8ae7b140609e7e3d0881290a36fe6aec6661fd68f5f5aa7f08b301a3c6e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_default_video.so",
+      "size": 90124,
+      "sha256": "0baf0f488df9d0fcdee59ed5a1583d39e20da4ef520b534ac61af47fc7d53715"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_postproc.so",
+      "size": 35004,
+      "sha256": "8e831d07391bcf3a767e47401f2034b1b274cb9fe0d50401d0fdb6df10fff526"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_preview.so",
+      "size": 90124,
+      "sha256": "f2a790e679b82c25407537242fb63fecf3b0239351cc623258baaa487db96f02"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_snapshot.so",
+      "size": 90124,
+      "sha256": "9406ea8e8c32cc295b0bf44c053ee6583c5fac38933ce4fee2dc134c2cfa9114"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_snapshot_bokeh.so",
+      "size": 90124,
+      "sha256": "a2c5cf2de6a7cd559a75c4295f617506b55d48400055dc17888f27eac0cd6354"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_zsl_preview_lc898122.so",
+      "size": 115808,
+      "sha256": "dae030a21d1388d8c751e54c327a12908c371af3d492421c2130c15ae031a0fb"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_zsl_preview_lc898122_3dmode.so",
+      "size": 115804,
+      "sha256": "2f4378fc9109d1588035021fa66f39c6047d149b453e6d05e0a1e001c4303f26"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_zsl_preview_lc898122_bokeh.so",
+      "size": 115808,
+      "sha256": "7fca624d31cc5153cf4d3c6fe6cd5bb3f54807a29afde63d0eca3948dd7ed339"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx268_sub_zsl_video_lc898122.so",
+      "size": 115808,
+      "sha256": "7257f6b2e2d911e424fb8601f21524bb31ea4af0a5180b9131918c0b78c0f5e0"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_1080p_3d_video_lc898122.so",
+      "size": 115808,
+      "sha256": "26ede734c90d2e6162bd8d05def643892d1404871ad5eb07f3133dff6c64d486"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_1080p_hfr_60.so",
+      "size": 90124,
+      "sha256": "f50392afc9228c940b9d735a0dc6bb642b6dea6c4113a93e522f2c3905a2a6ef"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_1080p_hfr_60_lc898122.so",
+      "size": 115808,
+      "sha256": "bdd7ceb59f90290da6696105836d39ba9ca70935a37c2c5d4d8f248c1ce96e2e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_360p_3d_video_lc898122.so",
+      "size": 115808,
+      "sha256": "da074cbccb1a4298d9df4249dbede6b4ffe6823f0af481c74e471cbd380e58be"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_480p_hfr_240.so",
+      "size": 90124,
+      "sha256": "5e931b04d81dfde889a999cd0f295d94d6ac8eb7e63af1d199f2fb06662bd8b4"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_480p_hfr_240_lc898122.so",
+      "size": 115808,
+      "sha256": "29bb8c645c4114b1df69da0f4262a7a560c5dafbeafe3142c72aa9ea0a29da78"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_4k_3d_snapshot_lc898122.so",
+      "size": 115808,
+      "sha256": "15080d35bf435c8eeacd5f48953666e76f66b8e32ab33b37ba557e42aeb4b880"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_4k_panorama_lc898122.so",
+      "size": 115808,
+      "sha256": "bd645e6f406727dc4090ffe5b4a8f3a11f4cbd163872125d420b55caacfbbda6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_4k_preview_lc898122.so",
+      "size": 115808,
+      "sha256": "52916bad0648213aa11ce08e44cead6c564004330f1e66b7826ac2a664620041"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_4k_video_lc898122.so",
+      "size": 115808,
+      "sha256": "5d33c58de572a60c42d0e0d2324b8ba95e364b1ccf1e0f0bd58c5fc8a4f8655d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_720p_hfr_120.so",
+      "size": 90124,
+      "sha256": "7b159d4be1aaaf3de0bc119ac39d5d973b3ca1e10047feeeab931cadb3d38fb5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_720p_hfr_120_lc898122.so",
+      "size": 115808,
+      "sha256": "6788dfbeafe5976cba0ba5a4cd7e983fe19e7f8952c56ba466f08ddebaae2825"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_common.so",
+      "size": 76184,
+      "sha256": "6a4cb2055fe8b577747cc530b96694e3bf3b80a81339dc1f0e4c8c45135b1952"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_1080p_3d_video.so",
+      "size": 64008,
+      "sha256": "d443aa600d707ed4d810a92d2157a7667720c396081f76c19e7595f019cefb86"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_1080p_hfr_60.so",
+      "size": 64008,
+      "sha256": "0bb506464fb93c47731d2f239c79ae6b145cf400e2b86f7aef6716e14e80f4a6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_480p_hfr_240.so",
+      "size": 64004,
+      "sha256": "27f54f72bea04c12c2992469e152348d51e70557a6da975942faa2dba66d0892"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_4k_3d_snapshot.so",
+      "size": 64004,
+      "sha256": "2dbedee6a7dd0bd95f4ac9e31ca59a5f45a2d0928f14d18d540fe3167f9beb32"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_720p_hfr_120.so",
+      "size": 64008,
+      "sha256": "3600e802f94a0dbaf3ccbd0421db24928575b3fa90a1aac87a45901f4849e04e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_liveshot.so",
+      "size": 64004,
+      "sha256": "a6f5c7c249f565771189b8bf3c40593e5bef096364b342cb15fb8e6eb83d7c3b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_preview.so",
+      "size": 64004,
+      "sha256": "78e338214d86678d7e2d1952644cb4579946560595df5d5fae8526d2629c8933"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_qhd_hfr_60.so",
+      "size": 64004,
+      "sha256": "dd5b5c63420bb5f3a094ddda635d7b53126206a0e395b1739bb68c4ee09cd737"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_snapshot.so",
+      "size": 64004,
+      "sha256": "7bc78776bd8204c3b6e53bb06159427ccb406bd505909aef0d8898ba57cbaad0"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_snapshot_arc_hdr.so",
+      "size": 64008,
+      "sha256": "6136017770384771ff0847e42c7874afe1af0a985df4b3e9ee478cbc86ef95cc"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_snapshot_bokeh.so",
+      "size": 64004,
+      "sha256": "626e55c64d2272c1b439151dbaad78729b873c353ce7c2b80e6b244718d0029f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_snapshot_eis.so",
+      "size": 64004,
+      "sha256": "2dc54670729be20d2990550e926170f998949d42289bbce76f5d19dd34c16280"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_snapshot_flash.so",
+      "size": 64004,
+      "sha256": "5bdf3afd8035d090a0e111c7e5c31705a25caaf2ce5506952badc23aed027549"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_snapshot_hdr.so",
+      "size": 64004,
+      "sha256": "09623557b52b03c16738714f8bc5789f6c251df650e5c4d5f5592a141a21d5b1"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_snapshot_lls.so",
+      "size": 64008,
+      "sha256": "ea9a53da376c4d94dd55f59e2fbde847c52bef98a4c7cc3cc75d5562a95d0e8e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_cpp_video.so",
+      "size": 64004,
+      "sha256": "5153bd31b1e0fab536c40868983d2b2b2efb16545981c95f8cc79be84921595f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_default_video.so",
+      "size": 90124,
+      "sha256": "90431f2b90865e57afb3510e47d71b9e14846da9c61c2bd784c26d649f7470a1"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_postproc.so",
+      "size": 35000,
+      "sha256": "f092cf5f4cd2f945e8d5353b991c4643b84d563661f0bbacbd3f06abc281003d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_preview.so",
+      "size": 90128,
+      "sha256": "99e8b677d382a2de755659815d5382c93bd6e3b68a3f505b4dd6143481463a4e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_qhd_hfr_60.so",
+      "size": 90124,
+      "sha256": "eeb3066f559bb681d172ba2ece1a099fc6f330e49b749ba2ecc97a46936adc71"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_qhd_hfr_60_lc898122.so",
+      "size": 115808,
+      "sha256": "0a28d5d4fa0de765c66ef551d8c22f4c5afc1da49e3e2f08ba95609c3bbe6d97"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_snapshot.so",
+      "size": 90124,
+      "sha256": "58dd0512699377d8f396fa17cdfe039676daa3b3153507b8b675a463de570d74"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_snapshot_bokeh.so",
+      "size": 90124,
+      "sha256": "81668bd1500dc007b4c16afdd091e114bdc3598b3b2a324d1c60d3e9b79e3662"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_zsl_preview_lc898122.so",
+      "size": 115808,
+      "sha256": "64e73f9e958f2b2bee0ee23d54ce1b11d2d1b8fc8886262a53a7099e9d5f4d0f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_zsl_preview_lc898122_3dmode.so",
+      "size": 115808,
+      "sha256": "742b51975240efe15214bc1574cc5d157c674a1f3fc5b956d8dc06c3c01561c7"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_zsl_preview_lc898122_bokeh.so",
+      "size": 115808,
+      "sha256": "7ea634fb67017c1b646c888d5b7ff882b876cb0963431bca0fd538c7ea434abb"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_main_zsl_video_lc898122.so",
+      "size": 115808,
+      "sha256": "c01c7f062459d224b8283992e9c84d773dc6b7321362788b0fa70e0b7aeeca99"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_1080p_3d_video_lc898122.so",
+      "size": 115808,
+      "sha256": "2fced4177dfbd78219fedf99eea835cf2921287ea720078189e4604b2ba41623"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_1080p_hfr_60.so",
+      "size": 90120,
+      "sha256": "4c34525c7550e1e615b5347209ae0b54fd815bced10d456441f3b1561eaeaea8"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_1080p_hfr_60_lc898122.so",
+      "size": 115808,
+      "sha256": "ada2fa8e8b014572a9e18d9d6fadd3fa4ef93043651c89c41c09c998f07ff60c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_360p_3d_video_lc898122.so",
+      "size": 115808,
+      "sha256": "3c78309de2ef39b8b8e781f334ddccef8297f4fbdca677b5ddab87c94016ed12"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_480p_hfr_240.so",
+      "size": 90124,
+      "sha256": "470273e058431fc9d8a743a0e486b5c62c5f696d680d64a7eb6eb8b86d36589d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_480p_hfr_240_lc898122.so",
+      "size": 115808,
+      "sha256": "c4543f48d74830e0a86eb58324b5c6157fd2122ad34b19756562c12d10302814"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_4k_3d_snapshot_lc898122.so",
+      "size": 115808,
+      "sha256": "5e257801deaa6e53886b19f3c404e009e55864cb6fc52f161ed898d96c5e3d91"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_4k_panorama_lc898122.so",
+      "size": 115808,
+      "sha256": "f05bc1c3db9b3e9ce5f8676d8f0c265f9b6d1a1b8d294a11ca7362148264a178"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_4k_preview_lc898122.so",
+      "size": 115808,
+      "sha256": "8e254ea47f3e7620f0e1e9a62824015170dc82902e8600382faea33b18ec3863"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_4k_video_lc898122.so",
+      "size": 115808,
+      "sha256": "1d15fc8da2517fa8686011416b96a1ca7d1025c1844e119ecba26f4a2fe9c83c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_720p_hfr_120.so",
+      "size": 90120,
+      "sha256": "a84c9c535a7da613a4ba3ec242a2e91fc6d21e185b6a75cb9c0a738acf76def6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_720p_hfr_120_lc898122.so",
+      "size": 115808,
+      "sha256": "a5095f911f748b19aac1e42031c067d0e143d4bfc47a0d18057fff74fef8f69b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_common.so",
+      "size": 76184,
+      "sha256": "9ad1b56f485075800c6b356c8a019fb8a54dbf1c4547ad5fd1b83765a1ac0c8c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_1080p_3d_video.so",
+      "size": 64004,
+      "sha256": "54b61521662963fc5edd8a09acfb9c9f59d94079dfbf7181bae1c39717055050"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_1080p_hfr_60.so",
+      "size": 64004,
+      "sha256": "5ab725c8bc17ed8e603ea8bb4b6c3d50129f190eb3b9cd94fa86ba742dd32815"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_480p_hfr_240.so",
+      "size": 64004,
+      "sha256": "f79fa18901d1c78888f30ffe0804af7869ab896ac6d2e1134cc92f0f2f9f4bd4"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_4k_3d_snapshot.so",
+      "size": 64004,
+      "sha256": "55377c65242b1b41aaef5f68c6f468d210aafc03d0e4387230df91754d1cc0f5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_720p_hfr_120.so",
+      "size": 64004,
+      "sha256": "32b09e1be790fcbf6c2562d1d58d8a3d391188ed99c02192fd4a0ddd5a3cb2f8"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_liveshot.so",
+      "size": 64004,
+      "sha256": "76c3f027e4685337f4d15f5473227579bd06b439a3e500a9545771139a7e30bf"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_preview.so",
+      "size": 64004,
+      "sha256": "e6923221ea08229cb8fc73fe4db61c3d47def0c11cd18873e2cd7112f434f4ca"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_qhd_hfr_60.so",
+      "size": 64004,
+      "sha256": "1e306b51195d54a7d7136b29ae2b834e72f6e9fed4b124fec6820f767db8d0ab"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_snapshot.so",
+      "size": 64004,
+      "sha256": "7b84454b0e5e0e597f701b32365c8c6cb0db5e534575e0903e2937496284e329"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_snapshot_arc_hdr.so",
+      "size": 64004,
+      "sha256": "825e14a0afb3e4eb3383632486078b7fbd04fcdedb8cca616fa2ec07be0b0db4"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_snapshot_bokeh.so",
+      "size": 64008,
+      "sha256": "924a20f2d9e3b471a7b30a272cd69c5205cab3bb034f284565a8e5384f489793"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_snapshot_eis.so",
+      "size": 64004,
+      "sha256": "062d888d33e96ff3a5801175665c49046d564fc24f9e3ddafa8b099a0c01339b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_snapshot_flash.so",
+      "size": 64008,
+      "sha256": "e6a283f237791d678b73c67516364609681d7008420d603e6d511f20b44f29c3"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_snapshot_hdr.so",
+      "size": 64004,
+      "sha256": "b56f181a8f48be0d525c324874e0c3063360f86e093dd462152a3c662ca3d7ca"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_snapshot_lls.so",
+      "size": 64004,
+      "sha256": "a1210e01ed9c5692480b4b2da67a57a5cfc5d97893ab7b4ec497a2efc68eba56"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_cpp_video.so",
+      "size": 64004,
+      "sha256": "8e3ea37ca5cc007bcea2aa159271118a7780b9f3a88bd657f414ca091b57973b"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_default_video.so",
+      "size": 90124,
+      "sha256": "77c94116d2d39fae82bb2aeab1f1318c9dd3de6e1e9dacce1f4951430779dda5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_postproc.so",
+      "size": 35000,
+      "sha256": "85541e624354fc029ebc63252d8dfb139cada2a0b165dbb97cea989426edc79d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_preview.so",
+      "size": 90124,
+      "sha256": "43bac66138dff9e251e45f93d1f5716bc5dba075f6b64638010e8bc931cd2fcf"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_qhd_hfr_60.so",
+      "size": 90124,
+      "sha256": "a40904b041f3c7ad46eb111ecc2a2362e16919c066b3fa0b27ba6de8aeb3cfba"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_qhd_hfr_60_lc898122.so",
+      "size": 115808,
+      "sha256": "10cac25d03f2089f3578c0ec02639d68795848dbeaf20b16591b21849fa97893"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_snapshot.so",
+      "size": 90124,
+      "sha256": "6c1576f4e765e3e6ca86c2881afa655864293e22823a5e064127855150937e5f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_snapshot_bokeh.so",
+      "size": 90124,
+      "sha256": "624074d9be8d4155ffe43b7f443cb5d5a6f4833954dc97af9c3c4ab6769e947a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_zsl_preview_lc898122.so",
+      "size": 115808,
+      "sha256": "ce0c5eb7a200f633ca75e9e20a0b98f635705ed35cdff1bf8e4b3afb4f39b05e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_zsl_preview_lc898122_3dmode.so",
+      "size": 115804,
+      "sha256": "1275be496ce1986ffc422d78e10de2231caf18b2b016944572f093e65f0076a6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_zsl_preview_lc898122_bokeh.so",
+      "size": 115808,
+      "sha256": "f0a51bb53e6d27849806e17de57ab00ecd6f3198f478b7c2c850675b30012a78"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libchromatix_imx380_sub_zsl_video_lc898122.so",
+      "size": 115808,
+      "sha256": "84610c6e4d5261f1a10dee08138759ea72368b62f187e44a06a9d5703502fdf9"
     },
     {
       "tier": "P1",
@@ -1131,6 +1983,12 @@
       "path": "vendor/lib/libevent_observer.so",
       "size": 23872,
       "sha256": "18a877459d6218e0f67ca7754e1503f488799a72f533406d082ef07748a014cf"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libflash_pmic.so",
+      "size": 23580,
+      "sha256": "b5eded58dc6941a564de742b36f2b712e15cef85cf355f303546cc5ab8bf420d"
     },
     {
       "tier": "P1",
@@ -1602,9 +2460,243 @@
     },
     {
       "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_bpc48.so",
+      "size": 38000,
+      "sha256": "facacd4ed256ad2f78dd3913f12dcc1c0d96a5e9d2bbcca0c46658bc40280722"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_cac47.so",
+      "size": 32688,
+      "sha256": "64e88184e6414036b494e971718b6fa1e485f2a72ca8c7095c707f1b5ac2b25a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_chroma_enhan40.so",
+      "size": 41036,
+      "sha256": "96994c87c28f639af21f3f68191566a1e43c9da9befcc370d0f972180ca108b3"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_chroma_suppress40.so",
+      "size": 28564,
+      "sha256": "4d42c6800682b6c1c64f18a43d8aa8e1d9c6f43e5302bd47ec6f688930a85fae"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_clamp_encoder40.so",
+      "size": 24316,
+      "sha256": "0dc64bbf29f9310d3f97093028dddc9f0c27780f4d94c5afaabaa363bf237932"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_clamp_video40.so",
+      "size": 24316,
+      "sha256": "7701fcd4d53ca463f81566ccab818d8eef95e30c72470454385452c6705a128f"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_clamp_viewfinder40.so",
+      "size": 24320,
+      "sha256": "b5af5b6af769dd6f852112c247eec9962fa587fb703b1743fa610cb6de0c4371"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_color_correct46.so",
+      "size": 36888,
+      "sha256": "9b38b10e80694c86b646d761a68e5eaa86a357701522a8e15ed13e952f715366"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_color_xform_encoder46.so",
+      "size": 24324,
+      "sha256": "aea2617d739ea42be5e19f2ba89ccf2875f06a80dc6322682859a31a71965314"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_color_xform_video46.so",
+      "size": 24324,
+      "sha256": "9d898f424990c0e837e480866109fedeefa3d6a996e4a64e184d2967e6faa38a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_color_xform_viewfinder46.so",
+      "size": 24328,
+      "sha256": "682cc9737afb2cf82245e19a3ca788eb075b508da14f318eaf33f4e6c9541df6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_cs_stats46.so",
+      "size": 28596,
+      "sha256": "9758f16a0f98fc37960c93db3d3094171af71a27fff9fe273b2fd3cb587f7fef"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_demosaic48.so",
+      "size": 32612,
+      "sha256": "dcb2817c7e28eda5487e29291e62ed1c5c3b11153d100b137274f2a95c1c7b3c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_demux48.so",
+      "size": 32612,
+      "sha256": "d59d68b163e57773cdf9e7a7c6b70f7401453e69d7e79b8d4bfa625d2cb573c1"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_fovcrop_encoder46.so",
+      "size": 48980,
+      "sha256": "f36fe353a3217bfc81af018ab45a6e0dbdb917875bfdcf1e59d7dcb15a9a649d"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_fovcrop_video46.so",
+      "size": 48980,
+      "sha256": "fb602b09cca240b172bb6857a7826f52cb754afba37077dac87325c6b95b0592"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_fovcrop_viewfinder46.so",
+      "size": 48980,
+      "sha256": "cea3f8418daf8e2a880f9032f92ab0bb48d261bc78a554e56c3b06557ab5660e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_gamma44.so",
+      "size": 72488,
+      "sha256": "74dd08ba092373e20e749b69fe70c5e8d6f09660c54f1e4db8fe2c850782ebf9"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_gic48.so",
+      "size": 36512,
+      "sha256": "689ea2b08461b44574cb7bd0a45fc9f7c7b21b4095c331ec1735f23031c93b29"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_gtm46.so",
+      "size": 65684,
+      "sha256": "cd578862bf565595aac6e7750666b368383d2843acf9a413fbf15f8c5aafa2a9"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_hdr48.so",
+      "size": 40700,
+      "sha256": "af57e9d61b41cd874efd4d4a3d391bd205768084f603ac192b1fdb8793c4a626"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_hdr_be_stats46.so",
+      "size": 32528,
+      "sha256": "b894ebf93a988f4431347cc8ef25a6039d542f3c73b81fd73aeb6ed58ab9d4cb"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_hdr_bhist_stats44.so",
+      "size": 32536,
+      "sha256": "e61dfd7d8e64aa642820561d2741d12895e73275c1f20d5e4bb0792cee4487f2"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_ihist_stats46.so",
+      "size": 32524,
+      "sha256": "858db8a6f0d48b093db4b3186c410e1770532d2c26cd2afc6dcceb0165ac1cef"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_linearization40.so",
+      "size": 57368,
+      "sha256": "284ec96c84cbde2c3f7b38e8f2ee0b1120e90b8483067035fb559a7483659c9e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_ltm47.so",
+      "size": 121184,
+      "sha256": "d7ca645834b661c7284279ed17584dd87f90deff1a958100117477fa15f413b5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_mce40.so",
+      "size": 36544,
+      "sha256": "93864026550056dcacc554cf7f38075d480a67028ce149ce8ebfbb985c672c36"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_mesh_rolloff44.so",
+      "size": 86640,
+      "sha256": "c40a2489e223ee6258de2cbf4f525a2758824a811ade5e6231d6b696259fa554"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_pdaf48.so",
+      "size": 46096,
+      "sha256": "c909952739fd1770affd248207fcacb75df04df3e0e55c0975342a7e77cece30"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_pedestal_correct46.so",
+      "size": 49032,
+      "sha256": "7e114ed5bb6378e80317c70e59f0d6eac5deb662ee2fa899595e4ab40ead2d36"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_rs_stats46.so",
+      "size": 32564,
+      "sha256": "3b3e718e7671f3837a0e930477505c53de5fe4c25c13302cd021c2b246a48398"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_scaler_encoder46.so",
+      "size": 65400,
+      "sha256": "552781b721e7b062a2e2b8b497aae7de9213e9d6f82617b8113ae5d72cb3c6a7"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_scaler_video46.so",
+      "size": 65400,
+      "sha256": "e830fcb21fab7bff3da89ff02dafd281761f427022757a517339713c279e746c"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_scaler_viewfinder46.so",
+      "size": 65400,
+      "sha256": "8ea20eb3575917dab485e675d23198f8c4d37bbbc58395cd2f22c82d97016390"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_sce40.so",
+      "size": 69720,
+      "sha256": "3b5698c393023273727565a038b9d686de34e1d42a0abd9dde96cfd920da00c7"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_isp_snr47.so",
+      "size": 36652,
+      "sha256": "5aa60d1abd9cfc283fdea6fc96252c0d24f9d0aa2667c701405e8deb8b157b52"
+    },
+    {
+      "tier": "P1",
       "path": "vendor/lib/libmmcamera_isp_sub_module.so",
       "size": 69740,
       "sha256": "66851adf9c27bc46dc5ef41c3fff325e97a34897d4f123459a129a05d70eeef2"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_m24c64s_main_eeprom.so",
+      "size": 43656,
+      "sha256": "c02cd5e925c7c1b2be04c0689c07ea84e3a50607c51aee2b67f1933d15301f73"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_m24c64s_sub_eeprom.so",
+      "size": 43624,
+      "sha256": "bdf6c2b4296785a62616768c94837ae6fb85b831ea10274fc2fe03ca639d8357"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_paaf_lib.so",
+      "size": 23856,
+      "sha256": "132326d9ca8266dcc27075a6982759c963e231f182726ee5a7492da89f53a041"
     },
     {
       "tier": "P1",
@@ -1623,6 +2715,18 @@
       "path": "vendor/lib/libmmcamera_ppbase_module.so",
       "size": 32432,
       "sha256": "20308f62f9607590d04c192b9e96a899e0b7c2094e2f341b5b077a5756dc1acd"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_ppeiscore.so",
+      "size": 57560,
+      "sha256": "3bc15dba6b93de54a4be9ec0e1eb4cdb7b0c44a0c3792b6065c542950e898542"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_quadracfa.so",
+      "size": 23976,
+      "sha256": "4ef767a4b80f203f020fabf0ca82cd5b5a20eb8bbecc4834234e0e78daacf650"
     },
     {
       "tier": "P1",
@@ -1731,6 +2835,12 @@
       "path": "vendor/lib/libqomx_core.so",
       "size": 23896,
       "sha256": "3185094542fbd26eda5124c1922d3bc5325e0d37fd295afc32584f5f4ee7a6de"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libremosaic_daemon.so",
+      "size": 19768,
+      "sha256": "02cbf2df8e05e10df1348d95a7c62c6cd418fee299e9a802408cdb7de15e06f1"
     },
     {
       "tier": "P1",
