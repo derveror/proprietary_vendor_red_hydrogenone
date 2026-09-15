@@ -10,10 +10,10 @@
     "sdk": 28
   },
   "counts": {
-    "P0": 110,
+    "P0": 113,
     "P1": 530,
     "P2": 19,
-    "total": 659
+    "total": 662
   },
   "files": [
     {
@@ -81,6 +81,12 @@
       "path": "vendor/bin/spdaemon",
       "size": 68656,
       "sha256": "a157a177f899ad1783945b88fbe3cb2ddae35ea480d8595b5ddcac91ea16886d"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/bin/tftp_server",
+      "size": 136648,
+      "sha256": "ecdfa1761175b257b2179eb51868d7ad41bc38fdc5dd054098d3612951a49d24"
     },
     {
       "tier": "P0",
@@ -588,6 +594,12 @@
     },
     {
       "tier": "P0",
+      "path": "vendor/lib64/libqrtr.so",
+      "size": 68112,
+      "sha256": "f2992d563abbe8ea4a9092b8c0a6fe04a9918b9ccdf1c336c0b3783a96645e88"
+    },
+    {
+      "tier": "P0",
       "path": "vendor/lib64/libqseed3.so",
       "size": 65240,
       "sha256": "10791ee4f1137b5e44475c7fa2492cf2f115101815cb3ebd63b6993807f59e67"
@@ -597,6 +609,12 @@
       "path": "vendor/lib64/libqservice.so",
       "size": 69312,
       "sha256": "f77605784fd4a638f3f767e63819622d2d15020a6c23ea20bfab5ceabfe016cf"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libqsocket.so",
+      "size": 68000,
+      "sha256": "8f3cde8b60e41034e04d527d022a7f07d9c5ef710142db959045a412aeb37406"
     },
     {
       "tier": "P0",

@@ -15752,6 +15752,32 @@
         }
       }
     },
+    "libqrtr": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libqrtr.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libdl",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libqrtr.so": [
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
     "libqseed3": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -15830,6 +15856,32 @@
               "libcutils",
               "libutils",
               "libbinder",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libqsocket": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libqsocket.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libdl",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libqsocket.so": [
               "libc++",
               "libc",
               "libm",
@@ -18467,6 +18519,38 @@
         }
       }
     },
+    "tftp_server": {
+      "kind": "cc_prebuilt_binary",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/bin/tftp_server"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libdl",
+            "liblog",
+            "libm",
+            "libqrtr",
+            "libqsocket"
+          ],
+          "needed": {
+            "proprietary/vendor/bin/tftp_server": [
+              "libqsocket",
+              "libqrtr",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
     "thermal-engine": {
       "kind": "cc_prebuilt_binary",
       "check_elf_files": true,
@@ -20990,10 +21074,10 @@
     }
   },
   "summary": {
-    "total_modules": 504,
-    "checkelf_enabled": 504,
+    "total_modules": 507,
+    "checkelf_enabled": 507,
     "checkelf_exceptions": 0,
-    "provider_sonames": 474,
+    "provider_sonames": 476,
     "allow_undefined_symbol_modules": 20
   }
 }

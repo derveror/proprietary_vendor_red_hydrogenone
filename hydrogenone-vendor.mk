@@ -5,8 +5,6 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/red/hydrogenone
 
 PRODUCT_COPY_FILES += \
-    vendor/red/hydrogenone/proprietary/vendor/bin/init.qcom.sensors.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.sensors.sh \
-    vendor/red/hydrogenone/proprietary/vendor/bin/init.qti.ims.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.ims.sh \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800h.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800h.bin \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800h_8998_660.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800h_8998_660.bin \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800s_dsp.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800s_dsp.bin \
@@ -52,360 +50,128 @@ PRODUCT_COPY_FILES += \
     vendor/red/hydrogenone/proprietary/vendor/firmware/a540_zap.b02:$(TARGET_COPY_OUT_VENDOR)/firmware/a540_zap.b02 \
     vendor/red/hydrogenone/proprietary/vendor/firmware/a540_zap.elf:$(TARGET_COPY_OUT_VENDOR)/firmware/a540_zap.elf \
     vendor/red/hydrogenone/proprietary/vendor/firmware/a540_zap.mdt:$(TARGET_COPY_OUT_VENDOR)/firmware/a540_zap.mdt \
+    vendor/red/hydrogenone/proprietary/vendor/firmware/cpp_firmware_v1_12_0.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_12_0.fw \
     vendor/red/hydrogenone/proprietary/vendor/firmware/leia_pfp_470.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/leia_pfp_470.fw \
     vendor/red/hydrogenone/proprietary/vendor/firmware/leia_pm4_470.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/leia_pm4_470.fw
 
 PRODUCT_PACKAGES += \
-    adsprpcd \
-    android.hardware.biometrics.fingerprint@2.1-service \
-    android.hardware.bluetooth@1.0-impl-qti \
-    android.hardware.bluetooth@1.0-service-qti \
-    android.hardware.keymaster@3.0-impl-qti \
-    android.hardware.keymaster@3.0-service-qti \
-    audio.primary.default \
-    camera.device@1.0-impl \
-    camera.device@3.2-impl \
-    camera.device@3.3-impl \
-    camera.device@3.4-external-impl \
-    camera.device@3.4-impl \
-    camera.msm8998 \
-    vendor.qti.hardware.camera.device@1.0 \
-    com.fingerprints.extension@1.0 \
-    com.qualcomm.qti.ant@1.0 \
     com.qualcomm.qti.bluetooth_audio@1.0 \
-    com.qualcomm.qti.bluetooth_audio@1.0-impl \
     com.qualcomm.qti.imscmservice@1.0 \
     com.qualcomm.qti.imscmservice@2.0 \
     com.qualcomm.qti.imscmservice@2.1 \
     com.qualcomm.qti.uceservice@2.0 \
-    com.qualcomm.qti.wifidisplayhal@1.0 \
-    com.qualcomm.qti.wifidisplayhal@1.0-halimpl \
-    com.quicinc.cne.api@1.0 \
-    com.quicinc.cne.api@1.1 \
-    com.quicinc.cne.constants@1.0 \
-    com.quicinc.cne.constants@2.0 \
-    com.quicinc.cne.constants@2.1 \
-    com.quicinc.cne.server@2.0 \
-    com.quicinc.cne.server@2.1 \
-    com.quicinc.cne.server@2.2 \
-    com.quicinc.cne.server@2.3 \
     eglSubDriverAndroid \
+    libEGL_adreno \
+    libGLESv1_CM_adreno \
+    libGLESv2_adreno \
+    libQTapGLES \
+    libq3dtools_adreno \
+    libq3dtools_esx \
+    android.hardware.bluetooth@1.0-impl-qti \
+    audio.primary.default \
+    com.qualcomm.qti.bluetooth_audio@1.0-impl \
     gatekeeper.msm8998 \
-    ims_rtp_daemon \
-    imsdatadaemon \
-    imsqmidaemon \
-    imsrcsd \
-    irsc_util \
     keystore.msm8998 \
-    lib-dplmedia \
+    nfc_nci.nqx.default \
+    vendor.qti.esepowermanager@1.0-impl \
+    vendor.qti.gnss@1.0-impl \
     lib-imscmservice \
     lib-imsdpl \
     lib-imsqimf \
     lib-imsrcs-v2 \
     lib-imsrcsbaseimpl \
     lib-imsxml \
-    lib-rtpcommon \
-    lib-rtpcore \
-    lib-rtpdaemoninterface \
-    lib-rtpsl \
     lib-siputility \
     libC2D2 \
     libCB \
     libDRPlugin \
-    libEGL_adreno \
-    libFlacSwDec \
-    libGLESv1_CM_adreno \
-    libGLESv2_adreno \
-    libOmxAacDec \
-    libOmxAacEnc \
-    libOmxAmrDec \
-    libOmxAmrEnc \
-    libOmxAmrwbplusDec \
-    libOmxEvrcEnc \
-    libOmxQcelp13Enc \
-    libOmxWmaDec \
     libOpenCL \
     libQSEEComAPI \
-    libQTapGLES \
     libadreno_utils \
-    libadsp_default_listener \
     libadsprpc \
-    libarcsoft_antishaking \
-    libarcsoft_beautyshot \
-    libarcsoft_dualcam_refocus \
-    libarcsoft_high_dynamic_range \
-    libarcsoft_low_light_shot \
     libaudio_log_utils \
-    libaudioalsa \
-    libaudiopreprocessing \
-    libavservices_minijail_vendor \
-    libbtnv \
     libc2d30_bltlib \
-    libcld80211 \
-    libcneapiclient \
     libconfigdb \
     libdataitems \
-    libdepthmapwrapper \
     libdiag \
-    libdrmfs \
-    libdrmutils \
     libdrplugin_client \
     libdsi_netctrl \
     libdsutils \
     libevent_observer \
-    libfastcvopt \
     libflp \
-    libgdtap \
     libgeofence \
-    libgps.utils \
-    libgpustats \
     libgsl \
-    libhal_dbg \
-    libhdr_tm \
     libidl \
     libizat_client_api \
     libizat_core \
-    libjson \
-    libkeymasterdeviceutils \
-    libkeystore-engine-wifi-hidl \
-    libkeystore-wifi-hidl \
     liblbs_core \
     libllvm-glnext \
     libllvm-qcom \
     libloc_api_v02 \
-    libloc_core \
-    liblocation_api \
     liblocationservice \
     liblocationservice_glue \
     liblowi_client \
-    liblowi_wifihal \
-    liblqe \
     libmdmdetect \
-    libmm-omxcore \
-    libmmcamera2_c2d_module \
-    libmmcamera2_cpp_module \
     libmmcamera2_frame_algorithm \
-    libmmcamera2_iface_modules \
-    libmmcamera2_imglib_modules \
     libmmcamera2_is \
-    libmmcamera2_isp_modules \
-    libmmcamera2_mct \
-    libmmcamera2_mct_shimlayer \
-    libmmcamera2_pp_buf_mgr \
-    libmmcamera2_pproc_modules \
     libmmcamera2_q3a_core \
-    libmmcamera2_sensor_modules \
     libmmcamera2_stats_algorithm \
     libmmcamera2_stats_lib \
-    libmmcamera2_stats_modules \
-    libmmcamera_arcsoftbokeh_lib \
-    libmmcamera_arcsoftlls \
-    libmmcamera_atmel_at24c32e_eeprom \
-    libmmcamera_blackwhite \
-    libmmcamera_bokeh \
-    libmmcamera_csidtg \
     libmmcamera_dbg \
-    libmmcamera_depth_map \
-    libmmcamera_dummyalgo \
-    libmmcamera_dw9761b_2d_eeprom \
-    libmmcamera_eebinparse \
-    libmmcamera_eeprom_util \
-    libmmcamera_eztune_module \
-    libmmcamera_facedetection_lib \
     libmmcamera_faceproc \
     libmmcamera_faceproc2 \
-    libmmcamera_gt24p64b_main_eeprom \
-    libmmcamera_gt24p64b_sub_eeprom \
-    libmmcamera_hdr_gb_lib \
-    libmmcamera_hdrgreyscale \
-    libmmcamera_highcontrast \
-    libmmcamera_hvx_add_constant \
-    libmmcamera_hvx_grid_sum \
-    libmmcamera_imglib \
-    libmmcamera_imglib_faceproc_adspstub \
-    libmmcamera_imx214 \
-    libmmcamera_imx230 \
-    libmmcamera_imx258 \
-    libmmcamera_imx258_gt24c16_eeprom \
-    libmmcamera_imx258_gt24c32_eeprom \
-    libmmcamera_imx258_mono \
-    libmmcamera_imx258_mono_gt24c32_eeprom \
-    libmmcamera_imx268_main \
-    libmmcamera_imx268_sub \
-    libmmcamera_imx298 \
-    libmmcamera_imx318 \
-    libmmcamera_imx362 \
-    libmmcamera_imx362_gt24c64a \
-    libmmcamera_imx376 \
-    libmmcamera_imx378 \
-    libmmcamera_imx380_main \
-    libmmcamera_imx380_sub \
-    libmmcamera_interface \
-    libmmcamera_irs1645 \
-    libmmcamera_isp_abf48 \
-    libmmcamera_isp_aec_bg_stats47 \
-    libmmcamera_isp_bf_stats47 \
-    libmmcamera_isp_bg_stats46 \
-    libmmcamera_isp_bhist_stats44 \
-    libmmcamera_isp_black_level48 \
-    libmmcamera_isp_sub_module \
-    libmmcamera_pdaf \
-    libmmcamera_pdafcamif \
-    libmmcamera_ppbase_module \
-    libmmcamera_thread_services \
-    libmmcamera_tintless_algo \
-    libmmcamera_tintless_bg_pca_algo \
-    libmmjpeg_interface \
-    libmmlib2d_interface \
-    libmmosal_proprietary \
-    libmpbase \
     libnetmgr \
-    libnetmgr_common \
-    libnlnetmgr \
-    libpdmapper \
-    libpdnotifier \
     libperipheral_client \
-    libq3dtools_adreno \
-    libq3dtools_esx \
-    libqcci_legacy \
     libqcrilFramework \
-    libqdMetaData \
     libqdi \
-    libqdp \
     libqmi \
     libqmi_cci \
     libqmi_client_helper \
     libqmi_client_qmux \
     libqmi_common_so \
-    libqmi_csi \
     libqmi_encdec \
     libqmiservices \
-    libqomx_core \
-    libqseed3 \
     libqservice \
-    libril \
-    libril-qc-hal-qmi \
-    libril-qc-ltedirectdisc \
-    libril-qc-radioconfig \
     libril-qcril-hook-oem \
-    librilqmiservices \
+    libril \
     librilutils \
-    librmnetctl \
     librpmb \
-    libssd \
-    libsdedrm \
-    libsdm-color \
-    libsdm-diag \
     libsdm-disp-apis \
-    vendor.display.color@1.0 \
     libsdm-disp-vndapis \
-    libsdmextension \
     libsdmutils \
     libsdsprpc \
     libsensor1 \
     libsensor_reg \
     libsettings \
     libsns_low_lat_stream_stub \
-    libsystem_health_mon \
     libthermalclient \
-    libthermalioctl \
     libtime_genoff \
     libtinycompress_vendor \
-    libtinyxml2_1 \
     libulp2 \
-    libwfdcommonutils_proprietary \
-    libwfdhaldsmanager \
-    libwfdhdcpcp \
-    libwfdmmservice \
-    libwfdmodulehdcpsession \
-    libwifi-hal \
     libxml \
     libxtadapter \
-    libxtwifi_ulp_adaptor \
-    netmgrd \
-    nfc_nci.nqx.default \
     nfc_nci.nqx.default.hw \
-    nqnfcinfo \
-    pd-mapper \
-    pm-proxy \
-    pm-service \
-    qcrild \
     qcrild_librilutils \
-    qseecomd \
-    rild \
-    rmt_storage \
     sensors.ssc \
-    sensors.qti \
-    thermal-engine \
     vendor.cm.hardware.thermal3d@1.0 \
-    vendor.cm.hardware.thermal3d@1.0-impl \
-    vendor.cm.hardware.thermal3d@1.0-service.cm \
+    vendor.display.color@1.0 \
     vendor.leia.hardware.leiadisp@1.0 \
-    vendor.leia.hardware.leiadisp@1.0-impl \
-    vendor.leia.hardware.leiadisp@1.0-service \
-    vendor.nxp.hardware.nfc@1.0 \
-    vendor.qti.data.factory@1.0 \
-    vendor.qti.data.factory@1.1 \
     vendor.qti.esepowermanager@1.0 \
-    vendor.qti.esepowermanager@1.0-impl \
-    vendor.qti.esepowermanager@1.0-service \
     vendor.qti.gnss@1.0 \
-    vendor.qti.gnss@1.0-impl \
-    vendor.qti.gnss@1.1 \
-    vendor.qti.gnss@1.2 \
-    vendor.qti.gnss@2.0 \
-    vendor.qti.gnss@2.1 \
-    vendor.qti.hardware.data.connection@1.0 \
-    vendor.qti.hardware.data.dynamicdds@1.0 \
-    vendor.qti.hardware.data.qmi@1.0 \
-    vendor.qti.hardware.fingerprint@1.0 \
-    vendor.qti.hardware.fm@1.0 \
-    vendor.qti.hardware.radio.am@1.0 \
-    vendor.qti.hardware.radio.atcmdfwd@1.0 \
-    vendor.qti.hardware.radio.ims@1.0 \
-    vendor.qti.hardware.radio.ims@1.1 \
-    vendor.qti.hardware.radio.ims@1.2 \
-    vendor.qti.hardware.radio.ims@1.3 \
-    vendor.qti.hardware.radio.ims@1.4 \
-    vendor.qti.hardware.radio.lpa@1.0 \
     vendor.qti.hardware.radio.qcrilhook@1.0 \
-    vendor.qti.hardware.radio.qtiradio@1.0 \
-    vendor.qti.hardware.radio.qtiradio@2.0 \
-    vendor.qti.hardware.radio.qtiradio@2.1 \
-    vendor.qti.hardware.radio.uim@1.0 \
-    vendor.qti.hardware.radio.uim@1.1 \
-    vendor.qti.hardware.radio.uim_remote_client@1.0 \
-    vendor.qti.hardware.radio.uim_remote_server@1.0 \
     vendor.qti.ims.callinfo@1.0 \
-    vendor.qti.ims.rcsconfig@1.0 \
-    vendor.qti.imsrtpservice@1.0 \
-    vendor.qti.imsrtpservice@1.0-service-Impl \
-    vendor.qti.latency@2.0 \
-    vulkan.msm8998 \
-    wcnss_filter \
-    wifidisplayhalservice \
-    xtwifi-client \
-    xtwifi-inet-agent
-
-# RED .118 P0 daemon completion
-PRODUCT_PACKAGES += \
-    energy-awareness \
-    hvdcp_opti \
-    libspcom \
-    spdaemon
-
-# Android 15 compatibility for RED Android 9 HIDL prebuilts
-PRODUCT_PACKAGES += \
-    libhidlbase_shim
-
-# RED .118 production camera runtime closure
-PRODUCT_COPY_FILES += \
-    vendor/red/hydrogenone/proprietary/vendor/firmware/cpp_firmware_v1_12_0.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_12_0.fw
-
-PRODUCT_PACKAGES += \
+    com.qualcomm.qti.wifidisplayhal@1.0-halimpl \
+    com.qualcomm.qti.wifidisplayhal@1.0 \
+    camera.msm8998 \
     libSonyIMX380PdafLibrary \
     libactuator_lc898219xl_main \
     libactuator_lc898219xl_sub \
+    libarcsoft_antishaking \
+    libarcsoft_beautyshot \
+    libarcsoft_dualcam_refocus \
+    libarcsoft_high_dynamic_range \
+    libarcsoft_low_light_shot \
+    libavservices_minijail_vendor \
     libchromatix_imx268_main_1080p_3d_video_lc898122 \
     libchromatix_imx268_main_1080p_hfr_60 \
     libchromatix_imx268_main_1080p_hfr_60_lc898122 \
@@ -544,7 +310,68 @@ PRODUCT_PACKAGES += \
     libchromatix_imx380_sub_zsl_preview_lc898122_3dmode \
     libchromatix_imx380_sub_zsl_preview_lc898122_bokeh \
     libchromatix_imx380_sub_zsl_video_lc898122 \
+    libdepthmapwrapper \
+    libfastcvopt \
     libflash_pmic \
+    libhal_dbg \
+    libmmcamera2_c2d_module \
+    libmmcamera2_cpp_module \
+    libmmcamera2_iface_modules \
+    libmmcamera2_imglib_modules \
+    libmmcamera2_isp_modules \
+    libmmcamera2_mct \
+    libmmcamera2_mct_shimlayer \
+    libmmcamera2_pp_buf_mgr \
+    libmmcamera2_pproc_modules \
+    libmmcamera2_sensor_modules \
+    libmmcamera2_stats_modules \
+    libmmcamera_arcsoftbokeh_lib \
+    libmmcamera_arcsoftlls \
+    libmmcamera_atmel_at24c32e_eeprom \
+    libmmcamera_blackwhite \
+    libmmcamera_bokeh \
+    libmmcamera_csidtg \
+    libmmcamera_depth_map \
+    libmmcamera_dummyalgo \
+    libmmcamera_dw9761b_2d_eeprom \
+    libmmcamera_eebinparse \
+    libmmcamera_eeprom_util \
+    libmmcamera_eztune_module \
+    libmmcamera_facedetection_lib \
+    libmmcamera_gt24p64b_main_eeprom \
+    libmmcamera_gt24p64b_sub_eeprom \
+    libmmcamera_hdr_gb_lib \
+    libmmcamera_hdrgreyscale \
+    libmmcamera_highcontrast \
+    libmmcamera_hvx_add_constant \
+    libmmcamera_hvx_grid_sum \
+    libmmcamera_imglib \
+    libmmcamera_imglib_faceproc_adspstub \
+    libmmcamera_imx214 \
+    libmmcamera_imx230 \
+    libmmcamera_imx258 \
+    libmmcamera_imx258_gt24c16_eeprom \
+    libmmcamera_imx258_gt24c32_eeprom \
+    libmmcamera_imx258_mono \
+    libmmcamera_imx258_mono_gt24c32_eeprom \
+    libmmcamera_imx268_main \
+    libmmcamera_imx268_sub \
+    libmmcamera_imx298 \
+    libmmcamera_imx318 \
+    libmmcamera_imx362 \
+    libmmcamera_imx362_gt24c64a \
+    libmmcamera_imx376 \
+    libmmcamera_imx378 \
+    libmmcamera_imx380_main \
+    libmmcamera_imx380_sub \
+    libmmcamera_interface \
+    libmmcamera_irs1645 \
+    libmmcamera_isp_abf48 \
+    libmmcamera_isp_aec_bg_stats47 \
+    libmmcamera_isp_bf_stats47 \
+    libmmcamera_isp_bg_stats46 \
+    libmmcamera_isp_bhist_stats44 \
+    libmmcamera_isp_black_level48 \
     libmmcamera_isp_bpc48 \
     libmmcamera_isp_cac47 \
     libmmcamera_isp_chroma_enhan40 \
@@ -581,9 +408,179 @@ PRODUCT_PACKAGES += \
     libmmcamera_isp_scaler_viewfinder46 \
     libmmcamera_isp_sce40 \
     libmmcamera_isp_snr47 \
+    libmmcamera_isp_sub_module \
     libmmcamera_m24c64s_main_eeprom \
     libmmcamera_m24c64s_sub_eeprom \
     libmmcamera_paaf_lib \
+    libmmcamera_pdaf \
+    libmmcamera_pdafcamif \
+    libmmcamera_ppbase_module \
     libmmcamera_ppeiscore \
     libmmcamera_quadracfa \
-    libremosaic_daemon
+    libmmcamera_thread_services \
+    libmmjpeg_interface \
+    libmmlib2d_interface \
+    libmmosal_proprietary \
+    libmpbase \
+    libqdMetaData \
+    libqomx_core \
+    libremosaic_daemon \
+    libwfdcommonutils_proprietary \
+    libwfdhaldsmanager \
+    libwfdhdcpcp \
+    libwfdmmservice \
+    libwfdmodulehdcpsession \
+    com.fingerprints.extension@1.0 \
+    com.qualcomm.qti.ant@1.0 \
+    com.quicinc.cne.api@1.0 \
+    com.quicinc.cne.api@1.1 \
+    com.quicinc.cne.constants@1.0 \
+    com.quicinc.cne.constants@2.0 \
+    com.quicinc.cne.constants@2.1 \
+    com.quicinc.cne.server@2.0 \
+    com.quicinc.cne.server@2.1 \
+    com.quicinc.cne.server@2.2 \
+    com.quicinc.cne.server@2.3 \
+    android.hardware.keymaster@3.0-impl-qti \
+    vendor.cm.hardware.thermal3d@1.0-impl \
+    vendor.leia.hardware.leiadisp@1.0-impl \
+    vulkan.msm8998 \
+    lib-dplmedia \
+    lib-rtpcommon \
+    lib-rtpcore \
+    lib-rtpdaemoninterface \
+    lib-rtpsl \
+    libFlacSwDec \
+    libOmxAacDec \
+    libOmxAacEnc \
+    libOmxAmrDec \
+    libOmxAmrEnc \
+    libOmxAmrwbplusDec \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
+    libOmxWmaDec \
+    libadsp_default_listener \
+    libaudioalsa \
+    libbtnv \
+    libcneapiclient \
+    libdrmfs \
+    libdrmutils \
+    libgdtap \
+    libgpustats \
+    libhdr_tm \
+    libjson \
+    libkeymasterdeviceutils \
+    liblowi_wifihal \
+    liblqe \
+    libmm-omxcore \
+    libmmcamera_tintless_algo \
+    libmmcamera_tintless_bg_pca_algo \
+    libnetmgr_common \
+    libnlnetmgr \
+    libpdmapper \
+    libpdnotifier \
+    libqcci_legacy \
+    libqdp \
+    libqmi_csi \
+    libqrtr \
+    libqseed3 \
+    libqsocket \
+    libril-qc-hal-qmi \
+    libril-qc-ltedirectdisc \
+    libril-qc-radioconfig \
+    librilqmiservices \
+    librmnetctl \
+    libsdedrm \
+    libsdm-color \
+    libsdm-diag \
+    libsdmextension \
+    libspcom \
+    libssd \
+    libsystem_health_mon \
+    libthermalioctl \
+    libtinyxml2_1 \
+    libxtwifi_ulp_adaptor \
+    vendor.nxp.hardware.nfc@1.0 \
+    vendor.qti.data.factory@1.0 \
+    vendor.qti.data.factory@1.1 \
+    vendor.qti.gnss@1.1 \
+    vendor.qti.gnss@1.2 \
+    vendor.qti.gnss@2.0 \
+    vendor.qti.gnss@2.1 \
+    vendor.qti.hardware.data.connection@1.0 \
+    vendor.qti.hardware.data.dynamicdds@1.0 \
+    vendor.qti.hardware.data.qmi@1.0 \
+    vendor.qti.hardware.fingerprint@1.0 \
+    vendor.qti.hardware.fm@1.0 \
+    vendor.qti.hardware.radio.am@1.0 \
+    vendor.qti.hardware.radio.atcmdfwd@1.0 \
+    vendor.qti.hardware.radio.ims@1.0 \
+    vendor.qti.hardware.radio.ims@1.1 \
+    vendor.qti.hardware.radio.ims@1.2 \
+    vendor.qti.hardware.radio.ims@1.3 \
+    vendor.qti.hardware.radio.ims@1.4 \
+    vendor.qti.hardware.radio.lpa@1.0 \
+    vendor.qti.hardware.radio.qtiradio@1.0 \
+    vendor.qti.hardware.radio.qtiradio@2.0 \
+    vendor.qti.hardware.radio.qtiradio@2.1 \
+    vendor.qti.hardware.radio.uim@1.0 \
+    vendor.qti.hardware.radio.uim@1.1 \
+    vendor.qti.hardware.radio.uim_remote_client@1.0 \
+    vendor.qti.hardware.radio.uim_remote_server@1.0 \
+    vendor.qti.ims.rcsconfig@1.0 \
+    vendor.qti.imsrtpservice@1.0-service-Impl \
+    vendor.qti.imsrtpservice@1.0 \
+    vendor.qti.latency@2.0 \
+    adsprpcd \
+    energy-awareness \
+    hvdcp_opti \
+    android.hardware.biometrics.fingerprint@2.1-service \
+    android.hardware.bluetooth@1.0-service-qti \
+    android.hardware.keymaster@3.0-service-qti \
+    qcrild \
+    rild \
+    vendor.cm.hardware.thermal3d@1.0-service.cm \
+    vendor.leia.hardware.leiadisp@1.0-service \
+    vendor.qti.esepowermanager@1.0-service \
+    ims_rtp_daemon \
+    imsdatadaemon \
+    imsqmidaemon \
+    imsrcsd \
+    irsc_util \
+    netmgrd \
+    nqnfcinfo \
+    pd-mapper \
+    pm-proxy \
+    pm-service \
+    qseecomd \
+    rmt_storage \
+    sensors.qti \
+    spdaemon \
+    tftp_server \
+    thermal-engine \
+    wcnss_filter \
+    wifidisplayhalservice \
+    xtwifi-client \
+    xtwifi-inet-agent
+
+PRODUCT_COPY_FILES += \
+    vendor/red/hydrogenone/proprietary/vendor/bin/init.qcom.sensors.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.sensors.sh \
+    vendor/red/hydrogenone/proprietary/vendor/bin/init.qti.ims.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.ims.sh
+
+# LineageOS 22.2 source-owned replacements for pruned RED .118 prebuilts
+PRODUCT_PACKAGES += \
+    camera.device@1.0-impl \
+    camera.device@3.2-impl \
+    camera.device@3.3-impl \
+    camera.device@3.4-external-impl \
+    camera.device@3.4-impl \
+    libaudiopreprocessing \
+    libcld80211 \
+    libgps.utils \
+    libhidlbase_shim \
+    libkeystore-engine-wifi-hidl \
+    libkeystore-wifi-hidl \
+    libloc_core \
+    liblocation_api \
+    libwifi-hal \
+    vendor.qti.hardware.camera.device@1.0

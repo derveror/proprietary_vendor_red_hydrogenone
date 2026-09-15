@@ -12363,6 +12363,30 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libqrtr",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqrtr.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libdl",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libqseed3",
     owner: "red",
     strip: {
@@ -12425,6 +12449,30 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqsocket",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqsocket.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libdl",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }
@@ -14368,6 +14416,33 @@ cc_prebuilt_binary {
                 "libperipheral_client",
                 "libspcom",
                 "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "tftp_server",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/tftp_server",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libdl",
+                "liblog",
+                "libm",
+                "libqrtr",
+                "libqsocket",
             ],
         },
     },
