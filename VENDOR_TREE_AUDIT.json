@@ -3,10 +3,10 @@
   "all_selected_sha256_verified": true,
   "stock_archive_verified": true,
   "counts": {
-    "P0": 113,
+    "P0": 114,
     "P1": 530,
     "P2": 19,
-    "total": 662
+    "total": 663
   },
   "notes": [
     "No RED msm8998-common repository is used.",
@@ -41,7 +41,8 @@
     "Physical chroot tracing on Hydrogen One proved that RED .118 QTI Keymaster registers IKeymasterDevice/default through the dedicated keymaster partitions. The generic MSM8998 file-firmware implementation is not selected because it fails looking for absent keymaster.mdt.",
     "RED .118 SSC sensor payload, multihal configuration, registry defaults, and FastRPC dependency closure are retained because runtime Watchdog traces proved SystemServer blocked in SystemSensorManager.nativeCreate while the source-owned HIDL wrapper had no loadable sensor module.",
     "All 320 selected proprietary ELF modules have check_elf_files enabled; no dependency-mapping exceptions remain.",
+    "RED .118 qrtr-ns is retained so the modem can publish the WLAN QMI service before tftp_server supplies wlanmdsp.mbn to ICNSS.",
     "RED .118 production camera runtime closure retains 138 tuning libraries and 47 sensor, ISP, image-processing, flash, and firmware files selected from the four production XMLs and captured HAL load failures; device runtime validation remains required.",
-    "Current ELF contract: 507 of 507 proprietary ELF modules have check_elf_files enabled; 0 exceptions remain."
+    "Current ELF contract: 508 of 508 proprietary ELF modules have check_elf_files enabled; 0 exceptions remain."
   ]
 }

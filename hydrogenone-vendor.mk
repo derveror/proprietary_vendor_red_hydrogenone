@@ -552,6 +552,7 @@ PRODUCT_PACKAGES += \
     pd-mapper \
     pm-proxy \
     pm-service \
+    qrtr-ns \
     qseecomd \
     rmt_storage \
     sensors.qti \

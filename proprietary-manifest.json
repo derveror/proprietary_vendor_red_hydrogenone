@@ -10,10 +10,10 @@
     "sdk": 28
   },
   "counts": {
-    "P0": 113,
+    "P0": 114,
     "P1": 530,
     "P2": 19,
-    "total": 662
+    "total": 663
   },
   "files": [
     {
@@ -63,6 +63,12 @@
       "path": "vendor/bin/pm-service",
       "size": 70928,
       "sha256": "871f414c9c5d7610d4808661422fd38ecf347faf4d9fc1eb3785b3f8ff190dd4"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/bin/qrtr-ns",
+      "size": 68632,
+      "sha256": "294d3d810af39d66db49469917e46fc0537e5122cf54c883344135bfd83bf7dd"
     },
     {
       "tier": "P0",

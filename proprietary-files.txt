@@ -11,6 +11,7 @@ vendor/bin/pm-service
 vendor/bin/qseecomd
 vendor/bin/rmt_storage
 vendor/bin/thermal-engine
+vendor/bin/qrtr-ns
 vendor/bin/tftp_server
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc

@@ -18254,6 +18254,34 @@
         }
       }
     },
+    "qrtr-ns": {
+      "kind": "cc_prebuilt_binary",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/bin/qrtr-ns"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libdl",
+            "libm",
+            "libqrtr"
+          ],
+          "needed": {
+            "proprietary/vendor/bin/qrtr-ns": [
+              "libqrtr",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
     "qseecomd": {
       "kind": "cc_prebuilt_binary",
       "check_elf_files": true,
@@ -21074,8 +21102,8 @@
     }
   },
   "summary": {
-    "total_modules": 507,
-    "checkelf_enabled": 507,
+    "total_modules": 508,
+    "checkelf_enabled": 508,
     "checkelf_exceptions": 0,
     "provider_sonames": 476,
     "allow_undefined_symbol_modules": 20

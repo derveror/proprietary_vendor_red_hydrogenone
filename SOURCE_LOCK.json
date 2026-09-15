@@ -3,7 +3,7 @@
   "stock_archive_sha256": "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e",
   "stock_build": "H1A1000.082ho.01.00.10r.118",
   "stock_fingerprint": "RED/HydrogenONE/HydrogenONE:9/PKQ1.190118.001/118:userdebug/release-keys",
-  "selected_files": 662,
+  "selected_files": 663,
   "target_lineage": "lineage-22.2",
   "target_android_api": 35,
   "android15_contract": {
@@ -13,7 +13,7 @@
     "stale_init_pruned": true,
     "red_leia_display_dependency_recovered": true,
     "elf_dependency_graph_generated_from_dt_needed": true,
-    "checkelf_enabled_modules": 507,
+    "checkelf_enabled_modules": 508,
     "checkelf_exception_modules": 0,
     "p0_rootdir_daemon_payload_completed_from_red_118": true,
     "qsee_ssd_listener_completed_from_red_118": true,
@@ -206,6 +206,7 @@
       "stock_sha256": "388cd36dcd54f7c3842c8178ad0888fabbed045f791de0d6d3c3c29876c3a056",
       "patched_sha256": "9783f269c76a8342d38c5418b6643aa720ad6d7175facfa13fc2001441750bf6"
     },
-    "red118_camera_runtime_files": 185
+    "red118_camera_runtime_files": 185,
+    "qrtr_name_service_restored_from_red_118": true
   }
 }

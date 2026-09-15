@@ -11,6 +11,7 @@ TOOLS = ROOT / "tools"
 BASELINE_PIPELINE = (
     "ensure_source_owned_packages.py",
     "record_red118_camera_runtime.py",
+    "restore_red118_qrtr_name_service.py",
     "generate_elf_contract.py",
     "resolve_android15_source_collisions.py",
     "prune_source_owned_nbaio_mono.py",
@@ -44,6 +45,7 @@ BASELINE_PIPELINE = (
 POST_CAMERA_PIPELINE = (
     "ensure_source_owned_packages.py",
     "record_red118_camera_runtime.py",
+    "restore_red118_qrtr_name_service.py",
     "prune_source_owned_nbaio_mono.py",
     "prune_source_owned_init_rc_duplicates.py",
     "prune_source_owned_wifi_keystore.py",

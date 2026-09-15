@@ -14224,6 +14224,31 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_binary {
+    name: "qrtr-ns",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/qrtr-ns",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libdl",
+                "libm",
+                "libqrtr",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "qseecomd",
     owner: "red",
     strip: {
