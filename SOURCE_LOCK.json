@@ -206,6 +206,16 @@
       "stock_sha256": "388cd36dcd54f7c3842c8178ad0888fabbed045f791de0d6d3c3c29876c3a056",
       "patched_sha256": "9783f269c76a8342d38c5418b6643aa720ad6d7175facfa13fc2001441750bf6"
     },
+    "peripheral_manager_compatibility": {
+      "reason": "RED .118 Android 9 pm-service and pm-proxy crash on Android 15",
+      "reference_device": "razer/cheryl",
+      "donor_build": "sld_sprout RKQ1.210607.001/00WW_3_71E",
+      "paths": [
+        "vendor/bin/pm-proxy",
+        "vendor/bin/pm-service",
+        "vendor/lib64/libperipheral_client.so"
+      ]
+    },
     "red118_camera_runtime_files": 185,
     "qrtr_name_service_restored_from_red_118": true
   }

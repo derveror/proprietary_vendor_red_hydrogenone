@@ -55,14 +55,14 @@
     {
       "tier": "P0",
       "path": "vendor/bin/pm-proxy",
-      "size": 68376,
-      "sha256": "d9f4edac19ae6e0d15e6707250a0e914fa3089945fd0c1df2d6d09be1eab04d5"
+      "size": 11672,
+      "sha256": "a7b90a7d70f155f0d9f29040b51be2cab44dcbde977f949895ef0e5e5afc714b"
     },
     {
       "tier": "P0",
       "path": "vendor/bin/pm-service",
-      "size": 70928,
-      "sha256": "871f414c9c5d7610d4808661422fd38ecf347faf4d9fc1eb3785b3f8ff190dd4"
+      "size": 54888,
+      "sha256": "13382d52072aebd899eecc4578802a9a85bc6a4f8e1beea876bcc8f9aebf109f"
     },
     {
       "tier": "P0",
@@ -559,8 +559,8 @@
     {
       "tier": "P0",
       "path": "vendor/lib64/libperipheral_client.so",
-      "size": 69288,
-      "sha256": "a9f81c622f7874d9096a519b04338524a6d7897c604137ead1aac54b3a5e2fdc"
+      "size": 55648,
+      "sha256": "8cf22edb4c18359ce8f3523352a16e0ef8af3df6cbb40add57fa840351a1bf0f"
     },
     {
       "tier": "P0",
