@@ -4,9 +4,9 @@
   "stock_archive_verified": true,
   "counts": {
     "P0": 115,
-    "P1": 530,
+    "P1": 541,
     "P2": 19,
-    "total": 664
+    "total": 675
   },
   "notes": [
     "No RED msm8998-common repository is used.",
@@ -43,7 +43,7 @@
     "All 320 selected proprietary ELF modules have check_elf_files enabled; no dependency-mapping exceptions remain.",
     "RED .118 qrtr-ns is retained so the modem can publish the WLAN QMI service before tftp_server supplies wlanmdsp.mbn to ICNSS.",
     "RED .118 Android 9 pm-service and pm-proxy abort under Android 15 libutils. The three-file peripheral-manager closure is replaced with the LineageOS 22.2 cheryl Android 11 sld_sprout payload; RED pd-mapper, QRTR, TFTP and firmware remain device-native.",
-    "RED .118 production camera runtime closure retains 138 tuning libraries and 47 sensor, ISP, image-processing, flash, and firmware files selected from the four production XMLs and captured HAL load failures; device runtime validation remains required.",
-    "Current ELF contract: 509 of 509 proprietary ELF modules have check_elf_files enabled; 0 exceptions remain."
+    "RED .118 production camera runtime closure retains 138 tuning libraries and 58 sensor, ISP, image-processing, JPEG, flash, and firmware files selected from the four production XMLs and captured HAL load failures; device runtime validation remains required.",
+    "Current ELF contract: 518 of 518 proprietary ELF modules have check_elf_files enabled; 0 exceptions remain."
   ]
 }

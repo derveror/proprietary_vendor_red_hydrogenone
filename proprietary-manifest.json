@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 115,
-    "P1": 530,
+    "P1": 541,
     "P2": 19,
-    "total": 664
+    "total": 675
   },
   "files": [
     {
@@ -2058,6 +2058,24 @@
     },
     {
       "tier": "P1",
+      "path": "vendor/lib/libjpegdhw.so",
+      "size": 36340,
+      "sha256": "ee3163f15c482909e2f55625d3ee76a04cf03e7a6672ae9eb65ed772b7a6cb42"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libjpegdmahw.so",
+      "size": 36876,
+      "sha256": "339e6624ac7b2be6416fd274ce4d00644a3732fa376b023227eba60d19ef35d7"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libjpegehw.so",
+      "size": 41416,
+      "sha256": "391a13b7675cc2d96097225e50993b75083491e2730039acdd0e89cd060892d4"
+    },
+    {
+      "tier": "P1",
       "path": "vendor/lib/liblbs_core.so",
       "size": 82604,
       "sha256": "e6f98fcfba6bd292a13e78417b95a111a73e2b1038c5974bdfb20e22c0daf8c1"
@@ -2766,6 +2784,24 @@
     },
     {
       "tier": "P1",
+      "path": "vendor/lib/libmmcamera_tintless_algo.so",
+      "size": 93428,
+      "sha256": "33de7096e28daa494a9b18981f9feaffa7ef41c70225f065a3b42029e8cfe2a6"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmcamera_tintless_bg_pca_algo.so",
+      "size": 122072,
+      "sha256": "aa283f8b4f246e268f5b1c589d7f2581c14e9848079a7b3650a059e841e6e0cb"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmjpeg.so",
+      "size": 227592,
+      "sha256": "7bae1f66855cb1d87cb1851b906ea7466d7a61758b595546b567f2d55ee702a9"
+    },
+    {
+      "tier": "P1",
       "path": "vendor/lib/libmmjpeg_interface.so",
       "size": 86348,
       "sha256": "3c8cd8597e0435af2e166725d0b642eafef1bb1b14afbf79548a5230fe74d524"
@@ -2781,6 +2817,18 @@
       "path": "vendor/lib/libmmosal_proprietary.so",
       "size": 40852,
       "sha256": "d22237f743fc890f4ad68e13fc09dd8d1ead033b67efe5ea386206e52234b154"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmqjpeg_codec.so",
+      "size": 173396,
+      "sha256": "cce7c3c7e8494590ee073a7962682f02baf45261545a0872363a16ee0ee5da38"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libmmqjpegdma.so",
+      "size": 73960,
+      "sha256": "d9a7953ba294938970c98bade09bd783dab6951143ff0e67522b2bbac448b824"
     },
     {
       "tier": "P1",
@@ -2865,6 +2913,24 @@
       "path": "vendor/lib/libqomx_core.so",
       "size": 23896,
       "sha256": "3185094542fbd26eda5124c1922d3bc5325e0d37fd295afc32584f5f4ee7a6de"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libqomx_jpegdec.so",
+      "size": 74184,
+      "sha256": "fb959ce10a5914f04d73a4e963d062b2891f0039ad1031dd769f5b85b81d5390"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libqomx_jpegenc.so",
+      "size": 160976,
+      "sha256": "1f0a28903b0dfb32fb89a5116209b483cf91be6280296b4a7ac12681366a5ab0"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib/libqomx_jpegenc_pipe.so",
+      "size": 181628,
+      "sha256": "298292886a2bdad4e4f1ae3808023dee844d789974664b29f22709da6b74ec97"
     },
     {
       "tier": "P1",

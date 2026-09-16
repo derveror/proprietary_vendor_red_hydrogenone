@@ -9472,6 +9472,96 @@
         }
       }
     },
+    "libjpegdhw": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libjpegdhw.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libjpegdhw.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libjpegdmahw": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libjpegdmahw.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libjpegdmahw.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libjpegehw": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libjpegehw.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libjpegehw.so": [
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
     "libjson": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -14434,6 +14524,31 @@
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_tintless_algo.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera_dbg"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_tintless_algo.so": [
+              "libcutils",
+              "liblog",
+              "libmmcamera_dbg",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        },
         "android_arm64": {
           "srcs": [
             "proprietary/vendor/lib64/libmmcamera_tintless_algo.so"
@@ -14466,6 +14581,31 @@
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmcamera_tintless_bg_pca_algo.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmcamera_dbg"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmcamera_tintless_bg_pca_algo.so": [
+              "libcutils",
+              "liblog",
+              "libmmcamera_dbg",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        },
         "android_arm64": {
           "srcs": [
             "proprietary/vendor/lib64/libmmcamera_tintless_bg_pca_algo.so"
@@ -14484,6 +14624,40 @@
               "libcutils",
               "liblog",
               "libmmcamera_dbg",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmjpeg": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmjpeg.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "libfastcvopt",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmjpeg.so": [
+              "libcutils",
+              "libfastcvopt",
+              "liblog",
+              "libutils",
               "libc++",
               "libc",
               "libm",
@@ -14582,6 +14756,74 @@
           "needed": {
             "proprietary/vendor/lib/libmmosal_proprietary.so": [
               "libutils",
+              "libcutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmqjpeg_codec": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmqjpeg_codec.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcrypto",
+            "libcutils",
+            "libdl",
+            "libfastcvopt",
+            "liblog",
+            "libm",
+            "libmmjpeg",
+            "libmmqjpegdma"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmqjpeg_codec.so": [
+              "libcutils",
+              "liblog",
+              "libmmjpeg",
+              "libmmqjpegdma",
+              "libfastcvopt",
+              "libcrypto",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libmmqjpegdma": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libmmqjpegdma.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libmmqjpegdma.so": [
               "libcutils",
               "liblog",
               "libc++",
@@ -15787,6 +16029,110 @@
             "proprietary/vendor/lib/libqomx_core.so": [
               "libcutils",
               "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libqomx_jpegdec": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libqomx_jpegdec.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmjpeg",
+            "libmmqjpeg_codec"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libqomx_jpegdec.so": [
+              "libcutils",
+              "liblog",
+              "libmmqjpeg_codec",
+              "libmmjpeg",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libqomx_jpegenc": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libqomx_jpegenc.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmjpeg",
+            "libmmqjpeg_codec"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libqomx_jpegenc.so": [
+              "libcutils",
+              "liblog",
+              "libmmjpeg",
+              "libmmqjpeg_codec",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
+    "libqomx_jpegenc_pipe": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libqomx_jpegenc_pipe.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmmjpeg",
+            "libmmqjpeg_codec",
+            "libmmqjpegdma"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libqomx_jpegenc_pipe.so": [
+              "libcutils",
+              "liblog",
+              "libmmqjpeg_codec",
+              "libmmjpeg",
+              "libmmqjpegdma",
               "libc++",
               "libc",
               "libm",
@@ -21146,10 +21492,10 @@
     }
   },
   "summary": {
-    "total_modules": 509,
-    "checkelf_enabled": 509,
+    "total_modules": 518,
+    "checkelf_enabled": 518,
     "checkelf_exceptions": 0,
-    "provider_sonames": 476,
+    "provider_sonames": 485,
     "allow_undefined_symbol_modules": 20
   }
 }

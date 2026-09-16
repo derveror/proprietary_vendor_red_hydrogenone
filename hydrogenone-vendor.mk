@@ -120,6 +120,8 @@ PRODUCT_PACKAGES += \
     libmmcamera_dbg \
     libmmcamera_faceproc \
     libmmcamera_faceproc2 \
+    libmmcamera_tintless_algo \
+    libmmcamera_tintless_bg_pca_algo \
     libnetmgr \
     libperipheral_client \
     libqcrilFramework \
@@ -314,6 +316,9 @@ PRODUCT_PACKAGES += \
     libfastcvopt \
     libflash_pmic \
     libhal_dbg \
+    libjpegdhw \
+    libjpegdmahw \
+    libjpegehw \
     libmmcamera2_c2d_module \
     libmmcamera2_cpp_module \
     libmmcamera2_iface_modules \
@@ -418,12 +423,18 @@ PRODUCT_PACKAGES += \
     libmmcamera_ppeiscore \
     libmmcamera_quadracfa \
     libmmcamera_thread_services \
+    libmmjpeg \
     libmmjpeg_interface \
     libmmlib2d_interface \
     libmmosal_proprietary \
+    libmmqjpeg_codec \
+    libmmqjpegdma \
     libmpbase \
     libqdMetaData \
     libqomx_core \
+    libqomx_jpegdec \
+    libqomx_jpegenc \
+    libqomx_jpegenc_pipe \
     libremosaic_daemon \
     libwfdcommonutils_proprietary \
     libwfdhaldsmanager \
@@ -473,8 +484,6 @@ PRODUCT_PACKAGES += \
     liblowi_wifihal \
     liblqe \
     libmm-omxcore \
-    libmmcamera_tintless_algo \
-    libmmcamera_tintless_bg_pca_algo \
     libnetmgr_common \
     libnlnetmgr \
     libpdmapper \

@@ -17,6 +17,9 @@ CHROMATIX_PREFIXES = (
 )
 SUPPORT_PATHS = {
     "vendor/firmware/cpp_firmware_v1_12_0.fw",
+    "vendor/lib/libjpegdhw.so",
+    "vendor/lib/libjpegdmahw.so",
+    "vendor/lib/libjpegehw.so",
     "vendor/lib/libSonyIMX380PdafLibrary.so",
     "vendor/lib/libactuator_lc898219xl_main.so",
     "vendor/lib/libactuator_lc898219xl_sub.so",
@@ -26,6 +29,14 @@ SUPPORT_PATHS = {
     "vendor/lib/libmmcamera_paaf_lib.so",
     "vendor/lib/libmmcamera_ppeiscore.so",
     "vendor/lib/libmmcamera_quadracfa.so",
+    "vendor/lib/libmmcamera_tintless_algo.so",
+    "vendor/lib/libmmcamera_tintless_bg_pca_algo.so",
+    "vendor/lib/libmmjpeg.so",
+    "vendor/lib/libmmqjpeg_codec.so",
+    "vendor/lib/libmmqjpegdma.so",
+    "vendor/lib/libqomx_jpegdec.so",
+    "vendor/lib/libqomx_jpegenc.so",
+    "vendor/lib/libqomx_jpegenc_pipe.so",
     "vendor/lib/libremosaic_daemon.so",
 }
 ISP_MODULES = {
@@ -92,8 +103,8 @@ def camera_runtime_paths() -> set[str]:
     paths = chromatix | SUPPORT_PATHS | {
         f"vendor/lib/{name}" for name in ISP_MODULES
     }
-    if len(paths) != 185:
-        raise SystemExit(f"expected 185 camera runtime files, found {len(paths)}")
+    if len(paths) != 196:
+        raise SystemExit(f"expected 196 camera runtime files, found {len(paths)}")
     return paths
 
 
@@ -157,7 +168,7 @@ def record_audits(manifest: dict, counts: Counter) -> None:
     source_lock["selected_files"] = total
     source_lock.setdefault("android15_contract", {})[
         "red118_camera_runtime_files"
-    ] = 185
+    ] = 196
     write_json("SOURCE_LOCK.json", source_lock)
 
     generated = load_json("GENERATED_VENDOR_AUDIT.json")
@@ -176,7 +187,7 @@ def record_audits(manifest: dict, counts: Counter) -> None:
     tree_audit["counts"] = manifest["counts"]
     note = (
         "RED .118 production camera runtime closure retains 138 tuning libraries "
-        "and 47 sensor, ISP, image-processing, flash, and firmware files selected "
+        "and 58 sensor, ISP, image-processing, JPEG, flash, and firmware files selected "
         "from the four production XMLs and captured HAL load failures; device "
         "runtime validation remains required."
     )

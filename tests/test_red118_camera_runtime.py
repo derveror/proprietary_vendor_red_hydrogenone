@@ -12,6 +12,20 @@ sys.path.insert(0, str(ROOT))
 
 from tools.record_red118_camera_runtime import camera_runtime_paths
 
+STILL_CAPTURE_PATHS = {
+    "vendor/lib/libjpegdhw.so",
+    "vendor/lib/libjpegdmahw.so",
+    "vendor/lib/libjpegehw.so",
+    "vendor/lib/libmmcamera_tintless_algo.so",
+    "vendor/lib/libmmcamera_tintless_bg_pca_algo.so",
+    "vendor/lib/libmmjpeg.so",
+    "vendor/lib/libmmqjpeg_codec.so",
+    "vendor/lib/libmmqjpegdma.so",
+    "vendor/lib/libqomx_jpegdec.so",
+    "vendor/lib/libqomx_jpegenc.so",
+    "vendor/lib/libqomx_jpegenc_pipe.so",
+}
+
 
 def make_variable_tokens(text: str, variable: str) -> set[str]:
     values: set[str] = set()
@@ -32,7 +46,13 @@ def make_variable_tokens(text: str, variable: str) -> set[str]:
 class Red118CameraRuntimeTest(unittest.TestCase):
     def test_all_camera_runtime_files_are_pinned_to_the_manifest(self) -> None:
         paths = camera_runtime_paths()
-        self.assertEqual(len(paths), 185)
+        missing_runtime = sorted(STILL_CAPTURE_PATHS - paths)
+        self.assertEqual(
+            missing_runtime,
+            [],
+            "missing still-capture runtime paths:\n" + "\n".join(missing_runtime),
+        )
+        self.assertEqual(len(paths), 196)
         self.assertIn("vendor/lib/libremosaic_daemon.so", paths)
         manifest = json.loads(
             (ROOT / "proprietary-manifest.json").read_text(encoding="utf-8")
@@ -45,6 +65,23 @@ class Red118CameraRuntimeTest(unittest.TestCase):
             self.assertEqual(by_path[path]["tier"], "P1", path)
             self.assertEqual(by_path[path]["size"], len(data), path)
             self.assertEqual(by_path[path]["sha256"], hashlib.sha256(data).hexdigest(), path)
+
+    def test_still_capture_libraries_are_32_bit_arm_elf(self) -> None:
+        failures = []
+        for path in sorted(STILL_CAPTURE_PATHS):
+            blob = ROOT / "proprietary" / path
+            if not blob.is_file():
+                failures.append(f"missing {path}")
+                continue
+            header = blob.read_bytes()[:20]
+            if header[:4] != b"\x7fELF":
+                failures.append(f"{path}: not ELF")
+                continue
+            if header[4] != 1:
+                failures.append(f"{path}: not ELFCLASS32")
+            if int.from_bytes(header[18:20], "little") != 40:
+                failures.append(f"{path}: not ARM")
+        self.assertEqual(failures, [], "invalid still-capture blobs:\n" + "\n".join(failures))
 
     def test_pipeline_replays_camera_manifest_recording(self) -> None:
         pipeline = (ROOT / "tools" / "apply_android15_vendor_contract.py").read_text(
@@ -59,7 +96,7 @@ class Red118CameraRuntimeTest(unittest.TestCase):
             for path in paths
             if path.endswith(".so")
         }
-        self.assertEqual(len(elf_modules), 184)
+        self.assertEqual(len(elf_modules), 195)
         android_bp = (ROOT / "Android.bp").read_text(encoding="utf-8")
         vendor_mk = (ROOT / "hydrogenone-vendor.mk").read_text(encoding="utf-8")
         declared = set(re.findall(r'(?m)^\s*name:\s*"([^"]+)"', android_bp))
@@ -89,7 +126,10 @@ class Red118CameraRuntimeTest(unittest.TestCase):
             if note.startswith("RED .118 production camera runtime closure retains")
         ]
         self.assertEqual(len(notes), 1)
-        self.assertIn("47 sensor, ISP, image-processing, flash, and firmware files", notes[0])
+        self.assertIn(
+            "58 sensor, ISP, image-processing, JPEG, flash, and firmware files",
+            notes[0],
+        )
 
     def test_checkelf_summaries_are_consistent(self) -> None:
         elf = json.loads((ROOT / "ANDROID15_ELF_AUDIT.json").read_text(encoding="utf-8"))

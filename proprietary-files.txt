@@ -675,3 +675,14 @@ vendor/lib/libmmcamera_quadracfa.so
 
 # RED .118 production camera runtime closure
 vendor/lib/libremosaic_daemon.so
+vendor/lib/libjpegdhw.so
+vendor/lib/libjpegdmahw.so
+vendor/lib/libjpegehw.so
+vendor/lib/libmmcamera_tintless_algo.so
+vendor/lib/libmmcamera_tintless_bg_pca_algo.so
+vendor/lib/libmmjpeg.so
+vendor/lib/libmmqjpeg_codec.so
+vendor/lib/libmmqjpegdma.so
+vendor/lib/libqomx_jpegdec.so
+vendor/lib/libqomx_jpegenc.so
+vendor/lib/libqomx_jpegenc_pipe.so

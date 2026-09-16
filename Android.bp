@@ -7513,6 +7513,84 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libjpegdhw",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libjpegdhw.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjpegdmahw",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libjpegdmahw.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjpegehw",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libjpegehw.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libjson",
     owner: "red",
     strip: {
@@ -11391,6 +11469,20 @@ cc_prebuilt_library_shared {
         none: true,
     },
     target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_tintless_algo.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libmmcamera_dbg",
+            ],
+        },
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/libmmcamera_tintless_algo.so",
@@ -11406,7 +11498,7 @@ cc_prebuilt_library_shared {
             ],
         },
     },
-    compile_multilib: "64",
+    compile_multilib: "both",
     prefer: true,
     soc_specific: true,
 }
@@ -11418,6 +11510,20 @@ cc_prebuilt_library_shared {
         none: true,
     },
     target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_tintless_bg_pca_algo.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libmmcamera_dbg",
+            ],
+        },
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/libmmcamera_tintless_bg_pca_algo.so",
@@ -11433,7 +11539,35 @@ cc_prebuilt_library_shared {
             ],
         },
     },
-    compile_multilib: "64",
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmjpeg",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmjpeg.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "libfastcvopt",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "32",
     prefer: true,
     soc_specific: true,
 }
@@ -11513,6 +11647,62 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libm",
                 "libutils",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmqjpeg_codec",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmqjpeg_codec.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcrypto",
+                "libcutils",
+                "libdl",
+                "libfastcvopt",
+                "liblog",
+                "libm",
+                "libmmjpeg",
+                "libmmqjpegdma",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmqjpegdma",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmqjpegdma.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
             ],
         },
     },
@@ -12387,6 +12577,91 @@ cc_prebuilt_library_shared {
                 "libdl",
                 "liblog",
                 "libm",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqomx_jpegdec",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqomx_jpegdec.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libmmjpeg",
+                "libmmqjpeg_codec",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqomx_jpegenc",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqomx_jpegenc.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libmmjpeg",
+                "libmmqjpeg_codec",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqomx_jpegenc_pipe",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqomx_jpegenc_pipe.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libmmjpeg",
+                "libmmqjpeg_codec",
+                "libmmqjpegdma",
             ],
         },
     },
