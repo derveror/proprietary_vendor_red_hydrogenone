@@ -1,5 +1,18 @@
 {
   "schema_version": 1,
   "policy": "check_elf_files is disabled only when at least one DT_NEEDED provider has not yet been proven vendor-compatible in the pinned LineageOS 22.2 product graph.",
-  "exceptions": {}
+  "exceptions": {
+    "libril-qc-hal-qmi": {
+      "reason": "DT_NEEDED includes GNU Make-only radio config shim modules. Soong cannot express dependencies on Make modules, so its ELF dependency check is disabled only for this prebuilt; the shims remain explicit product packages and runtime DT_NEEDED entries.",
+      "blocking_dependencies": [
+        "android.hardware.radio.c_shim@1.0",
+        "android.hardware.radio.c_shim@1.1",
+        "android.hardware.radio.c_shim@1.2"
+      ],
+      "evidence": [
+        "proprietary/vendor/lib64/libril-qc-hal-qmi.so: DT_NEEDED -> libhidlbase, vendor.qti.hardware.radio.ims@1.0, vendor.qti.hardware.radio.ims@1.1, vendor.qti.hardware.radio.ims@1.2, vendor.qti.hardware.radio.ims@1.3, vendor.qti.hardware.radio.ims@1.4, vendor.qti.hardware.radio.ims@1.5, vendor.qti.hardware.radio.ims@1.6, vendor.qti.hardware.radio.ims@1.7, vendor.qti.hardware.radio.am@1.0, vendor.qti.hardware.radio.qcrilhook@1.0, vendor.qti.hardware.radio.uim@1.0, vendor.qti.hardware.radio.uim@1.1, vendor.qti.hardware.radio.uim@1.2, vendor.qti.hardware.radio.uim_remote_server@1.0, vendor.qti.hardware.radio.uim_remote_client@1.0, vendor.qti.hardware.radio.uim_remote_client@1.1, vendor.qti.hardware.radio.uim_remote_client@1.2, vendor.qti.hardware.radio.lpa@1.0, vendor.qti.hardware.radio.lpa@1.1, vendor.qti.hardware.radio.qtiradio@1.0, vendor.qti.hardware.radio.qtiradio@2.0, vendor.qti.hardware.radio.qtiradio@2.1, vendor.qti.hardware.radio.qtiradio@2.2, vendor.qti.hardware.radio.qtiradio@2.3, vendor.qti.hardware.radio.qtiradio@2.4, android.hardware.radio@1.0, libqcrilFramework, android.hardware.secure_element@1.0, android.hardware.secure_element@1.1, android.hardware.secure_element@1.2, vendor.qti.hardware.radio.internal.deviceinfo@1.0, libdsutils, libcutils, liblog, libutils, qcrild_librilutils, libqmi_cci, libqmi_client_qmux, libdiag, libhardware_legacy, libqmiservices, librilqmiservices, libqmi_client_helper, libidl, libtime_genoff, libsqlite, libbinder, libmdmdetect, libperipheral_client, libril-qc-logger, android.hardware.radio@1.1, android.hardware.radio@1.2, android.hardware.radio@1.3, android.hardware.radio@1.4, android.hardware.radio@1.5, android.hardware.radio.deprecated@1.0, qtimutex, libprotobuf-cpp-full-3.9.1-vendorcompat, libvndksupport, libbase, libz, libqdi, libnetmgr, libconfigdb, libxml, qtibus, libsystem_health_mon, libxml2, libdsi_netctrl, libqdp, liblqe, vendor.qti.hardware.data.iwlan@1.0, vendor.qti.hardware.data.connection@1.0, vendor.qti.hardware.data.connection@1.1, libc++, libc, libm, libdl",
+        "proprietary/vendor/lib64/libril-qc-hal-qmi.so: DT_NEEDED Make-only -> android.hardware.radio.c_shim@1.0, android.hardware.radio.c_shim@1.1, android.hardware.radio.c_shim@1.2"
+      ]
+    }
+  }
 }

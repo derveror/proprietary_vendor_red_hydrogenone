@@ -1,5 +1,6 @@
-# Automatically generated from verified RED .118 stock.
-# Android 15 contract: source-owned HAL wrappers, stale stock init, and factory/debug payload are pruned.
+#
+# Automatically generated file. DO NOT MODIFY
+#
 
 PRODUCT_SOONG_NAMESPACES += \
     vendor/red/hydrogenone
@@ -495,6 +496,7 @@ PRODUCT_PACKAGES += \
     libqseed3 \
     libqsocket \
     libril-qc-hal-qmi \
+    libril-qc-logger \
     libril-qc-ltedirectdisc \
     libril-qc-radioconfig \
     librilqmiservices \
@@ -509,6 +511,8 @@ PRODUCT_PACKAGES += \
     libthermalioctl \
     libtinyxml2_1 \
     libxtwifi_ulp_adaptor \
+    qtibus \
+    qtimutex \
     vendor.nxp.hardware.nfc@1.0 \
     vendor.qti.data.factory@1.0 \
     vendor.qti.data.factory@1.1 \
@@ -517,7 +521,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.gnss@2.0 \
     vendor.qti.gnss@2.1 \
     vendor.qti.hardware.data.connection@1.0 \
+    vendor.qti.hardware.data.connection@1.1 \
     vendor.qti.hardware.data.dynamicdds@1.0 \
+    vendor.qti.hardware.data.iwlan@1.0 \
     vendor.qti.hardware.data.qmi@1.0 \
     vendor.qti.hardware.fingerprint@1.0 \
     vendor.qti.hardware.fm@1.0 \
@@ -528,25 +534,36 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.radio.ims@1.2 \
     vendor.qti.hardware.radio.ims@1.3 \
     vendor.qti.hardware.radio.ims@1.4 \
+    vendor.qti.hardware.radio.ims@1.5 \
+    vendor.qti.hardware.radio.ims@1.6 \
+    vendor.qti.hardware.radio.ims@1.7 \
+    vendor.qti.hardware.radio.internal.deviceinfo@1.0 \
     vendor.qti.hardware.radio.lpa@1.0 \
+    vendor.qti.hardware.radio.lpa@1.1 \
     vendor.qti.hardware.radio.qtiradio@1.0 \
     vendor.qti.hardware.radio.qtiradio@2.0 \
     vendor.qti.hardware.radio.qtiradio@2.1 \
+    vendor.qti.hardware.radio.qtiradio@2.2 \
+    vendor.qti.hardware.radio.qtiradio@2.3 \
+    vendor.qti.hardware.radio.qtiradio@2.4 \
     vendor.qti.hardware.radio.uim@1.0 \
     vendor.qti.hardware.radio.uim@1.1 \
+    vendor.qti.hardware.radio.uim@1.2 \
     vendor.qti.hardware.radio.uim_remote_client@1.0 \
+    vendor.qti.hardware.radio.uim_remote_client@1.1 \
+    vendor.qti.hardware.radio.uim_remote_client@1.2 \
     vendor.qti.hardware.radio.uim_remote_server@1.0 \
     vendor.qti.ims.rcsconfig@1.0 \
     vendor.qti.imsrtpservice@1.0-service-Impl \
     vendor.qti.imsrtpservice@1.0 \
     vendor.qti.latency@2.0 \
     adsprpcd \
+    cnss-daemon \
     energy-awareness \
     hvdcp_opti \
     android.hardware.biometrics.fingerprint@2.1-service \
     android.hardware.bluetooth@1.0-service-qti \
     android.hardware.keymaster@3.0-service-qti \
-    cnss-daemon \
     qcrild \
     rild \
     vendor.cm.hardware.thermal3d@1.0-service.cm \

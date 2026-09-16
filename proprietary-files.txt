@@ -82,7 +82,6 @@ vendor/lib64/libc2d30_bltlib.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmutils.so
-vendor/lib64/libdsutils.so
 vendor/lib64/libgsl.so
 vendor/lib64/libhdr_tm.so
 vendor/lib64/libidl.so
@@ -118,7 +117,6 @@ vendor/lib64/libtinyxml2_1.so
 # P1 standard phone stack
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
-vendor/bin/hw/qcrild
 vendor/bin/hw/rild
 vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
 vendor/bin/ims_rtp_daemon
@@ -367,7 +365,6 @@ vendor/lib64/libcneapiclient.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libdrplugin_client.so
-vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libevent_observer.so
 vendor/lib64/libflp.so
 vendor/lib64/libgdtap.so
@@ -399,12 +396,9 @@ vendor/lib64/libnlnetmgr.so
 vendor/lib64/libpdmapper.so
 vendor/lib64/libpdnotifier.so
 vendor/lib64/libqcci_legacy.so
-vendor/lib64/libqcrilFramework.so
 vendor/lib64/libqdi.so
-vendor/lib64/libqdp.so
 vendor/lib64/libqmi.so
 vendor/lib64/libqmi_client_helper.so
-vendor/lib64/libril-qc-hal-qmi.so
 vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
@@ -686,3 +680,28 @@ vendor/lib/libmmqjpegdma.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
+
+# Radio - Android 15 compatibility stack from FP3 6.A.025.0. This exact
+# QCRIL generation is shared by the LineageOS 22.2 msm8998 reference trees.
+vendor/bin/hw/qcrild|9ebae4b7b4bc8fb31371f3926634206737d73bb2
+vendor/lib64/libdsi_netctrl.so|b622c0ff82676d5e02fb92445c6a030742f0c6c4
+vendor/lib64/libdsutils.so|0b466344eb6628feb1b5aba00d1ef3f680e5aa9a
+vendor/lib64/libqcrilFramework.so|64386a08a3d8c85cd2117575e7d863a24a8b8850
+vendor/lib64/libqdp.so|f83527aa6b6aa45c6495056dc830affbe889fb18
+vendor/lib64/libril-qc-hal-qmi.so|cc70a2e8e2435dee4cb396dadbcd7c4c244287bd|f679e715373bb60322aa397a074e8c02a5328665
+vendor/lib64/libril-qc-logger.so|7f80da37d120faffd72838b76d74102c7321e3a3
+vendor/lib64/qtibus.so|0b387ecd1b898f3d3aee6c51783817767a6d1e70
+vendor/lib64/qtimutex.so|fc156f485519be1cd683f1af3ebb6194ce4ba2d5
+vendor/lib64/vendor.qti.hardware.data.connection@1.1.so|b71ecdd47c46cae07fca43057695996e134e414b
+vendor/lib64/vendor.qti.hardware.data.iwlan@1.0.so|463659c4b5050c1af1d100c83914fd710ca99710
+vendor/lib64/vendor.qti.hardware.radio.ims@1.5.so|460892bc063163bef3d6a1a348dab22ec70d5e37
+vendor/lib64/vendor.qti.hardware.radio.ims@1.6.so|2d6fc4dab39c4d332984e8b940bd16b66f3b56ef
+vendor/lib64/vendor.qti.hardware.radio.ims@1.7.so|4ff46263854577eb9e09f85d40c3fbee298c7a94
+vendor/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so|33c17b96df825d02aa31ca6bd42a91547a741619
+vendor/lib64/vendor.qti.hardware.radio.lpa@1.1.so|a5f2a41df2aedcd97a77a3e4ec546f36879ece3b
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.2.so|578c82624565b784b8417caa282bdd8600ee3cfd
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.3.so|f2f651485fc35db21582a1e552d74126794bfabd
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.4.so|2b3b80ab396bb4ad94a175ff36d10ee27b9b263d
+vendor/lib64/vendor.qti.hardware.radio.uim@1.2.so|b5b51274af9ae10e912cc240de97aa0875547e70
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so|f79ccf1975eb72fe4d4d9404e53614286041da3b
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so|bb5517ea122c87762689a2036a2ecf1a30bc86f2

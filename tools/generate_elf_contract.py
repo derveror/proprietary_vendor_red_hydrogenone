@@ -216,6 +216,15 @@ SOURCE_VERIFIED_DEPENDENCIES = {
     "libprotobuf-cpp-full-vendorcompat",
 }
 
+# These compatibility libraries are GNU Make targets. Soong cannot express a
+# direct shared_libs edge to them, so they are installed explicitly by the
+# device product and intentionally omitted from generated Android.bp edges.
+MAKE_ONLY_DEPENDENCY_SONAMES = {
+    "android.hardware.radio.c_shim@1.0.so",
+    "android.hardware.radio.c_shim@1.1.so",
+    "android.hardware.radio.c_shim@1.2.so",
+}
+
 VINTF_FRAGMENT_BY_MODULE = {
     "android.hardware.biometrics.fingerprint@2.1-service": "vintf/fingerprint.xml",
     "android.hardware.bluetooth@1.0-service-qti": "vintf/bluetooth.xml",
@@ -555,6 +564,8 @@ def module_for_soname(soname: str, providers: dict[str, str]) -> str:
     # provides a dedicated vendorcompat module with that exact runtime stem.
     if soname == "libprotobuf-cpp-full.so":
         return "libprotobuf-cpp-full-vendorcompat"
+    if soname == "libprotobuf-cpp-full-3.9.1.so":
+        return "libprotobuf-cpp-full-3.9.1-vendorcompat"
 
     module = soname[:-3] if soname.endswith(".so") else soname
     # Match LineageOS 22.2 extract-utils: legacy stock ELF DT_NEEDED entries
@@ -564,6 +575,16 @@ def module_for_soname(soname: str, providers: dict[str, str]) -> str:
         if module == f"libclang_rt.ubsan_standalone{suffix}":
             return "libclang_rt.ubsan_standalone"
     return module
+
+
+def soong_dependency_modules(
+    needed: list[str], providers: dict[str, str]
+) -> list[str]:
+    return [
+        module_for_soname(soname, providers)
+        for soname in needed
+        if soname not in MAKE_ONLY_DEPENDENCY_SONAMES
+    ]
 
 
 def render_list(name: str, values: list[str], indent: int = 12) -> list[str]:
@@ -582,15 +603,25 @@ def render_block(
 ) -> str:
     arch_info: dict[str, dict] = {}
     blocking: set[str] = set()
+    make_only_dependencies: set[str] = set()
     for arch, srcs in block["arch_srcs"].items():
         shared: set[str] = set()
         needed_evidence: dict[str, list[str]] = {}
+        make_only_evidence: dict[str, list[str]] = {}
         for src in srcs:
             path = ROOT / src
             needed, _ = elf_dynamic(path)
-            mapped = [module_for_soname(name, providers) for name in needed]
+            mapped = soong_dependency_modules(needed, providers)
+            make_only = sorted(
+                module_for_soname(soname, providers)
+                for soname in needed
+                if soname in MAKE_ONLY_DEPENDENCY_SONAMES
+            )
             shared.update(mapped)
+            make_only_dependencies.update(make_only)
             needed_evidence[src] = mapped
+            if make_only:
+                make_only_evidence[src] = make_only
             for dep in mapped:
                 if (
                     dep in UNVERIFIED_EXTERNAL_DEPENDENCIES
@@ -602,6 +633,7 @@ def render_block(
             "srcs": srcs,
             "shared_libs": sorted(shared),
             "needed": needed_evidence,
+            "make_only_needed": make_only_evidence,
         }
 
     allowed_undefined_symbols: dict[str, list[str]] = {}
@@ -628,25 +660,39 @@ def render_block(
             symbol: legacy["runtime_provider"] for symbol in legacy["symbols"]
         }
 
-    is_exception = bool(blocking)
+    all_blocking = blocking | make_only_dependencies
+    is_exception = bool(all_blocking)
     if is_exception:
-        exceptions[block["name"]] = {
-            "reason": (
+        if make_only_dependencies and not blocking:
+            reason = (
+                "DT_NEEDED includes GNU Make-only radio config shim modules. "
+                "Soong cannot express dependencies on Make modules, so its ELF "
+                "dependency check is disabled only for this prebuilt; the shims "
+                "remain explicit product packages and runtime DT_NEEDED entries."
+            )
+        else:
+            reason = (
                 "DT_NEEDED includes provider modules not yet proven vendor-compatible "
                 "in the pinned LineageOS 22.2 product graph; defer checkelf until the clean build gate."
-            ),
-            "blocking_dependencies": sorted(blocking),
+            )
+        exceptions[block["name"]] = {
+            "reason": reason,
+            "blocking_dependencies": sorted(all_blocking),
             "evidence": [
                 f"{src}: DT_NEEDED -> {', '.join(deps)}"
                 for info in arch_info.values()
                 for src, deps in info["needed"].items()
+            ] + [
+                f"{src}: DT_NEEDED Make-only -> {', '.join(deps)}"
+                for info in arch_info.values()
+                for src, deps in info["make_only_needed"].items()
             ],
         }
 
     module_audit = {
         "kind": block["kind"],
         "check_elf_files": not is_exception,
-        "blocking_dependencies": sorted(blocking),
+        "blocking_dependencies": sorted(all_blocking),
         "architectures": arch_info,
     }
     if allowed_undefined_symbols:

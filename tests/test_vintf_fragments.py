@@ -31,10 +31,13 @@ EXPECTED = {
         "@1.0::IEsePowerManager/default",
     },
     "qcrild": {
-        "@1.1::IRadio/slot1",
-        "@1.1::IRadio/slot2",
-        "@1.1::ISap/slot1",
-        "@1.1::ISap/slot2",
+        # Intentional Android 15 compatibility override. RED .118's stock
+        # IRadio 1.1 service is below the framework minimum; this exact
+        # contract is supplied by the validated msm8998 reference QCRIL.
+        "@1.4::IRadio/slot1",
+        "@1.4::IRadio/slot2",
+        "@1.2::ISap/slot1",
+        "@1.2::ISap/slot2",
         "@1.0::IRadioConfig/default",
         "@1.0::ISecureElement/SIM1",
         "@1.0::ISecureElement/SIM2",

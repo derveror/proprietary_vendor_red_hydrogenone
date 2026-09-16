@@ -94,7 +94,9 @@ def proprietary_paths() -> set[str]:
         if not line or line.startswith("#"):
             continue
         body = line.split(";", 1)[0]
-        paths.add(body.split(":", 1)[0].lstrip("-"))
+        # Extract-utils lock lines append source/fixed hashes with ``|``.
+        # The path portion remains the selected runtime payload.
+        paths.add(body.split("|", 1)[0].split(":", 1)[0].lstrip("-"))
     return paths
 
 

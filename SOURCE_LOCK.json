@@ -13,8 +13,8 @@
     "stale_init_pruned": true,
     "red_leia_display_dependency_recovered": true,
     "elf_dependency_graph_generated_from_dt_needed": true,
-    "checkelf_enabled_modules": 518,
-    "checkelf_exception_modules": 0,
+    "checkelf_enabled_modules": 533,
+    "checkelf_exception_modules": 1,
     "p0_rootdir_daemon_payload_completed_from_red_118": true,
     "qsee_ssd_listener_completed_from_red_118": true,
     "qsee_securefs_cmlog_mounted_before_post_fs": true,
@@ -214,6 +214,40 @@
         "vendor/bin/pm-proxy",
         "vendor/bin/pm-service",
         "vendor/lib64/libperipheral_client.so"
+      ]
+    },
+    "radio_compatibility": {
+      "reason": "RED .118 QCRIL publishes IRadio below Android 15's supported minimum 1.4",
+      "donor_build": "FP3 6.A.025.0",
+      "validated_reference_trees": [
+        "essential/mata",
+        "razer/cheryl",
+        "oneplus/msm8998-common",
+        "nubia/msm8998-common"
+      ],
+      "paths": [
+        "vendor/bin/hw/qcrild",
+        "vendor/lib64/libdsi_netctrl.so",
+        "vendor/lib64/libdsutils.so",
+        "vendor/lib64/libqcrilFramework.so",
+        "vendor/lib64/libqdp.so",
+        "vendor/lib64/libril-qc-hal-qmi.so",
+        "vendor/lib64/libril-qc-logger.so",
+        "vendor/lib64/qtibus.so",
+        "vendor/lib64/qtimutex.so",
+        "vendor/lib64/vendor.qti.hardware.data.connection@1.1.so",
+        "vendor/lib64/vendor.qti.hardware.data.iwlan@1.0.so",
+        "vendor/lib64/vendor.qti.hardware.radio.ims@1.5.so",
+        "vendor/lib64/vendor.qti.hardware.radio.ims@1.6.so",
+        "vendor/lib64/vendor.qti.hardware.radio.ims@1.7.so",
+        "vendor/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so",
+        "vendor/lib64/vendor.qti.hardware.radio.lpa@1.1.so",
+        "vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.2.so",
+        "vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.3.so",
+        "vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.4.so",
+        "vendor/lib64/vendor.qti.hardware.radio.uim@1.2.so",
+        "vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so",
+        "vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so"
       ]
     },
     "red118_camera_runtime_files": 196,
