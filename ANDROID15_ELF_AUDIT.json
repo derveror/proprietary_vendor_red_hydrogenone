@@ -408,6 +408,50 @@
         }
       }
     },
+    "cnss-daemon": {
+      "kind": "cc_prebuilt_binary",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/bin/cnss-daemon"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcld80211",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libmdmdetect",
+            "libnl",
+            "libperipheral_client",
+            "libqmi_cci",
+            "libqmi_common_so",
+            "libqmiservices"
+          ],
+          "needed": {
+            "proprietary/vendor/bin/cnss-daemon": [
+              "libcutils",
+              "liblog",
+              "libqmi_cci",
+              "libqmi_common_so",
+              "libnl",
+              "libcld80211",
+              "libperipheral_client",
+              "libmdmdetect",
+              "libqmiservices",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          }
+        }
+      }
+    },
     "com.fingerprints.extension@1.0": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -21102,8 +21146,8 @@
     }
   },
   "summary": {
-    "total_modules": 508,
-    "checkelf_enabled": 508,
+    "total_modules": 509,
+    "checkelf_enabled": 509,
     "checkelf_exceptions": 0,
     "provider_sonames": 476,
     "allow_undefined_symbol_modules": 20

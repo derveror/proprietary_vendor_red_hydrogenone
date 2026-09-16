@@ -537,6 +537,7 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service \
     android.hardware.bluetooth@1.0-service-qti \
     android.hardware.keymaster@3.0-service-qti \
+    cnss-daemon \
     qcrild \
     rild \
     vendor.cm.hardware.thermal3d@1.0-service.cm \

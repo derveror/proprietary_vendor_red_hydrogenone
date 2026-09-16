@@ -4,6 +4,7 @@
 
 # P0 foundation / security / display / power
 vendor/bin/adsprpcd
+vendor/bin/cnss-daemon
 vendor/bin/irsc_util
 vendor/bin/pd-mapper
 vendor/bin/pm-proxy

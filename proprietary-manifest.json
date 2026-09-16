@@ -10,10 +10,10 @@
     "sdk": 28
   },
   "counts": {
-    "P0": 114,
+    "P0": 115,
     "P1": 530,
     "P2": 19,
-    "total": 663
+    "total": 664
   },
   "files": [
     {
@@ -21,6 +21,12 @@
       "path": "vendor/bin/adsprpcd",
       "size": 68344,
       "sha256": "015c2379ef4a97e782aec5930eab7fe935d8720b3ec8abfc28da44e7e98490c8"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/bin/cnss-daemon",
+      "size": 69880,
+      "sha256": "ccb5244705d434f749f5836aa7db7cfebcc117ca5714a8f1168fc7608ece46a2"
     },
     {
       "tier": "P0",

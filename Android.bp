@@ -308,6 +308,39 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
+cc_prebuilt_binary {
+    name: "cnss-daemon",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/cnss-daemon",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcld80211",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libmdmdetect",
+                "libnl",
+                "libperipheral_client",
+                "libqmi_cci",
+                "libqmi_common_so",
+                "libqmiservices",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
 cc_prebuilt_library_shared {
     name: "com.fingerprints.extension@1.0",
     owner: "red",
