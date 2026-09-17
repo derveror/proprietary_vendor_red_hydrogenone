@@ -2106,6 +2106,44 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "lib-uceservice",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-uceservice.so",
+            ],
+            shared_libs: [
+                "com.qualcomm.qti.imscmservice@2.0",
+                "com.qualcomm.qti.uceservice@2.0",
+                "lib-imscmservice",
+                "lib-imsdpl",
+                "lib-imsqimf",
+                "lib-imsxml",
+                "lib-siputility",
+                "libbase",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "libhidlbase",
+                "libhidltransport",
+                "libhwbinder",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libC2D2",
     owner: "red",
     strip: {

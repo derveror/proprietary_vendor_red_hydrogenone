@@ -4,9 +4,9 @@
   "stock_archive_verified": true,
   "counts": {
     "P0": 115,
-    "P1": 563,
+    "P1": 564,
     "P2": 19,
-    "total": 697
+    "total": 698
   },
   "notes": [
     "No RED msm8998-common repository is used.",
@@ -47,6 +47,6 @@
     "The FP3 QCRIL generation is paired with its byte-verified netmgr/DPM mobile-data plane; the older RED .118 netmgr generation is not mixed in.",
     "RED .118 librmnetctl is pruned in favor of the LineageOS dataservices source provider required by the FP3 netmgrd rtrmnet ABI.",
     "RED .118 production camera runtime closure retains 138 tuning libraries and 58 sensor, ISP, image-processing, JPEG, flash, and firmware files selected from the four production XMLs and captured HAL load failures; device runtime validation remains required.",
-    "Current ELF contract: 545 of 546 proprietary ELF modules have check_elf_files enabled; 1 exceptions remain."
+    "Current ELF contract: 546 of 547 proprietary ELF modules have check_elf_files enabled; 1 exceptions remain."
   ]
 }

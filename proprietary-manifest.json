@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 115,
-    "P1": 563,
+    "P1": 564,
     "P2": 19,
-    "total": 697
+    "total": 698
   },
   "files": [
     {
@@ -3405,6 +3405,12 @@
       "path": "vendor/lib64/lib-siputility.so",
       "size": 135728,
       "sha256": "fe5530caecc864fe920202f5b15c39f56c9ef39ed2a87a3c5b4e973d6197f5a5"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/lib-uceservice.so",
+      "size": 333136,
+      "sha256": "8ee42d4a11c05676196ebf1bfa9fa960e81b2fd663a18e0627091d691d212814"
     },
     {
       "tier": "P1",

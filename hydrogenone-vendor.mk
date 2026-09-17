@@ -482,6 +482,7 @@ PRODUCT_PACKAGES += \
     lib-rtpcore \
     lib-rtpdaemoninterface \
     lib-rtpsl \
+    lib-uceservice \
     libFlacSwDec \
     libOmxAacDec \
     libOmxAacEnc \

@@ -76,6 +76,29 @@ class RadioQmiRuntimeClosureTest(unittest.TestCase):
         ).stdout
         self.assertIn("imsprivate_get_service_object_internal_v01", symbols)
 
+    def test_stock_imsrcsd_runtime_loaded_uce_service_is_packaged(self) -> None:
+        daemon = PROPRIETARY / "vendor/bin/imsrcsd"
+        provider = PROPRIETARY / "vendor/lib64/lib-uceservice.so"
+        runtime_names = subprocess.run(
+            ["strings", "-a", daemon], check=True, capture_output=True, text=True
+        ).stdout
+        self.assertIn("lib-uceservice.so", runtime_names)
+        self.assertTrue(provider.is_file(), "imsrcsd dlopen provider is missing")
+        self.assertEqual(
+            hashlib.sha256(provider.read_bytes()).hexdigest(),
+            "8ee42d4a11c05676196ebf1bfa9fa960e81b2fd663a18e0627091d691d212814",
+        )
+
+        android_bp = (ROOT / "Android.bp").read_text(encoding="utf-8")
+        self.assertIn('name: "lib-uceservice"', android_bp)
+        self.assertIn(
+            '"proprietary/vendor/lib64/lib-uceservice.so"', android_bp
+        )
+        vendor_makefile = (ROOT / "hydrogenone-vendor.mk").read_text(
+            encoding="utf-8"
+        )
+        self.assertRegex(vendor_makefile, r"(?m)^\s*lib-uceservice(?:\s*\\)?$")
+
     def test_extraction_replays_stock_ims_private_provider_fixup(self) -> None:
         extraction = (
             ROOT.parents[2] / "device/red/hydrogenone/extract-files.py"

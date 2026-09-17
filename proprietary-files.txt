@@ -338,6 +338,7 @@ vendor/lib64/lib-imsqimf.so
 vendor/lib64/lib-imsrcs-v2.so|998df26d5e52eea05a21c2b7ff020298c76f8db6|cfd702fe049ca267e548910c7b24d3ab893d7274
 vendor/lib64/lib-imsrcsbaseimpl.so
 vendor/lib64/lib-imsxml.so
+vendor/lib64/lib-uceservice.so|9efed3c98ddfb65b187cf57cdedcbf3832f52b0c
 vendor/lib64/lib-rtpcommon.so
 vendor/lib64/lib-rtpcore.so
 vendor/lib64/lib-rtpdaemoninterface.so

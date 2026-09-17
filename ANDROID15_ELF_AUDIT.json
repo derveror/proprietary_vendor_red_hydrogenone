@@ -2980,6 +2980,62 @@
         }
       }
     },
+    "lib-uceservice": {
+      "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/lib-uceservice.so"
+          ],
+          "shared_libs": [
+            "com.qualcomm.qti.imscmservice@2.0",
+            "com.qualcomm.qti.uceservice@2.0",
+            "lib-imscmservice",
+            "lib-imsdpl",
+            "lib-imsqimf",
+            "lib-imsxml",
+            "lib-siputility",
+            "libbase",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "libhidlbase",
+            "libhidltransport",
+            "libhwbinder",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/lib-uceservice.so": [
+              "liblog",
+              "libcutils",
+              "libbase",
+              "libutils",
+              "libhwbinder",
+              "libhidlbase",
+              "libhidltransport",
+              "lib-imsdpl",
+              "lib-imsqimf",
+              "lib-imsxml",
+              "lib-siputility",
+              "lib-imscmservice",
+              "com.qualcomm.qti.imscmservice@2.0",
+              "com.qualcomm.qti.uceservice@2.0",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
     "libC2D2": {
       "kind": "cc_prebuilt_library_shared",
       "partition": "vendor",
@@ -23865,10 +23921,10 @@
     }
   },
   "summary": {
-    "total_modules": 546,
-    "checkelf_enabled": 545,
+    "total_modules": 547,
+    "checkelf_enabled": 546,
     "checkelf_exceptions": 1,
-    "provider_sonames": 511,
+    "provider_sonames": 512,
     "allow_undefined_symbol_modules": 20
   }
 }
