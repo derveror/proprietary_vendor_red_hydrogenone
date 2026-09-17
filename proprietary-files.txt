@@ -91,12 +91,7 @@ vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libmdmdetect.so
 vendor/lib64/libperipheral_client.so
-vendor/lib64/libqmi_cci.so
-vendor/lib64/libqmi_client_qmux.so
-vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
-vendor/lib64/libqmi_encdec.so
-vendor/lib64/libqmiservices.so
 vendor/lib64/libqrtr.so
 vendor/lib64/libqseed3.so
 vendor/lib64/libqservice.so
@@ -125,7 +120,7 @@ vendor/bin/imsqmidaemon
 vendor/bin/imsrcsd
 vendor/bin/init.qcom.sensors.sh
 vendor/bin/init.qti.ims.sh
-vendor/bin/netmgrd
+vendor/bin/netmgrd|f3eafb4d5e31e3f90544f380667625dfdc22aa37
 vendor/bin/nqnfcinfo
 vendor/bin/sensors.qti
 vendor/etc/sensors/hals.conf
@@ -390,22 +385,18 @@ vendor/lib64/libmmcamera_faceproc.so
 vendor/lib64/libmmcamera_faceproc2.so
 vendor/lib64/libmmcamera_tintless_algo.so
 vendor/lib64/libmmcamera_tintless_bg_pca_algo.so
-vendor/lib64/libnetmgr.so
-vendor/lib64/libnetmgr_common.so
-vendor/lib64/libnlnetmgr.so
+vendor/lib64/libnetmgr.so|8d0a3e85a1d535efa22634621c4e4796aea1d642
+vendor/lib64/libnetmgr_common.so|a414ca9603bddd34f1b00d648094782095f98e97
+vendor/lib64/libnlnetmgr.so|8f6aba985f05c837868f7e1f32b6b2399de428f2
 vendor/lib64/libpdmapper.so
 vendor/lib64/libpdnotifier.so
 vendor/lib64/libqcci_legacy.so
 vendor/lib64/libqdi.so
-vendor/lib64/libqmi.so
-vendor/lib64/libqmi_client_helper.so
 vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/libril.so
-vendor/lib64/librilqmiservices.so
 vendor/lib64/librilutils.so
-vendor/lib64/librmnetctl.so
 vendor/lib64/libsdsprpc.so
 vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
@@ -419,7 +410,6 @@ vendor/lib64/libxtadapter.so
 vendor/lib64/libxtwifi_ulp_adaptor.so
 vendor/lib64/nfc_nci.nqx.default.hw.so
 vendor/lib64/sensors.ssc.so
-vendor/lib64/qcrild_librilutils.so
 vendor/lib64/vendor.nxp.hardware.nfc@1.0.so
 vendor/lib64/vendor.qti.data.factory@1.0.so
 vendor/lib64/vendor.qti.data.factory@1.1.so
@@ -682,8 +672,15 @@ vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
 
 # Radio - Android 15 compatibility stack from FP3 6.A.025.0. This exact
-# QCRIL generation is shared by the LineageOS 22.2 msm8998 reference trees.
+# QCRIL and mobile-data generation is shared by the maintained LineageOS 22.2
+# msm8998 reference trees.
+vendor/bin/dpmQmiMgr|61a421804559b0e461439c19088acc01b871982a
+vendor/etc/data/netmgr_config.xml|b87b057d87139c7ac866dc5f75c498de1e8ab361
+vendor/etc/init/dpmQmiMgr.rc|1538743661a5c48c15cd105beaad20f72953885a
+vendor/etc/init/netmgrd.rc|5c592bd2cf775462e147d3def97e99abbac4631e
 vendor/bin/hw/qcrild|9ebae4b7b4bc8fb31371f3926634206737d73bb2
+vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|d9f1aa7f93b928f42499d613d20ccbc60f279097
+vendor/lib64/libdpmqmihal.so|41eb89e66ba065c43a5eb79cd3c72cef0ee167aa
 vendor/lib64/libdsi_netctrl.so|b622c0ff82676d5e02fb92445c6a030742f0c6c4
 vendor/lib64/libdsutils.so|0b466344eb6628feb1b5aba00d1ef3f680e5aa9a
 vendor/lib64/libqcrilFramework.so|64386a08a3d8c85cd2117575e7d863a24a8b8850
@@ -695,6 +692,8 @@ vendor/lib64/libqmi_client_qmux.so|600fe6c17ae7a5ca01d02bcbbbf7fb2c0510bd41
 vendor/lib64/libqmi_common_so.so|4a162382e0d611dacbb803371e78eb56786078b9
 vendor/lib64/libqmi_encdec.so|8a365cf7472c187c02fa0649e09fee529ded7563
 vendor/lib64/libqmiservices.so|2e259463cbeb329caec303b642ab4068c8d10be5
+vendor/lib64/libnetmgr_nr_fusion.so|e40531a6e11af9d4905179ef6174299da99041ca
+vendor/lib64/libnetmgr_rmnet_ext.so|4d3eff79502cffad09057faafffb449917031f96
 vendor/lib64/libril-qc-hal-qmi.so|cc70a2e8e2435dee4cb396dadbcd7c4c244287bd|f679e715373bb60322aa397a074e8c02a5328665
 vendor/lib64/libril-qc-logger.so|7f80da37d120faffd72838b76d74102c7321e3a3
 vendor/lib64/librilqmiservices.so|e2714b4ca1792ea210899250414682c58e066f7d

@@ -6,13 +6,16 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/red/hydrogenone
 
 PRODUCT_COPY_FILES += \
+    vendor/red/hydrogenone/proprietary/vendor/etc/data/netmgr_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/data/netmgr_config.xml \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800h.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800h.bin \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800h_8998_660.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800h_8998_660.bin \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800s_dsp.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800s_dsp.bin \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.bluetooth@1.0-service-qti.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.keymaster@3.0-service-qti.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc \
+    vendor/red/hydrogenone/proprietary/vendor/etc/init/dpmQmiMgr.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dpmQmiMgr.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/hw/init.msm.usb.configfs.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.msm.usb.configfs.rc \
+    vendor/red/hydrogenone/proprietary/vendor/etc/init/netmgrd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/netmgrd.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/qcrild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/qcrild.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rild.rc \
     vendor/red/hydrogenone/proprietary/vendor/etc/init/vendor.cm.hardware.thermal3d@1.0-service.cm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.cm.hardware.thermal3d@1.0-service.cm.rc \
@@ -56,6 +59,7 @@ PRODUCT_COPY_FILES += \
     vendor/red/hydrogenone/proprietary/vendor/firmware/leia_pm4_470.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/leia_pm4_470.fw \
     vendor/red/hydrogenone/proprietary/vendor/radio/qcril_database/qcril.db:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/qcril.db \
     vendor/red/hydrogenone/proprietary/vendor/radio/qcril_database/upgrade/0_initial.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/0_initial.sql \
+    vendor/red/hydrogenone/proprietary/vendor/radio/qcril_database/upgrade/10_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/10_version_update_ecc_table.sql \
     vendor/red/hydrogenone/proprietary/vendor/radio/qcril_database/upgrade/1_version_intro.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/1_version_intro.sql \
     vendor/red/hydrogenone/proprietary/vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/2_version_add_wps_config.sql \
     vendor/red/hydrogenone/proprietary/vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/3_version_update_wps_config.sql \
@@ -64,8 +68,7 @@ PRODUCT_COPY_FILES += \
     vendor/red/hydrogenone/proprietary/vendor/radio/qcril_database/upgrade/6_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/6_version_update_ecc_table.sql \
     vendor/red/hydrogenone/proprietary/vendor/radio/qcril_database/upgrade/7_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/7_version_update_ecc_table.sql \
     vendor/red/hydrogenone/proprietary/vendor/radio/qcril_database/upgrade/8_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/8_version_update_ecc_table.sql \
-    vendor/red/hydrogenone/proprietary/vendor/radio/qcril_database/upgrade/9_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/9_version_update_ecc_table.sql \
-    vendor/red/hydrogenone/proprietary/vendor/radio/qcril_database/upgrade/10_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/10_version_update_ecc_table.sql
+    vendor/red/hydrogenone/proprietary/vendor/radio/qcril_database/upgrade/9_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/9_version_update_ecc_table.sql
 
 PRODUCT_PACKAGES += \
     com.qualcomm.qti.bluetooth_audio@1.0 \
@@ -456,6 +459,7 @@ PRODUCT_PACKAGES += \
     libwfdmodulehdcpsession \
     com.fingerprints.extension@1.0 \
     com.qualcomm.qti.ant@1.0 \
+    com.qualcomm.qti.dpm.api@1.0 \
     com.quicinc.cne.api@1.0 \
     com.quicinc.cne.api@1.1 \
     com.quicinc.cne.constants@1.0 \
@@ -487,6 +491,7 @@ PRODUCT_PACKAGES += \
     libaudioalsa \
     libbtnv \
     libcneapiclient \
+    libdpmqmihal \
     libdrmfs \
     libdrmutils \
     libgdtap \
@@ -498,6 +503,8 @@ PRODUCT_PACKAGES += \
     liblqe \
     libmm-omxcore \
     libnetmgr_common \
+    libnetmgr_nr_fusion \
+    libnetmgr_rmnet_ext \
     libnlnetmgr \
     libpdmapper \
     libpdnotifier \
@@ -512,7 +519,6 @@ PRODUCT_PACKAGES += \
     libril-qc-ltedirectdisc \
     libril-qc-radioconfig \
     librilqmiservices \
-    librmnetctl \
     libsdedrm \
     libsdm-color \
     libsdm-diag \
@@ -571,6 +577,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.latency@2.0 \
     adsprpcd \
     cnss-daemon \
+    dpmQmiMgr \
     energy-awareness \
     hvdcp_opti \
     android.hardware.biometrics.fingerprint@2.1-service \

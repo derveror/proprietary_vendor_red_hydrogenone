@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 115,
-    "P1": 541,
+    "P1": 548,
     "P2": 19,
-    "total": 675
+    "total": 682
   },
   "files": [
     {
@@ -708,6 +708,12 @@
     },
     {
       "tier": "P1",
+      "path": "vendor/bin/dpmQmiMgr",
+      "size": 80456,
+      "sha256": "00a56585d294769d65addf61d0be73b0513ab74897ddb2d1bc34def7723ccecb"
+    },
+    {
+      "tier": "P1",
       "path": "vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service",
       "size": 136968,
       "sha256": "99c49c5882a74e703a58ad093ddee515df344e13195b007aa61a76bd1ff05d0d"
@@ -775,8 +781,8 @@
     {
       "tier": "P1",
       "path": "vendor/bin/netmgrd",
-      "size": 1593608,
-      "sha256": "6299917869e727a212bdb83bf77ffe8d54726c90f4a765ada1deb3589f40be4a"
+      "size": 2285680,
+      "sha256": "48a8aaf29aa52220b9071fcd0edef8d75bc93da7738b208eea1adefe8607c1f3"
     },
     {
       "tier": "P1",
@@ -813,6 +819,24 @@
       "path": "vendor/bin/xtwifi-inet-agent",
       "size": 138248,
       "sha256": "93ae8b13f39d453e8b0b757f9b4cec2773e15b0ac201a58f03657e9208e4d03a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/data/netmgr_config.xml",
+      "size": 161675,
+      "sha256": "68218668d7d7e0edd6972762322d3516588dc764b04d75a75ff58804544b0568"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/init/dpmQmiMgr.rc",
+      "size": 477,
+      "sha256": "525fba1911f28e3ee37bebc84033d94ea5c15ed89ce91c8ddeb02919ff8805dc"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/init/netmgrd.rc",
+      "size": 3717,
+      "sha256": "568143f3edf386dda7a13503cea2df6cc03904cfa798e14dfab5487aa8e6403b"
     },
     {
       "tier": "P1",
@@ -3102,6 +3126,12 @@
     },
     {
       "tier": "P1",
+      "path": "vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so",
+      "size": 207568,
+      "sha256": "9c758d219a5ac3f34a92d95eb7ebb6d422abc3104bc218625257cf2a07f40fc9"
+    },
+    {
+      "tier": "P1",
       "path": "vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so",
       "size": 335616,
       "sha256": "bf436ce8b675ae4e406ee3a7ca0c313102958ac462b1026ea3880e26f867bcda"
@@ -3384,6 +3414,12 @@
     },
     {
       "tier": "P1",
+      "path": "vendor/lib64/libdpmqmihal.so",
+      "size": 34128,
+      "sha256": "0c18eba12d4d4e14b234e8c71abba99b260318f72b6b30f4db86c39e3c2b6ebe"
+    },
+    {
+      "tier": "P1",
       "path": "vendor/lib64/libdrplugin_client.so",
       "size": 68488,
       "sha256": "f0575c6d7e25e818eb73e3607609074bc6ad3f605afe79bce910e2a53e58afcb"
@@ -3547,20 +3583,32 @@
     {
       "tier": "P1",
       "path": "vendor/lib64/libnetmgr.so",
-      "size": 134000,
-      "sha256": "83fdf520485634df5aa6d18744295bee5779044a136fd3e3f098016bd16174ab"
+      "size": 176312,
+      "sha256": "3a89fb2746fdb7268b20015effe6edb40ddd5bc87c0622ad40bd7663a2ce9734"
     },
     {
       "tier": "P1",
       "path": "vendor/lib64/libnetmgr_common.so",
-      "size": 68400,
-      "sha256": "e5b5636e86549c9bb9589b370b3642c283503e2dcaa97a366d1a744789d4c206"
+      "size": 46048,
+      "sha256": "ef9e8fbd56651bf6004d0d3deadd975656e468a66dfe7699f2d06c72fc57036e"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libnetmgr_nr_fusion.so",
+      "size": 12200,
+      "sha256": "b2579c20a31c02bbd58175723ceb91c548159061806f8cbab6216e4a84be0c47"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/lib64/libnetmgr_rmnet_ext.so",
+      "size": 18752,
+      "sha256": "462881e7fa7a378c2952171c04ff7fc7be811f731c108ec6237ab1ad2566afd8"
     },
     {
       "tier": "P1",
       "path": "vendor/lib64/libnlnetmgr.so",
-      "size": 68200,
-      "sha256": "497c85c87e2c81bb98b1ad5bc56ea2800ec90d9463899c86bf17cf32937c3b6a"
+      "size": 93232,
+      "sha256": "e1f5a382194342e7991f5ed81d450ec0129b2a7680a7640b7f58e2f3dc5e2c69"
     },
     {
       "tier": "P1",
@@ -3651,12 +3699,6 @@
       "path": "vendor/lib64/librilutils.so",
       "size": 68112,
       "sha256": "391675da16bfa7591ee4ceed764a5523677b2dcdbcba4a815b33036a57eacb2d"
-    },
-    {
-      "tier": "P1",
-      "path": "vendor/lib64/librmnetctl.so",
-      "size": 70640,
-      "sha256": "ad42b64ecbd587028eb91323c11c1e3ef9f7e3a2638f1349dfa9d64e52de52d2"
     },
     {
       "tier": "P1",

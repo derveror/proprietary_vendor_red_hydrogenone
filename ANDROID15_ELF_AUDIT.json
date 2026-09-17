@@ -703,6 +703,41 @@
         }
       }
     },
+    "com.qualcomm.qti.dpm.api@1.0": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "libhidlbase",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so": [
+              "libhidlbase",
+              "liblog",
+              "libutils",
+              "libcutils",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
     "com.qualcomm.qti.imscmservice@1.0": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -1474,6 +1509,57 @@
               "liblog",
               "libutils",
               "libcutils",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
+    "dpmQmiMgr": {
+      "kind": "cc_prebuilt_binary",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/bin/dpmQmiMgr"
+          ],
+          "shared_libs": [
+            "com.qualcomm.qti.dpm.api@1.0",
+            "libbase",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "libdpmqmihal",
+            "libhardware",
+            "libhardware_legacy",
+            "libhidlbase",
+            "liblog",
+            "libm",
+            "libqmi_cci",
+            "libqmi_client_helper",
+            "libqmiservices",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/bin/dpmQmiMgr": [
+              "libcutils",
+              "liblog",
+              "libbase",
+              "libutils",
+              "libhardware_legacy",
+              "libhardware",
+              "libhidlbase",
+              "libqmi_cci",
+              "libqmi_client_helper",
+              "libqmiservices",
+              "libdpmqmihal",
+              "com.qualcomm.qti.dpm.api@1.0",
               "libc++",
               "libc",
               "libm",
@@ -8791,6 +8877,49 @@
         }
       }
     },
+    "libdpmqmihal": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libdpmqmihal.so"
+          ],
+          "shared_libs": [
+            "com.qualcomm.qti.dpm.api@1.0",
+            "libbase",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "libhardware",
+            "libhardware_legacy",
+            "libhidlbase",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libdpmqmihal.so": [
+              "libhidlbase",
+              "liblog",
+              "libcutils",
+              "libbase",
+              "libutils",
+              "libhardware_legacy",
+              "libhardware",
+              "com.qualcomm.qti.dpm.api@1.0",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
     "libdrmfs": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -15417,6 +15546,92 @@
         }
       }
     },
+    "libnetmgr_nr_fusion": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libnetmgr_nr_fusion.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libconfigdb",
+            "libcutils",
+            "libdiag",
+            "libdl",
+            "libdsutils",
+            "liblog",
+            "libm",
+            "libnetmgr",
+            "libnetmgr_common",
+            "libqmiservices"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libnetmgr_nr_fusion.so": [
+              "libdsutils",
+              "libconfigdb",
+              "libdiag",
+              "libcutils",
+              "liblog",
+              "libnetmgr",
+              "libnetmgr_common",
+              "libqmiservices",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
+    "libnetmgr_rmnet_ext": {
+      "kind": "cc_prebuilt_library_shared",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libnetmgr_rmnet_ext.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libconfigdb",
+            "libcutils",
+            "libdiag",
+            "libdl",
+            "libdsutils",
+            "liblog",
+            "libm",
+            "libnetmgr",
+            "libnetmgr_common",
+            "librmnetctl"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libnetmgr_rmnet_ext.so": [
+              "libdsutils",
+              "libconfigdb",
+              "libdiag",
+              "libcutils",
+              "liblog",
+              "libnetmgr",
+              "libnetmgr_common",
+              "librmnetctl",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
     "libnlnetmgr": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -15435,7 +15650,9 @@
             "libdl",
             "libdsutils",
             "liblog",
-            "libm"
+            "libm",
+            "libnetmgr",
+            "libnetmgr_common"
           ],
           "needed": {
             "proprietary/vendor/lib64/libnlnetmgr.so": [
@@ -15444,6 +15661,8 @@
               "libdiag",
               "libcutils",
               "liblog",
+              "libnetmgr",
+              "libnetmgr_common",
               "libc++",
               "libc",
               "libm",
@@ -17305,33 +17524,6 @@
         }
       }
     },
-    "librmnetctl": {
-      "kind": "cc_prebuilt_library_shared",
-      "check_elf_files": true,
-      "blocking_dependencies": [],
-      "architectures": {
-        "android_arm64": {
-          "srcs": [
-            "proprietary/vendor/lib64/librmnetctl.so"
-          ],
-          "shared_libs": [
-            "libc",
-            "libc++",
-            "libdl",
-            "libm"
-          ],
-          "needed": {
-            "proprietary/vendor/lib64/librmnetctl.so": [
-              "libc++",
-              "libc",
-              "libm",
-              "libdl"
-            ]
-          },
-          "make_only_needed": {}
-        }
-      }
-    },
     "librpmb": {
       "kind": "cc_prebuilt_library_shared",
       "check_elf_files": true,
@@ -18802,7 +18994,6 @@
             "libdl",
             "libdsutils",
             "libhidlbase",
-            "libhidltransport",
             "liblog",
             "libm",
             "libnetmgr",
@@ -18815,6 +19006,7 @@
             "libqmi_client_qmux",
             "libqmi_common_so",
             "libqmiservices",
+            "libqti_vndfwk_detect",
             "librmnetctl",
             "libutils"
           ],
@@ -18830,17 +19022,17 @@
               "libnlnetmgr",
               "libnetmgr",
               "libnetmgr_common",
-              "libqmi",
               "libqmiservices",
-              "libqmi_cci",
               "libqmi_common_so",
+              "libqmi_cci",
               "libqmi_client_qmux",
               "libqmi_client_helper",
+              "libqmi",
               "libutils",
               "libhidlbase",
-              "libhidltransport",
               "libandroid_net",
               "android.system.net.netd@1.1",
+              "libqti_vndfwk_detect",
               "libcneapiclient",
               "libbinder",
               "libc++",
@@ -22811,10 +23003,10 @@
     }
   },
   "summary": {
-    "total_modules": 534,
-    "checkelf_enabled": 533,
+    "total_modules": 538,
+    "checkelf_enabled": 537,
     "checkelf_exceptions": 1,
-    "provider_sonames": 501,
+    "provider_sonames": 504,
     "allow_undefined_symbol_modules": 20
   }
 }
