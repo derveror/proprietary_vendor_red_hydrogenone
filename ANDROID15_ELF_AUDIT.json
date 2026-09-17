@@ -2321,6 +2321,7 @@
             "com.qualcomm.qti.uceservice@2.0",
             "lib-imsdpl",
             "lib-imsqimf",
+            "lib-imsrcsbaseimpl",
             "lib-imsxml",
             "lib-siputility",
             "libbase",
@@ -2342,6 +2343,7 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/lib-imsrcs-v2.so": [
+              "lib-imsrcsbaseimpl",
               "lib-imsdpl",
               "lib-imsqimf",
               "lib-imsxml",
@@ -16121,8 +16123,6 @@
             "libdl",
             "liblog",
             "libm",
-            "libmdmdetect",
-            "libqmi_client_qmux",
             "libqmi_encdec",
             "libutils"
           ],
@@ -16131,9 +16131,7 @@
               "libcutils",
               "libutils",
               "libqmi_encdec",
-              "libqmi_client_qmux",
               "liblog",
-              "libmdmdetect",
               "libc++",
               "libc",
               "libm",
@@ -16278,12 +16276,12 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/libqmi_client_qmux.so": [
-              "libcutils",
               "libdiag",
               "libdsutils",
               "libqmiservices",
               "libidl",
               "liblog",
+              "libcutils",
               "libc++",
               "libc",
               "libm",

@@ -231,8 +231,17 @@
         "vendor/lib64/libdsutils.so",
         "vendor/lib64/libqcrilFramework.so",
         "vendor/lib64/libqdp.so",
+        "vendor/lib64/libqmi.so",
+        "vendor/lib64/libqmi_cci.so",
+        "vendor/lib64/libqmi_client_helper.so",
+        "vendor/lib64/libqmi_client_qmux.so",
+        "vendor/lib64/libqmi_common_so.so",
+        "vendor/lib64/libqmi_encdec.so",
+        "vendor/lib64/libqmiservices.so",
         "vendor/lib64/libril-qc-hal-qmi.so",
         "vendor/lib64/libril-qc-logger.so",
+        "vendor/lib64/librilqmiservices.so",
+        "vendor/lib64/qcrild_librilutils.so",
         "vendor/lib64/qtibus.so",
         "vendor/lib64/qtimutex.so",
         "vendor/lib64/vendor.qti.hardware.data.connection@1.1.so",
@@ -247,7 +256,8 @@
         "vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.4.so",
         "vendor/lib64/vendor.qti.hardware.radio.uim@1.2.so",
         "vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so",
-        "vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so"
+        "vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so",
+        "vendor/radio/qcril_database/qcril.db"
       ]
     },
     "red118_camera_runtime_files": 196,
