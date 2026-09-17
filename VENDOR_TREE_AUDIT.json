@@ -3,10 +3,10 @@
   "all_selected_sha256_verified": true,
   "stock_archive_verified": true,
   "counts": {
-    "P0": 115,
+    "P0": 122,
     "P1": 564,
     "P2": 19,
-    "total": 698
+    "total": 705
   },
   "notes": [
     "No RED msm8998-common repository is used.",
@@ -45,6 +45,7 @@
     "RED .118 Android 9 pm-service and pm-proxy abort under Android 15 libutils. The three-file peripheral-manager closure is replaced with the LineageOS 22.2 cheryl Android 11 sld_sprout payload; RED pd-mapper, QRTR, TFTP and firmware remain device-native.",
     "RED .118 modem firmware and device policy remain authoritative, but its Android 9 QCRIL publishes only IRadio 1.1/1.2. The ABI-minimal QCRIL compatibility closure from FP3 6.A.025.0 is used by the LineageOS 22.2 mata, cheryl, OnePlus and Nubia MSM8998 trees and supplies IRadio 1.4/1.5; RED qrtr-ns, TFTP/WLAN path and modem firmware remain device-native.",
     "The FP3 QCRIL generation is paired with its byte-verified netmgr/DPM mobile-data plane; the older RED .118 netmgr generation is not mixed in.",
+    "The exact seven-file RED .118 ipa_fws PIL payload is retained in /vendor/firmware. Runtime tracing proved that write /dev/ipa 1 without this payload leaves IPA uninitialized and triggers the modem ipa_dl panic.",
     "RED .118 librmnetctl is pruned in favor of the LineageOS dataservices source provider required by the FP3 netmgrd rtrmnet ABI.",
     "RED .118 production camera runtime closure retains 138 tuning libraries and 58 sensor, ISP, image-processing, JPEG, flash, and firmware files selected from the four production XMLs and captured HAL load failures; device runtime validation remains required.",
     "Current ELF contract: 546 of 547 proprietary ELF modules have check_elf_files enabled; 1 exceptions remain."

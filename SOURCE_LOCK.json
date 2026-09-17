@@ -3,7 +3,7 @@
   "stock_archive_sha256": "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e",
   "stock_build": "H1A1000.082ho.01.00.10r.118",
   "stock_fingerprint": "RED/HydrogenONE/HydrogenONE:9/PKQ1.190118.001/118:userdebug/release-keys",
-  "selected_files": 698,
+  "selected_files": 705,
   "target_lineage": "lineage-22.2",
   "target_android_api": 35,
   "android15_contract": {
@@ -215,6 +215,20 @@
         "vendor/bin/pm-service",
         "vendor/lib64/libperipheral_client.so"
       ]
+    },
+    "red118_ipa_firmware": {
+      "source": "RED stock .118 vendor.img /vendor/firmware",
+      "kernel_trigger": "write /dev/ipa 1",
+      "runtime_failure_without_payload": "modem subsystem failure reason: :0:EX:kernel:0:ipa_dl:162:PC=c0b68eb4",
+      "sha256": {
+        "vendor/firmware/ipa_fws.b00": "98392dd51753daaaa61b4218f6577895dc3596053551b61a8c9d40de2abf5bfa",
+        "vendor/firmware/ipa_fws.b01": "5621af93fbd78adf54b485bc305076bd5d6a95e65ac81793236b3103ec6fde6a",
+        "vendor/firmware/ipa_fws.b02": "402234ff0f0cdac076339c89bb4488f040bb92df5ff53718e655d37169001cb4",
+        "vendor/firmware/ipa_fws.b03": "14024088f436ebd24b097cb113b2177e12c939efdac0211d560c7cc498611507",
+        "vendor/firmware/ipa_fws.b04": "8d572c4b4dee9572d90ab90137ec030331856bbfd8bf2e6ee315da4a5bab3373",
+        "vendor/firmware/ipa_fws.elf": "7ba9f1f8ae793832c83ee94baa40de397dee0e0ab90658b6d05e05d73e98d435",
+        "vendor/firmware/ipa_fws.mdt": "18ca393d578434d3eaa45e80f923d4804fe495f3c3507a0c94ad301ddef25684"
+      }
     },
     "radio_compatibility": {
       "reason": "RED .118 QCRIL publishes IRadio below Android 15's supported minimum 1.4; its netmgr/DPM generation must not be mixed with the FP3 QCRIL and QMI runtime",

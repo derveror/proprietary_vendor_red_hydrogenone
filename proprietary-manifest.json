@@ -10,10 +10,10 @@
     "sdk": 28
   },
   "counts": {
-    "P0": 115,
+    "P0": 122,
     "P1": 564,
     "P2": 19,
-    "total": 698
+    "total": 705
   },
   "files": [
     {
@@ -219,6 +219,48 @@
       "path": "vendor/firmware/a540_zap.mdt",
       "size": 6684,
       "sha256": "f952ba3898c5d7a5fa06f05a09292a4e5f491388fb2e93fe20788cd67e9160ff"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/ipa_fws.b00",
+      "size": 212,
+      "sha256": "98392dd51753daaaa61b4218f6577895dc3596053551b61a8c9d40de2abf5bfa"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/ipa_fws.b01",
+      "size": 6600,
+      "sha256": "5621af93fbd78adf54b485bc305076bd5d6a95e65ac81793236b3103ec6fde6a"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/ipa_fws.b02",
+      "size": 13608,
+      "sha256": "402234ff0f0cdac076339c89bb4488f040bb92df5ff53718e655d37169001cb4"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/ipa_fws.b03",
+      "size": 128,
+      "sha256": "14024088f436ebd24b097cb113b2177e12c939efdac0211d560c7cc498611507"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/ipa_fws.b04",
+      "size": 320,
+      "sha256": "8d572c4b4dee9572d90ab90137ec030331856bbfd8bf2e6ee315da4a5bab3373"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/ipa_fws.elf",
+      "size": 33088,
+      "sha256": "7ba9f1f8ae793832c83ee94baa40de397dee0e0ab90658b6d05e05d73e98d435"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/firmware/ipa_fws.mdt",
+      "size": 6812,
+      "sha256": "18ca393d578434d3eaa45e80f923d4804fe495f3c3507a0c94ad301ddef25684"
     },
     {
       "tier": "P0",
