@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 115,
-    "P1": 548,
+    "P1": 563,
     "P2": 19,
-    "total": 682
+    "total": 697
   },
   "files": [
     {
@@ -705,6 +705,96 @@
       "path": "vendor/lib64/libtinyxml2_1.so",
       "size": 134608,
       "sha256": "9a0455da666d9a13aa6d5de5ef0a3fe1013aa8e2b6c0c4808deca1d0975c4d2d"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/bin/dpmd",
+      "size": 41840,
+      "sha256": "7a5379734f6cbd23adfb8e3729087beb19ef584303425e0bf298e15c7fcb0263"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/etc/dpm/dpm.conf",
+      "size": 2897,
+      "sha256": "87f839379ce8f1882e2f287f83d4abc84b3b749873f7ffa6ae2303936352c7a7"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/etc/init/dpmd.rc",
+      "size": 659,
+      "sha256": "977c0d6987108d4a8a5952efadbbf66892ff4efaef3414b6e95e347229a77b24"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/etc/permissions/com.qti.dpmframework.xml",
+      "size": 559,
+      "sha256": "f0f06e0ffbe31064be2639ca338f0f944df96835e934ba60778a62d6ef9142c9"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/etc/permissions/dpmapi.xml",
+      "size": 313,
+      "sha256": "03dc2d5f62228102224eea64ff7bf98a4416146123497750e1a6bdb77b10d520"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/framework/com.qti.dpmframework.jar",
+      "size": 322090,
+      "sha256": "160f4818af5ae8bff97373e31d11b97af6be9e330c24bcd20a83986ac3ece2cf"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/framework/dpmapi.jar",
+      "size": 13506,
+      "sha256": "5b57736888c16de41f99264cfb980a41b470737b9b222f4c7ea9e2cd6ed9fe96"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so",
+      "size": 207568,
+      "sha256": "07634cb2cc208c90e395b182c761d66dc41d84c7da831c3f4e747054f2f78037"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/lib64/libdiag_system.so",
+      "size": 248632,
+      "sha256": "9d2cba558f3382c6f88e8acab4a82f899fa6d0a3b01d7398fdd2482c7de2bdc4"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/lib64/libdpmctmgr.so",
+      "size": 45440,
+      "sha256": "256d54e25d860c049d263f53ff5d214b3aff02af2d7cebb7fd307fd8948bbe32"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/lib64/libdpmfdmgr.so",
+      "size": 37024,
+      "sha256": "b0af4f9c6ff59cbc88a3af6852b1e34c4a97094bd052048e6ae1aad9859be3b7"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/lib64/libdpmframework.so",
+      "size": 222496,
+      "sha256": "a57ca3847cdd619c424c4e0dedfe603a0400f50fde44d5797ad21d27faf5662b"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/lib64/libdpmtcm.so",
+      "size": 41312,
+      "sha256": "d7356f33ec0cfd7b72cc1a8d5424b67ce0aa37ba6c6e9f9edded0fbe28ac39e4"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/lib64/vendor.qti.diaghal@1.0.so",
+      "size": 118416,
+      "sha256": "21050415b2af475f36e90058b913a12f366fb9782d9bfc7a5e154494661a6b20"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk",
+      "size": 33182,
+      "sha256": "bcadad9924174bab6fef54b95f69aeecf2a1f36d3e90495364cf63a62f29e580"
     },
     {
       "tier": "P1",

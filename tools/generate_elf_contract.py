@@ -495,6 +495,32 @@ def parse_blocks(text: str) -> list[dict]:
     return blocks
 
 
+def preserved_non_elf_blocks(text: str) -> str:
+    lines = text.splitlines(keepends=True)
+    preserved: list[str] = []
+    i = 0
+    while i < len(lines):
+        match = re.match(r"^([A-Za-z_][A-Za-z0-9_]*)\s*\{\s*$", lines[i])
+        if not match:
+            i += 1
+            continue
+        start = i
+        depth = lines[i].count("{") - lines[i].count("}")
+        i += 1
+        while i < len(lines) and depth > 0:
+            depth += lines[i].count("{") - lines[i].count("}")
+            i += 1
+        if depth != 0:
+            raise SystemExit(f"unterminated Android.bp block: {match.group(1)}")
+        if match.group(1) in {
+            "android_app_import",
+            "dex_import",
+            "soong_namespace",
+        }:
+            preserved.append("".join(lines[start:i]).strip())
+    return "\n\n".join(preserved)
+
+
 def ensure_required_provider_module(blocks: list[dict]) -> None:
     names = {block["name"] for block in blocks}
 
@@ -555,7 +581,34 @@ def elf_dynamic(path: Path) -> tuple[list[str], str | None]:
     return needed, soname.group(1) if soname else None
 
 
-def module_for_soname(soname: str, providers: dict[str, str]) -> str:
+def partition_for_src(src: str) -> str:
+    parts = Path(src).parts
+    if len(parts) < 3 or parts[0] != "proprietary":
+        raise SystemExit(f"cannot derive Android partition from prebuilt source: {src}")
+    return parts[1]
+
+
+def block_partition(block: dict) -> str:
+    partitions = {
+        partition_for_src(src)
+        for srcs in block["arch_srcs"].values()
+        for src in srcs
+    }
+    if len(partitions) != 1:
+        raise SystemExit(
+            f"prebuilt module {block['name']} spans Android partitions: "
+            f"{sorted(partitions)}"
+        )
+    return next(iter(partitions))
+
+
+def module_for_soname(
+    soname: str, providers: dict[str, str], partition: str | None = None
+) -> str:
+    if partition is not None:
+        qualified = f"{partition}:{soname}"
+        if qualified in providers:
+            return providers[qualified]
     if soname in providers:
         return providers[soname]
 
@@ -578,10 +631,10 @@ def module_for_soname(soname: str, providers: dict[str, str]) -> str:
 
 
 def soong_dependency_modules(
-    needed: list[str], providers: dict[str, str]
+    needed: list[str], providers: dict[str, str], partition: str | None = None
 ) -> list[str]:
     return [
-        module_for_soname(soname, providers)
+        module_for_soname(soname, providers, partition)
         for soname in needed
         if soname not in MAKE_ONLY_DEPENDENCY_SONAMES
     ]
@@ -601,6 +654,7 @@ def render_block(
     exceptions: dict,
     audit: dict,
 ) -> str:
+    partition = block_partition(block)
     arch_info: dict[str, dict] = {}
     blocking: set[str] = set()
     make_only_dependencies: set[str] = set()
@@ -611,9 +665,9 @@ def render_block(
         for src in srcs:
             path = ROOT / src
             needed, _ = elf_dynamic(path)
-            mapped = soong_dependency_modules(needed, providers)
+            mapped = soong_dependency_modules(needed, providers, partition)
             make_only = sorted(
-                module_for_soname(soname, providers)
+                module_for_soname(soname, providers, partition)
                 for soname in needed
                 if soname in MAKE_ONLY_DEPENDENCY_SONAMES
             )
@@ -691,6 +745,7 @@ def render_block(
 
     module_audit = {
         "kind": block["kind"],
+        "partition": partition,
         "check_elf_files": not is_exception,
         "blocking_dependencies": sorted(all_blocking),
         "architectures": arch_info,
@@ -744,7 +799,16 @@ def render_block(
         out.append(
             f'    relative_install_path: "{block["relative_install_path"]}",'
         )
-    out.append("    soc_specific: true,")
+    partition_flag = {
+        "vendor": "soc_specific",
+        "odm": "device_specific",
+        "product": "product_specific",
+        "system_ext": "system_ext_specific",
+        "system_dlkm": "system_dlkm_specific",
+        "vendor_dlkm": "vendor_dlkm_specific",
+    }.get(partition)
+    if partition_flag:
+        out.append(f"    {partition_flag}: true,")
     out.append("}")
     return "\n".join(out)
 
@@ -779,7 +843,9 @@ def main() -> int:
     ensure_required_red_provider_metadata()
     prune_android15_source_owned_providers()
 
-    blocks = parse_blocks(BP.read_text(encoding="utf-8"))
+    generated_blueprint = BP.read_text(encoding="utf-8")
+    non_elf_blueprint = preserved_non_elf_blocks(generated_blueprint)
+    blocks = parse_blocks(generated_blueprint)
     blocks = [
         block
         for block in blocks
@@ -787,10 +853,11 @@ def main() -> int:
     ]
     ensure_required_provider_module(blocks)
 
-    providers: dict[str, str] = {}
+    provider_candidates: dict[str, dict[str, str]] = {}
     for block in blocks:
         if block["kind"] != "cc_prebuilt_library_shared":
             continue
+        partition = block_partition(block)
         for srcs in block["arch_srcs"].values():
             for src in srcs:
                 path = ROOT / src
@@ -798,13 +865,22 @@ def main() -> int:
                 for key in (soname, path.name):
                     if not key:
                         continue
-                    existing = providers.get(key)
+                    candidates = provider_candidates.setdefault(key, {})
+                    existing = candidates.get(partition)
                     if existing and existing != block["name"]:
                         raise SystemExit(
-                            f"ambiguous ELF provider for {key}: "
+                            f"ambiguous ELF provider for {partition}:{key}: "
                             f"{existing}, {block['name']}"
                         )
-                    providers[key] = block["name"]
+                    candidates[partition] = block["name"]
+
+    providers: dict[str, str] = {}
+    for key, candidates in provider_candidates.items():
+        if len(candidates) == 1:
+            providers[key] = next(iter(candidates.values()))
+            continue
+        for partition, module in candidates.items():
+            providers[f"{partition}:{key}"] = module
 
     exceptions: dict[str, dict] = {}
     audit = {
@@ -817,10 +893,15 @@ def main() -> int:
         for block in blocks
     ]
 
+    blueprint_sections = [
+        section
+        for section in (non_elf_blueprint, "\n\n".join(rendered))
+        if section
+    ]
     BP.write_text(
         "// Automatically generated from verified RED .118 proprietary ELF payload.\n"
         "// shared_libs are derived from readelf DT_NEEDED; unresolved provider mappings remain explicit exceptions.\n\n"
-        + "\n\n".join(rendered)
+        + "\n\n".join(blueprint_sections)
         + "\n",
         encoding="utf-8",
     )

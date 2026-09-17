@@ -4,6 +4,7 @@
   "modules": {
     "adsprpcd": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -33,6 +34,7 @@
     },
     "android.hardware.biometrics.fingerprint@2.1-service": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -74,6 +76,7 @@
     },
     "android.hardware.bluetooth@1.0-impl-qti": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -161,6 +164,7 @@
     },
     "android.hardware.bluetooth@1.0-service-qti": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -206,6 +210,7 @@
     },
     "android.hardware.keymaster@3.0-impl-qti": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -251,6 +256,7 @@
     },
     "android.hardware.keymaster@3.0-service-qti": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -298,6 +304,7 @@
     },
     "audio.primary.default": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -349,6 +356,7 @@
     },
     "camera.msm8998": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -420,6 +428,7 @@
     },
     "cnss-daemon": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -465,6 +474,7 @@
     },
     "com.fingerprints.extension@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -506,6 +516,7 @@
     },
     "com.qualcomm.qti.ant@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -547,6 +558,7 @@
     },
     "com.qualcomm.qti.bluetooth_audio@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -622,6 +634,7 @@
     },
     "com.qualcomm.qti.bluetooth_audio@1.0-impl": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -705,6 +718,43 @@
     },
     "com.qualcomm.qti.dpm.api@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "system_ext",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "libhidlbase",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so": [
+              "libhidlbase",
+              "liblog",
+              "libutils",
+              "libcutils",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
+    "com.qualcomm.qti.dpm.api@1.0_vendor": {
+      "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -740,6 +790,7 @@
     },
     "com.qualcomm.qti.imscmservice@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -815,6 +866,7 @@
     },
     "com.qualcomm.qti.imscmservice@2.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -890,6 +942,7 @@
     },
     "com.qualcomm.qti.imscmservice@2.1": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -969,6 +1022,7 @@
     },
     "com.qualcomm.qti.uceservice@2.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1044,6 +1098,7 @@
     },
     "com.qualcomm.qti.wifidisplayhal@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1085,6 +1140,7 @@
     },
     "com.qualcomm.qti.wifidisplayhal@1.0-halimpl": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1128,6 +1184,7 @@
     },
     "com.quicinc.cne.api@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1171,6 +1228,7 @@
     },
     "com.quicinc.cne.api@1.1": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1216,6 +1274,7 @@
     },
     "com.quicinc.cne.constants@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1255,6 +1314,7 @@
     },
     "com.quicinc.cne.constants@2.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1294,6 +1354,7 @@
     },
     "com.quicinc.cne.constants@2.1": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1333,6 +1394,7 @@
     },
     "com.quicinc.cne.server@2.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1376,6 +1438,7 @@
     },
     "com.quicinc.cne.server@2.1": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1421,6 +1484,7 @@
     },
     "com.quicinc.cne.server@2.2": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1470,6 +1534,7 @@
     },
     "com.quicinc.cne.server@2.3": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1521,6 +1586,7 @@
     },
     "dpmQmiMgr": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1529,7 +1595,7 @@
             "proprietary/vendor/bin/dpmQmiMgr"
           ],
           "shared_libs": [
-            "com.qualcomm.qti.dpm.api@1.0",
+            "com.qualcomm.qti.dpm.api@1.0_vendor",
             "libbase",
             "libc",
             "libc++",
@@ -1559,6 +1625,48 @@
               "libqmi_client_helper",
               "libqmiservices",
               "libdpmqmihal",
+              "com.qualcomm.qti.dpm.api@1.0_vendor",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
+    "dpmd": {
+      "kind": "cc_prebuilt_binary",
+      "partition": "system_ext",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/system_ext/bin/dpmd"
+          ],
+          "shared_libs": [
+            "com.qualcomm.qti.dpm.api@1.0",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdiag_system",
+            "libdl",
+            "libdpmframework",
+            "libhardware_legacy",
+            "libhidlbase",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/system_ext/bin/dpmd": [
+              "libdpmframework",
+              "libdiag_system",
+              "libhardware_legacy",
+              "libhidlbase",
+              "libcutils",
+              "libutils",
               "com.qualcomm.qti.dpm.api@1.0",
               "libc++",
               "libc",
@@ -1572,6 +1680,7 @@
     },
     "eglSubDriverAndroid": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1645,6 +1754,7 @@
     },
     "energy-awareness": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1678,6 +1788,7 @@
     },
     "gatekeeper.msm8998": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1733,6 +1844,7 @@
     },
     "hvdcp_opti": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1764,6 +1876,7 @@
     },
     "ims_rtp_daemon": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1825,6 +1938,7 @@
     },
     "imsdatadaemon": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1876,6 +1990,7 @@
     },
     "imsqmidaemon": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1917,6 +2032,7 @@
     },
     "imsrcsd": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1958,6 +2074,7 @@
     },
     "irsc_util": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -1987,6 +2104,7 @@
     },
     "keystore.msm8998": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -2050,6 +2168,7 @@
     },
     "lib-dplmedia": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -2099,6 +2218,7 @@
     },
     "lib-imscmservice": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -2190,6 +2310,7 @@
     },
     "lib-imsdpl": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -2277,6 +2398,7 @@
     },
     "lib-imsqimf": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -2336,6 +2458,7 @@
     },
     "lib-imsrcs-v2": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -2461,6 +2584,7 @@
     },
     "lib-imsrcsbaseimpl": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -2568,6 +2692,7 @@
     },
     "lib-imsxml": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -2627,6 +2752,7 @@
     },
     "lib-rtpcommon": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -2664,6 +2790,7 @@
     },
     "lib-rtpcore": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -2705,6 +2832,7 @@
     },
     "lib-rtpdaemoninterface": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -2746,6 +2874,7 @@
     },
     "lib-rtpsl": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -2789,6 +2918,7 @@
     },
     "lib-siputility": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -2852,6 +2982,7 @@
     },
     "libC2D2": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -2911,6 +3042,7 @@
     },
     "libCB": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -2984,6 +3116,7 @@
     },
     "libDRPlugin": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3059,6 +3192,7 @@
     },
     "libEGL_adreno": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3138,6 +3272,7 @@
     },
     "libFlacSwDec": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3167,6 +3302,7 @@
     },
     "libGLESv1_CM_adreno": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3242,6 +3378,7 @@
     },
     "libGLESv2_adreno": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3327,6 +3464,7 @@
     },
     "libOmxAacDec": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3358,6 +3496,7 @@
     },
     "libOmxAacEnc": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3389,6 +3528,7 @@
     },
     "libOmxAmrDec": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3420,6 +3560,7 @@
     },
     "libOmxAmrEnc": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3451,6 +3592,7 @@
     },
     "libOmxAmrwbplusDec": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3482,6 +3624,7 @@
     },
     "libOmxEvrcEnc": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3513,6 +3656,7 @@
     },
     "libOmxQcelp13Enc": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3544,6 +3688,7 @@
     },
     "libOmxWmaDec": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3575,6 +3720,7 @@
     },
     "libOpenCL": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3626,6 +3772,7 @@
     },
     "libQSEEComAPI": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3685,6 +3832,7 @@
     },
     "libQTapGLES": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3756,6 +3904,7 @@
     },
     "libSonyIMX380PdafLibrary": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3787,6 +3936,7 @@
     },
     "libactuator_lc898219xl_main": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3818,6 +3968,7 @@
     },
     "libactuator_lc898219xl_sub": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3849,6 +4000,7 @@
     },
     "libadreno_utils": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3900,6 +4052,7 @@
     },
     "libadsp_default_listener": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3931,6 +4084,7 @@
     },
     "libadsprpc": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -3986,6 +4140,7 @@
     },
     "libarcsoft_antishaking": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4015,6 +4170,7 @@
     },
     "libarcsoft_beautyshot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4044,6 +4200,7 @@
     },
     "libarcsoft_dualcam_refocus": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4073,6 +4230,7 @@
     },
     "libarcsoft_high_dynamic_range": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4102,6 +4260,7 @@
     },
     "libarcsoft_low_light_shot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4131,6 +4290,7 @@
     },
     "libaudio_log_utils": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4194,6 +4354,7 @@
     },
     "libaudioalsa": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4221,6 +4382,7 @@
     },
     "libavservices_minijail_vendor": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4252,6 +4414,7 @@
     },
     "libbtnv": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4279,6 +4442,7 @@
     },
     "libc2d30_bltlib": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4338,6 +4502,7 @@
     },
     "libchromatix_imx268_main_1080p_3d_video_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4369,6 +4534,7 @@
     },
     "libchromatix_imx268_main_1080p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4400,6 +4566,7 @@
     },
     "libchromatix_imx268_main_1080p_hfr_60_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4431,6 +4598,7 @@
     },
     "libchromatix_imx268_main_360p_3d_video_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4462,6 +4630,7 @@
     },
     "libchromatix_imx268_main_480p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4493,6 +4662,7 @@
     },
     "libchromatix_imx268_main_480p_hfr_60_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4524,6 +4694,7 @@
     },
     "libchromatix_imx268_main_720p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4555,6 +4726,7 @@
     },
     "libchromatix_imx268_main_720p_hfr_60_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4586,6 +4758,7 @@
     },
     "libchromatix_imx268_main_common": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4617,6 +4790,7 @@
     },
     "libchromatix_imx268_main_cpp_1080p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4648,6 +4822,7 @@
     },
     "libchromatix_imx268_main_cpp_480p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4679,6 +4854,7 @@
     },
     "libchromatix_imx268_main_cpp_720p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4710,6 +4886,7 @@
     },
     "libchromatix_imx268_main_cpp_liveshot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4741,6 +4918,7 @@
     },
     "libchromatix_imx268_main_cpp_preview": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4772,6 +4950,7 @@
     },
     "libchromatix_imx268_main_cpp_snapshot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4803,6 +4982,7 @@
     },
     "libchromatix_imx268_main_cpp_snapshot_arc_hdr": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4834,6 +5014,7 @@
     },
     "libchromatix_imx268_main_cpp_snapshot_bokeh": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4865,6 +5046,7 @@
     },
     "libchromatix_imx268_main_cpp_snapshot_eis": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4896,6 +5078,7 @@
     },
     "libchromatix_imx268_main_cpp_snapshot_lls": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4927,6 +5110,7 @@
     },
     "libchromatix_imx268_main_cpp_video": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4958,6 +5142,7 @@
     },
     "libchromatix_imx268_main_default_video": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -4989,6 +5174,7 @@
     },
     "libchromatix_imx268_main_postproc": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5020,6 +5206,7 @@
     },
     "libchromatix_imx268_main_preview": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5051,6 +5238,7 @@
     },
     "libchromatix_imx268_main_snapshot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5082,6 +5270,7 @@
     },
     "libchromatix_imx268_main_snapshot_bokeh": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5113,6 +5302,7 @@
     },
     "libchromatix_imx268_main_zsl_preview_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5144,6 +5334,7 @@
     },
     "libchromatix_imx268_main_zsl_preview_lc898122_3dmode": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5175,6 +5366,7 @@
     },
     "libchromatix_imx268_main_zsl_preview_lc898122_bokeh": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5206,6 +5398,7 @@
     },
     "libchromatix_imx268_main_zsl_video_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5237,6 +5430,7 @@
     },
     "libchromatix_imx268_sub_1080p_3d_video_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5268,6 +5462,7 @@
     },
     "libchromatix_imx268_sub_1080p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5299,6 +5494,7 @@
     },
     "libchromatix_imx268_sub_1080p_hfr_60_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5330,6 +5526,7 @@
     },
     "libchromatix_imx268_sub_360p_3d_video_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5361,6 +5558,7 @@
     },
     "libchromatix_imx268_sub_480p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5392,6 +5590,7 @@
     },
     "libchromatix_imx268_sub_480p_hfr_60_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5423,6 +5622,7 @@
     },
     "libchromatix_imx268_sub_720p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5454,6 +5654,7 @@
     },
     "libchromatix_imx268_sub_720p_hfr_60_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5485,6 +5686,7 @@
     },
     "libchromatix_imx268_sub_common": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5516,6 +5718,7 @@
     },
     "libchromatix_imx268_sub_cpp_1080p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5547,6 +5750,7 @@
     },
     "libchromatix_imx268_sub_cpp_480p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5578,6 +5782,7 @@
     },
     "libchromatix_imx268_sub_cpp_720p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5609,6 +5814,7 @@
     },
     "libchromatix_imx268_sub_cpp_liveshot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5640,6 +5846,7 @@
     },
     "libchromatix_imx268_sub_cpp_preview": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5671,6 +5878,7 @@
     },
     "libchromatix_imx268_sub_cpp_snapshot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5702,6 +5910,7 @@
     },
     "libchromatix_imx268_sub_cpp_snapshot_arc_hdr": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5733,6 +5942,7 @@
     },
     "libchromatix_imx268_sub_cpp_snapshot_bokeh": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5764,6 +5974,7 @@
     },
     "libchromatix_imx268_sub_cpp_snapshot_eis": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5795,6 +6006,7 @@
     },
     "libchromatix_imx268_sub_cpp_snapshot_lls": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5826,6 +6038,7 @@
     },
     "libchromatix_imx268_sub_cpp_video": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5857,6 +6070,7 @@
     },
     "libchromatix_imx268_sub_default_video": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5888,6 +6102,7 @@
     },
     "libchromatix_imx268_sub_postproc": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5919,6 +6134,7 @@
     },
     "libchromatix_imx268_sub_preview": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5950,6 +6166,7 @@
     },
     "libchromatix_imx268_sub_snapshot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -5981,6 +6198,7 @@
     },
     "libchromatix_imx268_sub_snapshot_bokeh": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6012,6 +6230,7 @@
     },
     "libchromatix_imx268_sub_zsl_preview_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6043,6 +6262,7 @@
     },
     "libchromatix_imx268_sub_zsl_preview_lc898122_3dmode": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6074,6 +6294,7 @@
     },
     "libchromatix_imx268_sub_zsl_preview_lc898122_bokeh": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6105,6 +6326,7 @@
     },
     "libchromatix_imx268_sub_zsl_video_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6136,6 +6358,7 @@
     },
     "libchromatix_imx380_main_1080p_3d_video_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6167,6 +6390,7 @@
     },
     "libchromatix_imx380_main_1080p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6198,6 +6422,7 @@
     },
     "libchromatix_imx380_main_1080p_hfr_60_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6229,6 +6454,7 @@
     },
     "libchromatix_imx380_main_360p_3d_video_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6260,6 +6486,7 @@
     },
     "libchromatix_imx380_main_480p_hfr_240": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6291,6 +6518,7 @@
     },
     "libchromatix_imx380_main_480p_hfr_240_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6322,6 +6550,7 @@
     },
     "libchromatix_imx380_main_4k_3d_snapshot_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6353,6 +6582,7 @@
     },
     "libchromatix_imx380_main_4k_panorama_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6384,6 +6614,7 @@
     },
     "libchromatix_imx380_main_4k_preview_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6415,6 +6646,7 @@
     },
     "libchromatix_imx380_main_4k_video_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6446,6 +6678,7 @@
     },
     "libchromatix_imx380_main_720p_hfr_120": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6477,6 +6710,7 @@
     },
     "libchromatix_imx380_main_720p_hfr_120_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6508,6 +6742,7 @@
     },
     "libchromatix_imx380_main_common": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6539,6 +6774,7 @@
     },
     "libchromatix_imx380_main_cpp_1080p_3d_video": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6570,6 +6806,7 @@
     },
     "libchromatix_imx380_main_cpp_1080p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6601,6 +6838,7 @@
     },
     "libchromatix_imx380_main_cpp_480p_hfr_240": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6632,6 +6870,7 @@
     },
     "libchromatix_imx380_main_cpp_4k_3d_snapshot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6663,6 +6902,7 @@
     },
     "libchromatix_imx380_main_cpp_720p_hfr_120": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6694,6 +6934,7 @@
     },
     "libchromatix_imx380_main_cpp_liveshot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6725,6 +6966,7 @@
     },
     "libchromatix_imx380_main_cpp_preview": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6756,6 +6998,7 @@
     },
     "libchromatix_imx380_main_cpp_qhd_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6787,6 +7030,7 @@
     },
     "libchromatix_imx380_main_cpp_snapshot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6818,6 +7062,7 @@
     },
     "libchromatix_imx380_main_cpp_snapshot_arc_hdr": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6849,6 +7094,7 @@
     },
     "libchromatix_imx380_main_cpp_snapshot_bokeh": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6880,6 +7126,7 @@
     },
     "libchromatix_imx380_main_cpp_snapshot_eis": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6911,6 +7158,7 @@
     },
     "libchromatix_imx380_main_cpp_snapshot_flash": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6942,6 +7190,7 @@
     },
     "libchromatix_imx380_main_cpp_snapshot_hdr": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -6973,6 +7222,7 @@
     },
     "libchromatix_imx380_main_cpp_snapshot_lls": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7004,6 +7254,7 @@
     },
     "libchromatix_imx380_main_cpp_video": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7035,6 +7286,7 @@
     },
     "libchromatix_imx380_main_default_video": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7066,6 +7318,7 @@
     },
     "libchromatix_imx380_main_postproc": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7097,6 +7350,7 @@
     },
     "libchromatix_imx380_main_preview": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7128,6 +7382,7 @@
     },
     "libchromatix_imx380_main_qhd_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7159,6 +7414,7 @@
     },
     "libchromatix_imx380_main_qhd_hfr_60_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7190,6 +7446,7 @@
     },
     "libchromatix_imx380_main_snapshot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7221,6 +7478,7 @@
     },
     "libchromatix_imx380_main_snapshot_bokeh": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7252,6 +7510,7 @@
     },
     "libchromatix_imx380_main_zsl_preview_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7283,6 +7542,7 @@
     },
     "libchromatix_imx380_main_zsl_preview_lc898122_3dmode": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7314,6 +7574,7 @@
     },
     "libchromatix_imx380_main_zsl_preview_lc898122_bokeh": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7345,6 +7606,7 @@
     },
     "libchromatix_imx380_main_zsl_video_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7376,6 +7638,7 @@
     },
     "libchromatix_imx380_sub_1080p_3d_video_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7407,6 +7670,7 @@
     },
     "libchromatix_imx380_sub_1080p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7438,6 +7702,7 @@
     },
     "libchromatix_imx380_sub_1080p_hfr_60_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7469,6 +7734,7 @@
     },
     "libchromatix_imx380_sub_360p_3d_video_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7500,6 +7766,7 @@
     },
     "libchromatix_imx380_sub_480p_hfr_240": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7531,6 +7798,7 @@
     },
     "libchromatix_imx380_sub_480p_hfr_240_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7562,6 +7830,7 @@
     },
     "libchromatix_imx380_sub_4k_3d_snapshot_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7593,6 +7862,7 @@
     },
     "libchromatix_imx380_sub_4k_panorama_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7624,6 +7894,7 @@
     },
     "libchromatix_imx380_sub_4k_preview_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7655,6 +7926,7 @@
     },
     "libchromatix_imx380_sub_4k_video_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7686,6 +7958,7 @@
     },
     "libchromatix_imx380_sub_720p_hfr_120": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7717,6 +7990,7 @@
     },
     "libchromatix_imx380_sub_720p_hfr_120_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7748,6 +8022,7 @@
     },
     "libchromatix_imx380_sub_common": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7779,6 +8054,7 @@
     },
     "libchromatix_imx380_sub_cpp_1080p_3d_video": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7810,6 +8086,7 @@
     },
     "libchromatix_imx380_sub_cpp_1080p_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7841,6 +8118,7 @@
     },
     "libchromatix_imx380_sub_cpp_480p_hfr_240": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7872,6 +8150,7 @@
     },
     "libchromatix_imx380_sub_cpp_4k_3d_snapshot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7903,6 +8182,7 @@
     },
     "libchromatix_imx380_sub_cpp_720p_hfr_120": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7934,6 +8214,7 @@
     },
     "libchromatix_imx380_sub_cpp_liveshot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7965,6 +8246,7 @@
     },
     "libchromatix_imx380_sub_cpp_preview": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -7996,6 +8278,7 @@
     },
     "libchromatix_imx380_sub_cpp_qhd_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8027,6 +8310,7 @@
     },
     "libchromatix_imx380_sub_cpp_snapshot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8058,6 +8342,7 @@
     },
     "libchromatix_imx380_sub_cpp_snapshot_arc_hdr": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8089,6 +8374,7 @@
     },
     "libchromatix_imx380_sub_cpp_snapshot_bokeh": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8120,6 +8406,7 @@
     },
     "libchromatix_imx380_sub_cpp_snapshot_eis": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8151,6 +8438,7 @@
     },
     "libchromatix_imx380_sub_cpp_snapshot_flash": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8182,6 +8470,7 @@
     },
     "libchromatix_imx380_sub_cpp_snapshot_hdr": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8213,6 +8502,7 @@
     },
     "libchromatix_imx380_sub_cpp_snapshot_lls": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8244,6 +8534,7 @@
     },
     "libchromatix_imx380_sub_cpp_video": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8275,6 +8566,7 @@
     },
     "libchromatix_imx380_sub_default_video": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8306,6 +8598,7 @@
     },
     "libchromatix_imx380_sub_postproc": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8337,6 +8630,7 @@
     },
     "libchromatix_imx380_sub_preview": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8368,6 +8662,7 @@
     },
     "libchromatix_imx380_sub_qhd_hfr_60": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8399,6 +8694,7 @@
     },
     "libchromatix_imx380_sub_qhd_hfr_60_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8430,6 +8726,7 @@
     },
     "libchromatix_imx380_sub_snapshot": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8461,6 +8758,7 @@
     },
     "libchromatix_imx380_sub_snapshot_bokeh": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8492,6 +8790,7 @@
     },
     "libchromatix_imx380_sub_zsl_preview_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8523,6 +8822,7 @@
     },
     "libchromatix_imx380_sub_zsl_preview_lc898122_3dmode": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8554,6 +8854,7 @@
     },
     "libchromatix_imx380_sub_zsl_preview_lc898122_bokeh": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8585,6 +8886,7 @@
     },
     "libchromatix_imx380_sub_zsl_video_lc898122": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8616,6 +8918,7 @@
     },
     "libcneapiclient": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8669,6 +8972,7 @@
     },
     "libconfigdb": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8732,6 +9036,7 @@
     },
     "libdataitems": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8795,6 +9100,7 @@
     },
     "libdepthmapwrapper": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8824,6 +9130,7 @@
     },
     "libdiag": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8877,8 +9184,179 @@
         }
       }
     },
+    "libdiag_system": {
+      "kind": "cc_prebuilt_library_shared",
+      "partition": "system_ext",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/system_ext/lib64/libdiag_system.so"
+          ],
+          "shared_libs": [
+            "android.hidl.allocator@1.0",
+            "android.hidl.memory@1.0",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "libhidlbase",
+            "libhidlmemory",
+            "liblog",
+            "libm",
+            "libutils",
+            "vendor.qti.diaghal@1.0"
+          ],
+          "needed": {
+            "proprietary/system_ext/lib64/libdiag_system.so": [
+              "vendor.qti.diaghal@1.0",
+              "libhidlbase",
+              "liblog",
+              "libutils",
+              "android.hidl.allocator@1.0",
+              "android.hidl.memory@1.0",
+              "libhidlmemory",
+              "libc",
+              "libcutils",
+              "libc++",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
+    "libdpmctmgr": {
+      "kind": "cc_prebuilt_library_shared",
+      "partition": "system_ext",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/system_ext/lib64/libdpmctmgr.so"
+          ],
+          "shared_libs": [
+            "com.qualcomm.qti.dpm.api@1.0",
+            "libbinder",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdiag_system",
+            "libdl",
+            "libdpmframework",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/system_ext/lib64/libdpmctmgr.so": [
+              "libdiag_system",
+              "libbinder",
+              "libcutils",
+              "libutils",
+              "libdpmframework",
+              "com.qualcomm.qti.dpm.api@1.0",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
+    "libdpmfdmgr": {
+      "kind": "cc_prebuilt_library_shared",
+      "partition": "system_ext",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/system_ext/lib64/libdpmfdmgr.so"
+          ],
+          "shared_libs": [
+            "com.qualcomm.qti.dpm.api@1.0",
+            "libbinder",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdiag_system",
+            "libdl",
+            "libdpmframework",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/system_ext/lib64/libdpmfdmgr.so": [
+              "libdiag_system",
+              "libbinder",
+              "libcutils",
+              "libutils",
+              "libdpmframework",
+              "com.qualcomm.qti.dpm.api@1.0",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
+    "libdpmframework": {
+      "kind": "cc_prebuilt_library_shared",
+      "partition": "system_ext",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/system_ext/lib64/libdpmframework.so"
+          ],
+          "shared_libs": [
+            "com.qualcomm.qti.dpm.api@1.0",
+            "libbinder",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdiag_system",
+            "libdl",
+            "libhardware",
+            "libhardware_legacy",
+            "libhidlbase",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/system_ext/lib64/libdpmframework.so": [
+              "libdiag_system",
+              "libbinder",
+              "libcutils",
+              "libutils",
+              "liblog",
+              "libhidlbase",
+              "libhardware",
+              "libhardware_legacy",
+              "com.qualcomm.qti.dpm.api@1.0",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
     "libdpmqmihal": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8887,7 +9365,7 @@
             "proprietary/vendor/lib64/libdpmqmihal.so"
           ],
           "shared_libs": [
-            "com.qualcomm.qti.dpm.api@1.0",
+            "com.qualcomm.qti.dpm.api@1.0_vendor",
             "libbase",
             "libc",
             "libc++",
@@ -8909,6 +9387,46 @@
               "libutils",
               "libhardware_legacy",
               "libhardware",
+              "com.qualcomm.qti.dpm.api@1.0_vendor",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
+    "libdpmtcm": {
+      "kind": "cc_prebuilt_library_shared",
+      "partition": "system_ext",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/system_ext/lib64/libdpmtcm.so"
+          ],
+          "shared_libs": [
+            "com.qualcomm.qti.dpm.api@1.0",
+            "libbinder",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdiag_system",
+            "libdl",
+            "libdpmframework",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/system_ext/lib64/libdpmtcm.so": [
+              "libdiag_system",
+              "libbinder",
+              "libcutils",
+              "libutils",
+              "libdpmframework",
               "com.qualcomm.qti.dpm.api@1.0",
               "libc++",
               "libc",
@@ -8922,6 +9440,7 @@
     },
     "libdrmfs": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8961,6 +9480,7 @@
     },
     "libdrmutils": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -8990,6 +9510,7 @@
     },
     "libdrplugin_client": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9057,6 +9578,7 @@
     },
     "libdsi_netctrl": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9156,6 +9678,7 @@
     },
     "libdsutils": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9221,6 +9744,7 @@
     },
     "libevent_observer": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9284,6 +9808,7 @@
     },
     "libfastcvopt": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9317,6 +9842,7 @@
     },
     "libflash_pmic": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9348,6 +9874,7 @@
     },
     "libflp": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9423,6 +9950,7 @@
     },
     "libgdtap": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9464,6 +9992,7 @@
     },
     "libgeofence": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9539,6 +10068,7 @@
     },
     "libgpustats": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9576,6 +10106,7 @@
     },
     "libgsl": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9649,6 +10180,7 @@
     },
     "libhal_dbg": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9680,6 +10212,7 @@
     },
     "libhdr_tm": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9719,6 +10252,7 @@
     },
     "libidl": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9766,6 +10300,7 @@
     },
     "libizat_client_api": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9821,6 +10356,7 @@
     },
     "libizat_core": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9896,6 +10432,7 @@
     },
     "libjpegdhw": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9927,6 +10464,7 @@
     },
     "libjpegdmahw": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9958,6 +10496,7 @@
     },
     "libjpegehw": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -9989,6 +10528,7 @@
     },
     "libjson": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10020,6 +10560,7 @@
     },
     "libkeymasterdeviceutils": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10057,6 +10598,7 @@
     },
     "liblbs_core": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10148,6 +10690,7 @@
     },
     "libllvm-glnext": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10199,6 +10742,7 @@
     },
     "libllvm-qcom": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10246,6 +10790,7 @@
     },
     "libloc_api_v02": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10321,6 +10866,7 @@
     },
     "liblocationservice": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10404,6 +10950,7 @@
     },
     "liblocationservice_glue": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10503,6 +11050,7 @@
     },
     "liblowi_client": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10562,6 +11110,7 @@
     },
     "liblowi_wifihal": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10599,6 +11148,7 @@
     },
     "liblqe": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10642,6 +11192,7 @@
     },
     "libmdmdetect": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10701,6 +11252,7 @@
     },
     "libmm-omxcore": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10734,6 +11286,7 @@
     },
     "libmmcamera2_c2d_module": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10771,6 +11324,7 @@
     },
     "libmmcamera2_cpp_module": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10820,6 +11374,7 @@
     },
     "libmmcamera2_frame_algorithm": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10875,6 +11430,7 @@
     },
     "libmmcamera2_iface_modules": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10922,6 +11478,7 @@
     },
     "libmmcamera2_imglib_modules": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -10971,6 +11528,7 @@
     },
     "libmmcamera2_is": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11038,6 +11596,7 @@
     },
     "libmmcamera2_isp_modules": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11083,6 +11642,7 @@
     },
     "libmmcamera2_mct": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11126,6 +11686,7 @@
     },
     "libmmcamera2_mct_shimlayer": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11173,6 +11734,7 @@
     },
     "libmmcamera2_pp_buf_mgr": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11208,6 +11770,7 @@
     },
     "libmmcamera2_pproc_modules": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11253,6 +11816,7 @@
     },
     "libmmcamera2_q3a_core": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11328,6 +11892,7 @@
     },
     "libmmcamera2_sensor_modules": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11383,6 +11948,7 @@
     },
     "libmmcamera2_stats_algorithm": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11448,6 +12014,7 @@
     },
     "libmmcamera2_stats_lib": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11517,6 +12084,7 @@
     },
     "libmmcamera2_stats_modules": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11580,6 +12148,7 @@
     },
     "libmmcamera_arcsoftbokeh_lib": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11619,6 +12188,7 @@
     },
     "libmmcamera_arcsoftlls": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11658,6 +12228,7 @@
     },
     "libmmcamera_atmel_at24c32e_eeprom": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11691,6 +12262,7 @@
     },
     "libmmcamera_blackwhite": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11726,6 +12298,7 @@
     },
     "libmmcamera_bokeh": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11775,6 +12348,7 @@
     },
     "libmmcamera_csidtg": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11806,6 +12380,7 @@
     },
     "libmmcamera_dbg": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11861,6 +12436,7 @@
     },
     "libmmcamera_depth_map": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11892,6 +12468,7 @@
     },
     "libmmcamera_dummyalgo": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11927,6 +12504,7 @@
     },
     "libmmcamera_dw9761b_2d_eeprom": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11960,6 +12538,7 @@
     },
     "libmmcamera_eebinparse": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -11991,6 +12570,7 @@
     },
     "libmmcamera_eeprom_util": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12022,6 +12602,7 @@
     },
     "libmmcamera_eztune_module": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12059,6 +12640,7 @@
     },
     "libmmcamera_facedetection_lib": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12092,6 +12674,7 @@
     },
     "libmmcamera_faceproc": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12139,6 +12722,7 @@
     },
     "libmmcamera_faceproc2": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12186,6 +12770,7 @@
     },
     "libmmcamera_gt24p64b_main_eeprom": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12219,6 +12804,7 @@
     },
     "libmmcamera_gt24p64b_sub_eeprom": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12252,6 +12838,7 @@
     },
     "libmmcamera_hdr_gb_lib": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12283,6 +12870,7 @@
     },
     "libmmcamera_hdrgreyscale": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12318,6 +12906,7 @@
     },
     "libmmcamera_highcontrast": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12353,6 +12942,7 @@
     },
     "libmmcamera_hvx_add_constant": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12384,6 +12974,7 @@
     },
     "libmmcamera_hvx_grid_sum": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12415,6 +13006,7 @@
     },
     "libmmcamera_imglib": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12453,6 +13045,7 @@
     },
     "libmmcamera_imglib_faceproc_adspstub": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12486,6 +13079,7 @@
     },
     "libmmcamera_imx214": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12517,6 +13111,7 @@
     },
     "libmmcamera_imx230": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12548,6 +13143,7 @@
     },
     "libmmcamera_imx258": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12579,6 +13175,7 @@
     },
     "libmmcamera_imx258_gt24c16_eeprom": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12612,6 +13209,7 @@
     },
     "libmmcamera_imx258_gt24c32_eeprom": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12645,6 +13243,7 @@
     },
     "libmmcamera_imx258_mono": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12676,6 +13275,7 @@
     },
     "libmmcamera_imx258_mono_gt24c32_eeprom": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12709,6 +13309,7 @@
     },
     "libmmcamera_imx268_main": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12740,6 +13341,7 @@
     },
     "libmmcamera_imx268_sub": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12771,6 +13373,7 @@
     },
     "libmmcamera_imx298": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12802,6 +13405,7 @@
     },
     "libmmcamera_imx318": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12833,6 +13437,7 @@
     },
     "libmmcamera_imx362": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12864,6 +13469,7 @@
     },
     "libmmcamera_imx362_gt24c64a": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12895,6 +13501,7 @@
     },
     "libmmcamera_imx376": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12926,6 +13533,7 @@
     },
     "libmmcamera_imx378": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12957,6 +13565,7 @@
     },
     "libmmcamera_imx380_main": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -12988,6 +13597,7 @@
     },
     "libmmcamera_imx380_sub": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13019,6 +13629,7 @@
     },
     "libmmcamera_interface": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13062,6 +13673,7 @@
     },
     "libmmcamera_irs1645": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13093,6 +13705,7 @@
     },
     "libmmcamera_isp_abf48": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13132,6 +13745,7 @@
     },
     "libmmcamera_isp_aec_bg_stats47": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13171,6 +13785,7 @@
     },
     "libmmcamera_isp_bf_stats47": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13210,6 +13825,7 @@
     },
     "libmmcamera_isp_bg_stats46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13249,6 +13865,7 @@
     },
     "libmmcamera_isp_bhist_stats44": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13288,6 +13905,7 @@
     },
     "libmmcamera_isp_black_level48": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13327,6 +13945,7 @@
     },
     "libmmcamera_isp_bpc48": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13366,6 +13985,7 @@
     },
     "libmmcamera_isp_cac47": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13405,6 +14025,7 @@
     },
     "libmmcamera_isp_chroma_enhan40": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13444,6 +14065,7 @@
     },
     "libmmcamera_isp_chroma_suppress40": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13483,6 +14105,7 @@
     },
     "libmmcamera_isp_clamp_encoder40": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13522,6 +14145,7 @@
     },
     "libmmcamera_isp_clamp_video40": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13561,6 +14185,7 @@
     },
     "libmmcamera_isp_clamp_viewfinder40": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13600,6 +14225,7 @@
     },
     "libmmcamera_isp_color_correct46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13639,6 +14265,7 @@
     },
     "libmmcamera_isp_color_xform_encoder46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13678,6 +14305,7 @@
     },
     "libmmcamera_isp_color_xform_video46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13717,6 +14345,7 @@
     },
     "libmmcamera_isp_color_xform_viewfinder46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13756,6 +14385,7 @@
     },
     "libmmcamera_isp_cs_stats46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13795,6 +14425,7 @@
     },
     "libmmcamera_isp_demosaic48": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13834,6 +14465,7 @@
     },
     "libmmcamera_isp_demux48": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13873,6 +14505,7 @@
     },
     "libmmcamera_isp_fovcrop_encoder46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13912,6 +14545,7 @@
     },
     "libmmcamera_isp_fovcrop_video46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13951,6 +14585,7 @@
     },
     "libmmcamera_isp_fovcrop_viewfinder46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -13990,6 +14625,7 @@
     },
     "libmmcamera_isp_gamma44": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14029,6 +14665,7 @@
     },
     "libmmcamera_isp_gic48": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14068,6 +14705,7 @@
     },
     "libmmcamera_isp_gtm46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14107,6 +14745,7 @@
     },
     "libmmcamera_isp_hdr48": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14146,6 +14785,7 @@
     },
     "libmmcamera_isp_hdr_be_stats46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14185,6 +14825,7 @@
     },
     "libmmcamera_isp_hdr_bhist_stats44": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14224,6 +14865,7 @@
     },
     "libmmcamera_isp_ihist_stats46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14263,6 +14905,7 @@
     },
     "libmmcamera_isp_linearization40": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14302,6 +14945,7 @@
     },
     "libmmcamera_isp_ltm47": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14341,6 +14985,7 @@
     },
     "libmmcamera_isp_mce40": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14380,6 +15025,7 @@
     },
     "libmmcamera_isp_mesh_rolloff44": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14419,6 +15065,7 @@
     },
     "libmmcamera_isp_pdaf48": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14458,6 +15105,7 @@
     },
     "libmmcamera_isp_pedestal_correct46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14497,6 +15145,7 @@
     },
     "libmmcamera_isp_rs_stats46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14536,6 +15185,7 @@
     },
     "libmmcamera_isp_scaler_encoder46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14575,6 +15225,7 @@
     },
     "libmmcamera_isp_scaler_video46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14614,6 +15265,7 @@
     },
     "libmmcamera_isp_scaler_viewfinder46": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14653,6 +15305,7 @@
     },
     "libmmcamera_isp_sce40": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14692,6 +15345,7 @@
     },
     "libmmcamera_isp_snr47": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14731,6 +15385,7 @@
     },
     "libmmcamera_isp_sub_module": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14768,6 +15423,7 @@
     },
     "libmmcamera_m24c64s_main_eeprom": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14801,6 +15457,7 @@
     },
     "libmmcamera_m24c64s_sub_eeprom": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14834,6 +15491,7 @@
     },
     "libmmcamera_paaf_lib": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14869,6 +15527,7 @@
     },
     "libmmcamera_pdaf": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14904,6 +15563,7 @@
     },
     "libmmcamera_pdafcamif": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14939,6 +15599,7 @@
     },
     "libmmcamera_ppbase_module": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -14974,6 +15635,7 @@
     },
     "libmmcamera_ppeiscore": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15021,6 +15683,7 @@
     },
     "libmmcamera_quadracfa": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15054,6 +15717,7 @@
     },
     "libmmcamera_thread_services": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15087,6 +15751,7 @@
     },
     "libmmcamera_tintless_algo": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15146,6 +15811,7 @@
     },
     "libmmcamera_tintless_bg_pca_algo": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15205,6 +15871,7 @@
     },
     "libmmjpeg": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15240,6 +15907,7 @@
     },
     "libmmjpeg_interface": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15277,6 +15945,7 @@
     },
     "libmmlib2d_interface": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15310,6 +15979,7 @@
     },
     "libmmosal_proprietary": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15343,6 +16013,7 @@
     },
     "libmmqjpeg_codec": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15382,6 +16053,7 @@
     },
     "libmmqjpegdma": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15413,6 +16085,7 @@
     },
     "libmpbase": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15434,6 +16107,7 @@
     },
     "libnetmgr": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15505,6 +16179,7 @@
     },
     "libnetmgr_common": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15548,6 +16223,7 @@
     },
     "libnetmgr_nr_fusion": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15591,6 +16267,7 @@
     },
     "libnetmgr_rmnet_ext": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15634,6 +16311,7 @@
     },
     "libnlnetmgr": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15675,6 +16353,7 @@
     },
     "libpdmapper": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15716,6 +16395,7 @@
     },
     "libpdnotifier": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15755,6 +16435,7 @@
     },
     "libperipheral_client": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15822,6 +16503,7 @@
     },
     "libq3dtools_adreno": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15891,6 +16573,7 @@
     },
     "libq3dtools_esx": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -15964,6 +16647,7 @@
     },
     "libqcci_legacy": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16003,6 +16687,7 @@
     },
     "libqcrilFramework": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16064,6 +16749,7 @@
     },
     "libqdMetaData": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16097,6 +16783,7 @@
     },
     "libqdi": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16180,6 +16867,7 @@
     },
     "libqdp": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16221,6 +16909,7 @@
     },
     "libqmi": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16296,6 +16985,7 @@
     },
     "libqmi_cci": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16363,6 +17053,7 @@
     },
     "libqmi_client_helper": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16442,6 +17133,7 @@
     },
     "libqmi_client_qmux": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16513,6 +17205,7 @@
     },
     "libqmi_common_so": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16568,6 +17261,7 @@
     },
     "libqmi_csi": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16603,6 +17297,7 @@
     },
     "libqmi_encdec": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16658,6 +17353,7 @@
     },
     "libqmiservices": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16709,6 +17405,7 @@
     },
     "libqomx_core": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16740,6 +17437,7 @@
     },
     "libqomx_jpegdec": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16775,6 +17473,7 @@
     },
     "libqomx_jpegenc": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16810,6 +17509,7 @@
     },
     "libqomx_jpegenc_pipe": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16847,6 +17547,7 @@
     },
     "libqrtr": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16874,6 +17575,7 @@
     },
     "libqseed3": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16901,6 +17603,7 @@
     },
     "libqservice": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16964,6 +17667,7 @@
     },
     "libqsocket": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -16991,6 +17695,7 @@
     },
     "libremosaic_daemon": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17022,6 +17727,7 @@
     },
     "libril": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17113,6 +17819,7 @@
     },
     "libril-qc-hal-qmi": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": false,
       "blocking_dependencies": [
         "android.hardware.radio.c_shim@1.0",
@@ -17300,6 +18007,7 @@
     },
     "libril-qc-logger": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17333,6 +18041,7 @@
     },
     "libril-qc-ltedirectdisc": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17360,6 +18069,7 @@
     },
     "libril-qc-radioconfig": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17387,6 +18097,7 @@
     },
     "libril-qcril-hook-oem": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17450,6 +18161,7 @@
     },
     "librilqmiservices": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17479,6 +18191,7 @@
     },
     "librilutils": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17526,6 +18239,7 @@
     },
     "librpmb": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17585,6 +18299,7 @@
     },
     "libsdedrm": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17616,6 +18331,7 @@
     },
     "libsdm-color": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17655,6 +18371,7 @@
     },
     "libsdm-diag": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17688,6 +18405,7 @@
     },
     "libsdm-disp-apis": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17759,6 +18477,7 @@
     },
     "libsdm-disp-vndapis": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17830,6 +18549,7 @@
     },
     "libsdmextension": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17859,6 +18579,7 @@
     },
     "libsdmutils": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17906,6 +18627,7 @@
     },
     "libsdsprpc": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -17961,6 +18683,7 @@
     },
     "libsensor1": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18036,6 +18759,7 @@
     },
     "libsensor_reg": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18099,6 +18823,7 @@
     },
     "libsettings": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18162,6 +18887,7 @@
     },
     "libsns_low_lat_stream_stub": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18217,6 +18943,7 @@
     },
     "libspcom": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18250,6 +18977,7 @@
     },
     "libssd": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18287,6 +19015,7 @@
     },
     "libsystem_health_mon": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18320,6 +19049,7 @@
     },
     "libthermalclient": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18375,6 +19105,7 @@
     },
     "libthermalioctl": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18406,6 +19137,7 @@
     },
     "libtime_genoff": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18461,6 +19193,7 @@
     },
     "libtinycompress_vendor": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18516,6 +19249,7 @@
     },
     "libtinyxml2_1": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18543,6 +19277,7 @@
     },
     "libulp2": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18626,6 +19361,7 @@
     },
     "libwfdcommonutils_proprietary": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18663,6 +19399,7 @@
     },
     "libwfdhaldsmanager": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18704,6 +19441,7 @@
     },
     "libwfdhdcpcp": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18739,6 +19477,7 @@
     },
     "libwfdmmservice": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18776,6 +19515,7 @@
     },
     "libwfdmodulehdcpsession": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18817,6 +19557,7 @@
     },
     "libxml": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18876,6 +19617,7 @@
     },
     "libxtadapter": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18939,6 +19681,7 @@
     },
     "libxtwifi_ulp_adaptor": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -18974,6 +19717,7 @@
     },
     "netmgrd": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19047,6 +19791,7 @@
     },
     "nfc_nci.nqx.default": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19142,6 +19887,7 @@
     },
     "nfc_nci.nqx.default.hw": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19237,6 +19983,7 @@
     },
     "nqnfcinfo": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19268,6 +20015,7 @@
     },
     "pd-mapper": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19311,6 +20059,7 @@
     },
     "pm-proxy": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19346,6 +20095,7 @@
     },
     "pm-service": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19393,6 +20143,7 @@
     },
     "qcrild": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19430,6 +20181,7 @@
     },
     "qcrild_librilutils": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19477,6 +20229,7 @@
     },
     "qrtr-ns": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19506,6 +20259,7 @@
     },
     "qseecomd": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19543,6 +20297,7 @@
     },
     "qtibus": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19578,6 +20333,7 @@
     },
     "qtimutex": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19607,6 +20363,7 @@
     },
     "rild": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19640,6 +20397,7 @@
     },
     "rmt_storage": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19677,6 +20435,7 @@
     },
     "sensors.qti": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19720,6 +20479,7 @@
     },
     "sensors.ssc": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19803,6 +20563,7 @@
     },
     "spdaemon": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19842,6 +20603,7 @@
     },
     "tftp_server": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19875,6 +20637,7 @@
     },
     "thermal-engine": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19912,6 +20675,7 @@
     },
     "vendor.cm.hardware.thermal3d@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -19987,6 +20751,7 @@
     },
     "vendor.cm.hardware.thermal3d@1.0-impl": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20030,6 +20795,7 @@
     },
     "vendor.cm.hardware.thermal3d@1.0-service.cm": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20069,6 +20835,7 @@
     },
     "vendor.display.color@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20144,6 +20911,7 @@
     },
     "vendor.leia.hardware.leiadisp@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20219,6 +20987,7 @@
     },
     "vendor.leia.hardware.leiadisp@1.0-impl": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20264,6 +21033,7 @@
     },
     "vendor.leia.hardware.leiadisp@1.0-service": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20309,6 +21079,7 @@
     },
     "vendor.nxp.hardware.nfc@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20350,6 +21121,7 @@
     },
     "vendor.qti.data.factory@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20411,6 +21183,7 @@
     },
     "vendor.qti.data.factory@1.1": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20476,8 +21249,45 @@
         }
       }
     },
+    "vendor.qti.diaghal@1.0": {
+      "kind": "cc_prebuilt_library_shared",
+      "partition": "system_ext",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/system_ext/lib64/vendor.qti.diaghal@1.0.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "libhidlbase",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/system_ext/lib64/vendor.qti.diaghal@1.0.so": [
+              "libhidlbase",
+              "liblog",
+              "libutils",
+              "libcutils",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
     "vendor.qti.esepowermanager@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20553,6 +21363,7 @@
     },
     "vendor.qti.esepowermanager@1.0-impl": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20632,6 +21443,7 @@
     },
     "vendor.qti.esepowermanager@1.0-service": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20681,6 +21493,7 @@
     },
     "vendor.qti.gnss@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20760,6 +21573,7 @@
     },
     "vendor.qti.gnss@1.0-impl": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20879,6 +21693,7 @@
     },
     "vendor.qti.gnss@1.1": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20924,6 +21739,7 @@
     },
     "vendor.qti.gnss@1.2": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -20971,6 +21787,7 @@
     },
     "vendor.qti.gnss@2.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21020,6 +21837,7 @@
     },
     "vendor.qti.gnss@2.1": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21071,6 +21889,7 @@
     },
     "vendor.qti.hardware.data.connection@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21112,6 +21931,7 @@
     },
     "vendor.qti.hardware.data.connection@1.1": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21149,6 +21969,7 @@
     },
     "vendor.qti.hardware.data.dynamicdds@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21190,6 +22011,7 @@
     },
     "vendor.qti.hardware.data.iwlan@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21235,6 +22057,7 @@
     },
     "vendor.qti.hardware.data.qmi@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21276,6 +22099,7 @@
     },
     "vendor.qti.hardware.fingerprint@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21317,6 +22141,7 @@
     },
     "vendor.qti.hardware.fm@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21358,6 +22183,7 @@
     },
     "vendor.qti.hardware.radio.am@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21399,6 +22225,7 @@
     },
     "vendor.qti.hardware.radio.atcmdfwd@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21440,6 +22267,7 @@
     },
     "vendor.qti.hardware.radio.ims@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21481,6 +22309,7 @@
     },
     "vendor.qti.hardware.radio.ims@1.1": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21524,6 +22353,7 @@
     },
     "vendor.qti.hardware.radio.ims@1.2": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21569,6 +22399,7 @@
     },
     "vendor.qti.hardware.radio.ims@1.3": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21616,6 +22447,7 @@
     },
     "vendor.qti.hardware.radio.ims@1.4": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21665,6 +22497,7 @@
     },
     "vendor.qti.hardware.radio.ims@1.5": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21710,6 +22543,7 @@
     },
     "vendor.qti.hardware.radio.ims@1.6": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21757,6 +22591,7 @@
     },
     "vendor.qti.hardware.radio.ims@1.7": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21806,6 +22641,7 @@
     },
     "vendor.qti.hardware.radio.internal.deviceinfo@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21841,6 +22677,7 @@
     },
     "vendor.qti.hardware.radio.lpa@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21882,6 +22719,7 @@
     },
     "vendor.qti.hardware.radio.lpa@1.1": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21919,6 +22757,7 @@
     },
     "vendor.qti.hardware.radio.qcrilhook@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -21994,6 +22833,7 @@
     },
     "vendor.qti.hardware.radio.qtiradio@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22035,6 +22875,7 @@
     },
     "vendor.qti.hardware.radio.qtiradio@2.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22080,6 +22921,7 @@
     },
     "vendor.qti.hardware.radio.qtiradio@2.1": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22127,6 +22969,7 @@
     },
     "vendor.qti.hardware.radio.qtiradio@2.2": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22170,6 +23013,7 @@
     },
     "vendor.qti.hardware.radio.qtiradio@2.3": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22215,6 +23059,7 @@
     },
     "vendor.qti.hardware.radio.qtiradio@2.4": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22264,6 +23109,7 @@
     },
     "vendor.qti.hardware.radio.uim@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22305,6 +23151,7 @@
     },
     "vendor.qti.hardware.radio.uim@1.1": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22348,6 +23195,7 @@
     },
     "vendor.qti.hardware.radio.uim@1.2": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22387,6 +23235,7 @@
     },
     "vendor.qti.hardware.radio.uim_remote_client@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22428,6 +23277,7 @@
     },
     "vendor.qti.hardware.radio.uim_remote_client@1.1": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22465,6 +23315,7 @@
     },
     "vendor.qti.hardware.radio.uim_remote_client@1.2": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22504,6 +23355,7 @@
     },
     "vendor.qti.hardware.radio.uim_remote_server@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22545,6 +23397,7 @@
     },
     "vendor.qti.ims.callinfo@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22620,6 +23473,7 @@
     },
     "vendor.qti.ims.rcsconfig@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22661,6 +23515,7 @@
     },
     "vendor.qti.imsrtpservice@1.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22702,6 +23557,7 @@
     },
     "vendor.qti.imsrtpservice@1.0-service-Impl": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22751,6 +23607,7 @@
     },
     "vendor.qti.latency@2.0": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22792,6 +23649,7 @@
     },
     "vulkan.msm8998": {
       "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22835,6 +23693,7 @@
     },
     "wcnss_filter": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22872,6 +23731,7 @@
     },
     "wifidisplayhalservice": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22913,6 +23773,7 @@
     },
     "xtwifi-client": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -22968,6 +23829,7 @@
     },
     "xtwifi-inet-agent": {
       "kind": "cc_prebuilt_binary",
+      "partition": "vendor",
       "check_elf_files": true,
       "blocking_dependencies": [],
       "architectures": {
@@ -23003,10 +23865,10 @@
     }
   },
   "summary": {
-    "total_modules": 538,
-    "checkelf_enabled": 537,
+    "total_modules": 546,
+    "checkelf_enabled": 545,
     "checkelf_exceptions": 1,
-    "provider_sonames": 504,
+    "provider_sonames": 511,
     "allow_undefined_symbol_modules": 20
   }
 }

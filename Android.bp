@@ -1,6 +1,46 @@
 // Automatically generated from verified RED .118 proprietary ELF payload.
 // shared_libs are derived from readelf DT_NEEDED; unresolved provider mappings remain explicit exceptions.
 
+soong_namespace {
+    imports: [
+        "device/red/hydrogenone",
+        "hardware/qcom-caf/msm8998",
+        "hardware/qcom-caf/wlan",
+        "vendor/qcom/opensource/data-ipa-cfg-mgr-legacy-um",
+        "vendor/qcom/opensource/dataservices",
+    ],
+}
+
+android_app_import {
+    name: "dpmserviceapp",
+    owner: "red",
+    apk: "proprietary/system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    system_ext_specific: true,
+}
+
+dex_import {
+    name: "com.qti.dpmframework",
+    owner: "red",
+    jars: [
+        "proprietary/system_ext/framework/com.qti.dpmframework.jar",
+    ],
+    system_ext_specific: true,
+}
+
+dex_import {
+    name: "dpmapi",
+    owner: "red",
+    jars: [
+        "proprietary/system_ext/framework/dpmapi.jar",
+    ],
+    system_ext_specific: true,
+}
+
 cc_prebuilt_binary {
     name: "adsprpcd",
     owner: "red",
@@ -512,6 +552,35 @@ cc_prebuilt_library_shared {
     strip: {
         none: true,
     },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "libhidlbase",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.dpm.api@1.0_vendor",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    stem: "com.qualcomm.qti.dpm.api@1.0",
     target: {
         android_arm64: {
             srcs: [
@@ -1098,7 +1167,7 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/dpmQmiMgr",
             ],
             shared_libs: [
-                "com.qualcomm.qti.dpm.api@1.0",
+                "com.qualcomm.qti.dpm.api@1.0_vendor",
                 "libbase",
                 "libc",
                 "libc++",
@@ -1120,6 +1189,37 @@ cc_prebuilt_binary {
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "dpmd",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/bin/dpmd",
+            ],
+            shared_libs: [
+                "com.qualcomm.qti.dpm.api@1.0",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdiag_system",
+                "libdl",
+                "libdpmframework",
+                "libhardware_legacy",
+                "libhidlbase",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
 }
 
 cc_prebuilt_library_shared {
@@ -6893,6 +6993,131 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libdiag_system",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libdiag_system.so",
+            ],
+            shared_libs: [
+                "android.hidl.allocator@1.0",
+                "android.hidl.memory@1.0",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "libhidlbase",
+                "libhidlmemory",
+                "liblog",
+                "libm",
+                "libutils",
+                "vendor.qti.diaghal@1.0",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdpmctmgr",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libdpmctmgr.so",
+            ],
+            shared_libs: [
+                "com.qualcomm.qti.dpm.api@1.0",
+                "libbinder",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdiag_system",
+                "libdl",
+                "libdpmframework",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdpmfdmgr",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libdpmfdmgr.so",
+            ],
+            shared_libs: [
+                "com.qualcomm.qti.dpm.api@1.0",
+                "libbinder",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdiag_system",
+                "libdl",
+                "libdpmframework",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdpmframework",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libdpmframework.so",
+            ],
+            shared_libs: [
+                "com.qualcomm.qti.dpm.api@1.0",
+                "libbinder",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdiag_system",
+                "libdl",
+                "libhardware",
+                "libhardware_legacy",
+                "libhidlbase",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libdpmqmihal",
     owner: "red",
     strip: {
@@ -6904,7 +7129,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libdpmqmihal.so",
             ],
             shared_libs: [
-                "com.qualcomm.qti.dpm.api@1.0",
+                "com.qualcomm.qti.dpm.api@1.0_vendor",
                 "libbase",
                 "libc",
                 "libc++",
@@ -6922,6 +7147,36 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdpmtcm",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libdpmtcm.so",
+            ],
+            shared_libs: [
+                "com.qualcomm.qti.dpm.api@1.0",
+                "libbinder",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdiag_system",
+                "libdl",
+                "libdpmframework",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
 }
 
 cc_prebuilt_library_shared {
@@ -15451,6 +15706,34 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.diaghal@1.0",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.diaghal@1.0.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "libhidlbase",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
 }
 
 cc_prebuilt_library_shared {

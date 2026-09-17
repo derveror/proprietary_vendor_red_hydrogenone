@@ -6,6 +6,10 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/red/hydrogenone
 
 PRODUCT_COPY_FILES += \
+    vendor/red/hydrogenone/proprietary/system_ext/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/dpm/dpm.conf \
+    vendor/red/hydrogenone/proprietary/system_ext/etc/init/dpmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/dpmd.rc \
+    vendor/red/hydrogenone/proprietary/system_ext/etc/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qti.dpmframework.xml \
+    vendor/red/hydrogenone/proprietary/system_ext/etc/permissions/dpmapi.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/dpmapi.xml \
     vendor/red/hydrogenone/proprietary/vendor/etc/data/netmgr_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/data/netmgr_config.xml \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800h.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800h.bin \
     vendor/red/hydrogenone/proprietary/vendor/etc/hbtp/qtc800h_8998_660.bin:$(TARGET_COPY_OUT_VENDOR)/etc/hbtp/qtc800h_8998_660.bin \
@@ -459,7 +463,7 @@ PRODUCT_PACKAGES += \
     libwfdmodulehdcpsession \
     com.fingerprints.extension@1.0 \
     com.qualcomm.qti.ant@1.0 \
-    com.qualcomm.qti.dpm.api@1.0 \
+    com.qualcomm.qti.dpm.api@1.0_vendor \
     com.quicinc.cne.api@1.0 \
     com.quicinc.cne.api@1.1 \
     com.quicinc.cne.constants@1.0 \
@@ -575,6 +579,16 @@ PRODUCT_PACKAGES += \
     vendor.qti.imsrtpservice@1.0-service-Impl \
     vendor.qti.imsrtpservice@1.0 \
     vendor.qti.latency@2.0 \
+    com.qualcomm.qti.dpm.api@1.0 \
+    libdiag_system \
+    libdpmctmgr \
+    libdpmfdmgr \
+    libdpmframework \
+    libdpmtcm \
+    vendor.qti.diaghal@1.0 \
+    dpmserviceapp \
+    com.qti.dpmframework \
+    dpmapi \
     adsprpcd \
     cnss-daemon \
     dpmQmiMgr \
@@ -608,7 +622,8 @@ PRODUCT_PACKAGES += \
     wcnss_filter \
     wifidisplayhalservice \
     xtwifi-client \
-    xtwifi-inet-agent
+    xtwifi-inet-agent \
+    dpmd
 
 PRODUCT_COPY_FILES += \
     vendor/red/hydrogenone/proprietary/vendor/bin/init.qcom.sensors.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.sensors.sh \

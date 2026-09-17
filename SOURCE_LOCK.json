@@ -3,7 +3,7 @@
   "stock_archive_sha256": "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e",
   "stock_build": "H1A1000.082ho.01.00.10r.118",
   "stock_fingerprint": "RED/HydrogenONE/HydrogenONE:9/PKQ1.190118.001/118:userdebug/release-keys",
-  "selected_files": 682,
+  "selected_files": 697,
   "target_lineage": "lineage-22.2",
   "target_android_api": 35,
   "android15_contract": {
@@ -13,7 +13,7 @@
     "stale_init_pruned": true,
     "red_leia_display_dependency_recovered": true,
     "elf_dependency_graph_generated_from_dt_needed": true,
-    "checkelf_enabled_modules": 537,
+    "checkelf_enabled_modules": 545,
     "checkelf_exception_modules": 1,
     "p0_rootdir_daemon_payload_completed_from_red_118": true,
     "qsee_ssd_listener_completed_from_red_118": true,
@@ -226,6 +226,21 @@
         "nubia/msm8998-common"
       ],
       "paths": [
+        "system_ext/bin/dpmd",
+        "system_ext/etc/dpm/dpm.conf",
+        "system_ext/etc/init/dpmd.rc",
+        "system_ext/etc/permissions/com.qti.dpmframework.xml",
+        "system_ext/etc/permissions/dpmapi.xml",
+        "system_ext/framework/com.qti.dpmframework.jar",
+        "system_ext/framework/dpmapi.jar",
+        "system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so",
+        "system_ext/lib64/libdiag_system.so",
+        "system_ext/lib64/libdpmctmgr.so",
+        "system_ext/lib64/libdpmfdmgr.so",
+        "system_ext/lib64/libdpmframework.so",
+        "system_ext/lib64/libdpmtcm.so",
+        "system_ext/lib64/vendor.qti.diaghal@1.0.so",
+        "system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk",
         "vendor/bin/dpmQmiMgr",
         "vendor/bin/hw/qcrild",
         "vendor/bin/netmgrd",
@@ -271,7 +286,8 @@
         "vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so",
         "vendor/radio/qcril_database/qcril.db"
       ],
-      "data_plane_complete": true
+      "data_plane_complete": true,
+      "dpm_system_side_complete": true
     },
     "red118_camera_runtime_files": 196,
     "qrtr_name_service_restored_from_red_118": true,

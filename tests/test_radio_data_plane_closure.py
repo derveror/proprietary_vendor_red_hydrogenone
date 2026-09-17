@@ -14,6 +14,21 @@ PROPRIETARY = ROOT / "proprietary"
 # LineageOS 22.2 msm8998 reference trees.  Keeping this byte-verified prevents
 # qcrild/libdsi from being paired with the older RED .118 netmgr/DPM stack.
 EXPECTED_SHA256 = {
+    "system_ext/bin/dpmd": "7a5379734f6cbd23adfb8e3729087beb19ef584303425e0bf298e15c7fcb0263",
+    "system_ext/etc/dpm/dpm.conf": "87f839379ce8f1882e2f287f83d4abc84b3b749873f7ffa6ae2303936352c7a7",
+    "system_ext/etc/init/dpmd.rc": "977c0d6987108d4a8a5952efadbbf66892ff4efaef3414b6e95e347229a77b24",
+    "system_ext/etc/permissions/com.qti.dpmframework.xml": "f0f06e0ffbe31064be2639ca338f0f944df96835e934ba60778a62d6ef9142c9",
+    "system_ext/etc/permissions/dpmapi.xml": "03dc2d5f62228102224eea64ff7bf98a4416146123497750e1a6bdb77b10d520",
+    "system_ext/framework/com.qti.dpmframework.jar": "160f4818af5ae8bff97373e31d11b97af6be9e330c24bcd20a83986ac3ece2cf",
+    "system_ext/framework/dpmapi.jar": "5b57736888c16de41f99264cfb980a41b470737b9b222f4c7ea9e2cd6ed9fe96",
+    "system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so": "07634cb2cc208c90e395b182c761d66dc41d84c7da831c3f4e747054f2f78037",
+    "system_ext/lib64/libdpmctmgr.so": "256d54e25d860c049d263f53ff5d214b3aff02af2d7cebb7fd307fd8948bbe32",
+    "system_ext/lib64/libdpmfdmgr.so": "b0af4f9c6ff59cbc88a3af6852b1e34c4a97094bd052048e6ae1aad9859be3b7",
+    "system_ext/lib64/libdpmframework.so": "a57ca3847cdd619c424c4e0dedfe603a0400f50fde44d5797ad21d27faf5662b",
+    "system_ext/lib64/libdpmtcm.so": "d7356f33ec0cfd7b72cc1a8d5424b67ce0aa37ba6c6e9f9edded0fbe28ac39e4",
+    "system_ext/lib64/libdiag_system.so": "9d2cba558f3382c6f88e8acab4a82f899fa6d0a3b01d7398fdd2482c7de2bdc4",
+    "system_ext/lib64/vendor.qti.diaghal@1.0.so": "21050415b2af475f36e90058b913a12f366fb9782d9bfc7a5e154494661a6b20",
+    "system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk": "bcadad9924174bab6fef54b95f69aeecf2a1f36d3e90495364cf63a62f29e580",
     "vendor/bin/dpmQmiMgr": "00a56585d294769d65addf61d0be73b0513ab74897ddb2d1bc34def7723ccecb",
     "vendor/bin/netmgrd": "48a8aaf29aa52220b9071fcd0edef8d75bc93da7738b208eea1adefe8607c1f3",
     "vendor/etc/data/netmgr_config.xml": "68218668d7d7e0edd6972762322d3516588dc764b04d75a75ff58804544b0568",
@@ -41,6 +56,7 @@ class RadioDataPlaneClosureTest(unittest.TestCase):
         radio = source_lock["android15_contract"]["radio_compatibility"]
         self.assertEqual(radio["donor_build"], "FP3 6.A.025.0")
         self.assertTrue(set(EXPECTED_SHA256).issubset(set(radio["paths"])))
+        self.assertTrue(radio["dpm_system_side_complete"])
 
     def test_manifest_records_installed_data_plane_identity(self) -> None:
         manifest = json.loads(
@@ -62,6 +78,32 @@ class RadioDataPlaneClosureTest(unittest.TestCase):
         self.assertRegex(
             source,
             re.compile(r"\bint\s+rtrmnet_set_uplink_aggregation_params\s*\("),
+        )
+
+    def test_vendor_dpm_api_has_partition_suffix(self) -> None:
+        selected = (ROOT / "proprietary-files.txt").read_text(encoding="utf-8")
+        self.assertIn(
+            "vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so;MODULE_SUFFIX=_vendor|",
+            selected,
+        )
+
+    def test_generated_dpm_modules_keep_their_partitions(self) -> None:
+        android_bp = (ROOT / "Android.bp").read_text(encoding="utf-8")
+        self.assertRegex(
+            android_bp,
+            re.compile(
+                r'name: "com\.qualcomm\.qti\.dpm\.api@1\.0".*?'
+                r'system_ext_specific: true,',
+                re.S,
+            ),
+        )
+        self.assertRegex(
+            android_bp,
+            re.compile(
+                r'name: "com\.qualcomm\.qti\.dpm\.api@1\.0_vendor".*?'
+                r'soc_specific: true,',
+                re.S,
+            ),
         )
 
 

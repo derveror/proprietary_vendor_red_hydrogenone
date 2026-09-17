@@ -7,7 +7,11 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
-from tools.generate_elf_contract import ensure_required_provider_module, module_for_soname
+from tools.generate_elf_contract import (
+    ensure_required_provider_module,
+    module_for_soname,
+    preserved_non_elf_blocks,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -51,6 +55,37 @@ def manifest_paths() -> set[str]:
 
 
 class ElfContractTest(unittest.TestCase):
+    def test_generator_preserves_non_elf_modules(self) -> None:
+        source = '''soong_namespace {
+    imports: ["hardware/qcom-caf/msm8998"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libexample",
+}
+
+dex_import {
+    name: "dpmapi",
+    jars: ["proprietary/system_ext/framework/dpmapi.jar"],
+}
+
+android_app_import {
+    name: "dpmserviceapp",
+    apk: "proprietary/system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk",
+}
+
+sh_binary {
+    name: "init.qcom.sensors",
+    src: "proprietary/vendor/bin/init.qcom.sensors.sh",
+}
+'''
+        preserved = preserved_non_elf_blocks(source)
+        self.assertIn('soong_namespace {', preserved)
+        self.assertIn('name: "dpmapi"', preserved)
+        self.assertIn('name: "dpmserviceapp"', preserved)
+        self.assertNotIn('name: "libexample"', preserved)
+        self.assertNotIn('name: "init.qcom.sensors"', preserved)
+
     def test_required_red_dependency_provider_is_selected(self) -> None:
         selected = manifest_paths()
         missing_manifest = sorted(REQUIRED_RED_DEPENDENCY_PATHS - selected)
@@ -79,6 +114,26 @@ class ElfContractTest(unittest.TestCase):
         self.assertEqual(
             module_for_soname("libclang_rt.ubsan_standalone-arm-android.so", {}),
             "libclang_rt.ubsan_standalone",
+        )
+
+    def test_duplicate_soname_provider_is_selected_by_partition(self) -> None:
+        providers = {
+            "system_ext:com.qualcomm.qti.dpm.api@1.0.so":
+                "com.qualcomm.qti.dpm.api@1.0",
+            "vendor:com.qualcomm.qti.dpm.api@1.0.so":
+                "com.qualcomm.qti.dpm.api@1.0_vendor",
+        }
+        self.assertEqual(
+            module_for_soname(
+                "com.qualcomm.qti.dpm.api@1.0.so", providers, "system_ext"
+            ),
+            "com.qualcomm.qti.dpm.api@1.0",
+        )
+        self.assertEqual(
+            module_for_soname(
+                "com.qualcomm.qti.dpm.api@1.0.so", providers, "vendor"
+            ),
+            "com.qualcomm.qti.dpm.api@1.0_vendor",
         )
 
     def test_display_color_provider_module_is_added_when_stock_blobs_exist(self) -> None:
