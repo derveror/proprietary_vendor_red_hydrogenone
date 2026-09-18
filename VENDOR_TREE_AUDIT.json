@@ -4,9 +4,9 @@
   "stock_archive_verified": true,
   "counts": {
     "P0": 122,
-    "P1": 564,
+    "P1": 565,
     "P2": 19,
-    "total": 705
+    "total": 706
   },
   "notes": [
     "No RED msm8998-common repository is used.",

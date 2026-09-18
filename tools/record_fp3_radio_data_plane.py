@@ -27,6 +27,7 @@ EXPECTED_SHA256 = {
     "system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk": "bcadad9924174bab6fef54b95f69aeecf2a1f36d3e90495364cf63a62f29e580",
     "vendor/bin/dpmQmiMgr": "00a56585d294769d65addf61d0be73b0513ab74897ddb2d1bc34def7723ccecb",
     "vendor/bin/netmgrd": "48a8aaf29aa52220b9071fcd0edef8d75bc93da7738b208eea1adefe8607c1f3",
+    "vendor/etc/data/dsi_config.xml": "063cefcd27bf4acf88f5f9deecf9a50cf358ef49ac225d165d8d7e8a344ff4b4",
     "vendor/etc/data/netmgr_config.xml": "68218668d7d7e0edd6972762322d3516588dc764b04d75a75ff58804544b0568",
     "vendor/etc/init/dpmQmiMgr.rc": "525fba1911f28e3ee37bebc84033d94ea5c15ed89ce91c8ddeb02919ff8805dc",
     "vendor/etc/init/netmgrd.rc": "568143f3edf386dda7a13503cea2df6cc03904cfa798e14dfab5487aa8e6403b",

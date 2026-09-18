@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 122,
-    "P1": 564,
+    "P1": 565,
     "P2": 19,
-    "total": 705
+    "total": 706
   },
   "files": [
     {
@@ -951,6 +951,12 @@
       "path": "vendor/bin/xtwifi-inet-agent",
       "size": 138248,
       "sha256": "93ae8b13f39d453e8b0b757f9b4cec2773e15b0ac201a58f03657e9208e4d03a"
+    },
+    {
+      "tier": "P1",
+      "path": "vendor/etc/data/dsi_config.xml",
+      "size": 54859,
+      "sha256": "063cefcd27bf4acf88f5f9deecf9a50cf358ef49ac225d165d8d7e8a344ff4b4"
     },
     {
       "tier": "P1",
