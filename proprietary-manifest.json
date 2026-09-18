@@ -3025,8 +3025,8 @@
     {
       "tier": "P1",
       "path": "vendor/lib/libqdi.so",
-      "size": 126628,
-      "sha256": "ccb421de1ec61cdd1e1fb11cdd6bc37ba4c0fe0a77d232549be4baca9f6ee9a9"
+      "size": 109100,
+      "sha256": "c49f920a35aa16028125225dc953d827ba0bb11972e4a67a8a0c730e88532ce4"
     },
     {
       "tier": "P1",
@@ -3781,8 +3781,8 @@
     {
       "tier": "P1",
       "path": "vendor/lib64/libqdi.so",
-      "size": 134016,
-      "sha256": "6fd789134ac8274b7a02b31b7aeeea0d203dfa64fc3c3307ccd4d739cecfd274"
+      "size": 161336,
+      "sha256": "e8ab3959656dade28a320e5038c8569929cfb02ac3767031fbd41f9c1e288690"
     },
     {
       "tier": "P1",
