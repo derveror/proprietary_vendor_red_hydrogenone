@@ -596,6 +596,9 @@ PRODUCT_PACKAGES += \
     libdpmtcm \
     vendor.qti.diaghal@1.0 \
     dpmserviceapp \
+    ims \
+    libimscamera_jni \
+    libimsmedia_jni \
     com.qti.dpmframework \
     dpmapi \
     adsprpcd \
@@ -633,6 +636,10 @@ PRODUCT_PACKAGES += \
     xtwifi-client \
     xtwifi-inet-agent \
     dpmd
+
+PRODUCT_PACKAGES += \
+    system_ext_priv-app_ims_lib_arm64_libimscamera_jni_so \
+    system_ext_priv-app_ims_lib_arm64_libimsmedia_jni_so
 
 PRODUCT_COPY_FILES += \
     vendor/red/hydrogenone/proprietary/vendor/bin/init.qcom.sensors.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.sensors.sh \

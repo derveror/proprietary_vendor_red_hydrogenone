@@ -3,7 +3,7 @@
   "stock_archive_sha256": "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e",
   "stock_build": "H1A1000.082ho.01.00.10r.118",
   "stock_fingerprint": "RED/HydrogenONE/HydrogenONE:9/PKQ1.190118.001/118:userdebug/release-keys",
-  "selected_files": 706,
+  "selected_files": 709,
   "target_lineage": "lineage-22.2",
   "target_android_api": 35,
   "android15_contract": {
@@ -13,7 +13,7 @@
     "stale_init_pruned": true,
     "red_leia_display_dependency_recovered": true,
     "elf_dependency_graph_generated_from_dt_needed": true,
-    "checkelf_enabled_modules": 546,
+    "checkelf_enabled_modules": 548,
     "checkelf_exception_modules": 1,
     "p0_rootdir_daemon_payload_completed_from_red_118": true,
     "qsee_ssd_listener_completed_from_red_118": true,
@@ -262,6 +262,7 @@
         "vendor/etc/data/netmgr_config.xml",
         "vendor/etc/init/dpmQmiMgr.rc",
         "vendor/etc/init/netmgrd.rc",
+        "vendor/lib/libqdi.so",
         "vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so",
         "vendor/lib64/libdpmqmihal.so",
         "vendor/lib64/libdsi_netctrl.so",
@@ -271,10 +272,9 @@
         "vendor/lib64/libnetmgr_nr_fusion.so",
         "vendor/lib64/libnetmgr_rmnet_ext.so",
         "vendor/lib64/libnlnetmgr.so",
-        "vendor/lib/libqdi.so",
         "vendor/lib64/libqcrilFramework.so",
-        "vendor/lib64/libqdp.so",
         "vendor/lib64/libqdi.so",
+        "vendor/lib64/libqdp.so",
         "vendor/lib64/libqmi.so",
         "vendor/lib64/libqmi_cci.so",
         "vendor/lib64/libqmi_client_helper.so",
@@ -308,6 +308,22 @@
     },
     "red118_camera_runtime_files": 196,
     "qrtr_name_service_restored_from_red_118": true,
-    "source_owned_rmnetctl_pruned": true
+    "source_owned_rmnetctl_pruned": true,
+    "ims_mmtel_runtime": {
+      "reason": "Android 15 requires a framework-visible ImsService; RED stock 118 supplies only an Android 9 frontend, while all maintained MSM8998 LineageOS 22.2 references share this compatible Qualcomm frontend",
+      "donor_build": "FP3 6.A.040.2",
+      "validated_reference_trees": [
+        "essential/mata",
+        "razer/cheryl",
+        "oneplus/msm8998-common",
+        "nubia/msm8998-common"
+      ],
+      "paths": [
+        "system_ext/lib64/libimscamera_jni.so",
+        "system_ext/lib64/libimsmedia_jni.so",
+        "system_ext/priv-app/ims/ims.apk"
+      ],
+      "stock118_feature_policy_preserved": true
+    }
   }
 }

@@ -10354,6 +10354,84 @@
         }
       }
     },
+    "libimscamera_jni": {
+      "kind": "cc_prebuilt_library_shared",
+      "partition": "system_ext",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/system_ext/lib64/libimscamera_jni.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libnativehelper",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/system_ext/lib64/libimscamera_jni.so": [
+              "libnativehelper",
+              "libcutils",
+              "libutils",
+              "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
+    "libimsmedia_jni": {
+      "kind": "cc_prebuilt_library_shared",
+      "partition": "system_ext",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm64": {
+          "srcs": [
+            "proprietary/system_ext/lib64/libimsmedia_jni.so"
+          ],
+          "shared_libs": [
+            "libandroid",
+            "libbinder",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "libgui",
+            "liblog",
+            "libm",
+            "libnativehelper",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/system_ext/lib64/libimsmedia_jni.so": [
+              "libnativehelper",
+              "libcutils",
+              "libutils",
+              "libgui",
+              "libbinder",
+              "liblog",
+              "libandroid",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
     "libizat_client_api": {
       "kind": "cc_prebuilt_library_shared",
       "partition": "vendor",
@@ -16864,7 +16942,6 @@
           ],
           "needed": {
             "proprietary/vendor/lib/libqdi.so": [
-              "libqmi",
               "libdiag",
               "libdsutils",
               "libqmiservices",
@@ -16872,6 +16949,7 @@
               "libqmi_common_so",
               "libqmi_client_qmux",
               "libqmi_client_helper",
+              "libqmi",
               "liblog",
               "libc++",
               "libc",
@@ -16902,7 +16980,6 @@
           ],
           "needed": {
             "proprietary/vendor/lib64/libqdi.so": [
-              "libqmi",
               "libdiag",
               "libdsutils",
               "libqmiservices",
@@ -16910,6 +16987,7 @@
               "libqmi_common_so",
               "libqmi_client_qmux",
               "libqmi_client_helper",
+              "libqmi",
               "liblog",
               "libc++",
               "libc",
@@ -23921,10 +23999,10 @@
     }
   },
   "summary": {
-    "total_modules": 547,
-    "checkelf_enabled": 546,
+    "total_modules": 549,
+    "checkelf_enabled": 548,
     "checkelf_exceptions": 1,
-    "provider_sonames": 512,
+    "provider_sonames": 514,
     "allow_undefined_symbol_modules": 20
   }
 }

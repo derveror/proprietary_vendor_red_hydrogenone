@@ -515,6 +515,7 @@ def preserved_non_elf_blocks(text: str) -> str:
         if match.group(1) in {
             "android_app_import",
             "dex_import",
+            "install_symlink",
             "soong_namespace",
         }:
             preserved.append("".join(lines[start:i]).strip())

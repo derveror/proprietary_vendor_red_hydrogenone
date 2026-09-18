@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 122,
-    "P1": 565,
+    "P1": 568,
     "P2": 19,
-    "total": 706
+    "total": 709
   },
   "files": [
     {
@@ -828,6 +828,18 @@
     },
     {
       "tier": "P1",
+      "path": "system_ext/lib64/libimscamera_jni.so",
+      "size": 19960,
+      "sha256": "fff8a5e72e930e7333672ffb6c4c8ee78bdb49d5539d3afd24d2d08c7ec08213"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/lib64/libimsmedia_jni.so",
+      "size": 29184,
+      "sha256": "6f7a232d43deb578bbf20dc28a20c28b50ecedd451951c3c62cfc401a36e77ec"
+    },
+    {
+      "tier": "P1",
       "path": "system_ext/lib64/vendor.qti.diaghal@1.0.so",
       "size": 118416,
       "sha256": "21050415b2af475f36e90058b913a12f366fb9782d9bfc7a5e154494661a6b20"
@@ -837,6 +849,12 @@
       "path": "system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk",
       "size": 33182,
       "sha256": "bcadad9924174bab6fef54b95f69aeecf2a1f36d3e90495364cf63a62f29e580"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/priv-app/ims/ims.apk",
+      "size": 1246115,
+      "sha256": "b4619d79ed14ebfaa5b052d693b22511890acd96213df05af3cb551444939416"
     },
     {
       "tier": "P1",
