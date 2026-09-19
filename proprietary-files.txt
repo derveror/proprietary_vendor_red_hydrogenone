@@ -702,6 +702,12 @@ system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk|10828ba0d987fa884ad0b4a87a46
 system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so|114876ec8ba85965a69694a7edc0e555fe099061
 system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so|b90664b4ce069358f36801da5ceac10baf4ebcc6
 system_ext/priv-app/ims/ims.apk|16b82e1e0113beb7fb3a62a9a5513b317675d96e
+
+# Radio - voice-call audio bridge - from FP3 - 6.A.040.2
+system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|341ac4f8b754883df97f2e9920f1e9a255a6a160
+system_ext/etc/permissions/qcrilhook.xml|30397e293b2c40e6b7a1d11c2a615cdd05de625a
+system_ext/framework/qcrilhook.jar|2851c62bf5d823c4228bfc6c56613934517ffdee
+system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|87719275d1e87dec4b3e9f1a8e7373c7937c9dd8
 vendor/bin/dpmQmiMgr|61a421804559b0e461439c19088acc01b871982a
 vendor/etc/data/dsi_config.xml|27a9616809d2e2355640d5e7cdb7268eba9f6a0d
 vendor/etc/data/netmgr_config.xml|b87b057d87139c7ac866dc5f75c498de1e8ab361

@@ -10,6 +10,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 EXPECTED_SHA256 = {
+    "system_ext/app/QtiTelephonyService/QtiTelephonyService.apk": (
+        "f2b0ff541ea2b4ab57606fe7cf5737e0a1f21d29d5fb4f02d830488fefdbff06"
+    ),
+    "system_ext/etc/permissions/qcrilhook.xml": (
+        "30f2d18283025a215e823cd286a89673280077791d22ce5ccabcbb5a6e71bf5f"
+    ),
+    "system_ext/framework/qcrilhook.jar": (
+        "d4ee895698102bc443693beaeb184832c60a1c01da4df5a965af17b068327825"
+    ),
     "system_ext/lib64/libimscamera_jni.so": (
         "fff8a5e72e930e7333672ffb6c4c8ee78bdb49d5539d3afd24d2d08c7ec08213"
     ),
@@ -18,6 +27,9 @@ EXPECTED_SHA256 = {
     ),
     "system_ext/priv-app/ims/ims.apk": (
         "b4619d79ed14ebfaa5b052d693b22511890acd96213df05af3cb551444939416"
+    ),
+    "system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk": (
+        "e23970ba15b1ab5b82fcb23a48ac3cdff7441b16795b316cc5cdde4054632fbb"
     ),
 }
 
@@ -78,8 +90,9 @@ def main() -> int:
     source_lock.setdefault("android15_contract", {})["ims_mmtel_runtime"] = {
         "reason": (
             "Android 15 requires a framework-visible ImsService; RED stock 118 "
-            "supplies only an Android 9 frontend, while all maintained MSM8998 "
-            "LineageOS 22.2 references share this compatible Qualcomm frontend"
+            "supplies only an Android 9 frontend and radio-audio bridge, while "
+            "all maintained MSM8998 LineageOS 22.2 references share this "
+            "compatible Qualcomm runtime"
         ),
         "donor_build": "FP3 6.A.040.2",
         "validated_reference_trees": [
@@ -96,19 +109,29 @@ def main() -> int:
     tree_audit = load_json("VENDOR_TREE_AUDIT.json")
     tree_audit["counts"] = manifest["counts"]
     note = (
+        "The Android 15 Qualcomm IMS MMTEL frontend, private JNI libraries, "
+        "and radio-audio call-state bridge are byte-identical across the "
+        "maintained mata, cheryl, Nubia, and OnePlus MSM8998 reference trees; "
+        "RED .118 remains the feature-policy authority."
+    )
+    obsolete_note = (
         "The Android 15 Qualcomm IMS MMTEL frontend and its two private JNI "
         "libraries are byte-identical across the maintained mata, cheryl, "
         "Nubia, and OnePlus MSM8998 reference trees; RED .118 remains the "
         "feature-policy authority."
     )
-    notes = list(tree_audit.get("notes", []))
+    notes = [
+        existing
+        for existing in tree_audit.get("notes", [])
+        if existing != obsolete_note
+    ]
     if note not in notes:
         notes.append(note)
     tree_audit["notes"] = notes
     write_json("VENDOR_TREE_AUDIT.json", tree_audit)
 
     print(
-        "Recorded FP3 IMS MMTEL frontend: "
+        "Recorded FP3 IMS MMTEL and radio-audio runtime: "
         f"files={len(EXPECTED_SHA256)}, selected total={len(manifest['files'])}"
     )
     return 0

@@ -1,9 +1,9 @@
 {
-  "selected_files": 709,
+  "selected_files": 713,
   "p0": 122,
-  "p1": 568,
+  "p1": 572,
   "p2": 19,
-  "selected_bytes": 260210827,
+  "selected_bytes": 260543555,
   "elf_modules": 549,
   "copy_files": 58,
   "sensitive_path_matches": [],
@@ -12,7 +12,7 @@
   "checkelf_enabled": 548,
   "checkelf_exceptions": 1,
   "android15_blob_fixups": 63,
-  "actual_selected_bytes_after_fixups": 288230388,
+  "actual_selected_bytes_after_fixups": 288563116,
   "imsdatadaemon_hwbinder_fixups": 1,
   "faceproc_libc_private_fixups": 1
 }

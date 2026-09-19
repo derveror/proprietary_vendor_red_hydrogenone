@@ -3,7 +3,7 @@
   "stock_archive_sha256": "7277a1accf9595bb727f2189863cf5f6249dd99322e2953432bca6e448365f1e",
   "stock_build": "H1A1000.082ho.01.00.10r.118",
   "stock_fingerprint": "RED/HydrogenONE/HydrogenONE:9/PKQ1.190118.001/118:userdebug/release-keys",
-  "selected_files": 709,
+  "selected_files": 713,
   "target_lineage": "lineage-22.2",
   "target_android_api": 35,
   "android15_contract": {
@@ -310,7 +310,7 @@
     "qrtr_name_service_restored_from_red_118": true,
     "source_owned_rmnetctl_pruned": true,
     "ims_mmtel_runtime": {
-      "reason": "Android 15 requires a framework-visible ImsService; RED stock 118 supplies only an Android 9 frontend, while all maintained MSM8998 LineageOS 22.2 references share this compatible Qualcomm frontend",
+      "reason": "Android 15 requires a framework-visible ImsService; RED stock 118 supplies only an Android 9 frontend and radio-audio bridge, while all maintained MSM8998 LineageOS 22.2 references share this compatible Qualcomm runtime",
       "donor_build": "FP3 6.A.040.2",
       "validated_reference_trees": [
         "essential/mata",
@@ -319,9 +319,13 @@
         "nubia/msm8998-common"
       ],
       "paths": [
+        "system_ext/app/QtiTelephonyService/QtiTelephonyService.apk",
+        "system_ext/etc/permissions/qcrilhook.xml",
+        "system_ext/framework/qcrilhook.jar",
         "system_ext/lib64/libimscamera_jni.so",
         "system_ext/lib64/libimsmedia_jni.so",
-        "system_ext/priv-app/ims/ims.apk"
+        "system_ext/priv-app/ims/ims.apk",
+        "system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk"
       ],
       "stock118_feature_policy_preserved": true
     }

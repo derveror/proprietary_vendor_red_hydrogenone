@@ -11,9 +11,9 @@
   },
   "counts": {
     "P0": 122,
-    "P1": 568,
+    "P1": 572,
     "P2": 19,
-    "total": 709
+    "total": 713
   },
   "files": [
     {
@@ -750,6 +750,12 @@
     },
     {
       "tier": "P1",
+      "path": "system_ext/app/QtiTelephonyService/QtiTelephonyService.apk",
+      "size": 94622,
+      "sha256": "f2b0ff541ea2b4ab57606fe7cf5737e0a1f21d29d5fb4f02d830488fefdbff06"
+    },
+    {
+      "tier": "P1",
       "path": "system_ext/bin/dpmd",
       "size": 41840,
       "sha256": "7a5379734f6cbd23adfb8e3729087beb19ef584303425e0bf298e15c7fcb0263"
@@ -780,6 +786,12 @@
     },
     {
       "tier": "P1",
+      "path": "system_ext/etc/permissions/qcrilhook.xml",
+      "size": 234,
+      "sha256": "30f2d18283025a215e823cd286a89673280077791d22ce5ccabcbb5a6e71bf5f"
+    },
+    {
+      "tier": "P1",
       "path": "system_ext/framework/com.qti.dpmframework.jar",
       "size": 322090,
       "sha256": "160f4818af5ae8bff97373e31d11b97af6be9e330c24bcd20a83986ac3ece2cf"
@@ -789,6 +801,12 @@
       "path": "system_ext/framework/dpmapi.jar",
       "size": 13506,
       "sha256": "5b57736888c16de41f99264cfb980a41b470737b9b222f4c7ea9e2cd6ed9fe96"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/framework/qcrilhook.jar",
+      "size": 151442,
+      "sha256": "d4ee895698102bc443693beaeb184832c60a1c01da4df5a965af17b068327825"
     },
     {
       "tier": "P1",
@@ -855,6 +873,12 @@
       "path": "system_ext/priv-app/ims/ims.apk",
       "size": 1246115,
       "sha256": "b4619d79ed14ebfaa5b052d693b22511890acd96213df05af3cb551444939416"
+    },
+    {
+      "tier": "P1",
+      "path": "system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk",
+      "size": 86430,
+      "sha256": "e23970ba15b1ab5b82fcb23a48ac3cdff7441b16795b316cc5cdde4054632fbb"
     },
     {
       "tier": "P1",

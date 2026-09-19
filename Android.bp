@@ -12,6 +12,17 @@ soong_namespace {
 }
 
 android_app_import {
+    name: "QtiTelephonyService",
+    owner: "red",
+    apk: "proprietary/system_ext/app/QtiTelephonyService/QtiTelephonyService.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    system_ext_specific: true,
+}
+
+android_app_import {
     name: "dpmserviceapp",
     owner: "red",
     apk: "proprietary/system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk",
@@ -35,18 +46,16 @@ android_app_import {
     system_ext_specific: true,
 }
 
-install_symlink {
-    name: "system_ext_priv-app_ims_lib_arm64_libimscamera_jni_so",
+android_app_import {
+    name: "qcrilmsgtunnel",
+    owner: "red",
+    apk: "proprietary/system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
     system_ext_specific: true,
-    installed_location: "priv-app/ims/lib/arm64/libimscamera_jni.so",
-    symlink_target: "/system_ext/lib64/libimscamera_jni.so",
-}
-
-install_symlink {
-    name: "system_ext_priv-app_ims_lib_arm64_libimsmedia_jni_so",
-    system_ext_specific: true,
-    installed_location: "priv-app/ims/lib/arm64/libimsmedia_jni.so",
-    symlink_target: "/system_ext/lib64/libimsmedia_jni.so",
 }
 
 dex_import {
@@ -65,6 +74,29 @@ dex_import {
         "proprietary/system_ext/framework/dpmapi.jar",
     ],
     system_ext_specific: true,
+}
+
+dex_import {
+    name: "qcrilhook",
+    owner: "red",
+    jars: [
+        "proprietary/system_ext/framework/qcrilhook.jar",
+    ],
+    system_ext_specific: true,
+}
+
+install_symlink {
+    name: "system_ext_priv-app_ims_lib_arm64_libimscamera_jni_so",
+    system_ext_specific: true,
+    installed_location: "priv-app/ims/lib/arm64/libimscamera_jni.so",
+    symlink_target: "/system_ext/lib64/libimscamera_jni.so",
+}
+
+install_symlink {
+    name: "system_ext_priv-app_ims_lib_arm64_libimsmedia_jni_so",
+    system_ext_specific: true,
+    installed_location: "priv-app/ims/lib/arm64/libimsmedia_jni.so",
+    symlink_target: "/system_ext/lib64/libimsmedia_jni.so",
 }
 
 cc_prebuilt_binary {
