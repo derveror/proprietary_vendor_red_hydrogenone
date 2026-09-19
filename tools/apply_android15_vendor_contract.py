@@ -10,6 +10,7 @@ TOOLS = ROOT / "tools"
 
 BASELINE_PIPELINE = (
     "ensure_source_owned_packages.py",
+    "record_red118_audio_calibration.py",
     "record_red118_camera_runtime.py",
     "restore_red118_qrtr_name_service.py",
     "record_fp3_radio_data_plane.py",
@@ -47,6 +48,7 @@ BASELINE_PIPELINE = (
 
 POST_CAMERA_PIPELINE = (
     "ensure_source_owned_packages.py",
+    "record_red118_audio_calibration.py",
     "record_red118_camera_runtime.py",
     "restore_red118_qrtr_name_service.py",
     "record_fp3_radio_data_plane.py",

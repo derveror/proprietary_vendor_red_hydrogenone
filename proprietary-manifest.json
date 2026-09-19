@@ -10,10 +10,10 @@
     "sdk": 28
   },
   "counts": {
-    "P0": 122,
+    "P0": 141,
     "P1": 572,
     "P2": 19,
-    "total": 713
+    "total": 732
   },
   "files": [
     {
@@ -105,6 +105,60 @@
       "path": "vendor/bin/thermal-engine",
       "size": 7098184,
       "sha256": "50ba2c1d3b1b3f8cafabb6ca319fbcf675f3e9d4bace4f16d6268a8bb3e9efac"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb",
+      "size": 72370,
+      "sha256": "0c46a904c6c262248a5e0ef7ccb4f8e5131b28232ec71e19a78850f71961260a"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/acdbdata/MTP/MTP_General_cal.acdb",
+      "size": 29433,
+      "sha256": "09631f20c7d55738b833b570b79a83a35d5bf86f46a7a787de92433d1868d31a"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb",
+      "size": 9821,
+      "sha256": "8dd3d326ecd0ce07c8e5a818189033683e923948fe655a865b7e5de89a6a4bdd"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb",
+      "size": 282428,
+      "sha256": "a70ad69f8483139c1f468967eae30ea45590957a6e5af4e68212235c46eeeb67"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb",
+      "size": 7673,
+      "sha256": "114c3045e91a383dc27a9d85c332131b9229371310fd498de7664a4ccf5b6ed0"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb",
+      "size": 152517,
+      "sha256": "af9e08c497bff64be90d1ee47d197814e19a6bf0970b3d87a0038ac4047ee781"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb",
+      "size": 353538,
+      "sha256": "3aa79fd5505166cbce6afda67b2d3d3a18090b95892b14ece29072831750ac9a"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp",
+      "size": 6656,
+      "sha256": "17385208d13d3d70e8b2c5649a076f4243c7a580a14a830e21cacf6f1607521e"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/etc/audio_tuning_mixer.txt",
+      "size": 3712,
+      "sha256": "c09d6e8fdb0e367e132064a23bac781318be1313b7454712b43feae5e8f09f28"
     },
     {
       "tier": "P0",
@@ -342,6 +396,30 @@
     },
     {
       "tier": "P0",
+      "path": "vendor/lib/libacdb-fts.so",
+      "size": 19704,
+      "sha256": "9d5b7fc1618bf3f63fea4ef87799c3b8f9701b3472bfee01019287e1f98eb8ea"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libacdbloader.so",
+      "size": 112336,
+      "sha256": "93f8bebc7c3b057745f7dddb7f073007c3f619ac0435cf35411bae344dc1a648"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libacdbrtac.so",
+      "size": 32152,
+      "sha256": "390f0255b4f8aab3076de4aa266fa51b00c54f1d1722796bd8579150900610f9"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libadiertac.so",
+      "size": 32056,
+      "sha256": "09af96612bac9a615cc08f7934ba09b0d00d24d13fb5e1ed4bf5017e45a15d51"
+    },
+    {
+      "tier": "P0",
       "path": "vendor/lib/libadreno_utils.so",
       "size": 73152,
       "sha256": "90de3d0be0461c44b5ffb51d0888a58f5ea83aa35bc05b186e84d0c7bb3dec62"
@@ -351,6 +429,12 @@
       "path": "vendor/lib/libadsprpc.so",
       "size": 117792,
       "sha256": "5110e7abf37d8cb53fd4de616fe593a2523f1e3d9899b9015c169da09683837a"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib/libaudcal.so",
+      "size": 148636,
+      "sha256": "d035a7cfde4e2959d7aa58442f30bf1e9e75a10176caad36f462a2fc22289d0e"
     },
     {
       "tier": "P0",
@@ -510,6 +594,30 @@
     },
     {
       "tier": "P0",
+      "path": "vendor/lib64/libacdb-fts.so",
+      "size": 68224,
+      "sha256": "51730e0e9f9d7c9ad3261e894672350d3816975a4a83b7cab7524589a1cda082"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libacdbloader.so",
+      "size": 136248,
+      "sha256": "5ce12163b8e8ea2cd2e75babbdfd9fa398ec39c97b6656a9250a76d1a6b91eaf"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libacdbrtac.so",
+      "size": 68200,
+      "sha256": "f69f4d134e8759ba39bb07d0d0487319172f1f5e1e299588f42a56cf5b5356ed"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libadiertac.so",
+      "size": 68376,
+      "sha256": "c949030b2da1191aebb79a93e368fdc1a0d1d57eaaad681ada2214c04bc29a40"
+    },
+    {
+      "tier": "P0",
       "path": "vendor/lib64/libadreno_utils.so",
       "size": 72232,
       "sha256": "26d6e4a9f8260852d4d55f6df70f7df77a94d7096ceec6e13c93d65ca7a4c65f"
@@ -525,6 +633,12 @@
       "path": "vendor/lib64/libadsprpc.so",
       "size": 201920,
       "sha256": "e0b423c543fedcfbdfbf1d163cc75777afd2cec947bd2689789206f7e9d7ff1d"
+    },
+    {
+      "tier": "P0",
+      "path": "vendor/lib64/libaudcal.so",
+      "size": 199640,
+      "sha256": "0e81c904a1c49fa829c82288048ecc597e161b229be17de615150ee2dac0a153"
     },
     {
       "tier": "P0",

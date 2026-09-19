@@ -2877,6 +2877,143 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libacdb-fts",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libacdb-fts.so",
+            ],
+            shared_libs: [
+                "libaudcal",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libacdb-fts.so",
+            ],
+            shared_libs: [
+                "libaudcal",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libacdbloader",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libacdbloader.so",
+            ],
+            shared_libs: [
+                "libacdb-fts",
+                "libacdbrtac",
+                "libadiertac",
+                "libaudcal",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libtinyalsa",
+                "libutils",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libacdbloader.so",
+            ],
+            shared_libs: [
+                "libacdb-fts",
+                "libacdbrtac",
+                "libadiertac",
+                "libaudcal",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libtinyalsa",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libacdbrtac",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libacdbrtac.so",
+            ],
+            shared_libs: [
+                "libaudcal",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libacdbrtac.so",
+            ],
+            shared_libs: [
+                "libaudcal",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libactuator_lc898219xl_main",
     owner: "red",
     strip: {
@@ -2924,6 +3061,49 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libadiertac",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libadiertac.so",
+            ],
+            shared_libs: [
+                "libaudcal",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libadiertac.so",
+            ],
+            shared_libs: [
+                "libaudcal",
+                "libc",
+                "libc++",
+                "libcutils",
+                "libdl",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "both",
     prefer: true,
     soc_specific: true,
 }
@@ -3151,6 +3331,47 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libaudcal",
+    owner: "red",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libaudcal.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libdiag",
+                "libdl",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libaudcal.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libdiag",
+                "libdl",
+                "liblog",
+                "libm",
+                "libutils",
+            ],
+        },
+    },
+    compile_multilib: "both",
     prefer: true,
     soc_specific: true,
 }

@@ -3,6 +3,15 @@
 ## Target: LineageOS 22.2 / Android 15
 
 # P0 foundation / security / display / power
+vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
+vendor/etc/audio_tuning_mixer.txt
 vendor/bin/adsprpcd
 vendor/bin/cnss-daemon
 vendor/bin/irsc_util
@@ -54,8 +63,13 @@ vendor/lib/libC2D2.so
 vendor/lib/libCB.so
 vendor/lib/libOpenCL.so
 vendor/lib/libQSEEComAPI.so
+vendor/lib/libacdb-fts.so
+vendor/lib/libacdbloader.so
+vendor/lib/libacdbrtac.so
 vendor/lib/libadreno_utils.so
+vendor/lib/libadiertac.so
 vendor/lib/libadsprpc.so
+vendor/lib/libaudcal.so
 vendor/lib/libc2d30_bltlib.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libgsl.so
@@ -82,9 +96,14 @@ vendor/lib64/libC2D2.so
 vendor/lib64/libCB.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/libQSEEComAPI.so
+vendor/lib64/libacdb-fts.so
+vendor/lib64/libacdbloader.so
+vendor/lib64/libacdbrtac.so
 vendor/lib64/libadreno_utils.so
+vendor/lib64/libadiertac.so
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
+vendor/lib64/libaudcal.so
 vendor/lib64/libc2d30_bltlib.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdrmfs.so

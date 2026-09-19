@@ -3,10 +3,10 @@
   "all_selected_sha256_verified": true,
   "stock_archive_verified": true,
   "counts": {
-    "P0": 122,
+    "P0": 141,
     "P1": 572,
     "P2": 19,
-    "total": 713
+    "total": 732
   },
   "notes": [
     "No RED msm8998-common repository is used.",
@@ -48,7 +48,8 @@
     "The exact seven-file RED .118 ipa_fws PIL payload is retained in /vendor/firmware. Runtime tracing proved that write /dev/ipa 1 without this payload leaves IPA uninitialized and triggers the modem ipa_dl panic.",
     "RED .118 librmnetctl is pruned in favor of the LineageOS dataservices source provider required by the FP3 netmgrd rtrmnet ABI.",
     "The Android 15 Qualcomm IMS MMTEL frontend, private JNI libraries, and radio-audio call-state bridge are byte-identical across the maintained mata, cheryl, Nubia, and OnePlus MSM8998 reference trees; RED .118 remains the feature-policy authority.",
+    "RED .118 MTP audio calibration runtime retains 19 exact stock files: the 32/64-bit ACDB loader dependency closure, MTP calibration database, and mixer tuning used by the msm8998-tasha-snd-card.",
     "RED .118 production camera runtime closure retains 138 tuning libraries and 58 sensor, ISP, image-processing, JPEG, flash, and firmware files selected from the four production XMLs and captured HAL load failures; device runtime validation remains required.",
-    "Current ELF contract: 548 of 549 proprietary ELF modules have check_elf_files enabled; 1 exceptions remain."
+    "Current ELF contract: 553 of 554 proprietary ELF modules have check_elf_files enabled; 1 exceptions remain."
   ]
 }

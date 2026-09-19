@@ -3990,6 +3990,214 @@
         }
       }
     },
+    "libacdb-fts": {
+      "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libacdb-fts.so"
+          ],
+          "shared_libs": [
+            "libaudcal",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libacdb-fts.so": [
+              "libcutils",
+              "libutils",
+              "liblog",
+              "libaudcal",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        },
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libacdb-fts.so"
+          ],
+          "shared_libs": [
+            "libaudcal",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libacdb-fts.so": [
+              "libcutils",
+              "libutils",
+              "liblog",
+              "libaudcal",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
+    "libacdbloader": {
+      "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libacdbloader.so"
+          ],
+          "shared_libs": [
+            "libacdb-fts",
+            "libacdbrtac",
+            "libadiertac",
+            "libaudcal",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libtinyalsa",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libacdbloader.so": [
+              "libcutils",
+              "libutils",
+              "liblog",
+              "libaudcal",
+              "libtinyalsa",
+              "libacdbrtac",
+              "libadiertac",
+              "libacdb-fts",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        },
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libacdbloader.so"
+          ],
+          "shared_libs": [
+            "libacdb-fts",
+            "libacdbrtac",
+            "libadiertac",
+            "libaudcal",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libtinyalsa",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libacdbloader.so": [
+              "libcutils",
+              "libutils",
+              "liblog",
+              "libaudcal",
+              "libtinyalsa",
+              "libacdbrtac",
+              "libadiertac",
+              "libacdb-fts",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
+    "libacdbrtac": {
+      "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libacdbrtac.so"
+          ],
+          "shared_libs": [
+            "libaudcal",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libacdbrtac.so": [
+              "libcutils",
+              "libutils",
+              "liblog",
+              "libaudcal",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        },
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libacdbrtac.so"
+          ],
+          "shared_libs": [
+            "libaudcal",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libacdbrtac.so": [
+              "libcutils",
+              "libutils",
+              "liblog",
+              "libaudcal",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
     "libactuator_lc898219xl_main": {
       "kind": "cc_prebuilt_library_shared",
       "partition": "vendor",
@@ -4044,6 +4252,70 @@
             "proprietary/vendor/lib/libactuator_lc898219xl_sub.so": [
               "libcutils",
               "liblog",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
+    "libadiertac": {
+      "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libadiertac.so"
+          ],
+          "shared_libs": [
+            "libaudcal",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libadiertac.so": [
+              "libcutils",
+              "libutils",
+              "liblog",
+              "libaudcal",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        },
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libadiertac.so"
+          ],
+          "shared_libs": [
+            "libaudcal",
+            "libc",
+            "libc++",
+            "libcutils",
+            "libdl",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libadiertac.so": [
+              "libcutils",
+              "libutils",
+              "liblog",
+              "libaudcal",
               "libc++",
               "libc",
               "libm",
@@ -4338,6 +4610,66 @@
               "libdl",
               "libc",
               "libm"
+            ]
+          },
+          "make_only_needed": {}
+        }
+      }
+    },
+    "libaudcal": {
+      "kind": "cc_prebuilt_library_shared",
+      "partition": "vendor",
+      "check_elf_files": true,
+      "blocking_dependencies": [],
+      "architectures": {
+        "android_arm": {
+          "srcs": [
+            "proprietary/vendor/lib/libaudcal.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libdiag",
+            "libdl",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib/libaudcal.so": [
+              "libutils",
+              "liblog",
+              "libdiag",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
+            ]
+          },
+          "make_only_needed": {}
+        },
+        "android_arm64": {
+          "srcs": [
+            "proprietary/vendor/lib64/libaudcal.so"
+          ],
+          "shared_libs": [
+            "libc",
+            "libc++",
+            "libdiag",
+            "libdl",
+            "liblog",
+            "libm",
+            "libutils"
+          ],
+          "needed": {
+            "proprietary/vendor/lib64/libaudcal.so": [
+              "libutils",
+              "liblog",
+              "libdiag",
+              "libc++",
+              "libc",
+              "libm",
+              "libdl"
             ]
           },
           "make_only_needed": {}
@@ -23999,10 +24331,10 @@
     }
   },
   "summary": {
-    "total_modules": 549,
-    "checkelf_enabled": 548,
+    "total_modules": 554,
+    "checkelf_enabled": 553,
     "checkelf_exceptions": 1,
-    "provider_sonames": 514,
+    "provider_sonames": 519,
     "allow_undefined_symbol_modules": 20
   }
 }
